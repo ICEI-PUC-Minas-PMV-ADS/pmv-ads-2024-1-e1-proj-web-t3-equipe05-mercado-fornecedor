@@ -1,25 +1,25 @@
-# Título do Projeto
+# Mercado do Fornecedor
 
-`CURSO`
+ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
 
-`DISCIPLINA`
+Projeto: Desenvolvimento de Aplicação Web Front-End
 
-`SEMESTRE`
+1º SEMESTRE
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto desenvolvido.
+Um sistema para cotações e licitações de empresas onde clientes e fornecedores possam interagir com seus produtos e serviços de forma unificada.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
-* Nome completo do aluno 6
+* Felipe Sauter
+* Ismail Jaber Hachem
+* Lorena Marta Martinianade Paula
+* Otavio StefanineNunes Soutelo
+* Renato Andrade de Carvalho
+* Safira Gabriele Garcia da Silva
 
 ## Orientador
 
-* Nome completo do professor
+* Simone Alves Nogueira
 
 # Documentação
 
