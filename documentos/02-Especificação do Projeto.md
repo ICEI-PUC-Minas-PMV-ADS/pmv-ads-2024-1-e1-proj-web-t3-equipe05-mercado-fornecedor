@@ -51,8 +51,13 @@
 
 |EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
 |--------------------|---------------------------|----------------------------------|
-| ...                | ...                       | ...                              |
-| ...                | ...                       | ...                              |
+| Fornecedor                 | Inutilizar planilhas para controle das cotações dos clientes                       | Melhoria no alto volume de dados separado por guias                              |
+| Cliente                  | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas                       | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas                              |
+| Fornecedor                | Fornecedor	Que os pedidos não sejam mais feitos por e-mail e WhatsApp	Agilidade no atendimento dos pedidos                       | Fornecedor	Que os pedidos não sejam mais feitos por e-mail e WhatsApp	Agilidade no atendimento dos pedidos                              |
+| Cliente                | Cliente	Ter opção de anexo de notas fiscais	Agilidade na importação interna de compra                       | Cliente	Ter opção de anexo de notas fiscais	Agilidade na importação interna de compra                              |
+| Cliente                | Cliente	Consultar pedidos por período	Controlar a quantidade de produtos que forem comprando                       | Cliente	Consultar pedidos por período	Controlar a quantidade de produtos que forem comprando                              |
+| Fornecedor                | Fornecedor	Controle no status da solicitação	Evitar se perderem qual cliente já foi atendido                       | Fornecedor	Controle no status da solicitação	Evitar se perderem qual cliente já foi atendido                              |
+
 
 ## Requisitos do Projeto
 
