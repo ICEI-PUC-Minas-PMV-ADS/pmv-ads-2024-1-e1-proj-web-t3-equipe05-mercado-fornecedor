@@ -95,7 +95,7 @@
 | RFN-05 |  Contraste legível entre cor da fonte e do fundo                    | Média   | 
 
 **Prioridade: Alta / Média / Baixa. 
-Referências Bibliográficas  
+### Referências Bibliográficas  
 
 PROCESSOS, Performance. Saiba quais são os impactos do mal gerenciamento do departamento de compras em sua organização. In: PROCESSOS, Performance. Blog Performance Processos. Lajeado, 01 nov. 2018. Disponível em: https://x.gd/YEGQv. Acesso em: 11 mar. 2024. 
 
