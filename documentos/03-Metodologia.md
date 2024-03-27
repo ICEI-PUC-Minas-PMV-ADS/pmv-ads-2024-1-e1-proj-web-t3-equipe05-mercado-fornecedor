@@ -1,7 +1,7 @@
 
 # Metodologia
 
-A metodologia utilizada é o SCRUM, com auxílio da ferramenta figma.
+O projeto utilizará a metodologia ágil SCRUM, com auxílio da ferramenta figma.
 
 
 ## Gerenciamento de Projeto
