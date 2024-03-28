@@ -1,13 +1,11 @@
 
 # Metodologia
 
-O projeto utilizará a metodologia ágil SCRUM, com auxílio da ferramenta figma.
+O projeto utilizará a metodologia ágil Scrum, com auxílio das ferramentas Figma, Trello e Github.
 
 
 ## Gerenciamento de Projeto
-A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, pois como citam Amaral, Fleury e Isoni (2019, p. 68), seus benefícios são a
-
-“visão clara dos resultados a entregar; ritmo e disciplina necessários à execução; definição de papéis e responsabilidades dos integrantes do projeto (Scrum Owner, Scrum Master e Team); empoderamento dos membros da equipe de projetos para atingir o desafio; conhecimento distribuído e compartilhado de forma colaborativa; ambiência favorável para crítica às ideias e não às pessoas.”
+Segundo a empresa TOTVS, uma empresa brasielira de software, o Scrum é a melhor opção para quem busca desenvolver um projeto de uma forma moderna, uma vez que ele conecta os participantes da equipe, o que torna o processo iterativo. Por isso, sua inclusão no planejamento é fundamental. 
 
 ### Divisão de Papéis
 
