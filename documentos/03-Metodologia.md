@@ -5,7 +5,7 @@ O projeto utilizará a metodologia ágil Scrum, com auxílio das ferramentas Fig
 
 
 ## Gerenciamento de Projeto
-Segundo a empresa TOTVS, uma empresa brasielira de software, o Scrum é a melhor opção para quem busca desenvolver um projeto de uma forma moderna, uma vez que ele conecta os participantes da equipe, o que torna o processo iterativo. Por isso, sua inclusão no planejamento é fundamental. 
+Segundo a TOTVS, uma empresa brasileira de software, o Scrum é a melhor opção para quem busca desenvolver um projeto de uma forma moderna, uma vez que ele conecta os participantes da equipe, o que torna o processo iterativo. Por isso, sua inclusão no planejamento é fundamental. 
 
 ### Divisão de Papéis
 
