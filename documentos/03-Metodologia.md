@@ -59,7 +59,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 | Kanban                              | Trello                             | [Trello](https://trello.com/invite/b/KYCpAzlH/ATTIaadcfd398153f7ed90860e1a0fd452082D2536D0/mercado-do-fornecedor)                         |
 | Repositório de código fonte         | GitHub                             | http://....                            |
 | Documentos do projeto               | GitHub                             | http://....                            |
-| Projeto de Interface                | Figma                              | http://....                            |
+| Projeto de Interface                | Figma                              | [Protótipo de média fidelidade](https://www.figma.com/file/9HEteggh2m8f35gVAdH2wF/MercadoDoFornecedor-LowFi?type=design&node-id=0%3A1&mode=design&t=4DSrD756aJzZ8KZK-1)                            |
 | Gerenciamento do Projeto            | GitHub Projects                    | http://....                            |
 | Hospedagem                          | GitHub Pages                       | http://....                            |
 
