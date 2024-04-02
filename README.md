@@ -1,10 +1,10 @@
 # Mercado do Fornecedor
 
-ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
+`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
-Projeto: Desenvolvimento de Aplicação Web Front-End
+`Projeto: Desenvolvimento de Aplicação Web Front-End`
 
-1º SEMESTRE
+`1º SEMESTRE`
 
 Um sistema para cotações e licitações de empresas onde clientes e fornecedores possam interagir com seus produtos e serviços de forma unificada.
 
