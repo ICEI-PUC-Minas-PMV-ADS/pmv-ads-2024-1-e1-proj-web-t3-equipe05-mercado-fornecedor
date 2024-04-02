@@ -12,7 +12,7 @@ Um sistema para cotações e licitações de empresas onde clientes e fornecedor
 
 * Felipe Sauter
 * Ismail Jaber Hachem
-* Lorena Marta Martinianade Paula
+* Lorena Marta Martiniana de Paula
 * Otavio StefanineNunes Soutelo
 * Renato Andrade de Carvalho
 * Safira Gabriele Garcia da Silva
