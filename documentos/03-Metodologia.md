@@ -56,7 +56,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 
 | AMBIENTE                            | PLATAFORMA                         | LINK DE ACESSO                         |
 |-------------------------------------|------------------------------------|----------------------------------------|
-| Kanban                              | Trello                             | http://....                            |
+| Kanban                              | Trello                             | [Trello](https://trello.com/invite/b/KYCpAzlH/ATTIaadcfd398153f7ed90860e1a0fd452082D2536D0/mercado-do-fornecedor)                         |
 | Repositório de código fonte         | GitHub                             | http://....                            |
 | Documentos do projeto               | GitHub                             | http://....                            |
 | Projeto de Interface                | Figma                              | http://....                            |
