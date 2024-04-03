@@ -9,10 +9,7 @@
     <figcaption>Figura 1 - Esquema de user flow desenvolvido pela equipe</figcaption>
 </figure> 
 
-> **Links Úteis**:
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools & Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+
 
 ## Protótipo
 
@@ -30,12 +27,5 @@ Protótipos de baixa fidelidade apresentam de forma simplificada o design da int
   <img src="img/mf-fornecedores.png"/>
 </details>
  
-> **Links Úteis**:
-
->- Ferramentas:
->> - [Pencil](https://pencil.evolus.vn/)
->> - [MarvelApp](https://marvelapp.com/)
->> - [Figma](https://www.figma.com/)
-
 
 
