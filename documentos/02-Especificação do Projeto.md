@@ -56,7 +56,7 @@
 
 ## Requisitos do Projeto
 
-[Com base nas Histórias de Usuários, enumere os requisitos da solução. 
+
 
 ### Requisitos Funcionais
 
