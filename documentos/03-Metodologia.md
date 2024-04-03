@@ -13,7 +13,7 @@ A equipe utiliza o Scrum como base para definição do processo de desenvolvimen
 
 - Scrum Master: Renato Andrade.
 - Product Owner: Felipe Sauter.
-- Equipe de Desenvolvimento: Lorena Marta, Felipe Andrade, Otávio Stefanine, Safira Garcia, Renato Andrade, Ismail,
+- Equipe de Desenvolvimento: Lorena Marta, Felipe Andrade, Otávio Stefanine, Safira Garcia, Renato Andrade.
 - Equipe de Design: Lorena Marta.
 
 > **Links Úteis**:
