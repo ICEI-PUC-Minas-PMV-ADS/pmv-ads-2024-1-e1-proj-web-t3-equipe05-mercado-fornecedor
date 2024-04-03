@@ -16,10 +16,6 @@ A equipe utiliza o Scrum como base para definição do processo de desenvolvimen
 - Equipe de Desenvolvimento: Lorena Marta, Felipe Andrade, Otávio Stefanine, Safira Garcia, Renato Andrade.
 - Equipe de Design: Lorena Marta.
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
 
 ### Processo
 
@@ -49,7 +45,6 @@ A equipe utiliza o Scrum como base para definição do processo de desenvolvimen
 </figure> 
   
 ### Ferramentas
-
 
 
 Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
