@@ -52,8 +52,7 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 
 | AMBIENTE                            | PLATAFORMA                         | LINK DE ACESSO                         |
 |-------------------------------------|------------------------------------|----------------------------------------|
-| Kanban                              |                                    |                                        |
-| Repositório de código fonte         | GitHub                             | http://....                            |
+| Repositório de código fonte         | GitHub                             | [http://.... ](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/tree/main/codigo-fonte)  |
 | Documentos do projeto               | GitHub                             | [http://.... ](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/tree/main/documentos)    |
 | Projeto de Interface                | Figma                              | [Protótipo de média fidelidade](https://www.figma.com/file/9HEteggh2m8f35gVAdH2wF/MercadoDoFornecedor-LowFi?type=design&node-id=0%3A1&mode=design&t=4DSrD756aJzZ8KZK-1)                                 |
 | Gerenciamento do Projeto            | Trello                             | [Trello](https://trello.com/invite/b/KYCpAzlH/ATTIaadcfd398153f7ed90860e1a0fd452082D2536D0/mercado-do-fornecedor)                           |
