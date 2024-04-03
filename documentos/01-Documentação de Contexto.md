@@ -18,7 +18,6 @@ Outro problema é a falta de personalização. Cada empresa tem suas próprias n
 
 Por fim, a gestão de dados é outro desafio. As empresas precisam ser capazes de buscar eficientemente dados de cotação, o que pode ser difícil com softwares que não oferecem recursos como por exemplo campo de pesquisa e filtragem.
 
-Este link pode ajudar a equipe a entender mais sobre definição do problema: [Objetivos, Problema de pesquisa e Justificativa.](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
 
 
 ## Objetivos
@@ -33,7 +32,6 @@ Dentre os principais objetivos que devem ser alcançados com o desenvolvimento d
 •	Permitir a personalização de tabelas e processos;
 •	Desenvolver um sistema de buscas de dados e informações como fornecedores, tabelas, dentre outros.
 
-Este link pode ajudar a equipe a entender mais sobre definição dos objetivos: [Objetivos, Problema de pesquisa e Justificativa.](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
 
 ## Justificativa
 
@@ -47,7 +45,6 @@ Ficou evidente a necessidade da utilização de um software de gestão de cotaç
 
 Devem ser apresentados dados de fontes relevantes e confiáveis sobre o problema, inserindo-o como alvo de estudo. Sugere-se que a equipe utilize questionários, entrevistas e dados estatísticos, que devem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pela equipe.]
 
-Este link pode ajudar a equipe a formular a justificativa: [Como montar a justificativa.](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
@@ -60,10 +57,4 @@ Para conhecer melhor o público-alvo foi entrevistado algumas pessoas do setor d
 •	Excesso de falhas na inserção de dados manuais,
 •	Ausência de capacitação profissional para a utilização do software. Demora na resposta das cotações,
 •	Alto volume de dados.
-
-
-Os links abaixo podem ajudar a equipe a conhecer um pouco mais sobre o público-alvo. 
-
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
 
