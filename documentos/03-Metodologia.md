@@ -23,12 +23,12 @@ Segundo a TOTVS, uma empresa brasileira de software, o Scrum é a melhor opção
 - Desenvolvimento: Quando uma tarefa da sprint for iniciada, será movimentada para esta aba, para que a equipe possa realizar a tarefa.
 - Revisão dos códigos: Revisão dos códigos desenvolvidos pela equipe, para que seja corrigido possíveis erros e bugs de programação.
 - Fase de testes: nesta etiqueta, todo projeto desenvolvido e corrigido passa pela fase de testes, para que esteja ápito sem erros e ser entregue ao cliente.
-- Concluído: Toda tarefa concluída pela equipe será movimentada para esta aba.
-- Anexos: Etiqueta cirada afim de centralizar todo anexo de documentos e imagens para que seja de fácil acesso para utilização da equipe.
+- Concluído: Toda tarefa conclu
+- Anexos: 
 
 
 ### Etiquetas
-<p>Serão adicionadas após a criação do Trello.</p>
+
 
 <ul>
   <li>Backlog</li>
