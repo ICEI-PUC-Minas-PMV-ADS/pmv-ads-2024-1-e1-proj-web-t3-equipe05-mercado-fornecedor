@@ -10,7 +10,7 @@ Segundo a TOTVS, uma empresa brasileira de software, o Scrum é a melhor opção
 ### Divisão de Papéis
 
 A equipe utiliza o Scrum como base para definição do processo de desenvolvimento.
-[Adicione informações abaixo sobre a divisão de papéis entre os membros da equipe.]
+
 - Scrum Master: Renato Andrade.
 - Product Owner: Felipe Sauter.
 - Equipe de Desenvolvimento: Lorena Marta, Felipe Andrade, Otávio Stefano, Safira Garcia, Renato Andrade, Ismail,
