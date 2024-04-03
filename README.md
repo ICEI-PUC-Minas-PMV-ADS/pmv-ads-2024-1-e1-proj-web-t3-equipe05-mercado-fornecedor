@@ -11,7 +11,6 @@ Um sistema para cotações e licitações de empresas onde clientes e fornecedor
 ## Integrantes
 
 * Felipe Sauter
-* Ismail Jaber Hachem
 * Lorena Marta Martiniana de Paula
 * Otavio StefanineNunes Soutelo
 * Renato Andrade de Carvalho
