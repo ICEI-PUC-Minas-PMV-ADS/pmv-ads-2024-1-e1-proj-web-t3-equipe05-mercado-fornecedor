@@ -32,7 +32,7 @@ Protótipos de baixa fidelidade apresentam de forma simplificada o design da int
 </details>
  
 > **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
+
 >- Ferramentas:
 >> - [Pencil](https://pencil.evolus.vn/)
 >> - [MarvelApp](https://marvelapp.com/)
