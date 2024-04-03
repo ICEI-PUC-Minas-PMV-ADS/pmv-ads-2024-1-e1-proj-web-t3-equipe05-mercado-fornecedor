@@ -46,12 +46,12 @@
 
 |EU COMO... `QUEM`   | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
 |--------------------|---------------------------|----------------------------------|
-| Fornecedor                 | Inutilizar planilhas para controle das cotações dos clientes                       | Melhoria no alto volume de dados separado por guias                              |
-| Cliente                  | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas                       | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas                              |
-| Fornecedor                | Fornecedor	Que os pedidos não sejam mais feitos por e-mail e WhatsApp	Agilidade no atendimento dos pedidos                       | Fornecedor	Que os pedidos não sejam mais feitos por e-mail e WhatsApp	Agilidade no atendimento dos pedidos                              |
-| Cliente                | Cliente	Ter opção de anexo de notas fiscais	Agilidade na importação interna de compra                       | Cliente	Ter opção de anexo de notas fiscais	Agilidade na importação interna de compra                              |
-| Cliente                | Cliente	Consultar pedidos por período	Controlar a quantidade de produtos que forem comprando                       | Cliente	Consultar pedidos por período	Controlar a quantidade de produtos que forem comprando                              |
-| Fornecedor                | Fornecedor	Controle no status da solicitação	Evitar se perderem qual cliente já foi atendido                       | Fornecedor	Controle no status da solicitação	Evitar se perderem qual cliente já foi atendido                              |
+| Fornecedor                 | Inutilizar planilhas para controle das cotações dos clientes.                      | Melhoria no alto volume de dados separado por guias.                              |
+| Cliente                  | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas.                      | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas.                              |
+| Fornecedor                | Fornecedor	Que os pedidos não sejam mais feitos por e-mail e WhatsApp	Agilidade no atendimento dos pedidos.                      | Fornecedor	Que os pedidos não sejam mais feitos por e-mail e WhatsApp	Agilidade no atendimento dos pedidos.                              |
+| Cliente                | Cliente	Ter opção de anexo de notas fiscais	Agilidade na importação interna de compra.                       | Cliente	Ter opção de anexo de notas fiscais	Agilidade na importação interna de compra.                              |
+| Cliente                | Cliente	Consultar pedidos por período	Controlar a quantidade de produtos que forem comprando.                      | Cliente	Consultar pedidos por período	Controlar a quantidade de produtos que forem comprando.                              |
+| Fornecedor                | Fornecedor	Controle no status da solicitação	Evitar se perderem qual cliente já foi atendido.                      | Fornecedor	Controle no status da solicitação	Evitar se perderem qual cliente já foi atendido.                             |
 
 
 ## Requisitos do Projeto
@@ -63,16 +63,16 @@
 
 |ID    | Descrição                | Prioridade |
 |-------|---------------------------------|----|
-| RF-01 |  A aplicação deve permitir que o pedido apareça para todos os fornecedores, para que o cliente verifique os melhores preços | Média | 
-| RF-02 |  A aplicação deve apresentar campo de status no andamento das requisições | Baixa |
-| RF-03 |  O sistema deve permitir anexar mais produtos caso falte na requisição já em aberto | Alta |
-| RF-04 |  A aplicação deve permitir que o cliente visualize o cadastro de todos os fornecedores para ciência da marca da mercadoria que cotarão | Média |
-| RF-05 |  A aplicação deve conter notificações no perfil do cliente, quando houver resposta dos fornecedores  | Alta   |
-| RF-06 |  Conter campo de informações complementares | Baixa |
-| RF-07 |  Permitir a visualização de relatórios de custo de suprimentos totais e por cada fornecedor em um período. | Média |
-| RF-08 |  A aplicação deve fornecer um campo para anexo das XMLS e PDF’S das notas emitidas para o cliente | Alta  |
-| RF-09 |  No perfil de fornecedor, permitir filtragem de todos os pedidos feitos por cliente | Alta |
-| RF-10 |  No perfil de cliente, permitir apenas a pesquisa pelo número do pedido  | Alta |
+| RF-01 |  A aplicação deve permitir que o pedido apareça para todos os fornecedores, para que o cliente verifique os melhores preços; | Média | 
+| RF-02 |  A aplicação deve apresentar campo de status no andamento das requisições; | Baixa |
+| RF-03 |  O sistema deve permitir anexar mais produtos caso falte na requisição já em aberto; | Alta |
+| RF-04 |  A aplicação deve permitir que o cliente visualize o cadastro de todos os fornecedores para ciência da marca da mercadoria que cotarão; | Média |
+| RF-05 |  A aplicação deve conter notificações no perfil do cliente, quando houver resposta dos fornecedores;  | Alta   |
+| RF-06 |  Conter campo de informações complementares; | Baixa |
+| RF-07 |  Permitir a visualização de relatórios de custo de suprimentos totais e por cada fornecedor em um período; | Média |
+| RF-08 |  A aplicação deve fornecer um campo para anexo das XMLS e PDF’S das notas emitidas para o cliente; | Alta  |
+| RF-09 |  No perfil de fornecedor, permitir filtragem de todos os pedidos feitos por cliente; | Alta |
+| RF-10 |  No perfil de cliente, permitir apenas a pesquisa pelo número do pedido.  | Alta |
 
 **Prioridade: Alta / Média / Baixa. 
 
@@ -82,11 +82,11 @@
 
 |ID      | Descrição               |Prioridade |
 |--------|-------------------------|----|
-| RNF-01 |  Facilidade de navegar pelo sistema.                    | Média   | 
-| RNF-02 |  O sistema deve estar disponível em diferentes dispositivos                    | Baixa   | 
-| RNF-03 |  A aplicação deve ser responsiva                    | Alta   | 
-| RFN-04 |  O sistema deve funcionar 24/7                    | Alta   | 
-| RFN-05 |  Contraste legível entre cor da fonte e do fundo                    | Média   | 
+| RNF-01 |  Facilidade de navegar pelo sistema;                 | Média   | 
+| RNF-02 |  O sistema deve estar disponível em diferentes dispositivos;                    | Baixa   | 
+| RNF-03 |  A aplicação deve ser responsiva;                  | Alta   | 
+| RFN-04 |  O sistema deve funcionar 24/7;                  | Alta   | 
+| RFN-05 |  Contraste legível entre cor da fonte e do fundo.                  | Média   | 
 
 **Prioridade: Alta / Média / Baixa. 
 
