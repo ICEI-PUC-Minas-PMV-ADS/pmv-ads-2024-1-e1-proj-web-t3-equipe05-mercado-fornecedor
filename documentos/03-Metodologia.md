@@ -41,8 +41,8 @@ Segundo a TOTVS, uma empresa brasileira de software, o Scrum é a melhor opção
 </ul>
 
 <figure> 
-  <img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png"
-    <figcaption>Figura 3 - Tela do esquema de cores e categorias</figcaption>
+  <img src="[https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/documentos/img/Trello%20Mercado%20Fornecedor.png)"
+    <figcaption>Figura 3 - Tela com as definições das categorias do projeto
 </figure> 
   
 ### Ferramentas
