@@ -18,23 +18,26 @@ Segundo a TOTVS, uma empresa brasileira de software, o Scrum é a melhor opção
 ### Processo
 
 
-- Backlog: recebe as tarefas a serem trabalhadas e representa o Product Backlog. Todas as atividades identificadas no decorrer do projeto também devem ser incorporadas a esta lista. 
-- To Do: Esta lista representa o Sprint Backlog. Este é o Sprint atual que estamos trabalhando. 
-- Doing: Quando uma tarefa tiver sido iniciada, ela é movida para cá.
-- Bugfix: Resolução de bugs e problemas que surgirem ao longo do desenvolvimento.
-- Done: nesta lista são colocadas as tarefas que passaram pelos testes e controle de qualidade e estão prontos para ser entregues ao usuário. Não há mais edições ou revisões necessárias, ele está agendado e pronto para a ação.
+- Backlog: Irá receber detalhadamento de todos os tópicos a serem desenvolvidos pela equipe.
+- Sprint Backlog: Recebe partes dos conteúdos que seram desenvolvido atualmente pela equipe.
+- Desenvolvimento: Quando uma tarefa da sprint for iniciada, será movimentada para esta aba, para que a equipe possa realizar a tarefa.
+- Revisão dos códigos: Revisão dos códigos desenvolvidos pela equipe, para que seja corrigido possíveis erros e bugs de programação.
+- Fase de testes: nesta etiqueta, todo projeto desenvolvido e corrigido passa pela fase de testes, para que esteja ápito sem erros e ser entregue ao cliente.
+- Concluído: Toda tarefa concluída pela equipe será movimentada para esta aba.
+- Anexos: Etiqueta cirada afim de centralizar todo anexo de documentos e imagens para que seja de fácil acesso para utilização da equipe.
 
 
 ### Etiquetas
 <p>Serão adicionadas após a criação do Trello.</p>
 
 <ul>
-  <li>Bug (Erro no código)</li>
-  <li>Desenvolvimento (Development)</li>
-  <li>Documentação (Documentation)</li>
-  <li>Gerência de Projetos (Project Management)</li>
-  <li>Infraestrutura (Infrastructure)</li>
-  <li>Testes (Tests)</li>
+  <li>Backlog</li>
+  <li>A fazer</li>
+  <li>Desenvolvimento</li>
+  <li>Revisão do código</li>
+  <li>Fase de testes</li>
+  <li>Concluído</li>
+  <li>Anexos</li>
 </ul>
 
 <figure> 
@@ -49,11 +52,11 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 
 | AMBIENTE                            | PLATAFORMA                         | LINK DE ACESSO                         |
 |-------------------------------------|------------------------------------|----------------------------------------|
-| Kanban                              | Trello                             | [Trello](https://trello.com/invite/b/KYCpAzlH/ATTIaadcfd398153f7ed90860e1a0fd452082D2536D0/mercado-do-fornecedor)                         |
+| Kanban                              |                                    |                                        |
 | Repositório de código fonte         | GitHub                             | http://....                            |
 | Documentos do projeto               | GitHub                             | http://....                            |
-| Projeto de Interface                | Figma                              | [Protótipo de média fidelidade](https://www.figma.com/file/9HEteggh2m8f35gVAdH2wF/MercadoDoFornecedor-LowFi?type=design&node-id=0%3A1&mode=design&t=4DSrD756aJzZ8KZK-1)                            |
-| Gerenciamento do Projeto            | GitHub Projects                    | http://....                            |
+| Projeto de Interface                | Figma                              | [Protótipo de média fidelidade](https://www.figma.com/file/9HEteggh2m8f35gVAdH2wF/MercadoDoFornecedor-LowFi?type=design&node-id=0%3A1&mode=design&t=4DSrD756aJzZ8KZK-1)                                 |
+| Gerenciamento do Projeto            | Trello                             | [Trello](https://trello.com/invite/b/KYCpAzlH/ATTIaadcfd398153f7ed90860e1a0fd452082D2536D0/mercado-do-fornecedor)                           |
 | Hospedagem                          | GitHub Pages                       | http://....                            |
 
 
