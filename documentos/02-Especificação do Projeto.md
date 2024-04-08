@@ -88,7 +88,6 @@
 | RFN-04 |  O sistema deve funcionar 24/7;                  | Alta   | 
 | RFN-05 |  Contraste legível entre cor da fonte e do fundo.                  | Média   | 
 
-**Prioridade: Alta / Média / Baixa. 
 
  
 
