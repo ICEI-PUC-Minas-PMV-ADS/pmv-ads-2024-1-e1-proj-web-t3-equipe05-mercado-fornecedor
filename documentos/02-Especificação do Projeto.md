@@ -44,7 +44,7 @@
 
 
 
-|EU COMO...    | QUERO/PRECISO ... `O QUE` |PARA ... `PORQUE`                 |
+|EU COMO...    | QUERO/PRECISO ...  |PARA ... `PORQUE`                 |
 |--------------------|---------------------------|----------------------------------|
 | Fornecedor                 | Inutilizar planilhas para controle das cotações dos clientes.                      | Melhoria no alto volume de dados separado por guias.                              |
 | Cliente                  | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas.                      | Cliente 	Não usar o WhatsApp para contato com fornecedor	Evitar perda no controle dos pedidos feitos, devido ter muitas conversas.                              |
