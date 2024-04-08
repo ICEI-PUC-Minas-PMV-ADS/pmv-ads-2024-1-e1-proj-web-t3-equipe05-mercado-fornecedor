@@ -74,7 +74,7 @@
 | RF-09 |  No perfil de fornecedor, permitir filtragem de todos os pedidos feitos por cliente; | Alta |
 | RF-10 |  No perfil de cliente, permitir apenas a pesquisa pelo número do pedido.  | Alta |
 
-**Prioridade: Alta / Média / Baixa. 
+
 
 ### Requisitos não Funcionais
 
