@@ -5,7 +5,7 @@
 
 
 <figure> 
-  <img src="img/wireflow.jpg"
+  <img src="img/userflow.jpg"
     <figcaption>Figura 1 - Esquema de user flow desenvolvido pela equipe</figcaption>
 </figure> 
 
@@ -13,18 +13,27 @@
 
 ## Protótipo
 
-Desenvolver um protótipo emerge como uma das maneiras mais ágeis e econômicas de validar uma ideia, conceito ou funcionalidade. Isso permite a interação, avaliação, modificação e aprovação das principais características de uma interface antes de entrar na fase de desenvolvimento. Leia o artigo [Protótipos: baixa, média ou alta fidelidade?](https://medium.com/ladies-that-ux-br/prot%C3%B3tipos-baixa-m%C3%A9dia-ou-alta-fidelidade-71d897559135).
-
-### Protótipo de baixa fidelidade
-
-Protótipos de baixa fidelidade apresentam de forma simplificada o design da interface e o relacionamento entre suas páginas, permitindo evolução da proposta da solução. Neste projeto, os utilizaremos para apoiar a validação dos requisitos e efetuar mudanças dos mesmos, caso seja necessário, para menor impacto na codificação da aplicação.
+Para esta etapa, a equipe optou por desenvolver dois tipos de protótipos: de média fidelidade e de alta fidelidade. Assim, foi possível visualizar e compreender melhor os elementos necessários para que os requisitos funcionais fossem atendidos, além de facilitar o desenvolvimento da aplicação.
 
 
-<details>
-  <summary>Protótipo das páginas principais</summary>
-  <img src="img/mf-home.png"/>
-  <img src="img/mf-fornecedores.png"/>
-</details>
+### Protótipo de média fidelidade
+
+Neste protótipo foram estabelecidos os elementos das principais páginas da aplicação - home e fornecedores - e sua disposição. Também foram definidas as disposições das informações nas páginas, além do uso de imagens e vídeos para complementar o projeto.
+
+<figure>
+  <img src="img/prototitpomfmediafidelidade.png"/>
+  <figcaption>Figura 2 - Protótipos de média fidelidade das páginas Home e Fornecedores</figcaption>
+</figure>
+
+
+### Protótipo de alta fidelidade
+
+Após a validação do protótipo de média fidelidade pelos membros do grupo, foi desenvolvido um protótipo de alta fidelidade. Desta vez, contendo todas as páginas da aplicação, além de detalhes como cores e imagens, que ajudam na compreensão do que se espera do layout da aplicação final.
+
+<figure>
+  <img src="img/prototitpomfaltafidelidade.png"/>
+  <figcaption>Figura 3 - Protótipos de alta fidelidade de todas as páginas da aplicação</figcaption>
+</figure>
  
 
 
