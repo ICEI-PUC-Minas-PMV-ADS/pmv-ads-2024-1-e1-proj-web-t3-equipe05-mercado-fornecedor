@@ -40,7 +40,7 @@ Segundo a TOTVS, uma empresa brasileira de software, o Scrum é a melhor opção
 </ul>
 
 <figure> 
-  <img src="img/"
+  <img src="img/Etiquetas trello.png"
     <figcaption>Figura 3 - Tela do Trello com as definições das categorias do projeto.
 </figure> 
  
