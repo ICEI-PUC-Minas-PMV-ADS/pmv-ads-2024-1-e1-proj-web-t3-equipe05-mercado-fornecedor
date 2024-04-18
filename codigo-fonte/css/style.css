@@ -1,5 +1,7 @@
-h1
-{
-    color:black;
-    
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  color: pink;
 }
