@@ -1,6 +1,6 @@
 # Mercado do Fornecedor
 
-`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
+`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS` ENCONTRO 17/04
 
 `Projeto: Desenvolvimento de Aplicação Web Front-End`
 
