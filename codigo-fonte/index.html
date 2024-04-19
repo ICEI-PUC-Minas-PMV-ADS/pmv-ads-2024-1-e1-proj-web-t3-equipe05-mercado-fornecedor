@@ -16,13 +16,168 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+    <link href="./css/icons.css" rel="stylesheet" />
     <link href="./css/style.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/1e3fdf6601.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header></header>
+    <div id="hiddenNav" class="hidden-navbar">
+      <div class="navbar-container">
+        <div class="user-navbar">
+          <a href="./cadastro.html"><span>Cadastrar</span></a>
+          <a href="./login.html"><span>Login</span></a>
+        </div>
+
+        <a href="javascript:void(0)" onclick="closeNav()">
+          <i class="fa-solid fa-xmark fa-3x"></i>
+        </a>
+      </div>
+    </div>
+    <header id="header">
+      <div class="header-container">
+        <div class="header-text">
+          <nav id="navbar" class="nav-menu">
+            <h1 id="logo" class="logo">
+              <a href="index.html"><img src="./img/logo.png" /></a>
+            </h1>
+
+            <ul class="nav-list">
+              <li class="content__item">
+                <a href="#sobre" class="link link--nav" data-text="Sobre o MF">
+                  <span>Sobre o MF</span>
+                </a>
+              </li>
+              <li class="content__item">
+                <a href="#equipe" class="link link--nav" data-text="Equipe">
+                  <span>Equipe</span>
+                </a>
+              </li>
+              <li class="content__item">
+                <a
+                  href="./fornecedores.html"
+                  class="link link--nav"
+                  data-text="Fornecedores"
+                >
+                  <span>Fornecedores</span>
+                </a>
+              </li>
+              <li class="content__item">
+                <a href="#contato" class="link link--nav" data-text="Contato">
+                  <span>Contato</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" onclick="openNav()">
+                  <img src="./img/user.png" />
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <section class="header-call-to-action">
+            <div class="header-message">
+              Conecte-se com clientes e fornecedores de todo Brasil em busca do
+              melhor preço!
+            </div>
+            <div class="call-to-action">
+              <a href="./cadastro.html" class="main-btn">Cadastre-se</a>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="header-carousel">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/img2.jpeg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/img3.jpeg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/img4.jpeg" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </header>
 
     <main>
-      <h1>Mercado do Fornecedor</h1>
+      <section id="sobre" class="section-sobre">
+        <h2>O Mercado do Fornecedor</h2>
+        <h3>
+          Vivamus risus metus, finibus vel sagittis vel, placerat vitae dui
+          egestas aliquam libero at porta eleifend, felis et aliquet
+        </h3>
+
+        <section class="servicos">
+          <ul class="lista-de-servicos">
+            <li>
+              <div class="icon">
+                <i class="fa-solid fa-file fa-4x"></i>
+              </div>
+              <div class="texto-servicos">
+                <h4>Crie seus pedidos personalizados</h4>
+                Nulla nec risus vel nibh viverra tincidunt. Phasellus feugiat
+                dui et finibus fermentum. Phasellus in erat ut ex sollicitudin
+                accumsan ut in ligula.
+              </div>
+            </li>
+
+            <li>
+              <div class="icon">
+                <i class="fa-solid fa-calculator fa-4x"></i>
+              </div>
+              <div class="texto-servicos">
+                <h4>Receba cotações e escolha o melhor custo</h4>
+                Nulla nec risus vel nibh viverra tincidunt. Phasellus feugiat
+                dui et finibus fermentum. Phasellus in erat ut ex sollicitudin
+                accumsan ut in ligula.
+              </div>
+            </li>
+
+            <li>
+              <div class="icon">
+                <i class="fa-solid fa-location-dot fa-4x"></i>
+              </div>
+              <div class="texto-servicos">
+                <h4>Encontre clientes do Brasil inteiro</h4>
+                Nulla nec risus vel nibh viverra tincidunt. Phasellus feugiat
+                dui et finibus fermentum. Phasellus in erat ut ex sollicitudin
+                accumsan ut in ligula.
+              </div>
+            </li>
+          </ul>
+
+          <div class="video-servicos">
+            <video class="video-player" controls>
+              <source src="./video/AdobeStock_201762097.mp4" />
+            </video>
+          </div>
+        </section>
+      </section>
     </main>
     <footer></footer>
 
