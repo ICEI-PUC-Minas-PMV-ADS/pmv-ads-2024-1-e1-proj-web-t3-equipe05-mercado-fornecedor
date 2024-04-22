@@ -5,4 +5,32 @@ body {
 h1 {
   font-family: "Red Hat Display", sans-serif;
   font-size: 40px;
+  font-weight:bold;
+  color: #00395D;
 }
+.container-busca{
+  width:100%;
+  display:flex;
+  gap: 10px;
+}
+  .btn{
+    background: #E4F2F5;
+    border:none;
+    color: #98B9C1;
+  }
+  .btn:hover{
+    background-color: #005C97;
+  }
+  .lista-de-fornecedores{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+    .card{
+    color: #00395D;
+    font-weight: bold;
+    }
+    .card-title{
+      font-weight: bold;
+    }
+  
