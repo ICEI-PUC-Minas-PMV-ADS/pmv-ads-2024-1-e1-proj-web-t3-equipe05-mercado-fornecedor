@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  list-style: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(45deg, #005c97, #363795);
+  min-height: 100vh;
+  color: #231f20;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+h2 {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #00395d;
+  margin-bottom: 40px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header div {
+  width: 72px;
+  height: 100px;
+}
+.logo {
+  width: 72px;
+  height: 100px;
+  background-image: url("../img/logo.png");
+  transition: 0.5s;
+  cursor: pointer;
+  margin: 0 auto;
+  top: 50px;
+}
+
+.logo:hover {
+  background-image: url("../img/logohover.png");
+  transition: 1s;
+}
+
+.login-form-bg {
+  margin: 0 auto;
+  max-width: 55vw;
+  min-height: 60.5vh;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 15px rgba(13, 0, 93, 0.6);
+}
+
+.login-form-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 56%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.login-form input {
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  color: #005c97;
+  background-color: #eef9fc;
+  border: none;
+  border-bottom: 1px solid #aee7f3;
+  font-size: 14px;
+}
+
+::placeholder {
+  color: #98b9c1;
+}
+
+input:focus {
+  outline: none;
+}
+
+.login-form button {
+  width: 150px;
+  height: 50px;
+  background-color: #00b5e2;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.login-form button:hover {
+  background-color: #ff9e1b;
+  color: #231f20;
+  transition: all 0.5s ease;
+}
+
+.login-form span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.login-form span a {
+  text-decoration: none;
+  color: #ff9e1b;
+  transition: all 0.5s ease;
+}
+
+.login-form span a:hover {
+  color: #00b5e2;
+  transition: all 0.5s ease;
+}
+
+.login-img {
+  width: 50%;
+  background-color: #eef9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 20px 20px 0;
+}
+
+@media (max-width: 1800px) {
+  .login-form-bg {
+    max-width: 80vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .login-form-bg {
+    max-width: 95vw;
+  }
+}
