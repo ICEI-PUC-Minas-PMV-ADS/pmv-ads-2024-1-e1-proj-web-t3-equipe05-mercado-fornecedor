@@ -3,5 +3,6 @@ body {
 }
 
 h1 {
-  color: pink;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 40px;
 }
