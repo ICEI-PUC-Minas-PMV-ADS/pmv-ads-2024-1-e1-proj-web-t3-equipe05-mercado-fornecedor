@@ -73,6 +73,8 @@ header {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   transition: margin-top 0.5s;
 }
 
@@ -244,7 +246,7 @@ header {
 .header-carousel {
   width: 61.4584%;
   margin: 0 auto;
-  transform: translate(0, -38vh);
+  margin-top: -350px;
   box-shadow: 0px 0px 15px #00000030;
   color: #00000036;
 }
@@ -264,8 +266,7 @@ header {
 }
 
 main {
-  margin: 0 auto;
-  transform: translate(0, -30vh);
+  margin-top: 100px;
 }
 
 .section-sobre {
@@ -451,6 +452,184 @@ main {
   transform: translate3d(-150%, 0, 0);
 }
 
+.container-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.title-dashboard {
+  font-size: 32px;
+  color: #0f99cc;
+  width: 100%;
+  border-bottom: 1px solid #0f99cc;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.busca-itens {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.campo-busca {
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
+.busca {
+  width: 100%;
+  background-color: #e4f2f5;
+  border: none;
+  border-radius: 5px;
+  height: 60px;
+  padding-left: 20px;
+  color: #005c97;
+}
+
+.busca::placeholder {
+  color: #98b9c1;
+}
+
+.busca:focus {
+  outline: #0f99cc;
+}
+
+.icone-busca {
+  margin-left: -50px;
+  color: #005c97;
+}
+
+.btn {
+  width: 14vw;
+  padding: 0 20px;
+  background-color: #e4f2f5;
+  border: none;
+  color: #98b9c1;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: #00b5e2;
+}
+
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: #00b5e2;
+}
+
+.dropdown-toggle::after {
+  color: #005c97;
+}
+
+.lista-pedidos {
+  width: 100%;
+}
+
+.lista-grid {
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 12%;
+  text-align: left;
+  padding: 20px 0;
+  padding-left: 20px;
+}
+
+.item-lista {
+  width: 100%;
+  color: #00395d;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item-lista-3 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+.item-lista-4 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+}
+
+.accordion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.accordion-list-item {
+  background-color: #f9f9f9;
+  border-radius: 0.4rem;
+  border-bottom: 1px dashed #c8e2e8;
+}
+
+.accordion-link {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.accordion-link .ion-md-arrow-down {
+  display: none;
+}
+
+.lista-grid-pedidos {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 12%;
+  align-items: center;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.item-fornecedor {
+  display: flex;
+  align-items: center;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #f9f9f9;
+  transition: max-height 650ms;
+}
+
+.answer p {
+  color: #00395d;
+  font-size: 15px;
+  padding: 2rem;
+}
+
+.accordion-list-item:target .answer {
+  max-height: 20rem;
+}
+
+.accordion-list-item:target .accordion-link .ion-md-arrow-forward {
+  display: none;
+}
+
+.accordion-list-item:target .accordion-link .ion-md-arrow-down {
+  display: block;
+}
+
 @media (max-width: 1600px) {
   .header-text,
   .header-carousel,
@@ -466,12 +645,12 @@ main {
     font-size: 40px;
   }
 
-  .header-carousel {
-    transform: translate(0, -32vh);
+  .header-carousel img {
+    height: 60vh;
   }
 
-  main {
-    transform: translate(0, -20vh);
+  .campo-busca {
+    width: 83%;
   }
 }
 
@@ -480,5 +659,29 @@ main {
   .header-carousel,
   .main-container {
     width: 80%;
+  }
+}
+
+@media (max-height: 850px) {
+  .header-carousel {
+    margin-top: -30vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .header-carousel {
+    margin-top: -10vh;
+  }
+}
+
+@media (min-height: 1100px) {
+  .header-carousel {
+    margin-top: -55vh;
+  }
+}
+
+@media (min-height: 1500px) {
+  .header-carousel {
+    margin-top: -60vh;
   }
 }

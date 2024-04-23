@@ -10,16 +10,182 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+
     <link href="./css/style.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/1e3fdf6601.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <main></main>
+    <main>
+      <div class="container-centered">
+        <section class="main-container">
+          <h2 class="title-dashboard">Meus pedidos</h2>
+
+          <section class="busca-itens">
+            <div class="campo-busca">
+              <input class="busca" placeholder="Buscar pedidos" />
+              <div class="icone-busca">
+                <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Filtrar pedidos
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="lista-pedidos">
+            <div class="lista-grid">
+              <div class="item-lista item-lista-1">Número</div>
+              <div class="item-lista item-lista-2">Data</div>
+              <div class="item-lista item-lista-3">Fornecedor</div>
+              <div class="item-lista item-lista-4">Valor</div>
+              <div class="item-lista item-lista-5">Status</div>
+            </div>
+
+            <div class="accordion-list">
+              <div class="accordion-list-item" id="question1">
+                <a class="accordion-link" href="#question1">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor"></div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Fornecedor
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="answer">
+                  <p>
+                    We believe in the greater good, we strive to do something
+                    for people, we aim to make their lives easier and more
+                    enjoyable, we love businesses that keep this
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-list-item" id="question2">
+                <a class="accordion-link" href="#question2">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor"></div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Fornecedor
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="answer">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-list-item" id="question3">
+                <a class="accordion-link" href="#question3">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-lista item-lista-3">
+                      <div class="icon-fornecedor"></div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Fornecedor
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="answer">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-list-item" id="question4">
+                <a class="accordion-link" href="#question4">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-lista item-lista-3">
+                      <div class="icon-fornecedor"></div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Fornecedor
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="answer">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
