@@ -7,16 +7,22 @@ h1 {
   font-size: 40px;
   font-weight:bold;
   color: #00395D;
+  text-align: center;
+  padding-bottom:30px;
+  padding-top: 40px;
 }
 .container-busca{
-  width:100%;
+  width: 100%;
   display:flex;
   gap: 10px;
+  justify-content: center;
 }
   .btn{
     background: #E4F2F5;
     border:none;
     color: #98B9C1;
+    justify-content: left;
+    pse
   }
   .btn:hover{
     background-color: #005C97;
@@ -24,7 +30,8 @@ h1 {
   .lista-de-fornecedores{
     display:flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
+    justify-content: center;
   }
     .card{
     color: #00395D;
@@ -32,5 +39,9 @@ h1 {
     }
     .card-title{
       font-weight: bold;
+    }
+    .dropdown{
+      justify-content: left;
+
     }
   
