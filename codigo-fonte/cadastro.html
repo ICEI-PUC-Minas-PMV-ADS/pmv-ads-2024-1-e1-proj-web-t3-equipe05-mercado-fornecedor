@@ -1,127 +1,105 @@
 <!DOCTYPE html>
+<html lang="en"></html>
 <html>
 
 <head>
   <title>Cadastro</title>
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel= "stylesheet" href="style.css">
+  <link rel= "stylesheet" href="./css/style.css">
     <style> 
     body {background-color: rgb(52, 52, 148);}
     </style>
-
+</head>
 <body> 
-  
   <div style="text-align: center;">
     <img src="./imagem/logo.png" alt="logo"/> 
 </div>
 
- </body>
-</head>
+<div class="form-bloco"> 
+  <section class="formulario-cadastro"> 
 
-<body>
-    <h1 style="text-align: center;">Cadastro</h1>
+      <h1 style="text-align: center;">Cadastro</h1>
+    
+    <form class="formulario-quadrado">
+      
+        
+        <input type="text" placeholder="Nome" id="nome" name="nome" required>
   
-  <form>
-    <fieldset>
-      <legend>Dados Pessoais</legend>
-
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required><br>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
-
-      <label for="cpf">CPF:</label>
-      <input type="text" id="cpf" name="cpf" required><br>
-
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone"><br>
-    </fieldset>
-
-    <br>
-
-    <fieldset>
-      <legend>Endereço</legend>
-
-      <label for="cep">CEP:</label>
-      <input type="text" id="cep" name="cep" required><br>
-
-      <label for="endereco">Endereço:</label>
-      <input type="text" id="endereco" name="endereco" required><br>
-
-      <label for="numero">Número:</label>
-      <input type="text" id="numero" name="numero"><br>
-
-      <label for="complemento">Complemento:</label>
-      <input type="text" id="complemento" name="complemento"><br>
-
-      <label for="bairro">Bairro:</label>
-      <input type="text" id="bairro" name="bairro" required><br>
-
-      <label for="cidade">Cidade:</label>
-      <input type="text" id="cidade" name="cidade" required><br>
-
-      <label for="estado">Estado:</label>
-      <select id="estado" name="estado" required>
-        <option value="">Selecione</option>
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AP">Amapá</option>
-        <option value="AM">Amazonas</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PR">Paraná</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="RO">Rondônia</option>
-        <option value="RR">Roraima</option>
-        <option value="SC">Santa Catarina</option>
-        <option value="SP">São Paulo</option>
-        <option value="SE">Sergipe</option>
-        <option value="TO">Tocantins</option>
-      </select>
-    </fieldset>
-
-    <br>
-
-    <fieldset>
-      <legend>Dados de Acesso</legend>
-
-      <label for="login">Login:</label>
-      <input type="text" id="login" name="login" required><br>
-
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" required><br>
-    </fieldset>
-
-    <br>
-
-    <input type="submit" value="Cadastrar">
-  </form>
-
-  <input type="radio" name="tipo" id="Cliente" value="C">
-  <label for="cliente">Cliente</label>
+        
+        <input type="text" placeholder="Cnpj" id="Cnpj" name="Cnpj" required>
   
-  <input type="radio" name="tipo" id="Fornecedor" value="F">
-  <label for="Fornecedo">Fornecedor</label>
-
-  <div style="text-align: center;">
-    <img src="./imagem/desenho.png" alt="Desenho"/> 
-</div>
+       
+        <input type="text" placeholder="Endereço"id="endereco" name="endereco" required>
+  
+        
+        <input type="tel" placeholder="Telefone"id="telefone" name="telefone">
+      
+  
+        <input type="text" placeholder="Cep"id="cep" name="cep" required>
+  
+  
+        <input type="text" placeholder="Cidade"id="cidade" name="cidade" required>
+  
+        <select id="estado" name="estado" required>
+          <option value="">Selecione</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+  
+     
+        <input type="email" placeholder="E-mail"id="email" name="email" required>
+  
+  
+  
+        <input type="password" placeholder="Senha"id="senha" name="senha" required>
+  
+      
+  
+      <input type="submit" value="Cadastrar">
+      
+      <input class="radio-btn" type="radio" name="tipo" id="Cliente" value="C">
+   
+    
+    <input class="radio-btn" type="radio" name="tipo" id="Fornecedor" value="F">
+    </form>
+  
+    
+   
+  <!--
+     <div style="text-align: center;">
+      <img src="./imagem/desenho.png" alt="Desenho"/> 
+  </div>
+  -->
+   
+  </section>
+  </div>
 </body>
 
 </html>
