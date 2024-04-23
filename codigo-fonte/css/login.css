@@ -31,7 +31,7 @@ h2 {
   font-family: "Red Hat Display", sans-serif;
   font-size: 40px;
   font-weight: bold;
-  color: #00395d;
+  color: #005c97;
   margin-bottom: 40px;
 }
 
@@ -104,6 +104,39 @@ header div {
 
 input:focus {
   outline: none;
+}
+
+.input-style {
+  width: 100%;
+  position: relative;
+}
+.form-input ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 99;
+}
+.form-input ~ .focus-border:before,
+.form-input ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #00b5e2;
+  transition: 0.4s;
+}
+.form-input ~ .focus-border:after {
+  left: auto;
+  right: 0;
+}
+.form-input:focus ~ .focus-border:before,
+.form-input:focus ~ .focus-border:after {
+  width: 50%;
+  transition: 0.4s;
 }
 
 .login-form button {
