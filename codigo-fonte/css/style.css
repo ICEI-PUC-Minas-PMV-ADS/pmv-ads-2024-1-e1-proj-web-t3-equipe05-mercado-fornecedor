@@ -635,7 +635,7 @@ main {
   transition: all 300ms ease;
 }
 
-.answer {
+.detalhe-pedido {
   max-height: 0;
   overflow: hidden;
   position: relative;
@@ -643,22 +643,50 @@ main {
   transition: max-height 650ms;
 }
 
-.answer p {
+.detalhe-pedido p {
   color: #00395d;
   font-size: 15px;
   padding: 2rem;
 }
 
-.accordion-list-item:target .answer {
+.accordion-list-item:target .detalhe-pedido {
   max-height: 20rem;
 }
 
-.accordion-list-item:target .accordion-link .ion-md-arrow-forward {
-  display: none;
+.paginacao {
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
 }
 
-.accordion-list-item:target .accordion-link .ion-md-arrow-down {
-  display: block;
+.lista-paginas {
+  display: flex;
+  gap: 10px;
+}
+
+.lista-paginas li {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-color: #def9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f99cc;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.lista-paginas li:hover {
+  background-color: transparent;
+  color: #00b5e2;
+  border: 1px solid #00b5e2;
+  transition: all 0.5s ease;
+}
+
+.lista-paginas li:active {
+  background-color: transparent;
 }
 
 @media (max-width: 1600px) {
