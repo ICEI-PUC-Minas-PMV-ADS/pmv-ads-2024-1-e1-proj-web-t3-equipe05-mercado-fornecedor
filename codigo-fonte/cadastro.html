@@ -21,6 +21,7 @@
   <section class="formulario-cadastro"> 
 
       <h1 style="text-align: center;">Cadastro</h1>
+      <p style="text-align: center;">Realize seu cadastro no Mercado do Fornecedor e conecte-se com os melhores <br> fornecedores e clientes</p>
     
     <form class="formulario-quadrado">
       
@@ -28,20 +29,22 @@
         <input type="text" placeholder="Nome" id="nome" name="nome" required>
   
         
-        <input type="text" placeholder="Cnpj" id="Cnpj" name="Cnpj" required>
+        <input type="text" placeholder="CNPJ" id="CNPJ" name="CNPJ" required>
   
        
         <input type="text" placeholder="Endereço"id="endereco" name="endereco" required>
   
         
-        <input type="tel" placeholder="Telefone"id="telefone" name="telefone">
+        <input type="text" placeholder="Telefone"id="telefone" name="telefone">
       
   
         <input type="text" placeholder="Cep"id="cep" name="cep" required>
   
   
         <input type="text" placeholder="Cidade"id="cidade" name="cidade" required>
-  
+
+        <input type="text" placeholder="E-mail"id="email" name="email" required>
+        
         <select id="estado" name="estado" required>
           <option value="">Selecione</option>
           <option value="AC">Acre</option>
@@ -73,33 +76,24 @@
           <option value="TO">Tocantins</option>
         </select>
   
-     
-        <input type="email" placeholder="E-mail"id="email" name="email" required>
-  
-  
-  
-        <input type="password" placeholder="Senha"id="senha" name="senha" required>
-  
-      
+      <input type="text" placeholder="Senha"id="senha" name="senha" required>
   
       <input type="submit" value="Cadastrar">
-      
-      <input class="radio-btn" type="radio" name="tipo" id="Cliente" value="C">
-   
-    
-    <input class="radio-btn" type="radio" name="tipo" id="Fornecedor" value="F">
-    </form>
-  
-    
-   
-  <!--
-     <div style="text-align: center;">
-      <img src="./imagem/desenho.png" alt="Desenho"/> 
-  </div>
-  -->
-   
-  </section>
-  </div>
-</body>
 
-</html>
+      <p>Já é cadastrado? Realize seu login:</p>
+    
+      <input type="radio" id="cliente" name="userType" value="cliente">
+      <label for="cliente">Cliente</label>
+      
+  
+      <input type="radio" id="fornecedor" name="userType" value="fornecedor">
+      <label for="fornecedor">Fornecedor</label>
+      
+     
+  </form>
+  <div style="text-align: center;">
+    <section class="imagem-final">
+    <img src="./imagem/desenho.png" alt="Desenho"/> 
+</div>
+  
+  

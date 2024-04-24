@@ -1,18 +1,21 @@
 title{
   color:blanchedalmond
 }
+
+
 .form-bloco{
   display: flex;
   justify-content: center;
 }
 .formulario-cadastro{
   background-color: #FFFFFF;
-  max-width: 55vw;
+  max-width: 48vw;
   min-height: 60.5vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 50px;
+  border-radius: 20px
 }
 
 .formulario-quadrado{
@@ -40,9 +43,6 @@ width: 80%;
   font-family: "Inter", sans-serif;
 
 }
-input.radio-btn{
-  height: 15px;
-}
 ::placeholder{
   color: #98B9C1;
 }
@@ -50,8 +50,46 @@ input:focus{
   outline: none;
 }
 h1{
+  font-size: 40px;
   font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
   color: #005C97;
 width: 100%;
 }
+
+p{
+  font-size: 18px;
+  color: #231F20;
+  font-family: 'Times New Roman';
+}
+
+input[type="submit"]{
+  color: #FFFFFF;
+  background-color:#E3780D;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+input[type="radio"] {
+  width: 47px;
+  height: 16px;
+}
+
+
+label[for="cliente"]{
+  color: #00B5E2;
+  font-weight: bold;
+}
+
+label[for="fornecedor"]{
+  color: #00B5E2;
+  font-weight: bold;
+}
+
+.imagem-final{
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+
