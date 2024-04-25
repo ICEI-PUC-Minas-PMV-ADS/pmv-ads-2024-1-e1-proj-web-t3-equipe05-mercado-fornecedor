@@ -407,7 +407,6 @@ main {
 
 .link::before {
   content: "";
-  /* show by default */
 }
 
 .link--nav {
