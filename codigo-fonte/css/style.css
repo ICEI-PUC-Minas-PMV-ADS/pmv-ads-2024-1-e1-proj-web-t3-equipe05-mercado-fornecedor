@@ -755,6 +755,207 @@ main {
 .modal-dialog {
   max-width: 800px;
 }
+
+.modal-title {
+  color: #0f99cc;
+  padding-left: 5px;
+}
+
+.fs-5 {
+  font-size: 28px !important;
+}
+.modal-header {
+  border-color: #9ce8f8;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.criar-pedido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-padrao {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.item-pedido-input {
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  color: #005c97;
+  background-color: #eef9fc;
+  border: none;
+  border-bottom: 1px solid #aee7f3;
+  font-size: 14px;
+}
+
+.item-pedido-input::placeholder {
+  color: #98b9c1;
+}
+
+.item-pedido-input:focus {
+  outline: none;
+}
+
+.add-item-btn {
+  width: 120px;
+  height: 50px;
+  background-color: #00b5e2;
+  border: none;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  font-size: 14px;
+}
+
+.add-item-btn:hover {
+  background-color: #ff9e1b;
+  color: #231f20;
+  transition: all 0.5s ease;
+}
+
+/* Animação on click dos inputs */
+.input-style-padrao {
+  width: 48.5%;
+  position: relative;
+}
+
+.qtd-item-pedido-input {
+  width: 30%;
+  position: relative;
+}
+
+.input-style-lg {
+  width: 99.6%;
+  position: relative;
+}
+.item-pedido-input ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 99;
+}
+.item-pedido-input ~ .focus-border:before,
+.item-pedido-input ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #00b5e2;
+  transition: 0.4s;
+}
+.item-pedido-input ~ .focus-border:after {
+  left: auto;
+  right: 0;
+}
+.item-pedido-input:focus ~ .focus-border:before,
+.item-pedido-input:focus ~ .focus-border:after {
+  width: 50%;
+  transition: 0.4s;
+}
+
+.itens-pedido {
+  width: 100%;
+  padding: 20px;
+}
+
+.itens-pedido h5 {
+  font-size: 16px;
+  color: #00395d;
+  border-bottom: 1px solid #98b9c1;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.nome-itens {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.nome-itens li {
+  width: 45%;
+  color: #231f20;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nome-itens li:nth-child(1) {
+  padding: 0 20px;
+}
+
+.lista-itens-pedido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.itens-pedido-cadastrados {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #231f20;
+  background-color: #f9f9f9;
+  height: 40px;
+  padding: 0 20px;
+}
+
+.ipc-1 {
+  width: 45%;
+}
+
+.item-close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: #231f20;
+  transition: all 0.5s ease;
+}
+
+.item-close-icon:hover {
+  color: #00b5e2;
+  transition: all 0.5s ease;
+}
+
+.cadastrar-btn {
+  width: 100%;
+  display: flex;
+  padding-left: 4px;
+}
+
+.cadastrar-pedido-btn {
+  color: #ffffff;
+  font-size: 16px;
+  background-color: #ff9e1b;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 20px;
+  transition: all 0.5s ease;
+}
+
+.cadastrar-pedido-btn:hover {
+  background-color: #00b5e2;
+  color: #231f20;
+  transition: all 0.5s ease;
+}
+
 /* FIM PÁGINA DASHBOARD */
 
 /* SEÇÃO FALE CONOSCO */
