@@ -1,3 +1,5 @@
+/* RESET CSS */
+
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +34,6 @@ ul {
 ::-webkit-scrollbar-button {
   display: none;
 }
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   box-shadow: inset 0 0 14px 14px #00b5e2;
 }
@@ -40,6 +41,10 @@ ul {
 ::-webkit-scrollbar-track {
   display: none;
 }
+
+/* FIM CUSTOM SCROLLBAR */
+
+/* TAGS PRINCIPAIS */
 
 body {
   background-color: #ffffff;
@@ -70,6 +75,10 @@ h4 {
   font-weight: bold;
   color: #00395d;
 }
+
+/* FIM TAGS PRINCIPAIS */
+
+/* HEADER DA PÁGINA HOME */
 
 header {
   font-family: "Red Hat Display", sans-serif;
@@ -176,6 +185,8 @@ header {
   background-image: url("../img/logohover.png");
   transition: 1s;
 }
+
+/* Menu de navegação */
 .nav-list {
   display: flex;
   justify-content: space-between;
@@ -209,193 +220,7 @@ header {
   transition: 1s;
 }
 
-.header-call-to-action {
-  text-align: center;
-  padding: 120px 0;
-}
-
-.header-message {
-  font-size: 48px;
-  text-shadow: 1px 1px 1px #00395d;
-}
-
-.call-to-action {
-  padding: 50px 0;
-}
-
-.main-btn {
-  text-decoration: none;
-  cursor: pointer;
-  background-color: #ff9e1b;
-  border: none;
-  width: 300px;
-  padding: 15px 60px;
-  border-radius: 50px;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: bold;
-  position: relative;
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-  outline: 0px solid;
-  outline-color: #ff9e1b;
-  outline-offset: 0px;
-  text-shadow: none;
-  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.main-btn:hover {
-  box-shadow: inset 0 0 20px #c44b05, 0 0 20px #00b5e2;
-  outline-offset: 15px;
-  text-shadow: 1px 1px 1px #c44b05;
-}
-
-.header-carousel {
-  width: 61.4584%;
-  margin: 0 auto;
-  margin-top: -350px;
-  box-shadow: 0px 0px 15px #00000030;
-  color: #00000036;
-}
-
-.header-carousel img {
-  width: 100%;
-  height: 47vh;
-  object-fit: cover;
-}
-
-.carousel-caption h4 {
-  text-shadow: 0px 1px 1px #ffffff;
-}
-
-.carousel-caption p {
-  text-shadow: 0px 1px 1px #7e94a1;
-}
-
-main {
-  margin-top: 100px;
-}
-
-.section-sobre {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-}
-
-.main-container {
-  width: 61.4584%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-}
-
-.section-sobre h3,
-.fale-conosco h3 {
-  width: 70%;
-}
-
-.servicos {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: left;
-  padding-top: 5vh;
-}
-
-.lista-de-servicos {
-  width: 48%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-
-.lista-de-servicos li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.icon {
-  background-color: #00b5e2;
-  border-radius: 100%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  text-align: center;
-}
-.texto-servicos {
-  width: 75%;
-}
-
-.video-servicos {
-  width: 48%;
-}
-
-.video-player {
-  width: 100%;
-}
-
-.slideshow {
-  padding: 50px 0;
-}
-
-.slide-img {
-  width: 650px;
-  height: 400px;
-  object-fit: cover;
-  padding: 50px 0;
-}
-
-.slide-img img {
-  width: 650px;
-  height: 350px;
-  object-fit: cover;
-  box-shadow: 0px 20px 20px -15px #11111173;
-}
-
-.glide__slides {
-  align-items: center;
-}
-
-.glide__slides li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.glide__slides img {
-  width: 30vw;
-  height: 30vh;
-  transition: all 300ms ease;
-  object-fit: cover;
-  opacity: 0.8;
-}
-
-.glide__slide--active img {
-  transform: scale(1.1);
-  opacity: 1;
-  transition: all 300ms ease;
-}
-
-.content__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.content__item::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
+/* Animação de hover do menu da home */
 .link {
   cursor: pointer;
   position: relative;
@@ -458,6 +283,204 @@ main {
   transform: translate3d(-150%, 0, 0);
 }
 
+/* Call-to-action da home */
+.header-call-to-action {
+  text-align: center;
+  padding: 120px 0;
+}
+
+.header-message {
+  font-size: 48px;
+  text-shadow: 1px 1px 1px #00395d;
+}
+
+.call-to-action {
+  padding: 50px 0;
+}
+
+.main-btn {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #ff9e1b;
+  border: none;
+  width: 300px;
+  padding: 15px 60px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 0px solid;
+  outline-color: #ff9e1b;
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.main-btn:hover {
+  box-shadow: inset 0 0 20px #c44b05, 0 0 20px #00b5e2;
+  outline-offset: 15px;
+  text-shadow: 1px 1px 1px #c44b05;
+}
+
+/* Carousel da home */
+.header-carousel {
+  width: 61.4584%;
+  margin: 0 auto;
+  margin-top: -350px;
+  box-shadow: 0px 0px 15px #00000030;
+  color: #00000036;
+}
+
+.header-carousel img {
+  width: 100%;
+  height: 47vh;
+  object-fit: cover;
+}
+
+.carousel-caption h4 {
+  text-shadow: 0px 1px 1px #ffffff;
+}
+
+.carousel-caption p {
+  text-shadow: 0px 1px 1px #7e94a1;
+}
+
+/* FIM HEADER DA PÁGINA HOME */
+
+/* MAIN DA PÁGINA HOME */
+main {
+  margin-top: 100px;
+}
+
+/* SEÇÃO SOBRE */
+
+.section-sobre {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.main-container {
+  width: 61.4584%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-sobre h3,
+.fale-conosco h3 {
+  width: 70%;
+}
+
+/* Lista de serviços */
+.servicos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding-top: 5vh;
+}
+
+.lista-de-servicos {
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.lista-de-servicos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  background-color: #00b5e2;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+}
+.texto-servicos {
+  width: 75%;
+}
+
+/* Vídeo da lista de serviços */
+.video-servicos {
+  width: 48%;
+}
+
+.video-player {
+  width: 100%;
+}
+
+/* Carousel da seção sobre */
+.slideshow {
+  padding: 50px 0;
+}
+
+.slide-img {
+  width: 650px;
+  height: 400px;
+  object-fit: cover;
+  padding: 50px 0;
+}
+
+.slide-img img {
+  width: 650px;
+  height: 350px;
+  object-fit: cover;
+  box-shadow: 0px 20px 20px -15px #11111173;
+}
+
+.glide__slides {
+  align-items: center;
+}
+
+.glide__slides li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.glide__slides img {
+  width: 30vw;
+  height: 30vh;
+  transition: all 300ms ease;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.glide__slide--active img {
+  transform: scale(1.1);
+  opacity: 1;
+  transition: all 300ms ease;
+}
+
+.content__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.content__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* PÁGINA DE DASHBOARD */
 .container-centered {
   display: flex;
   flex-wrap: wrap;
@@ -473,6 +496,7 @@ main {
   padding-bottom: 10px;
 }
 
+/* Busca por texto e categoria do dashboard */
 .busca-itens {
   width: 100%;
   display: flex;
@@ -539,10 +563,12 @@ main {
   color: #005c97;
 }
 
+/* Lista de pedidos */
 .lista-pedidos {
   width: 100%;
 }
 
+/* Organiza a lista de pedidos em colunas usando display:grid */
 .lista-grid {
   margin-top: 50px;
   width: 100%;
@@ -572,6 +598,7 @@ main {
   grid-column-end: 7;
 }
 
+/* Menu accordion da lista de pedidos */
 .accordion-list {
   display: flex;
   flex-wrap: wrap;
@@ -668,6 +695,7 @@ main {
   max-height: 20rem;
 }
 
+/* Paginação da lista de pedidos */
 .paginacao {
   width: 100%;
   display: flex;
@@ -703,6 +731,33 @@ main {
 .lista-paginas li:active {
   background-color: transparent;
 }
+
+/* Botões da página de dashboard */
+.dashboard-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.large-btn {
+  background-color: #00395d;
+  color: #ffffff;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  width: 48%;
+  height: 50px;
+  border: none;
+}
+
+/* Modal de criar novo pedido */
+.modal-dialog {
+  max-width: 800px;
+}
+/* FIM PÁGINA DASHBOARD */
+
+/* SEÇÃO FALE CONOSCO */
 
 .fale-conosco {
   display: flex;
@@ -802,6 +857,10 @@ main {
   width: 45%;
 }
 
+/* FIM SEÇÃO FALE CONOSCO */
+
+/* FOOTER */
+
 footer {
   background-image: linear-gradient(to bottom, #005c97, #363795);
   color: #fff;
@@ -847,6 +906,10 @@ footer {
   color: #ff9e1b;
   transition: all 0.5s ease;
 }
+
+/* FIM FOOTER */
+
+/* MEDIA QUERIES (RESPONSIVIDADE) */
 
 @media (max-width: 1600px) {
   .header-text,
