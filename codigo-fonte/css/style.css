@@ -958,6 +958,12 @@ main {
 
 /* FIM PÁGINA DASHBOARD */
 
+/* PÁGINA DE DASHBOARD DO FORNECEDOR */
+
+.textarea-lg {
+  height: 100px;
+  padding-top: 10px;
+}
 /* SEÇÃO FALE CONOSCO */
 
 .fale-conosco {
@@ -1085,6 +1091,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #ffffff;
   padding-bottom: 20px;
 }
 
