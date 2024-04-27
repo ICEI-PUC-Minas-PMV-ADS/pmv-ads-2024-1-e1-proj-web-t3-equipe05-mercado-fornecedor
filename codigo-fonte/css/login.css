@@ -106,6 +106,7 @@ input:focus {
   outline: none;
 }
 
+/* Animação on click dos inputs */
 .input-style {
   width: 100%;
   position: relative;

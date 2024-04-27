@@ -34,11 +34,18 @@
               type="button"
               class="large-btn"
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              data-bs-target="#criar-pedido"
             >
               Criar novo pedido
             </button>
-            <button type="button" class="large-btn">Meus fornecedores</button>
+            <button
+              type="button"
+              class="large-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#enviar-proposta"
+            >
+              Enviar proposta
+            </button>
           </div>
           <h2 class="title-dashboard">Meus pedidos</h2>
 
@@ -343,10 +350,10 @@
       </div>
     </main>
 
-    <!-- Modal -->
+    <!-- Modal criar pedido -->
     <div
       class="modal fade"
-      id="exampleModal"
+      id="criar-pedido"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -354,7 +361,9 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Criar novo pedido
+            </h1>
             <button
               type="button"
               class="btn-close"
@@ -363,32 +372,152 @@
             ></button>
           </div>
           <div class="criar-pedido">
-            <form class="formulario-pedido">
-              <input class="item-pedido-input" placeholder="Item" />
-              <input
-                class="qtd-item-pedido-input"
-                aria-placeholder="Quantidade"
-              />
+            <form class="form-padrao formulario-pedido">
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Item" />
+                <span class="focus-border"></span>
+              </div>
+              <div class="qtd-item-pedido-input">
+                <input class="item-pedido-input" placeholder="Quantidade" />
+                <span class="focus-border"></span>
+              </div>
               <button class="add-item-btn" type="button">Adicionar</button>
-              <input
-                class="item-pedido-input"
-                placeholder="Endereço de entrega"
-              />
-              <input class="item-pedido-input" placeholder="Cidade" />
-              <input class="item-pedido-input" placeholder="Estado" />
-              <input class="item-pedido-input" placeholder="Prazo de entrega" />
-              <input class="item-pedido-input" placeholder="Observação" />
+              <div class="input-style-padrao input-style-lg">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Endereço de entrega"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Cidade" />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Estado" />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Prazo de entrega"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Observação" />
+                <span class="focus-border"></span>
+              </div>
+            </form>
+
+            <div class="itens-pedido">
+              <h5>Itens do pedido</h5>
+              <ul class="nome-itens">
+                <li>Nome</li>
+                <li>Quantidade</li>
+              </ul>
+
+              <ul id="lista-itens-pedido" class="lista-itens-pedido">
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="cadastrar-btn">
+              <button type="submit" class="cadastrar-pedido-btn">
+                Cadastrar novo pedido
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal enviar proposta-->
+    <div
+      class="modal fade"
+      id="enviar-proposta"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Criar proposta
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="criar-pedido">
+            <form class="form-padrao formulario-pedido">
+              <div class="input-style-padrao">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Valor"
+                  type="number"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Prazo de entrega"
+                  type="text"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao input-style-lg">
+                <textarea
+                  class="item-pedido-input textarea-lg"
+                  placeholder="Observações"
+                  type="text"
+                ></textarea>
+                <span class="focus-border"></span>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="cadastrar-btn">
+              <button type="submit" class="cadastrar-pedido-btn">
+                Enviar proposta
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -405,7 +534,6 @@
             <i class="fa-brands fa-github fa-2x"></i>
           </a>
         </div>
-        <img src="./img/linha_rodape.png" />
         <div class="footer-bottom">
           <p class="footer-licensa">Creative Commons - 2024</p>
           <a href="#header">
