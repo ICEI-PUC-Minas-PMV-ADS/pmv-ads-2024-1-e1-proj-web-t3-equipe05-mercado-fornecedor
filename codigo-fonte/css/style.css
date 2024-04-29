@@ -480,6 +480,110 @@ main {
   left: 0;
 }
 
+/* FIM DA SEÇÃO SOBRE */
+
+/* SEÇÃO FALE CONOSCO */
+
+.fale-conosco {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.fale-conosco h2 {
+  width: 100%;
+}
+
+.formulario {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  margin-top: 50px;
+  /*margin-left: 180px;
+  margin-top: 200px;*/
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 45%;
+}
+
+.form label {
+  color: #0f99cc;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.form input {
+  width: 100%;
+  height: 50px;
+  transition: all 0.5s;
+  padding: 10px;
+  border: 1px solid #00b5e2;
+  font-size: 14px;
+  color: #00395d;
+  /*padding: 50px;
+  outline: none;
+  border: 1px solid;
+  margin-bottom: 20px;
+  font-size: 15px;*/
+}
+
+.form input::placeholder {
+  color: #98b9c1;
+}
+
+.form input:focus {
+  border-radius: 16px;
+  outline: none;
+}
+
+.form textarea {
+  padding: 10px;
+  outline: none;
+  border: 1px solid #00b5e2;
+  width: 100%;
+  font-size: 14px;
+  color: #00395d;
+  margin-bottom: 30px;
+  transition: all 0.5s;
+}
+
+.form textarea:focus {
+  border-radius: 16px;
+}
+
+.form button {
+  width: 150px;
+  height: 50px;
+  background-color: #00b5e2;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  font-size: 16px;
+}
+
+.form button:hover {
+  background-color: #ff9e1b;
+  color: #231f20;
+  transition: all 0.5s ease;
+}
+
+.caixa-texto {
+  padding-top: 57px;
+  font-size: 14px;
+  color: #231f20;
+  width: 45%;
+}
+
+/* FIM SEÇÃO FALE CONOSCO */
+
 /* PÁGINA DE DASHBOARD */
 .container-centered {
   display: flex;
@@ -964,108 +1068,157 @@ main {
   height: 100px;
   padding-top: 10px;
 }
-/* SEÇÃO FALE CONOSCO */
 
-.fale-conosco {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
+/* LISTA DE EMPRESAS */
+.container-title {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
-.fale-conosco h2 {
+.container-title h1 {
+  color: #00395d;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 40px;
+}
+
+.container-title h4 {
+  color: #231f20;
+  font-size: 16px;
+  font-weight: 400;
+}
+.grid-list-container {
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+
+.card-lista-usuarios {
+  width: 280px;
+  text-align: left;
+}
+
+.img-lista-user {
+  max-width: 280px;
+  max-height: 260px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.title-lista-user {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00395d;
+  padding-top: 10px;
+}
+
+.cat-lista-user {
+  font-size: 14px;
+  color: #231f20;
+  padding-bottom: 15px;
+}
+
+.btn-lista-user {
+  height: 50px;
+  background-color: #91ebf5;
+  color: #00395d;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
   width: 100%;
 }
 
-.formulario {
+.detalhes-empresa {
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.marca-empresa {
+  background-color: #f9f9f9;
+  width: 220px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marca-empresa img {
+  width: 90%;
+  object-fit: cover;
+}
+
+.info-empresa {
+  width: 68%;
+}
+
+.info-empresa h5 {
+  font-size: 16px;
+  color: #00395d;
+  border-bottom: 1px solid #98b9c1;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.info-table {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  text-align: left;
-  margin-top: 50px;
-  /*margin-left: 180px;
-  margin-top: 200px;*/
 }
 
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  width: 45%;
+.info-table div {
+  width: 47%;
 }
 
-.form label {
-  color: #0f99cc;
-  font-size: 14px;
-  margin-bottom: 15px;
-  margin-top: 30px;
+.info-table div div {
   width: 100%;
 }
 
-.form input {
-  width: 100%;
-  height: 50px;
-  transition: all 0.5s;
-  padding: 10px;
-  border: 1px solid #00b5e2;
-  font-size: 14px;
+.info-table div h6 {
+  font-family: "Red Hat Display", sans-serif;
   color: #00395d;
-  /*padding: 50px;
-  outline: none;
-  border: 1px solid;
-  margin-bottom: 20px;
-  font-size: 15px;*/
-}
-
-.form input::placeholder {
-  color: #98b9c1;
-}
-
-.form input:focus {
-  border-radius: 16px;
-  outline: none;
-}
-
-.form textarea {
-  padding: 10px;
-  outline: none;
-  border: 1px solid #00b5e2;
-  width: 100%;
   font-size: 14px;
+}
+
+.titulo-lista-fornecedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  padding-bottom: 10px;
+}
+
+.titulo-lista-fornecedor li {
+  padding-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   color: #00395d;
-  margin-bottom: 30px;
-  transition: all 0.5s;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
 }
 
-.form textarea:focus {
-  border-radius: 16px;
+.lista-fornecedor {
+  display: grid;
+  grid-template-rows: repeat(5, 40px);
+  gap: 10px;
+  column-gap: 30px;
+  grid-auto-flow: column;
 }
 
-.form button {
-  width: 150px;
-  height: 50px;
-  background-color: #00b5e2;
-  border: none;
-  border-radius: 10px;
-  color: #ffffff;
-  transition: all 0.5s ease;
-  font-size: 16px;
+.lista-pedidos-fornecedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 10px;
 }
-
-.form button:hover {
-  background-color: #ff9e1b;
-  color: #231f20;
-  transition: all 0.5s ease;
-}
-
-.caixa-texto {
-  padding-top: 57px;
-  font-size: 14px;
-  color: #231f20;
-  width: 45%;
-}
-
-/* FIM SEÇÃO FALE CONOSCO */
-
 /* FOOTER */
 
 footer {

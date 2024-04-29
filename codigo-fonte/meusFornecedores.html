@@ -17,9 +17,317 @@
       rel="stylesheet"
     />
     <link href="./css/style.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/1e3fdf6601.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <main></main>
+    <main>
+      <div class="container-centered">
+        <section class="main-container">
+          <div class="container-title">
+            <h1>Meus fornecedores</h1>
+            <h4>Encontre fornecedores de pedidos anteriores ou em aberto</h4>
+          </div>
+          <section class="busca-itens">
+            <div class="campo-busca">
+              <input class="busca" placeholder="Buscar fornecedores" />
+              <div class="icone-busca">
+                <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Filtrar fornecedores
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <ul class="grid-list-container">
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f1.png" alt="Usiminas" />
+              </div>
+
+              <h4 class="title-lista-user">Usiminas</h4>
+              <h5 class="cat-lista-user">Siderurgia</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f6.png" alt="Voltz" />
+              </div>
+
+              <h4 class="title-lista-user">Voltz</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f5.png" alt="Panco" />
+              </div>
+
+              <h4 class="title-lista-user">Panco</h4>
+              <h5 class="cat-lista-user">Alimentos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f4.png" alt="Hummer" />
+              </div>
+
+              <h4 class="title-lista-user">Hummer</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f1.png" alt="Usiminas" />
+              </div>
+
+              <h4 class="title-lista-user">Usiminas</h4>
+              <h5 class="cat-lista-user">Siderurgia</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f6.png" alt="Voltz" />
+              </div>
+
+              <h4 class="title-lista-user">Voltz</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f5.png" alt="Panco" />
+              </div>
+
+              <h4 class="title-lista-user">Panco</h4>
+              <h5 class="cat-lista-user">Alimentos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f4.png" alt="Hummer" />
+              </div>
+
+              <h4 class="title-lista-user">Hummer</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li>
+          </ul>
+          <nav class="paginacao">
+            <ul class="lista-paginas">
+              <li><i class="fa-solid fa-angles-left"></i></li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li><i class="fa-solid fa-angles-right"></i></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <!--Modal informações do fornecedor-->
+    <div
+      class="modal fade"
+      id="ver-mais-fornecedores"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Usiminas</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="criar-pedido">
+            <div class="detalhes-empresa">
+              <div class="marca-empresa">
+                <img src="./img/f1.png" />
+              </div>
+              <div class="info-empresa">
+                <h5>Informações</h5>
+                <div class="info-table">
+                  <div>
+                    <div>
+                      <h6>Endereço</h6>
+                    </div>
+                    <p>Av. do Contorno, 6594 - LourdesCEP: 30110-044</p>
+                  </div>
+
+                  <div>
+                    <h6>CNPJ</h6>
+                    <p>43.403 490/0001-21</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="itens-pedido">
+              <h5>Pedidos</h5>
+
+              <ul class="titulo-lista-fornecedor">
+                <li>
+                  <div>Número</div>
+                  <div>Data</div>
+                  <div>Status</div>
+                </li>
+                <li>
+                  <div>Número</div>
+                  <div>Data</div>
+                  <div>Status</div>
+                </li>
+              </ul>
+
+              <ul id="lista-fornecedor" class="lista-fornecedor">
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">294830</div>
+                  <div class="item-pedidos-fornecedor">25/03/2024</div>
+                  <div class="item-pedidos-fornecedor">Em aberto</div>
+                </li>
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">578201</div>
+                  <div class="item-pedidos-fornecedor">04/03/2024</div>
+                  <div class="item-pedidos-fornecedor">Enviado</div>
+                </li>
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">325874</div>
+                  <div class="item-pedidos-fornecedor">07/02/2024</div>
+                  <div class="item-pedidos-fornecedor">Finalizado</div>
+                </li>
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">018929</div>
+                  <div class="item-pedidos-fornecedor">02/12/2023</div>
+                  <div class="item-pedidos-fornecedor">Cancelado</div>
+                </li>
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">238944</div>
+                  <div class="item-pedidos-fornecedor">15/08/2023</div>
+                  <div class="item-pedidos-fornecedor">Finalizado</div>
+                </li>
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">325874</div>
+                  <div class="item-pedidos-fornecedor">07/02/2024</div>
+                  <div class="item-pedidos-fornecedor">Finalizado</div>
+                </li>
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">018929</div>
+                  <div class="item-pedidos-fornecedor">02/12/2023</div>
+                  <div class="item-pedidos-fornecedor">Cancelado</div>
+                </li>
+                <li class="lista-pedidos-fornecedor">
+                  <div class="item-pedidos-fornecedor">238944</div>
+                  <div class="item-pedidos-fornecedor">15/08/2023</div>
+                  <div class="item-pedidos-fornecedor">Finalizado</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" id="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <p class="footer-empresa">&copy; Mercado do Fornecedor</p>
+          <a
+            href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github fa-2x"></i>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-licensa">Creative Commons - 2024</p>
+          <a href="#header">
+            <i class="fa-solid fa-angles-up fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
