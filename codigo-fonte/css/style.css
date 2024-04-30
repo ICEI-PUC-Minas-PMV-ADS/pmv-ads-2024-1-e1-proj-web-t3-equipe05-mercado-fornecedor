@@ -1015,6 +1015,23 @@ main {
   background-color: #f9f9f9;
   height: 40px;
   padding: 0 20px;
+  transition: opacity 500ms;
+  will-change: opacity;
+}
+
+.faded-out {
+  opacity: 0;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .ipc-1 {
@@ -1131,6 +1148,13 @@ main {
   border: none;
   border-radius: 10px;
   width: 100%;
+  transition: all 0.5s ease;
+}
+
+.btn-lista-user:hover {
+  background-color: #ff9e1b;
+  color: #231f20;
+  transition: all 0.5s ease;
 }
 
 .detalhes-empresa {

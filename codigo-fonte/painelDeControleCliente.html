@@ -374,38 +374,68 @@
           <div class="criar-pedido">
             <form class="form-padrao formulario-pedido">
               <div class="input-style-padrao">
-                <input class="item-pedido-input" placeholder="Item" />
+                <input
+                  id="add-item-pedido"
+                  class="item-pedido-input"
+                  placeholder="Item"
+                  type="text"
+                />
                 <span class="focus-border"></span>
               </div>
               <div class="qtd-item-pedido-input">
-                <input class="item-pedido-input" placeholder="Quantidade" />
+                <input
+                  id="add-qtd-item-pedido"
+                  class="item-pedido-input"
+                  placeholder="Quantidade"
+                  type="text"
+                />
                 <span class="focus-border"></span>
               </div>
-              <button class="add-item-btn" type="button">Adicionar</button>
+              <button
+                id="add-btn-item-pedido"
+                class="add-item-btn"
+                type="button"
+              >
+                Adicionar
+              </button>
               <div class="input-style-padrao input-style-lg">
                 <input
+                  id="add-endereco-pedido"
                   class="item-pedido-input"
                   placeholder="Endereço de entrega"
                 />
                 <span class="focus-border"></span>
               </div>
               <div class="input-style-padrao">
-                <input class="item-pedido-input" placeholder="Cidade" />
-                <span class="focus-border"></span>
-              </div>
-              <div class="input-style-padrao">
-                <input class="item-pedido-input" placeholder="Estado" />
+                <input
+                  id="add-cidade-pedido"
+                  class="item-pedido-input"
+                  placeholder="Cidade"
+                />
                 <span class="focus-border"></span>
               </div>
               <div class="input-style-padrao">
                 <input
+                  id="add-estado-pedido"
+                  class="item-pedido-input"
+                  placeholder="Estado"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input
+                  id="add-prazo-pedido"
                   class="item-pedido-input"
                   placeholder="Prazo de entrega"
                 />
                 <span class="focus-border"></span>
               </div>
               <div class="input-style-padrao">
-                <input class="item-pedido-input" placeholder="Observação" />
+                <input
+                  id="add-obs-pedido"
+                  class="item-pedido-input"
+                  placeholder="Observação"
+                />
                 <span class="focus-border"></span>
               </div>
             </form>
@@ -418,7 +448,7 @@
               </ul>
 
               <ul id="lista-itens-pedido" class="lista-itens-pedido">
-                <li class="itens-pedido-cadastrados">
+                <!-- <li class="itens-pedido-cadastrados">
                   <div class="ipc-1">Item 1</div>
                   <div class="ipc-1">50 unidades</div>
                   <div class="item-close-icon">
@@ -448,7 +478,7 @@
                   <div class="item-close-icon">
                     <i class="fa-solid fa-xmark"></i>
                   </div>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -547,5 +577,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="./js/script.js"></script>
+    <script src="./js/openMenu.js"></script>
   </body>
 </html>
