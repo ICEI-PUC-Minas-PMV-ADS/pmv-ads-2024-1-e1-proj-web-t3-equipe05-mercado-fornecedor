@@ -8,6 +8,7 @@ clientes.listaDeClientes.forEach((objetoCliente) => {
     console.log(objetoCliente.cnpj)
 })
 
+// ADICIONA E REMOVE ITENS DO MODAL NA JANELA MODAL PARA CRIAR PEDIDOS
 let counterItensPedido = 0;
 
 const btnAddItem = document.getElementById("add-btn-item-pedido");
