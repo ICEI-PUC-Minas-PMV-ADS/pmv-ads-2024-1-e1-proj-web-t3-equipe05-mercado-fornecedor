@@ -17,10 +17,117 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/fornecedores.css" rel="stylesheet" />
   </head>
   <body>
-    <main></main>
+    <main>
+      <h1>Fornecedores</h1> 
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-busca">
+            <input class="form-control me-2" type="Procurar" placeholder="Buscar Fornecedores" aria-label="" >
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+            <div class="dropdown">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Selecionar Categoria
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Alimentos</a></li>
+                <li><a class="dropdown-item" href="#">Artes e artesanatos</a></li>
+                <li><a class="dropdown-item" href="#">Entretenimento</a></li>
+                <li><a class="dropdown-item" href="#">Pet</a></li>
+                <li><a class="dropdown-item" href="#">Siderúrgica</a></li>
+                <li><a class="dropdown-item" href="#">Veículos</a></li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+      <ul class="lista-de-fornecedores">
+        <li class="card" style="width: 18rem;">
+          <img src="./img/Rectangle 36.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Elefante</h5>
+            <p class="card-text">Alimentícia</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/acrilex.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Acrilex</h5>
+            <p class="card-text">Artes e Artesanatos</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/futura.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Futura</h5>
+            <p class="card-text">Entretenimento</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/Pet.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Petlove</h5>
+            <p class="card-text">Pet</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/usiminas.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Usiminas</h5>
+            <p class="card-text">Siderúrgica</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/voltz.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Voltz</h5>
+            <p class="card-text">Veículos</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/catupiry.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Catupiry</h5>
+            <p class="card-text">Alimentícia</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/panco.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Panco</h5>
+            <p class="card-text">Alimentícia</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/Pet.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Petlove</h5>
+            <p class="card-text">Pet</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/Rectangle 36.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Elefante</h5>
+            <p class="card-text">Alimentícia</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/acrilex.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Acrilex</h5>
+            <p class="card-text">Artes e Artesanatos</p>
+          </div>
+        </li>
+        <li class="card" style="width: 18rem;">
+          <img src="./img/voltz.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Voltz</h5>
+            <p class="card-text">Veículos</p>
+          </div>
+        </li>
+      </ul>
+    </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
