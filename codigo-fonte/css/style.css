@@ -1,5 +1,6 @@
 body {
   font-family: "Inter", sans-serif;
+  
 }
 
 h1 {
@@ -22,8 +23,8 @@ h1 {
     border:none;
     color: #98B9C1;
     justify-content: left;
-    pse
   }
+  
   .btn:hover{
     background-color: #005C97;
   }
