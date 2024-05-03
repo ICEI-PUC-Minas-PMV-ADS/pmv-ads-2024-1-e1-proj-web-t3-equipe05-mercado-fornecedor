@@ -1,0 +1,48 @@
+body {
+  font-family: "Inter", sans-serif;
+  
+}
+
+h1 {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 40px;
+  font-weight:bold;
+  color: #00395D;
+  text-align: center;
+  padding-bottom:30px;
+  padding-top: 40px;
+}
+.container-busca{
+  width: 100%;
+  display:flex;
+  gap: 10px;
+  justify-content: center;
+}
+  .btn{
+    background: #E4F2F5;
+    border:none;
+    color: #98B9C1;
+    justify-content: left;
+  }
+  
+  .btn:hover{
+    background-color: #005C97;
+  }
+  .lista-de-fornecedores{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+    .card{
+    color: #00395D;
+    font-weight: bold;
+    }
+    .card-title{
+      font-weight: bold;
+    }
+    .dropdown{
+      justify-content: left;
+
+    }
+  
