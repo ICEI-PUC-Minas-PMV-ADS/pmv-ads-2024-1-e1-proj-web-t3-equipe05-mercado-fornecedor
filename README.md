@@ -36,7 +36,7 @@ Um sistema para cotações e licitações de empresas onde clientes e fornecedor
 
 # Hospedagem
 
-* Insira o endereço eletrônico público de acesso ao conteúdo publicado. 
+* <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Mercado do Fornecedor</a>
 
 # Código-Fonte
 
