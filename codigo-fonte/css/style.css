@@ -931,13 +931,13 @@ main {
   position: relative;
 }
 
-.qtd-item-pedido-input {
+.input-style-md {
   width: 30%;
   position: relative;
 }
 
-.input-style-lg {
-  width: 99.6%;
+.input-style-sm {
+  width: 23%;
   position: relative;
 }
 .item-pedido-input ~ .focus-border {
