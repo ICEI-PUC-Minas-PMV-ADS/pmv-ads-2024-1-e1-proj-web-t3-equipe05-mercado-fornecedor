@@ -1,16 +1,12 @@
 import Api from "./api.js";
-Api.consultaCEP(30550250);
-Api.listarUsuarios();
-
-Api.filtrarPedidosPorUser(5);
 
 export async function listarPedidosPorCliente(id) {
   const pedidos = await Api.filtrarPedidosPorUser(id);
-  let i = 0;
 
-  while (i < pedidos.lenght()) {
-    const listaPedidos = document.getElementById("lisa-de-pedidos-user");
+  pedidos.forEach((pedido) => {
+    const listaPedidos = document.getElementById("lista-de-pedidos-user");
 
+    console.log(pedido);
     const item = document.createElement("div");
     const itemLink = document.createElement("a");
     const gridPedido = document.createElement("div");
@@ -29,7 +25,7 @@ export async function listarPedidosPorCliente(id) {
     const infoPedido = document.createElement("p");
 
     item.classList.add("accordion-list-item");
-    item.setAttribute("id", "id-" + i);
+    item.setAttribute("id", "pedido-id-" + pedido.id);
     itemLink.classList.add("accordion-link");
     gridPedido.classList.add("lista-grid-pedidos");
     numeroDoPedido.classList.add("item-lista", "item-lista-1");
@@ -48,7 +44,43 @@ export async function listarPedidosPorCliente(id) {
 
     detalhesPedido.classList.add("detalhe-pedido");
 
-    numeroDoPedido.innerText = pedidos.id;
-    i++;
-  }
+    itemLink.href = "#pedido-id-" + pedido.id;
+    numeroDoPedido.innerText = pedido.id;
+    dataDoPedido.innerText = pedido.data;
+
+    if (pedido.fornecedorId !== null) {
+      const fornecedor = Api.listarUsuariosPorId(pedido.fornecedorId);
+
+      imgUser.src = fornecedor.logo;
+      nomeUser.innerText = fornecedor.nome;
+      valorPedido.innerText = `R$ ${pedido.valor}`;
+    } else {
+      imgUser.src = "./img/empty-fornecedor.png";
+      nomeUser.innerText = "Fornecedor não definido";
+      valorPedido.innerText = "-";
+    }
+
+    statusPedido.innerText = pedido.status;
+    verMaisBtn.innerText = "Ver mais";
+
+    containerImg.appendChild(imgUser);
+    containerPedido.appendChild(containerImg);
+    containerPedido.appendChild(nomeUser);
+
+    containerBtn.appendChild(verMaisBtn);
+
+    gridPedido.append(
+      numeroDoPedido,
+      dataDoPedido,
+      containerPedido,
+      valorPedido,
+      statusPedido,
+      containerBtn
+    );
+
+    itemLink.appendChild(gridPedido);
+    console.log(itemLink);
+    item.appendChild(itemLink);
+    listaPedidos.appendChild(item);
+  });
 }

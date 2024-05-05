@@ -1,16 +1,20 @@
 class Api {
-  static async consultaCEP(cep) {
-    const response = await fetch("https://viacep.com.br/ws/" + cep + "/json", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+  static async cadastrarUsuario(dadosUsuario) {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dadosUsuario),
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         return res;
-      });
+      })
+      .catch((error) => error);
 
     return response;
   }
@@ -26,22 +30,14 @@ class Api {
       }
     )
       .then((res) => {
-        if (res.status != 200) {
-          return res.status;
-        } else {
-          return res.json();
-        }
+        res.json();
       })
       .then((res) => {
-        if (typeof res == "number") {
-          console.log("Erro!");
-          return res;
-        } else {
-          localStorage.setItem("User", JSON.stringify(res.user));
-          localStorage.setItem("Token", res.accessToken);
-          return res;
-        }
-      });
+        localStorage.setItem("User", JSON.stringify(res.user));
+        localStorage.setItem("Token", res.accessToken);
+        return res;
+      })
+      .catch((error) => error);
 
     return response;
   }
@@ -49,6 +45,24 @@ class Api {
   static async listarUsuarios() {
     const response = await fetch(
       "https://mercado-do-fornecedor-api.onrender.com/users",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      });
+
+    return response;
+  }
+
+  static async listarUsuariosPorId(id) {
+    const response = await fetch(
+      `https://mercado-do-fornecedor-api.onrender.com/users?id=${id}`,
       {
         method: "GET",
         headers: {
@@ -104,20 +118,28 @@ class Api {
         },
       }
     )
-      .then((res) => {
-        if (res.status != 200) {
-          return res.status;
-        } else {
-          return res.json();
-        }
-      })
-      .then((res) => {
-        if (typeof res == "number") {
-          return 400;
-        } else {
-          console.log(res);
-        }
-      });
+      .then((res) => res.json())
+      .then((res) => res);
+
+    console.log(response);
+    return response;
+  }
+
+  static async cadastrarPedido(pedido) {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/pedidos",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+        body: JSON.stringify(pedido),
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => res)
+      .catch((error) => error);
 
     return response;
   }

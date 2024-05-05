@@ -86,21 +86,29 @@
             </div>
 
             <div id="lista-de-pedidos-user" class="accordion-list">
-              <div class="accordion-list-item" id="item1">
+              <!-- <div class="accordion-list-item" id="item1">
                 <a class="accordion-link" href="#item1">
                   <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div id="numero-pedido" class="item-lista item-lista-1">
+                      492389
+                    </div>
+                    <div id="data-pedido" class="item-lista item-lista-2">
+                      23/03/2024
+                    </div>
                     <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
+                      <div id="icon-fornecedor" class="icon-fornecedor">
                         <img src="./img/fornecedor1.png" alt="Bayer" />
                       </div>
-                      <span id="nomeFornecedor" class="nome-fornecedor">
+                      <span id="nome-fornecedor" class="nome-fornecedor">
                         Bayer AG
                       </span>
                     </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div id="valor-pedido" class="item-lista item-lista-4">
+                      R$ 500.000,00
+                    </div>
+                    <div id="status-pedido" class="item-lista item-lista-5">
+                      Enviado
+                    </div>
                     <div class="item-lista item-lista-6">
                       <button class="btn-mais">Ver mais</button>
                     </div>
@@ -303,9 +311,9 @@
                     esse cillum.
                   </p>
                 </div>
-              </div>
+              </div> -->
 
-              <div class="accordion-list-item" id="item8">
+              <!-- <div class="accordion-list-item" id="item8">
                 <a class="accordion-link" href="#item8">
                   <div class="lista-grid-pedidos">
                     <div class="item-lista item-lista-1">492389</div>
@@ -335,7 +343,7 @@
                     esse cillum.
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </section>
           <nav class="paginacao">
@@ -383,7 +391,7 @@
                 />
                 <span class="focus-border"></span>
               </div>
-              <div class="qtd-item-pedido-input">
+              <div class="input-style-md">
                 <input
                   id="add-qtd-item-pedido"
                   class="item-pedido-input"
@@ -399,27 +407,70 @@
               >
                 Adicionar
               </button>
-              <div class="input-style-padrao input-style-lg">
+              <div class="input-style-md">
                 <input
-                  id="add-endereco-pedido"
+                  id="add-cep-pedido"
                   class="item-pedido-input"
-                  placeholder="Endereço de entrega"
+                  placeholder="CEP"
                 />
                 <span class="focus-border"></span>
               </div>
-              <div class="input-style-padrao">
+              <button
+                id="buscar-btn-cep-pedido"
+                class="add-item-btn"
+                type="button"
+              >
+                Buscar
+              </button>
+              <div class="input-style-padrao input-style-sm">
                 <input
-                  id="add-cidade-pedido"
+                  id="logradouro"
+                  class="item-pedido-input"
+                  placeholder="Rua"
+                  disabled
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao input-style-sm">
+                <input
+                  id="bairro"
+                  class="item-pedido-input"
+                  placeholder="Bairro"
+                  disabled
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao input-style-sm">
+                <input
+                  id="add-complemento-pedido"
+                  class="item-pedido-input"
+                  placeholder="Complemento"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao input-style-sm">
+                <input
+                  id="add-numero-pedido"
+                  class="item-pedido-input"
+                  placeholder="Número"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao input-style-sm">
+                <input
+                  id="localidade"
                   class="item-pedido-input"
                   placeholder="Cidade"
+                  disabled
                 />
                 <span class="focus-border"></span>
               </div>
-              <div class="input-style-padrao">
+              <div class="input-style-padrao input-style-sm">
                 <input
-                  id="add-estado-pedido"
+                  id="uf"
                   class="item-pedido-input"
                   placeholder="Estado"
+                  disabled
                 />
                 <span class="focus-border"></span>
               </div>
@@ -485,7 +536,11 @@
           </div>
           <div class="modal-footer">
             <div class="cadastrar-btn">
-              <button type="submit" class="cadastrar-pedido-btn">
+              <button
+                id="btn-cadastrar-pedido"
+                type="button"
+                class="cadastrar-pedido-btn"
+              >
                 Cadastrar novo pedido
               </button>
             </div>
@@ -582,6 +637,7 @@
     <script type="module" src="./js/api.js"></script>
     <script type="module" src="./js/login.js"></script>
     <script type="module" src="./js/listarpedidos.js"></script>
+    <script type="module" src="./js/cadastrarPedido.js"></script>
     <script type="module" src="./js/script.js"></script>
   </body>
 </html>
