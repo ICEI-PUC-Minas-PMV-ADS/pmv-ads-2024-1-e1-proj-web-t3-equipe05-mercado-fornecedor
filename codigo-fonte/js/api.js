@@ -66,7 +66,6 @@ class Api {
       })
       .catch((error) => error);
 
-    console.log(response);
     return response;
   }
 
@@ -83,6 +82,25 @@ class Api {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
+        return res;
+      });
+
+    return response;
+  }
+
+  static async listarFornecedores() {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/users?tipo=fornecedor",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        return res;
       });
 
     return response;
