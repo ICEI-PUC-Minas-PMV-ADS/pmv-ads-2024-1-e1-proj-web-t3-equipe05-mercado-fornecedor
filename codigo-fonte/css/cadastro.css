@@ -29,6 +29,8 @@ body {
   min-height: 100vh;
   color: #231f20;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .centered {
   height: 100vh;
@@ -336,5 +338,14 @@ label[for="fornecedor"] {
 
   .form-final-info {
     flex-wrap: wrap;
+  }
+
+  .centered {
+    align-items: flex-start;
+  }
+
+  .formulario-cadastro {
+    max-width: 90vw;
+    padding: 20px;
   }
 }
