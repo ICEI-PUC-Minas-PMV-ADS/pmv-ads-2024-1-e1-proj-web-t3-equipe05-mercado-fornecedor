@@ -1,7 +1,7 @@
 import Api from "./api.js";
 
 const objLogin = {
-  email: "contato@panco.com",
+  email: "contato@acrilex.com",
   password: "123456",
 };
 

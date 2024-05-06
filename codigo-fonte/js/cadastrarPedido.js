@@ -138,4 +138,5 @@ function criarPedidos() {
 
 btnCadastrar.addEventListener("click", (e) => {
   criarPedidos();
+  document.getElementById("form-criar-pedido").reset();
 });

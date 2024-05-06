@@ -18,6 +18,7 @@ class Api {
 
     return response;
   }
+
   static async login(dadosDeLogin) {
     const response = await fetch(
       "https://mercado-do-fornecedor-api.onrender.com/login",
@@ -29,9 +30,7 @@ class Api {
         body: JSON.stringify(dadosDeLogin),
       }
     )
-      .then((res) => {
-        res.json();
-      })
+      .then((res) => res.json())
       .then((res) => {
         localStorage.setItem("User", JSON.stringify(res.user));
         localStorage.setItem("Token", res.accessToken);
@@ -39,6 +38,7 @@ class Api {
       })
       .catch((error) => error);
 
+    console.log(response);
     return response;
   }
 
@@ -120,8 +120,6 @@ class Api {
     )
       .then((res) => res.json())
       .then((res) => res);
-
-    console.log(response);
     return response;
   }
 
