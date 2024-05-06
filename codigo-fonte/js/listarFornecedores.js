@@ -9,7 +9,7 @@ export async function salvarFornecedoresNoStorage() {
 
 // LISTA OS FORNECEDORES NA PÁGINA FORNECEDORES.HTML
 function listarFornecedores() {
-  // Constante que armazena um array de objetos onde cada objeto representa um fornecedor
+  // const listaDeFornecedores = Constante que armazena um array de objetos onde cada objeto representa um fornecedor
   // Os objetos estão no seguinte formato:
   // {
   //       cnpj: "30.091.596/0001-43",
