@@ -51,7 +51,7 @@ export async function listarPedidosPorCliente(id) {
     if (pedido.fornecedorId !== null) {
       const fornecedor = Api.listarUsuariosPorId(pedido.fornecedorId);
 
-      imgUser.src = fornecedor.logo;
+      imgUser.src = fornecedor.imgUrl;
       nomeUser.innerText = fornecedor.nome;
       valorPedido.innerText = `R$ ${pedido.valor}`;
     } else {
