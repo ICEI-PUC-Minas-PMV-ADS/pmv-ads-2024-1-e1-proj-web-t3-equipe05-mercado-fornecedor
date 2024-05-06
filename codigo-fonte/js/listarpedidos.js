@@ -6,7 +6,6 @@ export async function listarPedidosPorCliente(id) {
   pedidos.forEach((pedido) => {
     const listaPedidos = document.getElementById("lista-de-pedidos-user");
 
-    console.log(pedido);
     const item = document.createElement("div");
     const itemLink = document.createElement("a");
     const gridPedido = document.createElement("div");
@@ -79,7 +78,6 @@ export async function listarPedidosPorCliente(id) {
     );
 
     itemLink.appendChild(gridPedido);
-    console.log(itemLink);
     item.appendChild(itemLink);
     listaPedidos.appendChild(item);
   });

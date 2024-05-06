@@ -7,10 +7,8 @@ const objLogin = {
 
 async function logUser() {
   const dados = await Api.login(objLogin);
-  console.log(dados);
 
   const userData = JSON.parse(localStorage.getItem("User"));
-  console.log(userData);
 }
 
 logUser();
