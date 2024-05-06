@@ -71,14 +71,14 @@ btnAddItem.addEventListener("click", function () {
 
 //BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 const inputCepPedidos = document.getElementById("buscar-btn-cep-pedido");
-const arrayEndereco = [];
+const objEndereco = {};
 
 const exibirEndereco = (endereco) => {
   for (const campo in endereco) {
     if (document.getElementById(campo)) {
       let input = document.getElementById(campo);
       input.value = endereco[campo];
-      arrayEndereco.push(endereco[campo]);
+      objEndereco[campo] = endereco[campo];
     }
   }
 };
@@ -104,6 +104,8 @@ inputCepPedidos.addEventListener("click", (e) => {
 const btnCadastrar = document.getElementById("btn-cadastrar-pedido");
 
 function criarPedidos() {
+  const complEndereco = document.getElementById("add-complemento-pedido").value;
+  const numEndereco = document.getElementById("add-numero-pedido").value;
   const prazo = document.getElementById("add-prazo-pedido").value;
   const obsPedido = document.getElementById("add-obs-pedido").value;
   const timeStamp = new Date();
@@ -113,9 +115,12 @@ function criarPedidos() {
 
   const data = `${dia}/${mes}/${ano}`;
 
+  objEndereco.complemento = complEndereco;
+  objEndereco.numero = numEndereco;
+
   const objPedido = {
     data: data,
-    endereco: arrayEndereco,
+    endereco: objEndereco,
     prazoDeEntrega: prazo,
     observacao: obsPedido,
     itensDoPedido: arrayItensPedido,

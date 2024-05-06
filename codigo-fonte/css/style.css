@@ -670,6 +670,7 @@ main {
 /* Lista de pedidos */
 .lista-pedidos {
   width: 100%;
+  min-height: 34.9vh;
 }
 
 /* Organiza a lista de pedidos em colunas usando display:grid */
