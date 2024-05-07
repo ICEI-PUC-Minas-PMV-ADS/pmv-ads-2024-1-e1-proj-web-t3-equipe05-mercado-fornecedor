@@ -138,7 +138,9 @@ function criarPedidos() {
     listaChild = listaPedidos.lastElementChild;
   }
 
-  listarPedidosPorCliente(userData.id);
+  setTimeout(() => {
+    listarPedidosPorCliente(userData.id);
+  }, 250);
 }
 
 btnCadastrar.addEventListener("click", (e) => {
