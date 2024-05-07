@@ -2,6 +2,14 @@ title{
   color:blanchedalmond
 }
 
+button {
+  background-color:#00395D;
+  color: #FFFFFF;
+  width: 465px;
+  height: 50px;
+  radius:5px;
+}
+
 
 .form-bloco{
   display: flex;
@@ -53,12 +61,12 @@ h1{
   font-size: 40px;
   font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
-  color: #005C97;
+  color: #00395D;
 width: 100%;
 }
 
 p{
-  font-size: 18px;
+  font-size: 16px;
   color: #231F20;
   font-family: 'Times New Roman';
 }

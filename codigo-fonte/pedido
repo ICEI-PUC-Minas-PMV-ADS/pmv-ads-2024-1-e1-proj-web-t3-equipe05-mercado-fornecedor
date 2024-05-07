@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<html>
+
+<head>
+  <title>Pedido</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel= "stylesheet" href="./css/pedido.css">
+    <style> 
+    body {background-color: rgb(250, 250, 254);}
+    </style>
+</head>
+<h1 style="text-align: center;">Painel de Controle Cliente</h1>
+<p style="text-align: center;">Aqui você poderá realizar pedidos, visualizar informações sobre seus fornecedores, ver detalhes de pedidos e muito mais.</p>
+
+<div class="Criar"
+    
+      <div class="dashboard-btn">
+        
+        <button
+          type="button"
+          class="large-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#criar-pedido"
+        >
+          Criar novo pedido
+        </button>
+        <button
+          type="button"
+          class="large-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#Meus Fornecedores"
+        >
+          Meus Fornecedores
+        </button>
+      </div>
