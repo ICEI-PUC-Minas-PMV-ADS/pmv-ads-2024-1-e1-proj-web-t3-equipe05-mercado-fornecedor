@@ -1267,6 +1267,49 @@ main {
   height: 40px;
   padding-left: 10px;
 }
+.equipe{
+  background-color: #00395d;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 20%;
+  text-align: center;
+}
+.estilo-lista-equipe{
+  color:floralwhite;
+  text-align: center;
+}
+.estilo-lista-equipe{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+}
+.card{
+  color: #00395D;
+  font-weight: bold;
+  padding-bottom: 20px;
+  background-color: #00395D;
+  justify-content: center;
+  width: 60%;
+  }
+  .card-title{
+    font-weight: bold;
+    color: floralwhite;
+  }
+  .card-text{
+    color: floralwhite;
+  }
+  .ul{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    columns: 2;
+    gap: 30px;
+  }
+
 /* FOOTER */
 
 footer {
@@ -1374,4 +1417,5 @@ footer {
   .header-carousel {
     margin-top: -60vh;
   }
+
 }
