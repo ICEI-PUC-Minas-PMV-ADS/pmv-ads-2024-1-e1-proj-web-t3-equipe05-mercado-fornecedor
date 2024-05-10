@@ -30,7 +30,8 @@ N/A - Página não atende a nenhum requisito estabelecido
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
-<a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Home da aplicação</a>
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Home da aplicação</a>
 
 #### Responsável
 
@@ -58,7 +59,8 @@ N/A - Página não atende a nenhum requisito estabelecido
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
-<a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/cadastro.html" target="_blank">Cadastro da aplicação</a>
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/cadastro.html" target="_blank">Cadastro da aplicação</a>
 
 #### Responsável
 
@@ -96,7 +98,8 @@ RF-02 - A aplicação deve apresentar campo de status no andamento das requisiç
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
-<a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/painelDeControleCliente.html" target="_blank">Página de lista de pedidos</a>
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/painelDeControleCliente.html" target="_blank">Página de lista de pedidos</a>
 
 #### Responsável
 
