@@ -3,7 +3,7 @@ import Api from "./api.js";
 export async function listarPedidosPorCliente(id) {
   const pedidos = await Api.filtrarPedidosPorUser(id);
 
-  pedidos.forEach((pedido) => {
+  for (const pedido of pedidos) {
     const listaPedidos = document.getElementById("lista-de-pedidos-user");
 
     const item = document.createElement("div");
@@ -48,10 +48,9 @@ export async function listarPedidosPorCliente(id) {
     dataDoPedido.innerText = pedido.data;
 
     if (pedido.fornecedorId !== null) {
-      const fornecedor = Api.listarUsuariosPorId(pedido.fornecedorId);
-
-      imgUser.src = fornecedor.imgUrl;
-      nomeUser.innerText = fornecedor.nome;
+      const fornecedor = await Api.listarUsuariosPorId(pedido.fornecedorId);
+      imgUser.src = fornecedor[0].imgUrl;
+      nomeUser.innerText = fornecedor[0].nome;
       valorPedido.innerText = `R$ ${pedido.valor}`;
     } else {
       imgUser.src = "./img/empty-fornecedor.png";
@@ -80,5 +79,5 @@ export async function listarPedidosPorCliente(id) {
     itemLink.appendChild(gridPedido);
     item.appendChild(itemLink);
     listaPedidos.appendChild(item);
-  });
+  }
 }

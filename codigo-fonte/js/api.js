@@ -99,9 +99,7 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => {
-        return res;
-      });
+      .then((res) => res);
 
     return response;
   }
@@ -117,16 +115,14 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-      });
+      .then((res) => res);
 
     return response;
   }
 
   static async listarTodosPedidos() {
     const response = await fetch(
-      "https://mercado-do-fornecedor-api.onrender.com/pedidos",
+      "https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc",
       {
         method: "GET",
         headers: {
@@ -155,7 +151,8 @@ class Api {
 
   static async filtrarPedidosPorUser(userId) {
     const response = await fetch(
-      "https://mercado-do-fornecedor-api.onrender.com/pedidos?userId=" + userId,
+      "https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc&userId=" +
+        userId,
       {
         method: "GET",
         headers: {
@@ -185,7 +182,6 @@ class Api {
       .then((res) => res)
       .catch((error) => error);
 
-    window.location("./painelDeControleCliente.html");
     return response;
   }
 }
