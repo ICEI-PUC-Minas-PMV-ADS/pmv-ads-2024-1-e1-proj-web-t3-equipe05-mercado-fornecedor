@@ -58,8 +58,8 @@
             </div>
           </section>
 
-          <ul class="grid-list-container">
-            <li class="card-lista-usuarios">
+          <ul id="lista-meus-fornecedores" class="grid-list-container">
+            <!-- <li class="card-lista-usuarios">
               <div class="img-lista-user">
                 <img src="./img/f1.png" alt="Usiminas" />
               </div>
@@ -187,7 +187,7 @@
               >
                 Ver mais
               </button>
-            </li>
+            </li> -->
           </ul>
           <nav class="paginacao">
             <ul class="lista-paginas">
@@ -201,6 +201,22 @@
         </section>
       </div>
     </main>
+
+    <div class="modal-fornecedor">
+      <span class="modal-fornecedor-backdrop close-modal-fornecedor"></span>
+      <div class="modal-fornecedor-content">
+        <div class="modal-fornecedor-header">
+          <h2
+            id="modal-fornecedor-title"
+            class="modal-fornecedor-title modal-title"
+          ></h2>
+          <button id="close-modal-fornecedor" class="close-modal-fornecedor">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div id="modal-fornecedor-body" class="modal-fornecedor-body"></div>
+      </div>
+    </div>
 
     <!--Modal informações do fornecedor-->
     <div
