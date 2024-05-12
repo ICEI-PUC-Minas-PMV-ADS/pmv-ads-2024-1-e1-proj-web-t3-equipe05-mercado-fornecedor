@@ -288,6 +288,33 @@ Para acessar a página, visite o link abaixo:
 
 - Felipe Sauter
 
+## Interface Minha Página
+<figure>
+  <img scr="img/minhaconta.png"/>
+  <figcaption>Figura Página Minha Conta</figcaption>
+</figure>
+
+## Artefatos e funcionalidade
+
+codigo-fonte/css/minhaconta.css
+codigo-fonte/minhaconta.html
+
+## Estrutura dos dados 
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/minhaconta.html">html minha conta</a>
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/minhaconta.css">css minha conta</a>
+
+### Instruções de acesso
+
+Para acessar a página, entre no link abaixo:
+- <a href=" https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/minhaconta.html" target="_blank">página minha conta</a>
+
+### Responsável 
+
+Safira Gabriele Garcia da Silva
+
+
+
+
 > **Links Úteis**:
 >
 > - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
