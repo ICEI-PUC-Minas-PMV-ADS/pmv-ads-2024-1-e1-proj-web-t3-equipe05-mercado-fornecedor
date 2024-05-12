@@ -1108,7 +1108,7 @@ main {
   padding-top: 10px;
 }
 
-/* LISTA DE EMPRESAS */
+/* LISTA DE EMPRESAS NA PÁGINA DO CLIENTE */
 .container-title {
   width: 100%;
   text-align: left;
@@ -1207,8 +1207,9 @@ main {
 }
 
 .marca-empresa img {
-  width: 90%;
-  object-fit: cover;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
 
 .info-empresa {
@@ -1260,11 +1261,16 @@ main {
 }
 
 .lista-fornecedor {
-  display: grid;
+  /* display: grid;
   grid-template-rows: repeat(5, 40px);
   gap: 10px;
   column-gap: 30px;
-  grid-auto-flow: column;
+  grid-auto-flow: column; */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  padding-bottom: 10px;
 }
 
 .lista-pedidos-fornecedor {
@@ -1319,56 +1325,7 @@ main {
   gap: 30px;
 }
 
-/* FOOTER */
-
-footer {
-  background-image: linear-gradient(to bottom, #005c97, #363795);
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  padding: 30px 0;
-  text-align: left;
-  width: 100%;
-  margin-top: 50px;
-}
-
-.footer-container {
-  width: 61.4584%;
-  margin: 0 auto;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ffffff;
-  padding-bottom: 20px;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-}
-.footer-top a,
-.footer-bottom a,
-.footer-top a:visited,
-.footer-bottom a:visited {
-  color: #ffffff;
-  transition: all 0.5s ease;
-}
-
-.footer-top a:hover,
-.footer-bottom a:hover {
-  color: #ff9e1b;
-  transition: all 0.5s ease;
-}
-
-/* FIM FOOTER */
+/* Modal de detalhes do fornecedor na página do cliente */
 
 .modal-fornecedor {
   display: flex;
@@ -1392,8 +1349,8 @@ footer {
 .modal-fornecedor .modal-fornecedor-content {
   background: #fff;
   border-radius: 5px;
-  min-width: 50vw;
-  max-width: 80vw;
+  min-width: 40vw;
+  max-width: 50vw;
   overflow-y: scroll;
   max-height: 80vh;
   /* position: fixed;
@@ -1445,6 +1402,57 @@ footer {
   margin-top: 0;
 }
 
+/* FOOTER */
+
+footer {
+  background-image: linear-gradient(to bottom, #005c97, #363795);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 30px 0;
+  text-align: left;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.footer-container {
+  width: 61.4584%;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+.footer-top a,
+.footer-bottom a,
+.footer-top a:visited,
+.footer-bottom a:visited {
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-top a:hover,
+.footer-bottom a:hover {
+  color: #ff9e1b;
+  transition: all 0.5s ease;
+}
+
+/* FIM FOOTER */
+
 /* MEDIA QUERIES (RESPONSIVIDADE) */
 
 @media (max-width: 1600px) {
@@ -1470,6 +1478,10 @@ footer {
   .campo-busca {
     width: 83%;
   }
+
+  .modal-fornecedor .modal-fornecedor-content {
+    max-width: 80vw;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1483,6 +1495,10 @@ footer {
   .btn,
   .dropdown-menu.show {
     width: 100%;
+  }
+
+  .modal-fornecedor .modal-fornecedor-content {
+    max-width: 95vw;
   }
 }
 

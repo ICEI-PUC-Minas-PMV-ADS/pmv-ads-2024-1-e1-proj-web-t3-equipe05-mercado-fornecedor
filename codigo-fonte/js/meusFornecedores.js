@@ -1,5 +1,6 @@
 const listaF = JSON.parse(localStorage.getItem("fornecedores"));
 const meusP = JSON.parse(localStorage.getItem("listaDePedidos"));
+const arrayPedidosDefinidos = [];
 
 function fecharModal() {
   const modal = document.querySelector(".modal-fornecedor");
@@ -33,6 +34,9 @@ function criarModal(fornecedor) {
   const infoTableDiv1Div = document.createElement("div");
   const enderecoTitle = document.createElement("h6");
   const sectionParagraph1 = document.createElement("p");
+  const sectionParagraph11 = document.createElement("p");
+  const cep = document.createElement("p");
+  const telefone = document.createElement("p");
   const infoTableDiv2 = document.createElement("div");
   const cnpjTitle = document.createElement("h6");
   const sectionParagraph2 = document.createElement("p");
@@ -46,16 +50,23 @@ function criarModal(fornecedor) {
 
   modalTitle.innerText = fornecedor.nome;
   img.src = fornecedor.imgUrl;
-  infoFornecedor.innerText = "Informações";
+  titleInfo.innerText = "Informações";
   enderecoTitle.innerText = "Endereço";
-  sectionParagraph1.innerText = fornecedor.endereco.logradouro;
+  sectionParagraph1.innerText = `${fornecedor.endereco.logradouro}, nº ${fornecedor.endereco.numero} ${fornecedor.endereco.complemento}`;
+  sectionParagraph11.innerText = `${fornecedor.endereco.bairro} - ${fornecedor.endereco.localidade}/${fornecedor.endereco.uf}`;
+  cep.innerText = `CEP: ${fornecedor.endereco.cep}`;
+  telefone.innerText = `Tel.: ${fornecedor.telefone}`;
   cnpjTitle.innerText = "CNPJ";
   sectionParagraph2.innerText = fornecedor.cnpj;
 
   marca.append(img);
 
-  infoTableDiv1Div.appendChild(enderecoTitle);
-  infoTableDiv1.append(infoTableDiv1Div, sectionParagraph1);
+  infoTableDiv1.append(
+    enderecoTitle,
+    sectionParagraph1,
+    sectionParagraph11,
+    telefone
+  );
 
   infoTableDiv2.append(cnpjTitle, sectionParagraph2);
 
@@ -93,8 +104,35 @@ function criarModal(fornecedor) {
   listaTitulosItem1.append(numero1, data1, status1);
   listaTitulosItem2.append(numero2, data2, status2);
   pedidosListaTitulos.append(listaTitulosItem1, listaTitulosItem2);
-  pedidos.append(pedidosTitle, pedidosListaTitulos);
 
+  const listaFornecedor = document.createElement("ul");
+  listaFornecedor.classList.add("lista-fornecedor");
+
+  const arrMeusPedidos = [];
+  arrayPedidosDefinidos.forEach((pedido) => {
+    if (pedido.fornecedorId === fornecedor.id) arrMeusPedidos.push(pedido);
+  });
+
+  arrMeusPedidos.forEach((pedido) => {
+    const itemListaFornecedor = document.createElement("li");
+    const numeroPedido = document.createElement("div");
+    const dataPedido = document.createElement("div");
+    const statusPedido = document.createElement("div");
+
+    itemListaFornecedor.classList.add("lista-pedidos-fornecedor");
+    numeroPedido.classList.add("item-pedidos-fornecedor");
+    dataPedido.classList.add("item-pedidos-fornecedor");
+    statusPedido.classList.add("item-pedidos-fornecedor");
+
+    numeroPedido.innerText = pedido.id;
+    dataPedido.innerText = pedido.data;
+    statusPedido.innerText = pedido.status;
+
+    itemListaFornecedor.append(numeroPedido, dataPedido, statusPedido);
+    listaFornecedor.append(itemListaFornecedor);
+  });
+
+  pedidos.append(pedidosTitle, pedidosListaTitulos, listaFornecedor);
   modalBodyContainer.append(detalhes, pedidos);
 
   modalBody.append(modalBodyContainer);
@@ -104,20 +142,20 @@ function criarModal(fornecedor) {
   fecharModal();
 }
 
-function buscarFornecedores(inputValue, objFornecedores) {
-  let resultadoBusca = objFornecedores.filter((word) =>
-    word.nome.toLowerCase().includes(inputValue.toLowerCase())
+function buscarFornecedores(inputValue, arrayObjFornecedores) {
+  let resultadoBusca = arrayObjFornecedores.filter((fornecedor) =>
+    fornecedor.nome.toLowerCase().includes(inputValue.toLowerCase())
   );
 
   if (Object.keys(resultadoBusca).length === 0) {
-    resultadoBusca = objFornecedores.filter((word) =>
-      word.segmento.toLowerCase().includes(inputValue.toLowerCase())
+    resultadoBusca = arrayObjFornecedores.filter((fornecedor) =>
+      fornecedor.segmento.toLowerCase().includes(inputValue.toLowerCase())
     );
   }
 
   if (Object.keys(resultadoBusca).length === 0) {
-    resultadoBusca = objFornecedores.filter((word) =>
-      word.cnpj.toLowerCase().includes(inputValue.toLowerCase())
+    resultadoBusca = arrayObjFornecedores.filter((fornecedor) =>
+      fornecedor.cnpj.toLowerCase().includes(inputValue.toLowerCase())
     );
   }
 
@@ -195,9 +233,11 @@ export function filtrarFornecedores(fornecedores, meusPedidos) {
     if (pedido.fornecedorId !== null) {
       if (!arrayFornecedores.includes(pedido.fornecedorId))
         arrayFornecedores.push(pedido.fornecedorId);
+      arrayPedidosDefinidos.push(pedido);
     }
   });
 
+  console.log(arrayPedidosDefinidos);
   const listaMeusFornecedores = [];
 
   fornecedores.forEach((fornecedor) => {
