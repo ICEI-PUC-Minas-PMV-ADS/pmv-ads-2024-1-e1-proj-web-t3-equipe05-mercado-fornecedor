@@ -161,7 +161,7 @@ RF-04	A aplicação deve permitir que o cliente visualize o cadastro de todos os
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
-- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/interfacepedidocliente.html" target="_blank">painel de controle do clienteo</a>
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/interfacepedidodocliente.html" target="_blank">painel de controle do cliente</a>
 
 #### Responsável
 
