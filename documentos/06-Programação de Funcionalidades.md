@@ -260,7 +260,7 @@ Para acessar a página, visite o link abaixo:
   <figcaption>Figura - Detalhes do Pedido</figcaption>
 </figure>
 <figure>
-  <img src="img/rodape-geral.png"/>
+  <img src="img/rodapé-geral.png"/>
   <figcaption>Figura - Detalhes do Pedido</figcaption>
 </figure>
 
