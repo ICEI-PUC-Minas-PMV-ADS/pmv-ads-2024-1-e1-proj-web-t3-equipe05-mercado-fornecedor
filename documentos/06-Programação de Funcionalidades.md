@@ -214,3 +214,41 @@ Para acessar a página, visite o link abaixo:
 > - [JSON Tutorial](https://www.w3resource.com/JSON)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+
+### Detalhes dos Pedidos
+
+<figure>
+  <img src="img/detalhes-pedido.png"/>
+  <figcaption>Figura - Detalhes do Pedido</figcaption>
+</figure>
+
+#### Requisito atendido
+
+A página deve permitir que o usuário visualize, edite adicione observações ou cancele um pedido
+
+#### Artefatos da funcionalidade
+
+- contato.html - Linhas  134 a 775
+- style.css - Linhas 1186 a 1339
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/detalhes-pedido.html">detalhes-pedido.html - linhas 134 até 775</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1186 até 1339</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo:
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Detalhes Pedido</a>
+
+#### Responsável
+
+- Felipe Sauter
+
+> **Links Úteis**:
+>
+> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
+> - [JSON Tutorial](https://www.w3resource.com/JSON)
+> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
+> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
