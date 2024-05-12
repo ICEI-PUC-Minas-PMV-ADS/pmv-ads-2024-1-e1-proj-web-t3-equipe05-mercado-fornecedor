@@ -126,7 +126,7 @@ Renato Andrade de Carvalho
 
 <figure>
   <img src="img/painelcontrolecliente.png"/>
-  <figcaption>Figura 4 - Paionel de controle cliente</figcaption>
+  <figcaption>Figura 4 - Painel de controle do cliente</figcaption>
 </figure>
 
 
