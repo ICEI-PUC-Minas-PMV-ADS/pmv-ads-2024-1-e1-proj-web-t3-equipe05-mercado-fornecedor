@@ -37,7 +37,7 @@ Para acessar a página, visite o link abaixo:
 
 Lorena Marta Martiniana de Paula
 
-### Cadastro de usuário - apenas JavaScript
+### Cadastro de usuário - apenas JavaScript 
 
 <figure>
   <img src="img/cadastro.png"/>
@@ -105,6 +105,38 @@ Para acessar a página, visite o link abaixo:
 
 Lorena Marta Martiniana de Paula
 
+### Interface do cadastro do usuário
+
+<figure>
+  <img src="img/cadastro.png"/>
+  <figcaption>Figura 4 - Interface da página de cadastro do usuário</figcaption>
+</figure>
+
+Interface HTML e CSS 
+
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/cadastro.html">HTML do cadastro</a>
+
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/cadastro.css">CSS do cadastro</a>
+
+#### Responsável
+
+Renato Andrade de Carvalho
+
+### Interface do painel de controle do cliente
+
+<figure>
+  <img src="img/painelcontrolecliente.png"/>
+  <figcaption>Figura 4 - Interface da página de cadastro do usuário</figcaption>
+</figure>
+
+
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/cadastro.html">HTML do cadastro</a>
+
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/cadastro.css">CSS do cadastro</a>
+
+#### Responsável
+
+Renato Andrade de Carvalho
 > **Links Úteis**:
 >
 > - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
