@@ -670,6 +670,7 @@ main {
 /* Lista de pedidos */
 .lista-pedidos {
   width: 100%;
+  min-height: 34.9vh;
 }
 
 /* Organiza a lista de pedidos em colunas usando display:grid */
@@ -718,6 +719,18 @@ main {
   flex-wrap: wrap;
   align-items: center;
   padding-top: 15px;
+  animation: append-animate 0.15s linear;
+}
+
+@keyframes append-animate {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .accordion-link {
@@ -761,6 +774,11 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon-fornecedor img {
+  width: 90%;
+  object-fit: cover;
 }
 .btn-mais {
   background-color: #91ebf5;
@@ -931,13 +949,13 @@ main {
   position: relative;
 }
 
-.qtd-item-pedido-input {
+.input-style-md {
   width: 30%;
   position: relative;
 }
 
-.input-style-lg {
-  width: 99.6%;
+.input-style-sm {
+  width: 23%;
   position: relative;
 }
 .item-pedido-input ~ .focus-border {
@@ -1107,20 +1125,26 @@ main {
 .grid-list-container {
   padding-top: 50px;
   width: 100%;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 30px;
+  row-gap: 30px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
 }
 
 .card-lista-usuarios {
-  width: 280px;
+  /* width: 280px;
+  text-align: left; */
+  width: 100%;
+
   text-align: left;
 }
 
 .img-lista-user {
-  max-width: 280px;
-  max-height: 260px;
+  max-width: 100%;
+  max-height: 92%;
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
@@ -1243,6 +1267,49 @@ main {
   height: 40px;
   padding-left: 10px;
 }
+.equipe{
+  background-color: #00395d;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 20%;
+  text-align: center;
+}
+.estilo-lista-equipe{
+  color:floralwhite;
+  text-align: center;
+}
+.estilo-lista-equipe{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+}
+.card{
+  color: #00395D;
+  font-weight: bold;
+  padding-bottom: 20px;
+  background-color: #00395D;
+  justify-content: center;
+  width: 60%;
+  }
+  .card-title{
+    font-weight: bold;
+    color: floralwhite;
+  }
+  .card-text{
+    color: floralwhite;
+  }
+  .ul{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    columns: 2;
+    gap: 30px;
+  }
+
 /* FOOTER */
 
 footer {
@@ -1350,4 +1417,5 @@ footer {
   .header-carousel {
     margin-top: -60vh;
   }
+
 }
