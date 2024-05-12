@@ -36,8 +36,9 @@ Para acessar a página, visite o link abaixo:
 #### Responsável
 
 Lorena Marta Martiniana de Paula
-
+Renato Andrade de Carvalho
 ### Cadastro de usuário - apenas JavaScript
+### Cadastro de usuário - html e css
 
 <figure>
   <img src="img/cadastro.png"/>
