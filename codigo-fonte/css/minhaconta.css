@@ -1,0 +1,121 @@
+*{
+    list-style: none;
+}
+.titulo1{
+    color: #00395d;
+
+}
+ .main-container{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+
+ }
+ aside{
+    width: 30%;
+ }
+.container {
+    width: 100%;
+    background-image: linear-gradient(to bottom, #00395d, #363795);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 200px rgba(0, 0, 0, 0.1);} */
+}
+    
+
+    .circulo{
+        width: 120px;
+        height: 120px;
+        border-radius: 120px;
+        background-color: #eaf6f9;
+        padding: 0;
+        
+    }
+    .circulo img{
+        width: 100%;
+
+    }
+    .controle-de-dados-do-usuario{
+      outline: unset;
+      padding: 8px;
+      width: 100%;
+      border:1px ;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: #eaf6f9;   
+      
+    }
+
+   
+   
+    .dados-do-usuario{
+        width: 68% ;
+    }
+
+    .form-dados-do-usuario{
+        font-family: arial;
+        padding: 0;
+        margin-bottom: 25px;
+        margin-left: 25px;
+    }
+    .form-dados-do-usuario input,.form-dados-do-usuario textarea{
+        outline: unset;
+        padding: 8px;
+        width: 40%;
+        border:1px ;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: #eaf6f9;
+    }
+         
+        
+    .form-dados-do-usuario button{
+            background-color: #ff9e1b;
+            border: 1px;
+            padding:8px;
+            border-radius: 20px;
+            outline: unset;
+            box-sizing: border-box;
+
+            
+
+
+          }
+
+          .lista-dados-cadastrados{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+
+          }
+          .li-lista-dados-cadastrados{
+        outline: unset;
+        padding: 8px;
+        width: 40%;
+        border:1px ;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: #eaf6f9;
+            
+
+
+          }
+          .titulo-dados-cadastrados{
+            font-family: "Red Hat Display", sans-serif;
+            font-size: 20px;
+            border-bottom: 1px solid #00395d;
+            color:#00395d;
+
+
+
+          }
+          .editar-meus-dados{
+            font-family: "Red Hat Display", sans-serif;
+            font-size: 20px;
+            border-bottom: 1px solid #00395d;
+            color:#00395d;
+            
+          }
