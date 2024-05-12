@@ -202,7 +202,7 @@ A página permite que o usuário envie uma mensagem de contato
 
 Para acessar a página, visite o link abaixo:
 
-- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Home da aplicação</a>
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Contato</a>
 
 #### Responsável
 
