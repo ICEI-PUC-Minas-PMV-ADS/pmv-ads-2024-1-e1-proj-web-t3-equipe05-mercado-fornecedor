@@ -10,3 +10,5 @@ export async function logUser() {
 
   const userData = JSON.parse(localStorage.getItem("User"));
 }
+
+logUser();

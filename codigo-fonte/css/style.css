@@ -667,6 +667,10 @@ main {
   color: #005c97;
 }
 
+.dropdown-menu.show {
+  width: 100%;
+}
+
 /* Lista de pedidos */
 .lista-pedidos {
   width: 100%;
@@ -1145,14 +1149,14 @@ main {
 
 .img-lista-user {
   width: 100%;
-  height: 92%;
+  height: 260px;
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
 }
 
 .img-lista-user img {
-  max-width: 50%;
+  max-width: 80%;
   object-fit: contain;
 }
 .title-lista-user {
@@ -1390,11 +1394,15 @@ footer {
   border-radius: 5px;
   min-width: 50vw;
   max-width: 80vw;
-  position: fixed;
-  top: -100%;
+  overflow-y: scroll;
+  max-height: 80vh;
+  /* position: fixed;
+  top: 0; */
+  margin-top: -500px;
   transition: all 0.6s ease;
   z-index: 1000;
 }
+
 .modal-fornecedor .modal-fornecedor-header {
   display: flex;
   justify-content: space-between;
@@ -1434,7 +1442,7 @@ footer {
   visibility: visible;
 }
 .modal-fornecedor.visible .modal-fornecedor-content {
-  top: 25%;
+  margin-top: 0;
 }
 
 /* MEDIA QUERIES (RESPONSIVIDADE) */
@@ -1442,7 +1450,8 @@ footer {
 @media (max-width: 1600px) {
   .header-text,
   .header-carousel,
-  .main-container {
+  .main-container,
+  .footer-container {
     width: 90%;
   }
 
@@ -1460,6 +1469,20 @@ footer {
 
   .campo-busca {
     width: 83%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .busca-itens {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .dropdown,
+  .campo-busca,
+  .btn,
+  .dropdown-menu.show {
+    width: 100%;
   }
 }
 

@@ -1,5 +1,5 @@
-const fornecedores = JSON.parse(localStorage.getItem("fornecedores"));
-const meusPedidos = JSON.parse(localStorage.getItem("listaDePedidos"));
+const listaF = JSON.parse(localStorage.getItem("fornecedores"));
+const meusP = JSON.parse(localStorage.getItem("listaDePedidos"));
 
 function fecharModal() {
   const modal = document.querySelector(".modal-fornecedor");
@@ -104,25 +104,42 @@ function criarModal(fornecedor) {
   fecharModal();
 }
 
-export function listarFornecedoresDoCliente() {
-  const arrayFornecedores = [];
+function buscarFornecedores(inputValue, objFornecedores) {
+  let resultadoBusca = objFornecedores.filter((word) =>
+    word.nome.toLowerCase().includes(inputValue.toLowerCase())
+  );
 
-  meusPedidos.forEach((pedido) => {
-    if (pedido.fornecedorId !== null) {
-      if (!arrayFornecedores.includes(pedido.fornecedorId))
-        arrayFornecedores.push(pedido.fornecedorId);
-    }
+  if (Object.keys(resultadoBusca).length === 0) {
+    resultadoBusca = objFornecedores.filter((word) =>
+      word.segmento.toLowerCase().includes(inputValue.toLowerCase())
+    );
+  }
+
+  if (Object.keys(resultadoBusca).length === 0) {
+    resultadoBusca = objFornecedores.filter((word) =>
+      word.cnpj.toLowerCase().includes(inputValue.toLowerCase())
+    );
+  }
+
+  listarFornecedoresDoCliente(resultadoBusca);
+}
+
+export function buscarFornecedoresDoCliente() {
+  const inputBusca = document.getElementById("buscar-fornecedores-input");
+
+  inputBusca.addEventListener("input", function () {
+    let textoBusca = inputBusca.value;
+
+    buscarFornecedores(textoBusca, meusFornecedores);
   });
+}
 
-  const listaMeusFornecedores = [];
-
-  fornecedores.forEach((fornecedor) => {
-    if (arrayFornecedores.includes(fornecedor.id)) {
-      listaMeusFornecedores.push(fornecedor);
-    }
-  });
-
+function listarFornecedoresDoCliente(listaMeusFornecedores) {
   const ulFornecedores = document.getElementById("lista-meus-fornecedores");
+
+  while (ulFornecedores.firstChild) {
+    ulFornecedores.removeChild(ulFornecedores.firstChild);
+  }
 
   listaMeusFornecedores.forEach((fornecedor) => {
     const cardFornecedor = document.createElement("li");
@@ -143,10 +160,10 @@ export function listarFornecedoresDoCliente() {
       imgFornecedor.src = fornecedor.imgUrl;
     }
 
-    nomeFornecedor.value = fornecedor.nome;
+    nomeFornecedor.innerText = fornecedor.nome;
 
     if (categoriaFornecedor !== null) {
-      categoriaFornecedor.value = fornecedor.segmento;
+      categoriaFornecedor.innerText = fornecedor.segmento;
     }
 
     btnVerMais.innerText = "Ver mais";
@@ -170,3 +187,29 @@ export function listarFornecedoresDoCliente() {
     });
   });
 }
+
+export function filtrarFornecedores(fornecedores, meusPedidos) {
+  const arrayFornecedores = [];
+
+  meusPedidos.forEach((pedido) => {
+    if (pedido.fornecedorId !== null) {
+      if (!arrayFornecedores.includes(pedido.fornecedorId))
+        arrayFornecedores.push(pedido.fornecedorId);
+    }
+  });
+
+  const listaMeusFornecedores = [];
+
+  fornecedores.forEach((fornecedor) => {
+    if (arrayFornecedores.includes(fornecedor.id)) {
+      listaMeusFornecedores.push(fornecedor);
+    }
+  });
+
+  return listaMeusFornecedores;
+}
+
+const meusFornecedores = filtrarFornecedores(listaF, meusP);
+
+buscarFornecedoresDoCliente();
+listarFornecedoresDoCliente(meusFornecedores);
