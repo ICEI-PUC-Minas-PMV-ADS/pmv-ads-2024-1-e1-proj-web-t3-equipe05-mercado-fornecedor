@@ -36,6 +36,7 @@ Para acessar a página, visite o link abaixo:
 #### Responsável
 
 Lorena Marta Martiniana de Paula
+
 Renato Andrade de Carvalho
 ### Cadastro de usuário - apenas JavaScript 
 
@@ -43,9 +44,13 @@ Renato Andrade de Carvalho
   <img src="img/cadastro.png"/>
   <figcaption>Figura 2 - Imagem da página de cadastro do usuário</figcaption>
 </figure>
+
 Interface HTML e CSS - Renato
+
 - <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/cadastro.html">HTML do cadastro</a>
+
 - <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/cadastro.css">CSS do cadastro</a>
+
 #### Requisito atendido
 
 N/A - Página não atende a nenhum requisito estabelecido
