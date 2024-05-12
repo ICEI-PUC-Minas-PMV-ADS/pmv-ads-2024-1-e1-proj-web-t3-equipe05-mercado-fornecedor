@@ -224,7 +224,7 @@ Para acessar a página, visite o link abaixo:
 
 #### Requisito atendido
 
-A página deve permitir que o usuário visualize, edite adicione observações ou cancele um pedido
+FR-09 - No perfil de fornecedor, permitir filtragem de todos os pedidos feitos por cliente;
 
 #### Artefatos da funcionalidade
 
