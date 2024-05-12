@@ -126,7 +126,7 @@ Renato Andrade de Carvalho
 
 <figure>
   <img src="img/painelcontrolecliente.png"/>
-  <figcaption>Figura 4 - Interface da página de cadastro do usuário</figcaption>
+  <figcaption>Figura 4 - Paionel de controle cliente</figcaption>
 </figure>
 
 
