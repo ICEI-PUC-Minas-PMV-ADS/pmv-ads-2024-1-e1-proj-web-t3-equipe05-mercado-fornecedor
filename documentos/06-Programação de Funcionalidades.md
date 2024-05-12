@@ -174,3 +174,36 @@ Renato Andrade de Carvalho
 > - [JSON Tutorial](https://www.w3resource.com/JSON)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+>
+
+
+### Página de Contato
+
+<figure>
+  <img src="img/"/>
+  <figcaption>Figura 1 - </figcaption>
+</figure>
+
+#### Requisito atendido
+
+A página permite que o usuário envie uma mensagem de contato
+
+#### Artefatos da funcionalidade
+
+- contato.html - Linhas 35 a 66
+- style.css - Linhas 968 a 1068
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/contato.html">contato.html - linhas 35 até 66</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 968 até 1068</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo:
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Home da aplicação</a>
+
+#### Responsável
+
+- Felipe Sauter
