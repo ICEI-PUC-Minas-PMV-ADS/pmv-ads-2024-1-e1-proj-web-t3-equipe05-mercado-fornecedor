@@ -150,6 +150,7 @@ RF-04	A aplicação deve permitir que o cliente visualize o cadastro de todos os
 #### Artefatos da funcionalidade
 
 -interfacepedidocliente.css
+
 -interfacepedidocliente.html
 
 #### Estrutura de Dados
