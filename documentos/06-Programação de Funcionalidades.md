@@ -130,9 +130,9 @@ Renato Andrade de Carvalho
 </figure>
 
 
-- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/cadastro.html">HTML do cadastro</a>
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/interfacepedidodocliente.css"> CSS do painel</a>
 
-- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/cadastro.css">CSS do cadastro</a>
+- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/interfacepedidodocliente.html">HTML do painel</a>
 
 #### Responsável
 
