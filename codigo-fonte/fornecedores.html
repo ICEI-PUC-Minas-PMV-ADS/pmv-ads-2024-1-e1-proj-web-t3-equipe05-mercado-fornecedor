@@ -26,6 +26,7 @@
         <div class="container-busca">
             <input class="form-control me-2" type="Procurar" placeholder="Buscar Fornecedores" aria-label="" >
             <button class="btn btn-outline-primary" type="submit">Buscar</button>
+            <ul id="lista-fornecedores"></ul>
             <div class="dropdown">
               <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Selecionar Categoria
@@ -42,6 +43,7 @@
           </div>
       </nav>
       <ul class="lista-de-fornecedores">
+        <select name="Buscar" id="Buscar" onchange="ListarFornecedores()" class="ListarFornecedores"></select>
         <li class="card" style="width: 18rem;">
           <img src="./img/Rectangle 36.png" class="card-img-top" alt="...">
           <div class="card-body">
@@ -56,82 +58,42 @@
             <p class="card-text">Artes e Artesanatos</p>
           </div>
         </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/futura.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Futura</h5>
-            <p class="card-text">Entretenimento</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/Pet.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Petlove</h5>
-            <p class="card-text">Pet</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/usiminas.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Usiminas</h5>
-            <p class="card-text">Siderúrgica</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/voltz.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Voltz</h5>
-            <p class="card-text">Veículos</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/catupiry.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Catupiry</h5>
-            <p class="card-text">Alimentícia</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/panco.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Panco</h5>
-            <p class="card-text">Alimentícia</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/Pet.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Petlove</h5>
-            <p class="card-text">Pet</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/Rectangle 36.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Elefante</h5>
-            <p class="card-text">Alimentícia</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/acrilex.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Acrilex</h5>
-            <p class="card-text">Artes e Artesanatos</p>
-          </div>
-        </li>
-        <li class="card" style="width: 18rem;">
-          <img src="./img/voltz.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Voltz</h5>
-            <p class="card-text">Veículos</p>
           </div>
         </li>
       </ul>
     </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <script src="ListaFornecedores"></script>
+    <script> 
+      function ListarFornecedores() {
+
+          // Obtem os dados informados pelo usuário nos filtros
+          let Buscar = document.getElementById('Buscar').value;
+          
+
+          // Popula a tabela com os registros do banco de dados
+          for (let index = 0; index < fornecedores.length; index++) {
+              const fornecedor = fornecedores[index];
+
+              
+                  
+                  // Inclui o fornecedor na tabela    
+                  $("#table-fornecedor").append(`<tr><td scope="row">${fornecedor.id}</td>
+                                                  <td>${fornecedor.nome}</td>
+                                                  <td>${fornecedor.cnpj}</td>
+                                                  <td>${fornecedor.telefone}</td>
+                                                  <td>${fornecedor.email}</td>
+                                                  <td>${fornecedor.cidade}</td>
+                                                  <td>${fornecedor.uf}</td>
+                                                  
+                                              </tr>`);
+              }
+          }
+      }
+
+      window.onload = () => {
+          ListarFornecedores()
+      }
+  </script>
+
   </body>
 </html>

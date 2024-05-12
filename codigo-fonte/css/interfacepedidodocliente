@@ -1,0 +1,8 @@
+h1{
+    font-size: 40px;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: #00395D;
+  width: 100%;
+  }
+
