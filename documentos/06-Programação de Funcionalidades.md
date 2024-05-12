@@ -290,7 +290,7 @@ Para acessar a página, visite o link abaixo:
 
 ## Interface Minha Página
 <figure>
-  <img src="img/minhaconta.png"/>
+  <img src="img/minhaconta.jpg"/>
   <figcaption>Figura 9 - Minha Conta </figcaption>
 </figure>
 
