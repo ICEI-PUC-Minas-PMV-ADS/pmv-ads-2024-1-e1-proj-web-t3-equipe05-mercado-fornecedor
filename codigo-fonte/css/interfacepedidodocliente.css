@@ -1,0 +1,21 @@
+h1{
+    font-size: 40px;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: bold;
+    color: #00395D;
+  width: 100%;
+  }
+
+  button {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#00395D;
+    color: #FFFFFF;
+    margin-left: 80px;
+    width: 450px;
+    height: 35px;
+    margin-right: -40px;
+  }
+  
+    
+
+  

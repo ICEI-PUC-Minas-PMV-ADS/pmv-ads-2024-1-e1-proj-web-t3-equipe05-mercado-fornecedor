@@ -7,18 +7,17 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel= "stylesheet" href="./css/c">
+  <link rel= "stylesheet" href="./css/interfacepedidodocliente.css">
     <style> 
     body {background-color: rgb(250, 250, 254);}
     </style>
 </head>
-<h1 style="text-align: center;">Painel de Controle Cliente</h1>
-<p style="text-align: center;">Aqui você poderá realizar pedidos, visualizar informações sobre seus fornecedores, ver detalhes de pedidos e muito mais.</p>
+<h1 style="margin-left: 80px">Painel de Controle Cliente</h1>
+<p style="margin-left: 80px">Aqui você poderá realizar pedidos, visualizar informações sobre seus fornecedores, ver detalhes de pedidos e muito mais.</p>
 
 <div class="Criar"
     
       <div class="dashboard-btn">
-        
         <button
           type="button"
           class="large-btn"
