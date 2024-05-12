@@ -219,7 +219,7 @@ Para acessar a página, visite o link abaixo:
 
 <figure>
   <img src="img/detalhes-pedidos.png"/>
-  <figcaption>Figura - Detalhes do Pedido</figcaption>
+  <figcaption>Figura 6 - Detalhes do Pedido</figcaption>
 </figure>
 
 #### Requisito atendido
@@ -257,11 +257,11 @@ Para acessar a página, visite o link abaixo:
 
 <figure>
   <img src="img/cabecalho-geral.png"/>
-  <figcaption>Figura - Detalhes do Pedido</figcaption>
+  <figcaption>Figura 7 - Detalhes do Pedido</figcaption>
 </figure>
 <figure>
   <img src="img/rodapé-geral.png"/>
-  <figcaption>Figura - Detalhes do Pedido</figcaption>
+  <figcaption>Figura 8 - Detalhes do Pedido</figcaption>
 </figure>
 
 #### Requisito atendido
@@ -290,8 +290,8 @@ Para acessar a página, visite o link abaixo:
 
 ## Interface Minha Página
 <figure>
-  <img scr="img/minhaconta.png"/>
-  <figcaption>Figura Página Minha Conta</figcaption>
+  <img src="img/minhaconta.png"/>
+  <figcaption>Figura 9 - Minha Conta </figcaption>
 </figure>
 
 ## Artefatos e funcionalidade
