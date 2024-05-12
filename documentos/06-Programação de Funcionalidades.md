@@ -218,7 +218,7 @@ Para acessar a página, visite o link abaixo:
 ### Detalhes dos Pedidos
 
 <figure>
-  <img src="img/detalhes-pedido.png"/>
+  <img src="img/detalhes-pedidos.png"/>
   <figcaption>Figura - Detalhes do Pedido</figcaption>
 </figure>
 
