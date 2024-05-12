@@ -180,8 +180,8 @@ Renato Andrade de Carvalho
 ### Página de Contato
 
 <figure>
-  <img src="img/"/>
-  <figcaption>Figura 1 - </figcaption>
+  <img src="img/contato.png"/>
+  <figcaption>Figura 5 - Página de Contato </figcaption>
 </figure>
 
 #### Requisito atendido
