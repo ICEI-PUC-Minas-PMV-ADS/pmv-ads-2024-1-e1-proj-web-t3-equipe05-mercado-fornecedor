@@ -252,3 +252,45 @@ Para acessar a página, visite o link abaixo:
 > - [JSON Tutorial](https://www.w3resource.com/JSON)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+
+### Cabeçalho e Rodapé
+
+<figure>
+  <img src="img/cabecalho-geral.png"/>
+  <figcaption>Figura - Detalhes do Pedido</figcaption>
+</figure>
+<figure>
+  <img src="img/rodape-geral.png"/>
+  <figcaption>Figura - Detalhes do Pedido</figcaption>
+</figure>
+
+#### Requisito atendido
+
+NA - Página não atende nenhum requisito estabelecido
+
+#### Artefatos da funcionalidade
+
+- contato.html - Linhas  12 a 33
+- style.css - Linhas 1072 a 1119
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/detalhes-pedido.html">contato.html - linhas 12 até 33</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 12 até 33</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo:
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/" target="_blank">Contato</a>
+
+#### Responsável
+
+- Felipe Sauter
+
+> **Links Úteis**:
+>
+> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
+> - [JSON Tutorial](https://www.w3resource.com/JSON)
+> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
+> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
