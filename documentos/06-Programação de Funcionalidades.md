@@ -312,12 +312,69 @@ Para acessar a página, entre no link abaixo:
 
 Safira Gabriele Garcia da Silva
 
-
-
-
 > **Links Úteis**:
 >
 > - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
 > - [JSON Tutorial](https://www.w3resource.com/JSON)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+
+### Apresentação da equipe - Home
+
+<figure>
+  <img src="img/equipe.png"/>
+  <figcaption>Figura 10 - Apresentação da equipe de desenvolvimento</figcaption>
+</figure>
+
+#### Requisito atendido
+N/A - Página não atende a nenhum requisito estabelecido
+
+#### Artefatos da funcionalidade
+
+-style.css - Linhas 1246 até 1289
+-index.html - Linhas 265 até 306
+
+#### Estrutura de Dados 
+
+- <a href="../codigo-fonte/index.html">Index.html - linhas 265 até 306</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1246 até 1289</a>
+
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo:
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/cadastro.html" target="_blank">Cadastro da aplicação</a>
+
+#### Responsável
+
+Otavio Stefanine Nunes Soutelo
+
+### Tabela de fornecedores
+
+<figure>
+  <img src="img/fornecedores.png"/>
+  <figcaption>Figura 11 - Apresentação de fornecedores</figcaption>
+</figure>
+
+#### Requisito atendido
+N/A - Página não atende a nenhum requisito estabelecido
+
+#### Artefatos da funcionalidade
+
+-fornecedores.css 
+-fornecedores.html 
+
+#### Estrutura de Dados 
+
+- <a href="../codigo-fonte/fornecedores.html">Fornecedores.html</a>
+- <a href="../codigo-fonte/css/fornecedores.css">fornecedores.css</a>
+
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo:
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/fornecedores.html" target="_blank">Fornecedores disponiveis</a>
+
+#### Responsável
+
+Otavio Stefanine Nunes Soutelo
