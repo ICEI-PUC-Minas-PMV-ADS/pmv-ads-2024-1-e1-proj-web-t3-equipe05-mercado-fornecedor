@@ -33,42 +33,49 @@ function criarModal(fornecedor) {
   const infoTableDiv1 = document.createElement("div");
   const infoTableDiv1Div = document.createElement("div");
   const enderecoTitle = document.createElement("h6");
-  const sectionParagraph1 = document.createElement("p");
-  const sectionParagraph11 = document.createElement("p");
+  const sectionParagraphEndereco1 = document.createElement("p");
+  const sectionParagraphEndereco2 = document.createElement("p");
   const cep = document.createElement("p");
   const telefone = document.createElement("p");
   const infoTableDiv2 = document.createElement("div");
+  const cnpj = document.createElement("div");
   const cnpjTitle = document.createElement("h6");
-  const sectionParagraph2 = document.createElement("p");
+  const sectionParagraphCnpj = document.createElement("p");
+  const emailTitle = document.createElement("h6");
+  const sectionParagraphEmail = document.createElement("p");
 
-  modalBodyContainer.classList.add("criar-pedido");
+  modalBodyContainer.classList.add("info-fornecedor");
   detalhes.classList.add("detalhes-empresa");
   marca.classList.add("marca-empresa");
 
   infoFornecedor.classList.add("info-empresa");
   infoTable.classList.add("info-table");
+  cnpj.classList.add("info-cnpj");
 
   modalTitle.innerText = fornecedor.nome;
   img.src = fornecedor.imgUrl;
   titleInfo.innerText = "Informações";
   enderecoTitle.innerText = "Endereço";
-  sectionParagraph1.innerText = `${fornecedor.endereco.logradouro}, nº ${fornecedor.endereco.numero} ${fornecedor.endereco.complemento}`;
-  sectionParagraph11.innerText = `${fornecedor.endereco.bairro} - ${fornecedor.endereco.localidade}/${fornecedor.endereco.uf}`;
+  sectionParagraphEndereco1.innerText = `${fornecedor.endereco.logradouro}, nº ${fornecedor.endereco.numero} ${fornecedor.endereco.complemento}`;
+  sectionParagraphEndereco2.innerText = `${fornecedor.endereco.bairro} - ${fornecedor.endereco.localidade}/${fornecedor.endereco.uf}`;
   cep.innerText = `CEP: ${fornecedor.endereco.cep}`;
   telefone.innerText = `Tel.: ${fornecedor.telefone}`;
   cnpjTitle.innerText = "CNPJ";
-  sectionParagraph2.innerText = fornecedor.cnpj;
+  sectionParagraphCnpj.innerText = fornecedor.cnpj;
+  emailTitle.innerText = "E-mail";
+  sectionParagraphEmail.innerText = fornecedor.email;
 
   marca.append(img);
 
   infoTableDiv1.append(
     enderecoTitle,
-    sectionParagraph1,
-    sectionParagraph11,
+    sectionParagraphEndereco1,
+    sectionParagraphEndereco2,
     telefone
   );
 
-  infoTableDiv2.append(cnpjTitle, sectionParagraph2);
+  cnpj.append(cnpjTitle, sectionParagraphCnpj);
+  infoTableDiv2.append(cnpj, emailTitle, sectionParagraphEmail);
 
   infoTable.append(infoTableDiv1, infoTableDiv2);
 
@@ -89,7 +96,7 @@ function criarModal(fornecedor) {
   const data2 = document.createElement("div");
   const status2 = document.createElement("div");
 
-  pedidos.classList.add("itens-pedido");
+  pedidos.classList.add("pedidos-fornecedor");
   pedidosListaTitulos.classList.add("titulo-lista-fornecedor");
 
   pedidosTitle.innerText = "Pedidos";
@@ -169,6 +176,29 @@ export function buscarFornecedoresDoCliente() {
     let textoBusca = inputBusca.value;
 
     buscarFornecedores(textoBusca, meusFornecedores);
+  });
+}
+
+function filtrarFornecedoresPorCategoria(listaDeFornecedores) {
+  const listaDeCategorias = document.getElementById(
+    "dropdown-meus-fornecedores"
+  );
+
+  listaDeFornecedores.forEach((fornecedor) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.classList.add("dropdown-item");
+    a.href = "#";
+    a.innerText = fornecedor.segmento;
+    a.value = fornecedor.segmento;
+
+    li.appendChild(a);
+    listaDeCategorias.appendChild(li);
+
+    li.addEventListener("click", (e) => {
+      buscarFornecedores(a.value, meusFornecedores);
+    });
   });
 }
 
@@ -252,4 +282,10 @@ export function filtrarFornecedores(fornecedores, meusPedidos) {
 const meusFornecedores = filtrarFornecedores(listaF, meusP);
 
 buscarFornecedoresDoCliente();
+filtrarFornecedoresPorCategoria(meusFornecedores);
 listarFornecedoresDoCliente(meusFornecedores);
+
+const menuTodos = document.getElementById("listar-todos-fornecedores");
+menuTodos.addEventListener("click", (e) => {
+  listarFornecedoresDoCliente(meusFornecedores);
+});

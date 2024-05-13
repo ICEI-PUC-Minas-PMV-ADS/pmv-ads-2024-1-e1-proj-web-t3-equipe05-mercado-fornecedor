@@ -671,6 +671,9 @@ main {
   width: 100%;
 }
 
+.default-dropdown {
+  color: #00b5e2;
+}
 /* Lista de pedidos */
 .lista-pedidos {
   width: 100%;
@@ -1192,7 +1195,6 @@ main {
 
 .detalhes-empresa {
   width: 100%;
-  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -1242,6 +1244,10 @@ main {
   font-family: "Red Hat Display", sans-serif;
   color: #00395d;
   font-size: 14px;
+}
+
+.info-cnpj {
+  padding-bottom: 20px;
 }
 
 .titulo-lista-fornecedor {
@@ -1356,6 +1362,8 @@ main {
   /* position: fixed;
   top: 0; */
   margin-top: -500px;
+  padding-right: 15px;
+  padding-left: 25px;
   transition: all 0.6s ease;
   z-index: 1000;
 }
@@ -1364,8 +1372,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ccc;
-  padding: 1.5rem;
+  border-bottom: 1px solid #9ce8f8;
+  padding: 1rem;
+}
+
+.modal-fornecedor-title {
+  color: #0f99cc;
+  font-size: 32px;
 }
 
 .modal-fornecedor-header button {
@@ -1387,8 +1400,28 @@ main {
   color: #000;
 }
 .modal-fornecedor .modal-fornecedor-body {
-  padding: 1.5rem;
+  padding: 2rem 0;
 }
+
+.info-fornecedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pedidos-fornecedor {
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.pedidos-fornecedor h5 {
+  font-size: 16px;
+  color: #00395d;
+  border-bottom: 1px solid #98b9c1;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
 .modal-fornecedor .modal-fornecedor-footer {
   border-top: 1px solid #ccc;
   padding: 1rem;

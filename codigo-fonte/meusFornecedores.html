@@ -29,7 +29,7 @@
         <section class="main-container">
           <div class="container-title">
             <h1>Meus fornecedores</h1>
-            <h4>Encontre fornecedores de pedidos anteriores ou em aberto</h4>
+            <h4>Encontre fornecedores de pedidos anteriores ou em andamento</h4>
           </div>
           <section class="busca-itens">
             <div class="campo-busca">
@@ -43,6 +43,7 @@
               </div>
             </div>
 
+            <!-- Dropdown que filtra fornecedores por categoria -->
             <div class="dropdown">
               <button
                 class="btn btn-secondary dropdown-toggle"
@@ -50,13 +51,13 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Filtrar fornecedores
+                Filtrar por categoria
               </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+              <ul id="dropdown-meus-fornecedores" class="dropdown-menu">
+                <li id="listar-todos-fornecedores">
+                  <a class="dropdown-item default-dropdown" href="#"
+                    >Ver todos fornecedores</a
+                  >
                 </li>
               </ul>
             </div>
@@ -206,14 +207,12 @@
       </div>
     </main>
 
+    <!-- Janela modal com informações do fornecedor -->
     <div class="modal-fornecedor">
       <span class="modal-fornecedor-backdrop close-modal-fornecedor"></span>
       <div class="modal-fornecedor-content">
         <div class="modal-fornecedor-header">
-          <h2
-            id="modal-fornecedor-title"
-            class="modal-fornecedor-title modal-title"
-          ></h2>
+          <h2 id="modal-fornecedor-title" class="modal-fornecedor-title"></h2>
           <button id="close-modal-fornecedor" class="close-modal-fornecedor">
             <i class="fa-solid fa-xmark"></i>
           </button>
@@ -222,113 +221,7 @@
       </div>
     </div>
 
-    <!--Modal informações do fornecedor-->
-    <div
-      class="modal fade"
-      id="ver-mais-fornecedores"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Usiminas</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="criar-pedido">
-            <div class="detalhes-empresa">
-              <div class="marca-empresa">
-                <img src="./img/f1.png" />
-              </div>
-              <div class="info-empresa">
-                <h5>Informações</h5>
-                <div class="info-table">
-                  <div>
-                    <div>
-                      <h6>Endereço</h6>
-                    </div>
-                    <p>Av. do Contorno, 6594 - LourdesCEP: 30110-044</p>
-                  </div>
-
-                  <div>
-                    <h6>CNPJ</h6>
-                    <p>43.403 490/0001-21</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="itens-pedido">
-              <h5>Pedidos</h5>
-
-              <ul class="titulo-lista-fornecedor">
-                <li>
-                  <div>Número</div>
-                  <div>Data</div>
-                  <div>Status</div>
-                </li>
-                <li>
-                  <div>Número</div>
-                  <div>Data</div>
-                  <div>Status</div>
-                </li>
-              </ul>
-
-              <ul id="lista-fornecedor" class="lista-fornecedor">
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">294830</div>
-                  <div class="item-pedidos-fornecedor">25/03/2024</div>
-                  <div class="item-pedidos-fornecedor">Em aberto</div>
-                </li>
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">578201</div>
-                  <div class="item-pedidos-fornecedor">04/03/2024</div>
-                  <div class="item-pedidos-fornecedor">Enviado</div>
-                </li>
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">325874</div>
-                  <div class="item-pedidos-fornecedor">07/02/2024</div>
-                  <div class="item-pedidos-fornecedor">Finalizado</div>
-                </li>
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">018929</div>
-                  <div class="item-pedidos-fornecedor">02/12/2023</div>
-                  <div class="item-pedidos-fornecedor">Cancelado</div>
-                </li>
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">238944</div>
-                  <div class="item-pedidos-fornecedor">15/08/2023</div>
-                  <div class="item-pedidos-fornecedor">Finalizado</div>
-                </li>
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">325874</div>
-                  <div class="item-pedidos-fornecedor">07/02/2024</div>
-                  <div class="item-pedidos-fornecedor">Finalizado</div>
-                </li>
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">018929</div>
-                  <div class="item-pedidos-fornecedor">02/12/2023</div>
-                  <div class="item-pedidos-fornecedor">Cancelado</div>
-                </li>
-                <li class="lista-pedidos-fornecedor">
-                  <div class="item-pedidos-fornecedor">238944</div>
-                  <div class="item-pedidos-fornecedor">15/08/2023</div>
-                  <div class="item-pedidos-fornecedor">Finalizado</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-footer"></div>
-        </div>
-      </div>
-    </div>
-
+    <!-- Footer -->
     <footer class="footer" id="footer">
       <div class="footer-container">
         <div class="footer-top">
