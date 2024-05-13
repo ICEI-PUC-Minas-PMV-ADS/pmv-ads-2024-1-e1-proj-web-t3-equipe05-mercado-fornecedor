@@ -5,7 +5,7 @@ const objLogin = {
   password: "123456",
 };
 
-async function logUser() {
+export async function logUser() {
   const dados = await Api.login(objLogin);
 
   const userData = JSON.parse(localStorage.getItem("User"));

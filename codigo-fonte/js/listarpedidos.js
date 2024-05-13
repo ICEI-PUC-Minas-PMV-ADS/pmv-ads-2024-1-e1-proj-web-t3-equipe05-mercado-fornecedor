@@ -1,5 +1,7 @@
 import Api from "./api.js";
 
+const userData = JSON.parse(localStorage.getItem("User"));
+
 export async function listarPedidosPorCliente(id) {
   const pedidos = await Api.filtrarPedidosPorUser(id);
 
@@ -81,3 +83,5 @@ export async function listarPedidosPorCliente(id) {
     listaPedidos.appendChild(item);
   }
 }
+
+listarPedidosPorCliente(userData.id);

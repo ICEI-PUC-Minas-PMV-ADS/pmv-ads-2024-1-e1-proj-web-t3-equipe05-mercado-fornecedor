@@ -667,6 +667,13 @@ main {
   color: #005c97;
 }
 
+.dropdown-menu.show {
+  width: 100%;
+}
+
+.default-dropdown {
+  color: #00b5e2;
+}
 /* Lista de pedidos */
 .lista-pedidos {
   width: 100%;
@@ -1104,7 +1111,7 @@ main {
   padding-top: 10px;
 }
 
-/* LISTA DE EMPRESAS */
+/* LISTA DE EMPRESAS NA PÁGINA DO CLIENTE */
 .container-title {
   width: 100%;
   text-align: left;
@@ -1132,6 +1139,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
+  margin-bottom: 100px;
 }
 
 .card-lista-usuarios {
@@ -1143,13 +1151,17 @@ main {
 }
 
 .img-lista-user {
-  max-width: 100%;
-  max-height: 92%;
+  width: 100%;
+  height: 260px;
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
 }
 
+.img-lista-user img {
+  max-width: 80%;
+  object-fit: contain;
+}
 .title-lista-user {
   font-size: 20px;
   font-weight: bold;
@@ -1183,7 +1195,6 @@ main {
 
 .detalhes-empresa {
   width: 100%;
-  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -1198,8 +1209,9 @@ main {
 }
 
 .marca-empresa img {
-  width: 90%;
-  object-fit: cover;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
 
 .info-empresa {
@@ -1234,6 +1246,10 @@ main {
   font-size: 14px;
 }
 
+.info-cnpj {
+  padding-bottom: 20px;
+}
+
 .titulo-lista-fornecedor {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1251,11 +1267,16 @@ main {
 }
 
 .lista-fornecedor {
-  display: grid;
+  /* display: grid;
   grid-template-rows: repeat(5, 40px);
   gap: 10px;
   column-gap: 30px;
-  grid-auto-flow: column;
+  grid-auto-flow: column; */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  padding-bottom: 10px;
 }
 
 .lista-pedidos-fornecedor {
@@ -1267,7 +1288,7 @@ main {
   height: 40px;
   padding-left: 10px;
 }
-.equipe{
+.equipe {
   background-color: #00395d;
   font-family: "Inter", sans-serif;
   font-size: 20px;
@@ -1275,40 +1296,144 @@ main {
   padding-bottom: 20%;
   text-align: center;
 }
-.estilo-lista-equipe{
-  color:floralwhite;
+.estilo-lista-equipe {
+  color: floralwhite;
   text-align: center;
 }
-.estilo-lista-equipe{
-  display:flex;
+.estilo-lista-equipe {
+  display: flex;
   flex-wrap: wrap;
   gap: 30px;
   padding: 20px;
   justify-content: center;
 }
-.card{
-  color: #00395D;
+.card {
+  color: #00395d;
   font-weight: bold;
   padding-bottom: 20px;
-  background-color: #00395D;
+  background-color: #00395d;
   justify-content: center;
   width: 60%;
-  }
-  .card-title{
-    font-weight: bold;
-    color: floralwhite;
-  }
-  .card-text{
-    color: floralwhite;
-  }
-  .ul{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    columns: 2;
-    gap: 30px;
-  }
+}
+.card-title {
+  font-weight: bold;
+  color: floralwhite;
+}
+.card-text {
+  color: floralwhite;
+}
+.ul {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  columns: 2;
+  gap: 30px;
+}
+
+/* Modal de detalhes do fornecedor na página do cliente */
+
+.modal-fornecedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.modal-fornecedor .modal-fornecedor-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.modal-fornecedor .modal-fornecedor-content {
+  background: #fff;
+  border-radius: 5px;
+  min-width: 40vw;
+  max-width: 50vw;
+  overflow-y: scroll;
+  max-height: 80vh;
+  /* position: fixed;
+  top: 0; */
+  margin-top: -500px;
+  padding-right: 15px;
+  padding-left: 25px;
+  transition: all 0.6s ease;
+  z-index: 1000;
+}
+
+.modal-fornecedor .modal-fornecedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #9ce8f8;
+  padding: 1rem;
+}
+
+.modal-fornecedor-title {
+  color: #0f99cc;
+  font-size: 32px;
+}
+
+.modal-fornecedor-header button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.modal-fornecedor .modal-fornecedor-header .close-modal-fornecedor {
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+}
+.modal-fornecedor .modal-fornecedor-header .close-modal-fornecedor:hover {
+  color: #000;
+}
+.modal-fornecedor .modal-fornecedor-body {
+  padding: 2rem 0;
+}
+
+.info-fornecedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pedidos-fornecedor {
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.pedidos-fornecedor h5 {
+  font-size: 16px;
+  color: #00395d;
+  border-bottom: 1px solid #98b9c1;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.modal-fornecedor .modal-fornecedor-footer {
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+  text-align: right;
+}
+.modal-fornecedor.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-fornecedor.visible .modal-fornecedor-content {
+  margin-top: 0;
+}
 
 /* FOOTER */
 
@@ -1366,7 +1491,8 @@ footer {
 @media (max-width: 1600px) {
   .header-text,
   .header-carousel,
-  .main-container {
+  .main-container,
+  .footer-container {
     width: 90%;
   }
 
@@ -1384,6 +1510,28 @@ footer {
 
   .campo-busca {
     width: 83%;
+  }
+
+  .modal-fornecedor .modal-fornecedor-content {
+    max-width: 80vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .busca-itens {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .dropdown,
+  .campo-busca,
+  .btn,
+  .dropdown-menu.show {
+    width: 100%;
+  }
+
+  .modal-fornecedor .modal-fornecedor-content {
+    max-width: 95vw;
   }
 }
 
@@ -1417,5 +1565,4 @@ footer {
   .header-carousel {
     margin-top: -60vh;
   }
-
 }

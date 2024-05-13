@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Pedido</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/style-contato.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/1e3fdf6601.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+    <header class="header" id="header">
+        <nav class="nav-bar">
+            <div class="logo">
+               
+            </div>
+
+                <div class="nav-list">
+                    <ul class="nav-ul">
+                        <li class="nav-item"> <a href="#" class="nav-link">Sobre o MF</a></li>
+                        <li class="nav-item"> <a href="#" class="nav-link">Equipe</a></li>
+                        <li class="nav-item"> <a href="#" class="nav-link">Fornecedores</a></li>
+                        <li class="nav-item"> <a href="#" class="nav-link">Contato</a></li>
+                        <li>
+                            <div class="login-button">
+                            <button class="buttom-login" id="buttom-login">
+                            <img src="./img/login-icon.png"><a href="#"></a></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+    </header>
+
+  <body>
+    <main>
+      <div class="container-centered">
+        <section class="main-container">
+          <div class="dashboard-btn">
+            <button
+              type="button"
+              class="large-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#criar-pedido"
+            >
+              Criar novo pedido
+            </button>
+            <button
+              type="button"
+              class="large-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#enviar-proposta"
+            >
+              Enviar proposta
+            </button>
+          </div>
+          <h2 class="title-dashboard">Meus pedidos</h2>
+
+          <section class="busca-itens">
+            <div class="campo-busca">
+              <input class="busca" placeholder="Buscar pedidos" />
+              <div class="icone-busca">
+                <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Filtrar pedidos
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="lista-pedidos">
+            <div class="lista-grid">
+              <div class="item-lista item-lista-1">Número</div>
+              <div class="item-lista item-lista-2">Data</div>
+              <div class="item-lista item-lista-3">Fornecedor</div>
+              <div class="item-lista item-lista-4">Valor</div>
+              <div class="item-lista item-lista-5">Status</div>
+            </div>
+
+            <div class="accordion-list">
+              <div class="accordion-list-item" id="item1">
+                <a class="accordion-link" href="#item1">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+
+                  <div class="titulo-pedido" id="titulo-pedido">
+                    <h4>Pedido 492389</h4>
+                  </div>
+
+                  <section class="coluna-01" id="coluna-01">
+
+                    <div>
+                      <h6>Observações:</h6>
+                    </div>
+                    
+                    <div class="caixa-obs" id="caixa-obs">
+                    O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-02" id="coluna-02">
+
+                    <div>
+                      <h6>Itens do pedido:</h6>
+                    </div>
+                    
+                    <div>
+                      <ul>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                      </ul>
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-03" id="coluna-03">
+
+                    <div>
+                      <h6>Endereço de entrega:</h6>
+                    </div>
+                   
+                    <div>
+                    Praça da Matriz, n° 50, Belo Horizonte - MG
+                    </div>
+
+                  </section>
+
+                  <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                  <div class="btn-hight" id="btn-hight">
+                    <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                    <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                    <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                  </div>
+
+                  <p>
+
+                  </p>
+                </div>
+
+                </div>
+              </div>
+              <div class="accordion-list-item" id="item2">
+                <a class="accordion-link" href="#item2">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+
+                  <div class="titulo-pedido" id="titulo-pedido">
+                    <h4>Pedido 492389</h4>
+                  </div>
+
+                  <section class="coluna-01" id="coluna-01">
+
+                    <div>
+                      <h6>Observações:</h6>
+                    </div>
+                    
+                    <div class="caixa-obs" id="caixa-obs">
+                    O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-02" id="coluna-02">
+
+                    <div>
+                      <h6>Itens do pedido:</h6>
+                    </div>
+                    
+                    <div>
+                      <ul>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                      </ul>
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-03" id="coluna-03">
+
+                    <div>
+                      <h6>Endereço de entrega:</h6>
+                    </div>
+                   
+                    <div>
+                    Praça da Matriz, n° 50, Belo Horizonte - MG
+                    </div>
+
+                  </section>
+
+                  <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                  <div class="btn-hight" id="btn-hight">
+                    <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                    <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                    <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                  </div>
+
+                  <p>
+
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-list-item" id="item3">
+                <a class="accordion-link" href="#item3">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+
+                  <div class="detalhe-pedido">
+
+                    <div class="titulo-pedido" id="titulo-pedido">
+                      <h4>Pedido 492389</h4>
+                    </div>
+  
+                    <section class="coluna-01" id="coluna-01">
+  
+                      <div>
+                        <h6>Observações:</h6>
+                      </div>
+                      
+                      <div class="caixa-obs" id="caixa-obs">
+                      O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                      </div>
+  
+                    </section>
+  
+                    <section class="coluna-02" id="coluna-02">
+  
+                      <div>
+                        <h6>Itens do pedido:</h6>
+                      </div>
+                      
+                      <div>
+                        <ul>
+                          <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                          <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                          <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                          <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                          <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                          <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        </ul>
+                      </div>
+  
+                    </section>
+  
+                    <section class="coluna-03" id="coluna-03">
+  
+                      <div>
+                        <h6>Endereço de entrega:</h6>
+                      </div>
+                     
+                      <div>
+                      Praça da Matriz, n° 50, Belo Horizonte - MG
+                      </div>
+  
+                    </section>
+  
+                    <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                    <div class="btn-hight" id="btn-hight">
+                      <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                      <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                      <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                    </div>
+  
+                    <p>
+  
+                    </p>
+                  </div>
+  
+              </div>
+              <div class="accordion-list-item" id="item4">
+                <a class="accordion-link" href="#item4">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+
+                  <div class="titulo-pedido" id="titulo-pedido">
+                    <h4>Pedido 492389</h4>
+                  </div>
+
+                  <section class="coluna-01" id="coluna-01">
+
+                    <div>
+                      <h6>Observações:</h6>
+                    </div>
+                    
+                    <div class="caixa-obs" id="caixa-obs">
+                    O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-02" id="coluna-02">
+
+                    <div>
+                      <h6>Itens do pedido:</h6>
+                    </div>
+                    
+                    <div>
+                      <ul>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                      </ul>
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-03" id="coluna-03">
+
+                    <div>
+                      <h6>Endereço de entrega:</h6>
+                    </div>
+                   
+                    <div>
+                    Praça da Matriz, n° 50, Belo Horizonte - MG
+                    </div>
+
+                  </section>
+
+                  <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                  <div class="btn-hight" id="btn-hight">
+                    <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                    <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                    <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                  </div>
+
+                  <p>
+
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="accordion-list-item" id="item5">
+                <a class="accordion-link" href="#item5">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+
+                  <div class="titulo-pedido" id="titulo-pedido">
+                    <h4>Pedido 492389</h4>
+                  </div>
+
+                  <section class="coluna-01" id="coluna-01">
+
+                    <div>
+                      <h6>Observações:</h6>
+                    </div>
+                    
+                    <div class="caixa-obs" id="caixa-obs">
+                    O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-02" id="coluna-02">
+
+                    <div>
+                      <h6>Itens do pedido:</h6>
+                    </div>
+                    
+                    <div>
+                      <ul>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                      </ul>
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-03" id="coluna-03">
+
+                    <div>
+                      <h6>Endereço de entrega:</h6>
+                    </div>
+                   
+                    <div>
+                    Praça da Matriz, n° 50, Belo Horizonte - MG
+                    </div>
+
+                  </section>
+
+                  <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                  <div class="btn-hight" id="btn-hight">
+                    <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                    <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                    <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                  </div>
+
+                  <p>
+
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="accordion-list-item" id="item6">
+                <a class="accordion-link" href="#item6">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+
+                  <div class="titulo-pedido" id="titulo-pedido">
+                    <h4>Pedido 492389</h4>
+                  </div>
+
+                  <section class="coluna-01" id="coluna-01">
+
+                    <div>
+                      <h6>Observações:</h6>
+                    </div>
+                    
+                    <div class="caixa-obs" id="caixa-obs">
+                    O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-02" id="coluna-02">
+
+                    <div>
+                      <h6>Itens do pedido:</h6>
+                    </div>
+                    
+                    <div>
+                      <ul>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                      </ul>
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-03" id="coluna-03">
+
+                    <div>
+                      <h6>Endereço de entrega:</h6>
+                    </div>
+                   
+                    <div>
+                    Praça da Matriz, n° 50, Belo Horizonte - MG
+                    </div>
+
+                  </section>
+
+                  <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                  <div class="btn-hight" id="btn-hight">
+                    <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                    <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                    <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                  </div>
+
+                  <p>
+
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="accordion-list-item" id="item7">
+                <a class="accordion-link" href="#item7">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+
+                  <div class="titulo-pedido" id="titulo-pedido">
+                    <h4>Pedido 492389</h4>
+                  </div>
+
+                  <section class="coluna-01" id="coluna-01">
+
+                    <div>
+                      <h6>Observações:</h6>
+                    </div>
+                    
+                    <div class="caixa-obs" id="caixa-obs">
+                    O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-02" id="coluna-02">
+
+                    <div>
+                      <h6>Itens do pedido:</h6>
+                    </div>
+                    
+                    <div>
+                      <ul>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                      </ul>
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-03" id="coluna-03">
+
+                    <div>
+                      <h6>Endereço de entrega:</h6>
+                    </div>
+                   
+                    <div>
+                    Praça da Matriz, n° 50, Belo Horizonte - MG
+                    </div>
+
+                  </section>
+
+                  <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                  <div class="btn-hight" id="btn-hight">
+                    <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                    <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                    <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                  </div>
+
+                  <p>
+
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="accordion-list-item" id="item8">
+                <a class="accordion-link" href="#item8">
+                  <div class="lista-grid-pedidos">
+                    <div class="item-lista item-lista-1">492389</div>
+                    <div class="item-lista item-lista-2">23/03/2024</div>
+                    <div class="item-fornecedor item-lista item-lista-3">
+                      <div class="icon-fornecedor">
+                        <img src="./img/fornecedor1.png" alt="Bayer" />
+                      </div>
+                      <span id="nomeFornecedor" class="nome-fornecedor">
+                        Bayer AG
+                      </span>
+                    </div>
+                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
+                    <div class="item-lista item-lista-5">Enviado</div>
+                    <div class="item-lista item-lista-6">
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+
+                  <div class="titulo-pedido" id="titulo-pedido">
+                    <h4>Pedido 492389</h4>
+                  </div>
+
+                  <section class="coluna-01" id="coluna-01">
+
+                    <div>
+                      <h6>Observações:</h6>
+                    </div>
+                    
+                    <div class="caixa-obs" id="caixa-obs">
+                    O item 001 deve vir nas cores amarelho, vermelho, verde, rosa e azul.
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-02" id="coluna-02">
+
+                    <div>
+                      <h6>Itens do pedido:</h6>
+                    </div>
+                    
+                    <div>
+                      <ul>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                        <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+                      </ul>
+                    </div>
+
+                  </section>
+
+                  <section class="coluna-03" id="coluna-03">
+
+                    <div>
+                      <h6>Endereço de entrega:</h6>
+                    </div>
+                   
+                    <div>
+                    Praça da Matriz, n° 50, Belo Horizonte - MG
+                    </div>
+
+                  </section>
+
+                  <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+                  <div class="btn-hight" id="btn-hight">
+                    <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+                    <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+                    <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+                  </div>
+
+                  <p>
+
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </section>
+          <nav class="paginacao">
+            <ul class="lista-paginas">
+              <li><i class="fa-solid fa-angles-left"></i></li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li><i class="fa-solid fa-angles-right"></i></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <!-- Modal criar pedido -->
+    <div
+      class="modal fade"
+      id="criar-pedido"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Criar novo pedido
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="criar-pedido">
+            <form class="form-padrao formulario-pedido">
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Item" />
+                <span class="focus-border"></span>
+              </div>
+              <div class="qtd-item-pedido-input">
+                <input class="item-pedido-input" placeholder="Quantidade" />
+                <span class="focus-border"></span>
+              </div>
+              <button class="add-item-btn" type="button">Adicionar</button>
+              <div class="input-style-padrao input-style-lg">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Endereço de entrega"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Cidade" />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Estado" />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Prazo de entrega"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input class="item-pedido-input" placeholder="Observação" />
+                <span class="focus-border"></span>
+              </div>
+            </form>
+
+            <div class="itens-pedido">
+              <h5>Itens do pedido</h5>
+              <ul class="nome-itens">
+                <li>Nome</li>
+                <li>Quantidade</li>
+              </ul>
+
+              <ul id="lista-itens-pedido" class="lista-itens-pedido">
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+
+                <li class="itens-pedido-cadastrados">
+                  <div class="ipc-1">Item 1</div>
+                  <div class="ipc-1">50 unidades</div>
+                  <div class="item-close-icon">
+                    <i class="fa-solid fa-xmark"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="cadastrar-btn">
+              <button type="submit" class="cadastrar-pedido-btn">
+                Cadastrar novo pedido
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal enviar proposta-->
+    <div
+      class="modal fade"
+      id="enviar-proposta"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Criar proposta
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="criar-pedido">
+            <form class="form-padrao formulario-pedido">
+              <div class="input-style-padrao">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Valor"
+                  type="number"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao">
+                <input
+                  class="item-pedido-input"
+                  placeholder="Prazo de entrega"
+                  type="text"
+                />
+                <span class="focus-border"></span>
+              </div>
+              <div class="input-style-padrao input-style-lg">
+                <textarea
+                  class="item-pedido-input textarea-lg"
+                  placeholder="Observações"
+                  type="text"
+                ></textarea>
+                <span class="focus-border"></span>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="cadastrar-btn">
+              <button type="submit" class="cadastrar-pedido-btn">
+                Enviar proposta
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" id="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <p class="footer-empresa">&copy; Mercado do Fornecedor</p>
+          <a
+            href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github fa-2x"></i>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-licensa">Creative Commons - 2024</p>
+          <a href="#header">
+            <i class="fa-solid fa-angles-up fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -162,7 +162,10 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res);
+      .then((res) => {
+        localStorage.setItem("listaDePedidos", JSON.stringify(res));
+        return res;
+      });
     return response;
   }
 
@@ -182,6 +185,23 @@ class Api {
       .then((res) => res)
       .catch((error) => error);
 
+    return response;
+  }
+
+  static async listarCotacoesPorPedido(pedidoId) {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc&pedidoId=" +
+        pedidoId,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => res);
     return response;
   }
 }
