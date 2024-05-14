@@ -55,7 +55,7 @@ export async function listarPedidosPorCliente(id) {
       nomeUser.innerText = fornecedor[0].nome;
       valorPedido.innerText = `R$ ${pedido.valor}`;
     } else {
-      imgUser.src = "./img/empty-fornecedor.png";
+      imgUser.src = "./img/defaultUser.png";
       nomeUser.innerText = "Fornecedor não definido";
       valorPedido.innerText = "-";
     }
