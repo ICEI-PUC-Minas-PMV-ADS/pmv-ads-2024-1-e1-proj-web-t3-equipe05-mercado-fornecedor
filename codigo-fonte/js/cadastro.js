@@ -50,14 +50,16 @@ function cadastrarUsuario() {
   // objEndereco.complemento = complementoEnd;
   // objEndereco.numero = numeroEnd;
 
+  const defaultImg = "https://i.ibb.co/ydQxnbG/default-User.png";
+
   const objUser = {
     nome: nome,
     cnpj: cnpj,
     tipo: radioChecked,
-    segmento: null,
+    segmento: "outro",
     endereco: null,
     telefone: null,
-    imgUrl: null,
+    imgUrl: defaultImg,
     email: email,
     password: senha,
   };
