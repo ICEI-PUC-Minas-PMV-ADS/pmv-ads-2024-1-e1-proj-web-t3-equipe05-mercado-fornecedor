@@ -194,3 +194,34 @@ input:focus {
     max-width: 95vw;
   }
 }
+
+@media (max-width: 999px) {
+  .login-form-bg {
+    max-width: 50vw;
+    justify-content: center;
+  }
+
+  .login-form-section {
+    width: 80%;
+  }
+  .login-form {
+    width: 100%;
+  }
+  .login-img {
+    width: 0%;
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .login-form-bg {
+    max-width: 90vw;
+  }
+}
+
+@media (min-height: 1200px) {
+  .login-form-bg {
+    min-height: 40vh;
+  }
+}
