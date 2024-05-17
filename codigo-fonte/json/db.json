@@ -1,0 +1,95 @@
+{
+  "users": [
+    {
+      "email": "contato@acrilex.com",
+      "password": "$2a$10$xQzEp.lgSb5hziuMofLj0.T6ilDz.kxWzk.nIHqxUXtYkf67AnIgu",
+      "nome": "Acrilex",
+      "cnpj": "12.587.533/0001-09",
+      "tipo": "cliente",
+      "endereco": {
+        "logradouro": "Estrada Galvão Bueno",
+        "bairro": "Batistini",
+        "localidade": "São Bernardo do Campo",
+        "uf": "SP",
+        "complemento": "",
+        "numero": "5000"
+      },
+      "telefone": "1132945000",
+      "imgUrl": "https://i.ibb.co/vsYy4D5/f11.png",
+      "id": 1
+    },
+    {
+      "email": "contato@dhl.com",
+      "password": "$2a$10$o29pM8X/kk59wKKwPC6ft.szVkd7AZoks5Ui4sLXdnnk6h4oPKJE2",
+      "nome": "DHL",
+      "cnpj": "65.396.926/0001-93",
+      "tipo": "fornecedor",
+      "endereco": {
+        "logradouro": "Avenida Geraldo Rocha",
+        "bairro": "Chácaras Cotia",
+        "localidade": "Contagem",
+        "uf": "MG",
+        "complemento": "",
+        "numero": "548"
+      },
+      "telefone": "3131902000",
+      "imgUrl": "https://i.ibb.co/sJYN6yS/f2.png",
+      "id": 2
+    },
+    {
+      "email": "contato@usiminas.com",
+      "password": "$2a$10$q5ZFv9DPAOL5lqgaw/a4g.Tfdqx9c/OylXYlQEizA/PCGBb1Q7vna",
+      "nome": "Usiminas",
+      "cnpj": "29.846.402/0001-93",
+      "tipo": "cliente",
+      "endereco": {
+        "logradouro": "Avenida do Contorno",
+        "bairro": "Lourdes",
+        "localidade": "Belo Horizonte",
+        "uf": "MG",
+        "complemento": "",
+        "numero": "6594"
+      },
+      "telefone": "3132901000",
+      "imgUrl": "https://i.ibb.co/YcgyyCw/f1.png",
+      "id": 3
+    }
+  ],
+  "pedidos": [
+    {
+      "data": "6/5/2024",
+      "endereco": {
+        "logradouro": "Estrada Galvão Bueno",
+        "bairro": "Batistini",
+        "localidade": "São Bernardo do Campo",
+        "uf": "SP",
+        "complemento": "",
+        "numero": "5000"
+      },
+      "prazoDeEntrega": "30 dias corridos",
+      "observacao": "Devem ser efetuadas duas entregas com prazo de 1 semana entre elas",
+      "itensDoPedido": [
+        {
+          "nomeDoItem": "Pigmento amarelo",
+          "qtdDoItem": "5kg",
+          "idItem": "item-lista-id-0"
+        },
+        {
+          "nomeDoItem": "Pigmento vermelho",
+          "qtdDoItem": "5kg",
+          "idItem": "item-lista-id-1"
+        },
+        {
+          "nomeDoItem": "Pigmento azul",
+          "qtdDoItem": "5kg",
+          "idItem": "item-lista-id-2"
+        }
+      ],
+      "status": "em aberto",
+      "userId": 1,
+      "fornecedorId": null,
+      "id": 1
+    }
+  ],
+  "cotacoes": []
+}

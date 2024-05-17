@@ -1,4 +1,5 @@
 import Api from "./api.js";
+import db_json from "../json/db.json" with { type: "json" };
 
 //BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 // const btnCepCadastro = document.getElementById("buscar-btn-cep-cadastro");
@@ -64,6 +65,25 @@ function cadastrarUsuario() {
     password: senha,
   };
 
+  const storageDB = JSON.parse(localStorage.getItem("users"));
+  const filtraFornecedor = db_json.users.filter((user) => user.email == email)
+
+  if(!filtraFornecedor[0]) {
+    if(email !== '' && senha !== '') {
+      if(storageDB === null) {
+
+        db_json.users.push(objUser);
+        localStorage.setItem("users", JSON.stringify(db_json.users));
+      }
+      else {
+        db_json.users = storageDB;
+        db_json.users.push(objUser);
+        localStorage.setItem("users", JSON.stringify(db_json.users));
+      }
+    }
+  }
+  
+  console.log(db_json.users)
   Api.cadastrarUsuario(objUser);
 }
 
