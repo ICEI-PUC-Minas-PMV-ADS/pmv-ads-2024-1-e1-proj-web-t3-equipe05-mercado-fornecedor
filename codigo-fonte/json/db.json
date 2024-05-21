@@ -55,41 +55,6 @@
       "id": 3
     }
   ],
-  "pedidos": [
-    {
-      "data": "6/5/2024",
-      "endereco": {
-        "logradouro": "Estrada Galvão Bueno",
-        "bairro": "Batistini",
-        "localidade": "São Bernardo do Campo",
-        "uf": "SP",
-        "complemento": "",
-        "numero": "5000"
-      },
-      "prazoDeEntrega": "30 dias corridos",
-      "observacao": "Devem ser efetuadas duas entregas com prazo de 1 semana entre elas",
-      "itensDoPedido": [
-        {
-          "nomeDoItem": "Pigmento amarelo",
-          "qtdDoItem": "5kg",
-          "idItem": "item-lista-id-0"
-        },
-        {
-          "nomeDoItem": "Pigmento vermelho",
-          "qtdDoItem": "5kg",
-          "idItem": "item-lista-id-1"
-        },
-        {
-          "nomeDoItem": "Pigmento azul",
-          "qtdDoItem": "5kg",
-          "idItem": "item-lista-id-2"
-        }
-      ],
-      "status": "em aberto",
-      "userId": 1,
-      "fornecedorId": null,
-      "id": 1
-    }
-  ],
+  "pedidos": [],
   "cotacoes": []
 }

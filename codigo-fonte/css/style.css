@@ -124,6 +124,16 @@ header {
   color: #ffffff;
 }
 
+.user-navbar a:nth-child(1),
+.user-navbar a:nth-child(2) {
+  border-right: 4px solid #ffffff;
+}
+
+.user-navbar a:nth-child(2),
+.user-navbar a:nth-child(3) {
+  padding-left: 40px;
+}
+
 .user-navbar a span {
   transition: 0.5s;
 }
@@ -583,6 +593,403 @@ main {
 }
 
 /* FIM SEÇÃO FALE CONOSCO */
+
+/* PÁGINA MINHA CONTA */
+.minha-conta {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.minha-conta .main-container {
+  text-align: left;
+  justify-content: space-between;
+}
+
+.minha-conta__titulo {
+  width: 100%;
+}
+
+.minha-conta__subtitulo {
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  color: #231f20;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.minha-conta__sidebar {
+  width: 34%;
+}
+
+.minha-conta__sidebar-grid {
+  margin-top: 90px;
+}
+
+.minha-conta__user-info {
+  width: 100%;
+  background-image: linear-gradient(to bottom, #00395d, #363795);
+  gap: 10px;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.minha-conta__user-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 120px;
+  background-color: #eaf6f9;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: -60px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.minha-conta__user-logo:hover {
+  box-shadow: 0px 0px 15px rgba(72, 217, 236, 0.6);
+  transition: all 0.3s ease;
+}
+.minha-conta__user-logo img {
+  object-fit: contain;
+  width: 90%;
+}
+
+.minha-conta__user-detail {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+.minha-conta__user-title {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.minha-conta__user-title h4 {
+  font-size: 16px;
+  font-family: "Red Hat Display", sans-serif;
+  color: #ffffff;
+}
+
+.minha-conta__user-title h5 {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #91ebf5;
+}
+
+.minha-conta__user-options {
+  display: flex;
+  gap: 40px;
+}
+
+.minha-conta__user-options div p {
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+
+.minha-conta__user-options div {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.minha-conta__user-options div:hover {
+  color: #91ebf5;
+  transition: all 0.3s ease;
+}
+
+.minha-conta__user-menu {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+}
+.minha-conta__menu-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 60px;
+  padding-left: 20px;
+  border-radius: 5px;
+
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.minha-conta__menu-item--disabled {
+  background-color: #eaf6f9;
+  color: #00395d;
+}
+
+.minha-conta__menu-item--disabled:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-image: linear-gradient(to right, #00395d, #363795);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.minha-conta__menu-item--disabled:hover {
+  color: #fff;
+}
+.minha-conta__menu-item--disabled:hover:after {
+  left: 0;
+  width: 100%;
+}
+.minha-conta__menu-item--disabled:active {
+  top: 2px;
+}
+
+.minha-conta__menu-item--active {
+  background-image: linear-gradient(to right, #00395d, #363795);
+  color: #ffffff;
+}
+
+.minha-conta__menu-item--active:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #00b5e2;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.minha-conta__menu-item--active:hover {
+  color: #00395d;
+}
+.minha-conta__menu-item--active:hover:after {
+  left: 0;
+  width: 100%;
+}
+.minha-conta__menu-item--active:active {
+  top: 2px;
+}
+
+.minha-conta__conteudo {
+  margin-top: 82px;
+  width: 63%;
+}
+
+.minha-conta__titulo-conteudo {
+  color: #005c97;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #91ebf5;
+}
+
+.minha-conta__form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.minha-conta__input {
+  color: #005c97;
+  padding-left: 20px;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  margin-bottom: 10px;
+  background-color: #eaf6f9;
+  transition: all 0.3s ease;
+}
+
+.minha-conta__input:disabled {
+  color: #7ec9dc;
+  background-color: #d6eff5;
+}
+
+.busca-cep {
+  display: flex;
+  justify-content: space-between;
+  width: 49%;
+}
+
+.busca-cep-btn {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: #00b5e2;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  font-size: 14px;
+}
+
+.busca-cep-btn:hover {
+  background-color: #ff9e1b;
+  transition: all 0.5s ease;
+}
+
+.minha-conta__input-md {
+  width: 49.3%;
+}
+
+.minha-conta__input-cep {
+  width: 83.5%;
+}
+
+.minha-conta__input-sm {
+  width: 24%;
+}
+
+.minha-conta__form input::placeholder {
+  color: #97d8e9;
+}
+
+.minha-conta__form input:focus {
+  border: 2px solid #97d8e9;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.minha-conta__salvar-btn {
+  cursor: pointer;
+  height: 50px;
+  background-color: #ff9e1b;
+  border-radius: 5px;
+  border: none;
+  outline: unset;
+  box-sizing: border-box;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #603700;
+  transition: all 0.5s ease;
+}
+
+.minha-conta__salvar-btn:hover {
+  color: #ffffff;
+  background-color: #00b5e2;
+  transition: all 0.5s ease;
+}
+
+.minha-conta__pedidos {
+  margin-top: 30px;
+}
+
+.minha-conta__lista-pedidos {
+  margin-top: 20px;
+}
+
+.minha-conta__lista-pedidos-grid {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 15%;
+  align-items: center;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.minha-conta__lista-pedidos-item {
+  width: 100%;
+  background-color: #f9f9f9;
+  border-bottom: 1px dashed #c8e2e8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  animation: append-animate 0.15s linear;
+}
+
+.minha-conta__lista-pedidos-grid .item-lista {
+  color: #231f20;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#minha-conta__dados {
+  animation: tabAnimation 0.5s;
+}
+
+#minha-conta__estatisticas {
+  display: none;
+  animation: tabAnimation 0.5s;
+}
+
+@keyframes tabAnimation {
+  from {
+    margin-top: -30px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+.minha-conta__tabela-relatorio {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.minha-conta__tabela-relatorio tr {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 17% 31% 31% 17%;
+}
+
+.minha-conta__tabela-relatorio tr th {
+  background-color: #edfcff;
+  border-radius: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #00395d;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+}
+
+.minha-conta__tabela-relatorio tr td {
+  margin-top: 7px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #545a60;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 12px;
+}
+
+/* FIM DA PÁGINA MINHA CONTA */
 
 /* PÁGINA DE DASHBOARD */
 .container-centered {
@@ -1518,6 +1925,9 @@ footer {
 }
 
 @media (max-width: 1200px) {
+  .main-container {
+    width: 95%;
+  }
   .busca-itens {
     flex-wrap: wrap;
     gap: 20px;
@@ -1532,6 +1942,23 @@ footer {
 
   .modal-fornecedor .modal-fornecedor-content {
     max-width: 95vw;
+  }
+  .minha-conta__user-info {
+    padding: 20px;
+  }
+  .minha-conta__sidebar {
+    width: 30%;
+  }
+
+  .minha-conta__user-detail {
+    padding: 0;
+  }
+  .minha-conta__user-options {
+    justify-content: space-between;
+  }
+
+  .minha-conta__conteudo {
+    width: 68%;
   }
 }
 
