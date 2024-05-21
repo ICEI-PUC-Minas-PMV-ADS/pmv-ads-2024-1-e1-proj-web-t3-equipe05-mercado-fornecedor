@@ -56,10 +56,17 @@ function criarModal(fornecedor) {
   img.src = fornecedor.imgUrl;
   titleInfo.innerText = "Informações";
   enderecoTitle.innerText = "Endereço";
-  sectionParagraphEndereco1.innerText = `${fornecedor.endereco.logradouro}, nº ${fornecedor.endereco.numero} ${fornecedor.endereco.complemento}`;
-  sectionParagraphEndereco2.innerText = `${fornecedor.endereco.bairro} - ${fornecedor.endereco.localidade}/${fornecedor.endereco.uf}`;
-  cep.innerText = `CEP: ${fornecedor.endereco.cep}`;
-  telefone.innerText = `Tel.: ${fornecedor.telefone}`;
+
+  if (fornecedor.endereco !== null) {
+    sectionParagraphEndereco1.innerText = `${fornecedor.endereco.logradouro}, nº ${fornecedor.endereco.numero} ${fornecedor.endereco.complemento}`;
+    sectionParagraphEndereco2.innerText = `${fornecedor.endereco.bairro} - ${fornecedor.endereco.localidade}/${fornecedor.endereco.uf}`;
+    cep.innerText = `CEP: ${fornecedor.endereco.cep}`;
+    telefone.innerText = `Tel.: ${fornecedor.telefone}`;
+  } else {
+    sectionParagraphEndereco1.innerText = `Endereço não informado`;
+    telefone.innerText = `Telefone não informado`;
+  }
+
   cnpjTitle.innerText = "CNPJ";
   sectionParagraphCnpj.innerText = fornecedor.cnpj;
   emailTitle.innerText = "E-mail";
@@ -131,8 +138,13 @@ function criarModal(fornecedor) {
     dataPedido.classList.add("item-pedidos-fornecedor");
     statusPedido.classList.add("item-pedidos-fornecedor");
 
+    const dataFormatada = new Date(pedido.data);
+    const dia = dataFormatada.getDate();
+    const mes = dataFormatada.getMonth() + 1;
+    const ano = dataFormatada.getFullYear();
+
     numeroPedido.innerText = pedido.id;
-    dataPedido.innerText = pedido.data;
+    dataPedido.innerText = `${dia}/${mes}/${ano}`;
     statusPedido.innerText = pedido.status;
 
     itemListaFornecedor.append(numeroPedido, dataPedido, statusPedido);
@@ -267,7 +279,6 @@ export function filtrarFornecedores(fornecedores, meusPedidos) {
     }
   });
 
-  console.log(arrayPedidosDefinidos);
   const listaMeusFornecedores = [];
 
   fornecedores.forEach((fornecedor) => {

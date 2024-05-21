@@ -47,6 +47,53 @@ class Api {
     return response;
   }
 
+  static async editarUsuario(dadosUsuario, id) {
+    const response = await fetch(
+      `https://mercado-do-fornecedor-api.onrender.com/users/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+        body: JSON.stringify(dadosUsuario),
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        return res;
+      })
+      .catch((error) => error);
+    // let toastMessage;
+    // let toastBgColor;
+
+    // if (response == "Email already exists") {
+    //   toastMessage = "E-mail já cadastrado";
+    //   toastBgColor = "linear-gradient(to right, #ED213A, #93291E)";
+    // } else if (response == "Email and password are required") {
+    //   toastMessage = "Digite e-mail e senha";
+    //   toastBgColor = "linear-gradient(to right, #ED213A, #93291E)";
+    // } else {
+    //   toastMessage = "Usuário cadastrado com sucesso!";
+    //   toastBgColor = "linear-gradient(to right, #00F260, #0575E6)";
+    //   setTimeout(() => {
+    //     window.location = "./login.html";
+    //   }, 4000);
+    // }
+
+    // Toastify({
+    //   close: true,
+    //   // duration: 120000,
+    //   text: toastMessage,
+    //   className: "info",
+    //   style: {
+    //     background: toastBgColor,
+    //   },
+    // }).showToast();
+
+    return response;
+  }
+
   static async login(dadosDeLogin) {
     const response = await fetch(
       "https://mercado-do-fornecedor-api.onrender.com/login",

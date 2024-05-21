@@ -108,18 +108,21 @@ function criarPedidos() {
   const numEndereco = document.getElementById("add-numero-pedido").value;
   const prazo = document.getElementById("add-prazo-pedido").value;
   const obsPedido = document.getElementById("add-obs-pedido").value;
-  const timeStamp = new Date();
-  const dia = timeStamp.getDate();
-  const ano = timeStamp.getFullYear();
-  const mes = timeStamp.getMonth() + 1;
+  let timeStamp = new Date();
+  // const dia = timeStamp.getDate();
+  // const ano = timeStamp.getFullYear();
+  // const mes = timeStamp.getMonth() + 1;
 
-  const data = `${dia}/${mes}/${ano}`;
+  // const data = `${dia}/${mes}/${ano}`;
 
   objEndereco.complemento = complEndereco;
   objEndereco.numero = numEndereco;
 
+  var os = timeStamp.getTimezoneOffset();
+  timeStamp = new Date(timeStamp.getTime() - os * 60 * 1000);
+
   const objPedido = {
-    data: data,
+    data: timeStamp.toJSON(),
     endereco: objEndereco,
     prazoDeEntrega: prazo,
     observacao: obsPedido,

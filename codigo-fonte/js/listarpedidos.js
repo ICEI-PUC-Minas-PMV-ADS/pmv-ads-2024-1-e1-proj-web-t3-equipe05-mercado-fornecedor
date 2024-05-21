@@ -47,13 +47,22 @@ export async function listarPedidosPorCliente(id) {
 
     itemLink.href = "#pedido-id-" + pedido.id;
     numeroDoPedido.innerText = pedido.id;
-    dataDoPedido.innerText = pedido.data;
+
+    const data = new Date(pedido.data);
+    const dia = data.getDate();
+    const mes = data.getMonth() + 1;
+    const ano = data.getFullYear();
+    dataDoPedido.innerText = `${dia}/${mes}/${ano}`;
 
     if (pedido.fornecedorId !== null) {
       const fornecedor = await Api.listarUsuariosPorId(pedido.fornecedorId);
       imgUser.src = fornecedor[0].imgUrl;
       nomeUser.innerText = fornecedor[0].nome;
-      valorPedido.innerText = `R$ ${pedido.valor}`;
+      const valor = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(pedido.valor);
+      valorPedido.innerText = valor;
     } else {
       imgUser.src = "./img/defaultUser.png";
       nomeUser.innerText = "Fornecedor não definido";
