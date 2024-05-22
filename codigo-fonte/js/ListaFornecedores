@@ -36,41 +36,19 @@ function listarFornecedores() {
 
 
 listarFornecedores () 
-
-var fornecedores = [
-      {
-          "id": 1,
-          "nome": "Leanne Graham",
-          "cnpj": "30.091.596/0001-43"
-          "cidade": "Belo Horizonte",
-          "uf": "SP",
-          "email": "Sincere@april.biz",
-          "telefone": "1-770-736-8031",
-      },
-      {
-          "id": 2,
-          "nome": "Ervin Howell",
-          "cnpj": "30.091.596/0001-43"
-          "cidade": "Betim",
-          "uf": "RJ",
-          "email": "Shanna@melissa.tv",
-          "telefone": "010-692-6593",
-        },
-        ];
-        
-            var btnbtnoutlineprimary = document.getElementById("btnbtn-outline-primary");
-            btnBuscar.addEventListener("click", function() {
-            var busca = document.getElementById("busca-fornecedor").value;
-            var listarFornecedores = document.getElementById("lista-fornecedores");
-            listaFornecedores.innerHTML = ""; //Limpa a lista antes de adicionar novos itens
-            
-            for(var i = 0; i < fornecedores.length; i++) {
-              var fornecedor = fornecedores[i];
-              if(fornecedor.nome.indexOf(busca) >= 0) { //Verifica se o nome do fornecedor contém a busca
-                var li = document.createElement("li");
-                li.innerHTML = fornecedor.nome + " - " + fornecedor.endereco + " - " + fornecedor.telefone;
-                listaFornecedores.appendChild(li); //Adiciona o item na lista
-              }
-            }
-          });
-          ```
+fetch('fornecedores.json')
+    .then(response => response.json())
+    .then(data => {
+      const fornecedores = data.fornecedores;
+      const listaFornecedores = document.createElement('ul');
+      for (let i = 0; i < fornecedores.length; i++) {
+        const itemLista = document.createElement('li');
+        const textoItem = document.createTextNode(fornecedores[i].nome + ' - ' +
+        fornecedores[i].telefone + ' - ' +
+        fornecedores[i].email);
+        itemLista.appendChild(textoItem);
+        listaFornecedores.appendChild(itemLista);
+      }
+      document.getElementById('lista-fornecedores').appendChild(listaFornecedores);
+    });
+}
