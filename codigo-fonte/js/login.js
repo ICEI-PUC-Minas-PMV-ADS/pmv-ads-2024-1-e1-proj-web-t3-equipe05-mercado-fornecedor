@@ -1,12 +1,14 @@
 import Api from "./api.js";
+// import { geraPedidos } from "./listarpedidos.js";
 
 const objLogin = {
-  email: "contato@usiminas.com",
+  email: "contato@acrilex.com",
   password: "123456",
 };
 
 export async function logUser() {
   const dados = await Api.login(objLogin);
+  localStorage.setItem("UserLogin", JSON.stringify(objLogin));
 
   const userData = JSON.parse(localStorage.getItem("User"));
 
@@ -20,6 +22,9 @@ export async function logUser() {
 
   minhaConta.append(minhaContaSpan);
   userNavbar.append(minhaConta);
+  console.log(dados);
+
+  // geraPedidos();
 }
 
 logUser();

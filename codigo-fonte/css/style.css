@@ -937,7 +937,8 @@ input::-webkit-inner-spin-button {
   animation: tabAnimation 0.5s;
 }
 
-#minha-conta__estatisticas {
+#minha-conta__estatisticas,
+#minha-conta__notificacoes {
   display: none;
   animation: tabAnimation 0.5s;
 }
@@ -951,6 +952,18 @@ input::-webkit-inner-spin-button {
     margin-top: 0;
     opacity: 1;
   }
+}
+
+.minha-conta__relatorio-btn {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.minha-conta__dropdown .btn {
+  width: 10vw;
+  height: 50px;
 }
 
 .minha-conta__tabela-relatorio {
@@ -1694,6 +1707,7 @@ input::-webkit-inner-spin-button {
   border-radius: 5px;
   height: 40px;
   padding-left: 10px;
+  margin-bottom: 10px;
 }
 .equipe {
   background-color: #00395d;
