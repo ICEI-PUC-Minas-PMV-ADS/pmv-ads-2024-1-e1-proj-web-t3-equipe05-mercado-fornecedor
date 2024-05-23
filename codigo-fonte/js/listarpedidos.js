@@ -1,13 +1,16 @@
 import Api from "./api.js";
 
 const userData = JSON.parse(localStorage.getItem("User"));
+const pedidosLista = await Api.filtrarPedidosPorUser(userData.id);
+const pedidosPaginados = [];
 
-export async function listarPedidosPorCliente(id) {
-  const pedidos = await Api.filtrarPedidosPorUser(id);
+export async function listarPedidosPorCliente(pedidos) {
+  const listaPedidos = document.getElementById("lista-de-pedidos-user");
+  while (listaPedidos.firstChild) {
+    listaPedidos.removeChild(listaPedidos.firstChild);
+  }
 
   for (const pedido of pedidos) {
-    const listaPedidos = document.getElementById("lista-de-pedidos-user");
-
     const item = document.createElement("div");
     const itemLink = document.createElement("a");
     const gridPedido = document.createElement("div");
@@ -93,4 +96,75 @@ export async function listarPedidosPorCliente(id) {
   }
 }
 
-listarPedidosPorCliente(userData.id);
+function paginacaoPedidos(pedidos) {
+  // Paginação de pedidos usando a Api
+  // let i = 1;
+  // let pedidos = pedidosLista;
+
+  // while (pedidos.length !== 0) {
+  //   pedidos = await Api.listarPedidosPaginados(i);
+  //   pedidosPaginados.push(pedidos);
+
+  //   i++;
+  // }
+  // pedidosPaginados.pop();
+
+  // Paginação de pedidos manualmente
+  let i = 0;
+  let arr = [];
+  pedidosPaginados.length = 0;
+
+  for (i = 0; i < pedidos.length; i++) {
+    if (i % 10 == 0 && i !== 0) {
+      pedidosPaginados.push(arr);
+      arr = [];
+    }
+    arr.push(pedidos[i]);
+  }
+
+  if (arr.length !== 0) {
+    pedidosPaginados.push(arr);
+  }
+
+  return pedidosPaginados;
+}
+
+export function geraPedidos(pedidos) {
+  console.log(pedidos);
+  const listaDePaginas = document.getElementById("lista-paginas");
+
+  while (listaDePaginas.firstChild) {
+    listaDePaginas.removeChild(listaDePaginas.firstChild);
+  }
+
+  paginacaoPedidos(pedidos);
+
+  listarPedidosPorCliente(pedidosPaginados[0]);
+
+  if (pedidosPaginados.length > 1) {
+    const liBack = document.createElement("li");
+    const back = document.createElement("i");
+    back.classList.add("fa-solid", "fa-angles-left");
+    liBack.append(back);
+    listaDePaginas.append(liBack);
+
+    for (let i = 0; i < pedidosPaginados.length; i++) {
+      const li = document.createElement("li");
+      li.setAttribute("id", "pag-id-" + (i + 1));
+      li.innerText = `${i + 1}`;
+      listaDePaginas.append(li);
+
+      li.addEventListener("click", (e) => {
+        listarPedidosPorCliente(pedidosPaginados[i]);
+      });
+    }
+
+    const liForward = document.createElement("li");
+    const forward = document.createElement("i");
+    forward.classList.add("fa-solid", "fa-angles-right");
+    liForward.append(forward);
+    listaDePaginas.append(liForward);
+  }
+}
+
+geraPedidos(userData.pedidos.reverse());

@@ -1,12 +1,12 @@
 import Api from "./api.js";
 
-const listaDePedidos = JSON.parse(localStorage.getItem("listaDePedidos"));
 const user = JSON.parse(localStorage.getItem("User"));
 const verPedidos = document.getElementById("visualizar-pedidos");
 const meusFornecedores = document.getElementById("meus-fornecedores");
 const salvarBtn = document.getElementById("minha-conta__salvar-btn");
 const editarDadosBtn = document.getElementById("editar-dados");
 const estatisticasBtn = document.getElementById("estatisticas");
+const notificacoesBtn = document.getElementById("notificacoes");
 
 // BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 const btnCepCadastro = document.getElementById("buscar-btn-cep-cadastro");
@@ -128,13 +128,11 @@ function editarDadosDoUsuario() {
   if (senha !== "") objUser.password = senha;
 
   Api.editarUsuario(objUser, user.id);
-
-  // window.location.reload();
 }
 
 function listarPedidosEmAberto() {
-  const pedidosEmAberto = listaDePedidos.filter(
-    (pedido) => pedido.userId === user.id && pedido.status === "em aberto"
+  const pedidosEmAberto = user.pedidos.filter(
+    (pedido) => pedido.status === "em aberto"
   );
 
   pedidosEmAberto.forEach((pedido) => {
@@ -196,12 +194,23 @@ function listarPedidosEmAberto() {
   });
 }
 
-function listarConteudo(e, openTab, closedTab, activeBtn, disabledBtn) {
-  closedTab.style.display = "none";
+function listarConteudo(
+  e,
+  openTab,
+  closedTab1,
+  closedTab2,
+  activeBtn,
+  disabledBtn1,
+  disabledBtn2
+) {
+  closedTab1.style.display = "none";
+  closedTab2.style.display = "none";
   openTab.style.display = "block";
 
   activeBtn.className = "minha-conta__menu-item minha-conta__menu-item--active";
-  disabledBtn.className =
+  disabledBtn1.className =
+    "minha-conta__menu-item minha-conta__menu-item--disabled";
+  disabledBtn2.className =
     "minha-conta__menu-item minha-conta__menu-item--disabled";
 }
 
@@ -227,7 +236,7 @@ function filtrarPedidosAnuais(anoAtual) {
     let pedidosFinalizados = 0;
     let pedidosEmAberto = 0;
     let valorTotal = 0;
-    const pedidosDoMes = listaDePedidos.filter((pedido) => {
+    const pedidosDoMes = user.pedidos.filter((pedido) => {
       const dataDoPedido = new Date(pedido.data);
       return (
         dataDoPedido.getMonth() == i && dataDoPedido.getFullYear() == anoAtual
@@ -258,15 +267,16 @@ function filtrarPedidosAnuais(anoAtual) {
   return pedidosPorMes;
 }
 
-function listarTabelaPedidosPorMes(anoAtual) {
-  const pedidosPorMes = filtrarPedidosAnuais(anoAtual);
+function listarTabelaPedidosPorMes(ano) {
+  const pedidosPorMes = filtrarPedidosAnuais(ano);
   const meses = Object.values(pedidosPorMes).reverse();
+  const table = document.getElementById("minha-conta__table-custo");
+
+  while (table.firstChild) {
+    table.removeChild(table.firstChild);
+  }
 
   meses.forEach((mes) => {
-    const ano = new Date().getFullYear();
-
-    const table = document.getElementById("minha-conta__table-custo");
-
     const row = document.createElement("tr");
     const colunaMes = document.createElement("td");
     const colunaFinalizados = document.createElement("td");
@@ -278,7 +288,7 @@ function listarTabelaPedidosPorMes(anoAtual) {
       currency: "BRL",
     }).format(mes.total);
 
-    colunaMes.innerText = `${mes.mes}/${anoAtual}`;
+    colunaMes.innerText = `${mes.mes}/${ano}`;
     colunaFinalizados.innerText = `${mes.pedidosFinalizados} pedidos`;
     colunaAbertos.innerText = `${mes.pedidosEmAberto} pedidos`;
     colunaTotal.innerText = valorTotal;
@@ -288,22 +298,116 @@ function listarTabelaPedidosPorMes(anoAtual) {
   });
 }
 
+function filtrarAnosDosPedidos() {
+  const arrDatas = [];
+
+  user.pedidos.forEach((pedido) => {
+    const dataDoPedido = new Date(pedido.data);
+    arrDatas.push(dataDoPedido.getFullYear());
+  });
+
+  return [...new Set(arrDatas)];
+}
+
+function filtrarPedidosPorAno() {
+  const arrDatas = filtrarAnosDosPedidos();
+  const listaDeCategorias = document.getElementById(
+    "minha-conta__dropdown-list"
+  );
+
+  arrDatas.forEach((ano) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.classList.add("dropdown-item");
+    a.href = "#";
+    a.innerText = ano;
+    a.value = ano;
+
+    li.appendChild(a);
+    listaDeCategorias.appendChild(li);
+
+    li.addEventListener("click", (e) => {
+      listarTabelaPedidosPorMes(a.value);
+    });
+  });
+}
+
+function criarGraficoLinhas() {
+  const ctx = document.getElementById("myChart");
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [
+        {
+          label: "# of Votes",
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+}
+
 salvarBtn.addEventListener("click", (e) => {
   editarDadosDoUsuario();
 });
 
 editarDadosBtn.addEventListener("click", (e) => {
   const openTab = document.getElementById("minha-conta__dados");
-  const closedTab = document.getElementById("minha-conta__estatisticas");
+  const closedTab1 = document.getElementById("minha-conta__estatisticas");
+  const closedTab2 = document.getElementById("minha-conta__notificacoes");
 
-  listarConteudo(e, openTab, closedTab, editarDadosBtn, estatisticasBtn);
+  listarConteudo(
+    e,
+    openTab,
+    closedTab1,
+    closedTab2,
+    editarDadosBtn,
+    notificacoesBtn,
+    estatisticasBtn
+  );
 });
 
 estatisticasBtn.addEventListener("click", (e) => {
   const openTab = document.getElementById("minha-conta__estatisticas");
-  const closedTab = document.getElementById("minha-conta__dados");
+  const closedTab1 = document.getElementById("minha-conta__dados");
+  const closedTab2 = document.getElementById("minha-conta__notificacoes");
 
-  listarConteudo(e, openTab, closedTab, estatisticasBtn, editarDadosBtn);
+  listarConteudo(
+    e,
+    openTab,
+    closedTab1,
+    closedTab2,
+    estatisticasBtn,
+    notificacoesBtn,
+    editarDadosBtn
+  );
+});
+
+notificacoesBtn.addEventListener("click", (e) => {
+  const openTab = document.getElementById("minha-conta__notificacoes");
+  const closedTab1 = document.getElementById("minha-conta__dados");
+  const closedTab2 = document.getElementById("minha-conta__estatisticas");
+
+  listarConteudo(
+    e,
+    openTab,
+    closedTab1,
+    closedTab2,
+    notificacoesBtn,
+    estatisticasBtn,
+    editarDadosBtn
+  );
 });
 
 meusFornecedores.addEventListener("click", (e) => {
@@ -324,4 +428,7 @@ verPedidos.addEventListener("click", (e) => {
 
 exibirDadosDoUsuario();
 listarPedidosEmAberto();
-listarTabelaPedidosPorMes(2024);
+filtrarPedidosPorAno();
+const currentYear = new Date().getFullYear();
+listarTabelaPedidosPorMes(currentYear);
+criarGraficoLinhas();

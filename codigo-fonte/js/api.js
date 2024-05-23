@@ -12,7 +12,6 @@ class Api {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         return res;
       })
       .catch((error) => error);
@@ -64,32 +63,16 @@ class Api {
         return res;
       })
       .catch((error) => error);
-    // let toastMessage;
-    // let toastBgColor;
 
-    // if (response == "Email already exists") {
-    //   toastMessage = "E-mail já cadastrado";
-    //   toastBgColor = "linear-gradient(to right, #ED213A, #93291E)";
-    // } else if (response == "Email and password are required") {
-    //   toastMessage = "Digite e-mail e senha";
-    //   toastBgColor = "linear-gradient(to right, #ED213A, #93291E)";
-    // } else {
-    //   toastMessage = "Usuário cadastrado com sucesso!";
-    //   toastBgColor = "linear-gradient(to right, #00F260, #0575E6)";
-    //   setTimeout(() => {
-    //     window.location = "./login.html";
-    //   }, 4000);
-    // }
-
-    // Toastify({
-    //   close: true,
-    //   // duration: 120000,
-    //   text: toastMessage,
-    //   className: "info",
-    //   style: {
-    //     background: toastBgColor,
-    //   },
-    // }).showToast();
+    Toastify({
+      close: true,
+      // duration: 120000,
+      text: "Usuário editado com sucesso!",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00F260, #0575E6)",
+      },
+    }).showToast();
 
     return response;
   }
@@ -146,7 +129,29 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res);
+      .then((res) => {
+        localStorage.setItem("Fornecedores", JSON.stringify(res));
+        return res;
+      });
+
+    return response;
+  }
+
+  static async listarClientes() {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/users?tipo=cliente",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        localStorage.setItem("Clientes", JSON.stringify(res));
+        return res;
+      });
 
     return response;
   }
@@ -190,6 +195,35 @@ class Api {
           return 400;
         } else {
           console.log(res);
+        }
+      });
+
+    return response;
+  }
+
+  static async listarPedidosPaginados(page) {
+    const response = await fetch(
+      `https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc&_page=${page}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+      }
+    )
+      .then((res) => {
+        if (res.status != 200) {
+          return res.status;
+        } else {
+          return res.json();
+        }
+      })
+      .then((res) => {
+        if (typeof res == "number") {
+          return 400;
+        } else {
+          return res;
         }
       });
 

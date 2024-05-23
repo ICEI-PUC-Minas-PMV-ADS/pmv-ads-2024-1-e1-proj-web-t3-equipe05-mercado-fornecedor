@@ -1,5 +1,5 @@
 import Api from "./api.js";
-import db_json from "../json/db.json" with { type: "json" };
+import db_json from "../json/db.json"  with { type: "json" };
 
 //BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 // const btnCepCadastro = document.getElementById("buscar-btn-cep-cadastro");
@@ -51,42 +51,48 @@ function cadastrarUsuario() {
   // objEndereco.complemento = complementoEnd;
   // objEndereco.numero = numeroEnd;
 
-  const defaultImg = "https://i.ibb.co/ydQxnbG/default-User.png";
+  const defaultImg = "https://i.postimg.cc/jjmBPG1M/default-User.png";
 
   const objUser = {
     nome: nome,
     cnpj: cnpj,
     tipo: radioChecked,
-    segmento: "outro",
+    segmento: "Outro",
     endereco: null,
     telefone: null,
     imgUrl: defaultImg,
     email: email,
     password: senha,
+    pedidos: [],
   };
 
-  const storageDB = JSON.parse(localStorage.getItem("users"));
-  const filtraFornecedor = db_json.users.filter((user) => user.email == email)
+  let storageDB = JSON.parse(localStorage.getItem("Users"));
+  const filtraFornecedor = db_json.users.filter((user) => user.email == email);
 
-  if(!filtraFornecedor[0]) {
-    if(email !== '' && senha !== '') {
-      if(storageDB === null) {
+  if (storageDB === null) {
+    localStorage.setItem("Users", JSON.stringify(db_json.users));
+    storageDB = JSON.parse(localStorage.getItem("Users"));
+  }
 
-        db_json.users.push(objUser);
-        localStorage.setItem("users", JSON.stringify(db_json.users));
-      }
-      else {
-        db_json.users = storageDB;
-        db_json.users.push(objUser);
-        localStorage.setItem("users", JSON.stringify(db_json.users));
-      }
+  console.log(filtraFornecedor)
+
+  Api.cadastrarUsuario(objUser);
+
+  if (filtraFornecedor.length === 0) {
+    let id;
+
+    let p = storageDB.length;
+
+    if (email !== "" && senha !== "") {
+      db_json.users = storageDB;
+      id = db_json.users[p - 1].id + 1;
+      objUser.id = id;
+
+      db_json.users.push(objUser);
+      localStorage.setItem("Users", JSON.stringify(db_json.users));
     }
   }
-  
-  console.log(db_json.users)
-  Api.cadastrarUsuario(objUser);
 }
-
 const btnCadastrarUser = document.getElementById("cadastrar-user-btn");
 
 btnCadastrarUser.addEventListener("click", (e) => {

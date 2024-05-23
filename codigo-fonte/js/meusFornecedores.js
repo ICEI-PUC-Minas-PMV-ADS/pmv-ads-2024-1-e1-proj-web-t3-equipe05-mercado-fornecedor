@@ -1,4 +1,6 @@
-const listaF = JSON.parse(localStorage.getItem("fornecedores"));
+const userOrders = JSON.parse(localStorage.getItem("User")).pedidos;
+
+const listaF = JSON.parse(localStorage.getItem("Users"));
 const meusP = JSON.parse(localStorage.getItem("listaDePedidos"));
 const arrayPedidosDefinidos = [];
 
@@ -123,11 +125,19 @@ function criarModal(fornecedor) {
   listaFornecedor.classList.add("lista-fornecedor");
 
   const arrMeusPedidos = [];
-  arrayPedidosDefinidos.forEach((pedido) => {
-    if (pedido.fornecedorId === fornecedor.id) arrMeusPedidos.push(pedido);
-  });
 
-  arrMeusPedidos.forEach((pedido) => {
+  userOrders.forEach((pedido) => {
+    if (pedido.fornecedorId === fornecedor.id) {
+      arrMeusPedidos.push(pedido);
+    }
+  });
+  // arrayPedidosDefinidos.forEach((pedido) => {
+  //   if (pedido.fornecedorId === fornecedor.id) arrMeusPedidos.push(pedido);
+  // });
+
+  for (let i = 0; i < 10; i++) {
+    if (i >= arrMeusPedidos.length) break;
+
     const itemListaFornecedor = document.createElement("li");
     const numeroPedido = document.createElement("div");
     const dataPedido = document.createElement("div");
@@ -138,18 +148,42 @@ function criarModal(fornecedor) {
     dataPedido.classList.add("item-pedidos-fornecedor");
     statusPedido.classList.add("item-pedidos-fornecedor");
 
-    const dataFormatada = new Date(pedido.data);
+    const dataFormatada = new Date(arrMeusPedidos[i].data);
     const dia = dataFormatada.getDate();
     const mes = dataFormatada.getMonth() + 1;
     const ano = dataFormatada.getFullYear();
 
-    numeroPedido.innerText = pedido.id;
+    numeroPedido.innerText = arrMeusPedidos[i].id;
     dataPedido.innerText = `${dia}/${mes}/${ano}`;
-    statusPedido.innerText = pedido.status;
+    statusPedido.innerText = arrMeusPedidos[i].status;
 
     itemListaFornecedor.append(numeroPedido, dataPedido, statusPedido);
     listaFornecedor.append(itemListaFornecedor);
-  });
+  }
+
+  // arrMeusPedidos.forEach((pedido) => {
+  //   const itemListaFornecedor = document.createElement("li");
+  //   const numeroPedido = document.createElement("div");
+  //   const dataPedido = document.createElement("div");
+  //   const statusPedido = document.createElement("div");
+
+  //   itemListaFornecedor.classList.add("lista-pedidos-fornecedor");
+  //   numeroPedido.classList.add("item-pedidos-fornecedor");
+  //   dataPedido.classList.add("item-pedidos-fornecedor");
+  //   statusPedido.classList.add("item-pedidos-fornecedor");
+
+  //   const dataFormatada = new Date(pedido.data);
+  //   const dia = dataFormatada.getDate();
+  //   const mes = dataFormatada.getMonth() + 1;
+  //   const ano = dataFormatada.getFullYear();
+
+  //   numeroPedido.innerText = pedido.id;
+  //   dataPedido.innerText = `${dia}/${mes}/${ano}`;
+  //   statusPedido.innerText = pedido.status;
+
+  //   itemListaFornecedor.append(numeroPedido, dataPedido, statusPedido);
+  //   listaFornecedor.append(itemListaFornecedor);
+  // });
 
   pedidos.append(pedidosTitle, pedidosListaTitulos, listaFornecedor);
   modalBodyContainer.append(detalhes, pedidos);
@@ -268,29 +302,35 @@ function listarFornecedoresDoCliente(listaMeusFornecedores) {
   });
 }
 
-export function filtrarFornecedores(fornecedores, meusPedidos) {
+export function filtrarFornecedores(pedidos, userList) {
   const arrayFornecedores = [];
 
-  meusPedidos.forEach((pedido) => {
-    if (pedido.fornecedorId !== null) {
-      if (!arrayFornecedores.includes(pedido.fornecedorId))
-        arrayFornecedores.push(pedido.fornecedorId);
-      arrayPedidosDefinidos.push(pedido);
-    }
+  pedidos.forEach((pedido) => {
+    userList.forEach((user) => {
+      if (user.id === pedido.fornecedorId) arrayFornecedores.push(user);
+    });
   });
 
-  const listaMeusFornecedores = [];
+  // userList.forEach((pedido) => {
+  //   if (pedido.fornecedorId !== null) {
+  //     if (!arrayFornecedores.includes(pedido.fornecedorId))
+  //       arrayFornecedores.push(pedido.fornecedorId);
+  //     arrayPedidosDefinidos.push(pedido);
+  //   }
+  // });
 
-  fornecedores.forEach((fornecedor) => {
-    if (arrayFornecedores.includes(fornecedor.id)) {
-      listaMeusFornecedores.push(fornecedor);
-    }
-  });
+  // const listaMeusFornecedores = [];
 
-  return listaMeusFornecedores;
+  // pedidos.forEach((fornecedor) => {
+  //   if (arrayFornecedores.includes(fornecedor.id)) {
+  //     listaMeusFornecedores.push(fornecedor);
+  //   }
+  // });
+
+  return [...new Set(arrayFornecedores)];
 }
 
-const meusFornecedores = filtrarFornecedores(listaF, meusP);
+const meusFornecedores = filtrarFornecedores(userOrders, listaF);
 
 buscarFornecedoresDoCliente();
 filtrarFornecedoresPorCategoria(meusFornecedores);
