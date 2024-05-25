@@ -4,6 +4,80 @@ const userData = JSON.parse(localStorage.getItem("User"));
 const pedidosLista = await Api.filtrarPedidosPorUser(userData.id);
 const pedidosPaginados = [];
 
+async function listaDePedidosMobile(pedidos) {
+  const listaPedidosUser = document.getElementById(
+    "lista-de-pedidos-user-mobile"
+  );
+  pedidos.forEach((pedido) => {
+    const listaAccordion = document.createElement("div");
+    let imgUser;
+    let nomeUser;
+    let valorPedido;
+
+    listaAccordion.classList.add("accordion-list-item");
+    listaAccordion.setAttribute("id", "item-mobile-" + pedido.id);
+
+    const data = new Date(pedido.data);
+    const dia = data.getDate();
+    const mes = data.getMonth() + 1;
+    const ano = data.getFullYear();
+
+    if (pedido.fornecedorId !== null) {
+      const listaFornecedores = JSON.parse(localStorage.getItem("Users"));
+      const fornecedor = listaFornecedores.filter(
+        (fornecedor) => fornecedor.id === pedido.fornecedorId
+      );
+      imgUser = fornecedor[0].imgUrl;
+      nomeUser = fornecedor[0].nome;
+      const valor = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(pedido.valor);
+      valorPedido = valor;
+    } else {
+      imgUser = "./img/defaultUser.png";
+      nomeUser = "Indefinido";
+      valorPedido = "-";
+    }
+
+    listaAccordion.innerHTML = `
+      <a class="accordion-link" href="#item-mobile-${pedido.id}">
+      <div class="lista-pedidos-mobile-ul">
+        <ul class="lista-pedidos-mobile-grid">
+          <li class="lista-pedido-item-li">
+            <div>Número</div>
+            <div>${pedido.id}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Data</div>
+            <div>${dia}/${mes}/${ano}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Fornecedor</div>
+            <div class="fornecedor-detalhe">
+              <img src="${imgUser}" alt="${nomeUser}" />
+              <p>${nomeUser}</p>
+            </div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Valor</div>
+            <div>${valorPedido}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Status</div>
+            <div>${pedido.status}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div><button class="btn-mais">Ver mais</button></div>
+          </li>
+        </ul>
+      </div>
+    </a>`;
+
+    listaPedidosUser.append(listaAccordion);
+  });
+}
+
 export async function listarPedidosPorCliente(pedidos) {
   const listaPedidos = document.getElementById("lista-de-pedidos-user");
   while (listaPedidos.firstChild) {
@@ -68,7 +142,7 @@ export async function listarPedidosPorCliente(pedidos) {
       valorPedido.innerText = valor;
     } else {
       imgUser.src = "./img/defaultUser.png";
-      nomeUser.innerText = "Fornecedor não definido";
+      nomeUser.innerText = "Indefinido";
       valorPedido.innerText = "-";
     }
 
@@ -94,6 +168,8 @@ export async function listarPedidosPorCliente(pedidos) {
     item.appendChild(itemLink);
     listaPedidos.appendChild(item);
   }
+
+  listaDePedidosMobile(pedidos);
 }
 
 function paginacaoPedidos(pedidos) {
@@ -130,7 +206,6 @@ function paginacaoPedidos(pedidos) {
 }
 
 export function geraPedidos(pedidos) {
-  console.log(pedidos);
   const listaDePaginas = document.getElementById("lista-paginas");
 
   while (listaDePaginas.firstChild) {

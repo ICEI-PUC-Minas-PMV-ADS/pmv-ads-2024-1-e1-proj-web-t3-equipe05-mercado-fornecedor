@@ -1,48 +1,74 @@
 body {
   font-family: "Inter", sans-serif;
-  
 }
 
 h1 {
   font-family: "Red Hat Display", sans-serif;
   font-size: 40px;
-  font-weight:bold;
-  color: #00395D;
+  font-weight: bold;
+  color: #00395d;
   text-align: center;
-  padding-bottom:30px;
+  padding-bottom: 30px;
   padding-top: 40px;
 }
-.container-busca{
+.container-busca {
   width: 100%;
-  display:flex;
+  display: flex;
   gap: 10px;
   justify-content: center;
 }
-  .btn{
-    background: #E4F2F5;
-    border:none;
-    color: #98B9C1;
-    justify-content: left;
-  }
-  
-  .btn:hover{
-    background-color: #005C97;
-  }
-  .lista-de-fornecedores{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-    .card{
-    color: #00395D;
-    font-weight: bold;
-    }
-    .card-title{
-      font-weight: bold;
-    }
-    .dropdown{
-      justify-content: left;
+.btn {
+  padding: 0 20px;
+  background-color: #e4f2f5;
+  border: none;
+  color: #98b9c1;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    }
-  
+.btn:hover {
+  background-color: #005c97;
+}
+.lista-de-fornecedores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+.card {
+  color: #00395d;
+  font-weight: bold;
+}
+.card-title {
+  font-weight: bold;
+}
+.dropdown {
+  justify-content: left;
+}
+
+@media (max-width: 600px) {
+  .container-busca {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .form-control {
+    width: 68%;
+  }
+
+  .btn {
+    min-width: 85px;
+    width: 25%;
+  }
+
+  .dropdown .btn {
+    width: 100%;
+  }
+
+  .card-fornecedor {
+    min-width: 100%;
+  }
+}

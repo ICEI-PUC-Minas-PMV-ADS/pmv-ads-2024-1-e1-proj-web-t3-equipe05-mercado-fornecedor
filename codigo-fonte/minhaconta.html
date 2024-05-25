@@ -41,6 +41,111 @@
   </head>
 
   <body>
+    <!--INÍCIO DO MENU DE USUÁRIO-->
+    <div id="hiddenNav" class="hidden-navbar">
+      <div class="navbar-container">
+        <div id="user-navbar" class="user-navbar">
+          <a href="./cadastro.html"><span>Cadastrar</span></a>
+          <a href="./login.html"><span>Login</span></a>
+        </div>
+
+        <a href="javascript:void(0)" onclick="closeNav()">
+          <i class="fa-solid fa-xmark fa-3x"></i>
+        </a>
+      </div>
+    </div>
+
+    <!--FIM DO MENU DE USUÁRIO-->
+
+    <!-- INÍCIO DO CABEÇALHO -->
+    <header class="header" id="header">
+      <nav class="nav-bar">
+        <a href="./index.html">
+          <div class="logo"></div>
+        </a>
+        <!-- <div class="nav-list"> -->
+        <ul class="nav-ul">
+          <li class="nav-item">
+            <a href="./index.html#sobre" class="nav-link">Sobre o MF</a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#equipe" class="nav-link">Equipe</a>
+          </li>
+          <li class="nav-item">
+            <a href="./fornecedores.html" class="nav-link">Fornecedores</a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#fale-conosco" class="nav-link">Contato</a>
+          </li>
+          <li>
+            <div class="login-button">
+              <button class="buttom-login" id="buttom-login">
+                <a href="javascript:void(0)" onclick="openNav()"
+                  ><img src="./img/login-icon.png"
+                /></a>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <!-- </div> -->
+
+        <!-- INÍCIO MOBILE HAMBURGER MENU -->
+        <div class="navigation">
+          <div class="menuToggle"></div>
+          <ul class="menu">
+            <li>
+              <a href="./index.html#sobre" class="nav-link">
+                <span class="material-symbols-outlined"> lightbulb </span>
+                Sobre o MF
+              </a>
+            </li>
+            <li>
+              <a href="./index.html#equipe" class="nav-link">
+                <span class="material-symbols-outlined"> groups </span>
+                Equipe
+              </a>
+            </li>
+            <li>
+              <a href="./fornecedores.html" class="nav-link">
+                <span class="material-symbols-outlined"> diversity_2 </span>
+                Fornecedores
+              </a>
+            </li>
+            <li>
+              <a href="./index.html#fale-conosco" class="nav-link">
+                <span class="material-symbols-outlined"> contact_support </span>
+                Contato
+              </a>
+            </li>
+            <li>
+              <div class="menu-divider"></div>
+            </li>
+            <li>
+              <a href="./cadastro.html" class="nav-link">
+                <span class="material-symbols-outlined"> how_to_reg </span>
+                Cadastrar
+              </a>
+            </li>
+            <li>
+              <a href="./login.html" class="nav-link">
+                <span class="material-symbols-outlined"> input </span>
+                Login
+              </a>
+            </li>
+            <li id="minha-conta-hamburger">
+              <a href="./minhaconta.html" class="nav-link">
+                <span class="material-symbols-outlined"> account_circle </span>
+                Minha conta
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FIM MOBILE HAMBURGER MENU -->
+      </nav>
+    </header>
+    <!-- FIM DO CABEÇALHO -->
+
     <main>
       <section class="minha-conta">
         <div class="main-container">
@@ -58,12 +163,17 @@
                 ></div>
                 <section class="minha-conta__user-detail">
                   <div class="minha-conta__user-title">
-                    <h4 id="minha-conta__user-name">Hummer</h4>
-                    <h5 id="minha-conta__user-tipo">Fornecedor</h5>
+                    <h4 id="minha-conta__user-name"></h4>
+                    <h5 id="minha-conta__user-tipo"></h5>
                   </div>
 
                   <div class="minha-conta__user-options">
-                    <div id="editar-imagem" class="minha-conta__user-add-img">
+                    <div
+                      id="editar-imagem"
+                      data-bs-toggle="modal"
+                      data-bs-target="#enviar-imagem"
+                      class="minha-conta__user-add-img"
+                    >
                       <p>Editar imagem</p>
                       <i class="fa-regular fa-image fa-3x"></i>
                     </div>
@@ -348,7 +458,7 @@
                       <th>Mês</th>
                       <th>Pedidos finalizados</th>
                       <th>Pedidos em aberto</th>
-                      <th>Valor total</th>
+                      <th id="minha-conta__tabela-valor">Valor total</th>
                     </tr>
                   </thead>
                   <tbody id="minha-conta__table-custo">
@@ -391,6 +501,77 @@
         </div>
       </section>
     </main>
+
+    <!--Modal enviar imagem-->
+    <div
+      class="modal fade"
+      id="enviar-imagem"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Editar imagem
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="criar-pedido">
+            <form class="form-padrao formulario-pedido">
+              <div class="input-style-padrao input-style-lg">
+                <input
+                  id="input__editar-imagem"
+                  class="item-pedido-input"
+                  placeholder="Url da imagem"
+                  type="url"
+                />
+                <span class="focus-border"></span>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="cadastrar-btn">
+              <button
+                id="btn__editar-imagem"
+                type="submit"
+                class="cadastrar-pedido-btn"
+              >
+                Editar imagem
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <p class="footer-empresa">&copy; Mercado do Fornecedor</p>
+          <a
+            href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github fa-2x"></i>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-licensa">Creative Commons - 2024</p>
+          <a href="#header">
+            <i class="fa-solid fa-angles-up fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
@@ -401,6 +582,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <script src="./js/openMenu.js"></script>
     <script type="module" src="./js/minhaConta.js"></script>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>
