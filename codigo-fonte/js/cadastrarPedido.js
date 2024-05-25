@@ -1,5 +1,6 @@
 import Api from "./api.js";
-import { listarPedidosPorCliente } from "./listarpedidos.js";
+import { geraPedidos } from "./listarpedidos.js";
+import db from "../json/db.json" with {type: "json"};
 
 const userData = JSON.parse(localStorage.getItem("User"));
 
@@ -103,33 +104,47 @@ inputCepPedidos.addEventListener("click", (e) => {
 //CRIA PEDIDO E ENVIA ATRAVÉS DA API, SALVANDO OS DADOS NO SERVIDOR
 const btnCadastrar = document.getElementById("btn-cadastrar-pedido");
 
-function criarPedidos() {
+async function criarPedidos() {
   const complEndereco = document.getElementById("add-complemento-pedido").value;
   const numEndereco = document.getElementById("add-numero-pedido").value;
   const prazo = document.getElementById("add-prazo-pedido").value;
   const obsPedido = document.getElementById("add-obs-pedido").value;
-  const timeStamp = new Date();
-  const dia = timeStamp.getDate();
-  const ano = timeStamp.getFullYear();
-  const mes = timeStamp.getMonth() + 1;
+  let timeStamp = new Date();
+  // const dia = timeStamp.getDate();
+  // const ano = timeStamp.getFullYear();
+  // const mes = timeStamp.getMonth() + 1;
 
-  const data = `${dia}/${mes}/${ano}`;
+  // const data = `${dia}/${mes}/${ano}`;
 
   objEndereco.complemento = complEndereco;
   objEndereco.numero = numEndereco;
 
+  var os = timeStamp.getTimezoneOffset();
+  timeStamp = new Date(timeStamp.getTime() - os * 60 * 1000);
+
+  const pedido = userData.pedidos;
+  let id;
+  if (pedido.length !== 0) {
+    id = pedido[pedido.length - 1].id + 1;
+  }
+
   const objPedido = {
-    data: data,
+    id: id,
+    data: timeStamp.toJSON(),
     endereco: objEndereco,
     prazoDeEntrega: prazo,
     observacao: obsPedido,
     itensDoPedido: arrayItensPedido,
     status: "em aberto",
-    userId: userData.id,
     fornecedorId: null,
+    cotacoes: [],
+    valor: null,
   };
 
-  Api.cadastrarPedido(objPedido);
+  pedido.push(objPedido);
+  const meusPedidos = { pedidos: pedido };
+
+  await Api.editarUsuario(meusPedidos, userData.id);
 
   const listaPedidos = document.getElementById("lista-de-pedidos-user");
   let listaChild = listaPedidos.lastElementChild;
@@ -138,8 +153,21 @@ function criarPedidos() {
     listaChild = listaPedidos.lastElementChild;
   }
 
+  let updatedUser = JSON.parse(localStorage.getItem("User"));
+  db.users.forEach((user) => {
+    if(user.email == userData.email) {
+      // user.pedidos.push(objPedido)
+      updatedUser.pedidos.push(objPedido)
+
+      localStorage.setItem("User", JSON.stringify(updatedUser))
+    }
+  })
+
+  
+  console.log(updatedUser.pedidos.reverse())
+
   setTimeout(() => {
-    listarPedidosPorCliente(userData.id);
+    geraPedidos(updatedUser.pedidos);
   }, 250);
 }
 

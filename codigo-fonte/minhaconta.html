@@ -1,97 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>minha conta</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado Do Fornecedor - Minha Conta</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel= "stylesheet" href="./css/minhaconta.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- <link rel="stylesheet" href="./css/minhaconta.css" /> -->
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/1e3fdf6601.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
 
-    
-</head>
-<h1 class="titulo1">Minha Conta</h1> 
-     <p>Altere informações da sua conta, adicione novos dados ou apague o seu perfil de usuário</p><br><br><br>
+  <body>
+    <!--INÍCIO DO MENU DE USUÁRIO-->
+    <div id="hiddenNav" class="hidden-navbar">
+      <div class="navbar-container">
+        <div id="user-navbar" class="user-navbar">
+          <a href="./cadastro.html"><span>Cadastrar</span></a>
+          <a href="./login.html"><span>Login</span></a>
+        </div>
 
+        <a href="javascript:void(0)" onclick="closeNav()">
+          <i class="fa-solid fa-xmark fa-3x"></i>
+        </a>
+      </div>
+    </div>
 
-       
-<body>
-    <main class="main-container">
-        <aside>
-            <div class="container">
-                <div class="circulo">
-                    <img src="./img/f1.png" alt="">
-                
+    <!--FIM DO MENU DE USUÁRIO-->
+
+    <!-- INÍCIO DO CABEÇALHO -->
+    <header class="header" id="header">
+      <nav class="nav-bar">
+        <a href="./index.html">
+          <div class="logo"></div>
+        </a>
+        <!-- <div class="nav-list"> -->
+        <ul class="nav-ul">
+          <li class="nav-item">
+            <a href="./index.html#sobre" class="nav-link">Sobre o MF</a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#equipe" class="nav-link">Equipe</a>
+          </li>
+          <li class="nav-item">
+            <a href="./fornecedores.html" class="nav-link">Fornecedores</a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#fale-conosco" class="nav-link">Contato</a>
+          </li>
+          <li>
+            <div class="login-button">
+              <button class="buttom-login" id="buttom-login">
+                <a href="javascript:void(0)" onclick="openNav()"
+                  ><img src="./img/login-icon.png"
+                /></a>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <!-- </div> -->
+
+        <!-- INÍCIO MOBILE HAMBURGER MENU -->
+        <div class="navigation">
+          <div class="menuToggle"></div>
+          <ul class="menu">
+            <li>
+              <a href="./index.html#sobre" class="nav-link">
+                <span class="material-symbols-outlined"> lightbulb </span>
+                Sobre o MF
+              </a>
+            </li>
+            <li>
+              <a href="./index.html#equipe" class="nav-link">
+                <span class="material-symbols-outlined"> groups </span>
+                Equipe
+              </a>
+            </li>
+            <li>
+              <a href="./fornecedores.html" class="nav-link">
+                <span class="material-symbols-outlined"> diversity_2 </span>
+                Fornecedores
+              </a>
+            </li>
+            <li>
+              <a href="./index.html#fale-conosco" class="nav-link">
+                <span class="material-symbols-outlined"> contact_support </span>
+                Contato
+              </a>
+            </li>
+            <li>
+              <div class="menu-divider"></div>
+            </li>
+            <li>
+              <a href="./cadastro.html" class="nav-link">
+                <span class="material-symbols-outlined"> how_to_reg </span>
+                Cadastrar
+              </a>
+            </li>
+            <li>
+              <a href="./login.html" class="nav-link">
+                <span class="material-symbols-outlined"> input </span>
+                Login
+              </a>
+            </li>
+            <li id="minha-conta-hamburger">
+              <a href="./minhaconta.html" class="nav-link">
+                <span class="material-symbols-outlined"> account_circle </span>
+                Minha conta
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FIM MOBILE HAMBURGER MENU -->
+      </nav>
+    </header>
+    <!-- FIM DO CABEÇALHO -->
+
+    <main>
+      <section class="minha-conta">
+        <div class="main-container">
+          <h2 class="minha-conta__titulo">Minha Conta</h2>
+          <p class="minha-conta__subtitulo">
+            Altere informações da sua conta, adicione novos dados ou apague o
+            seu perfil de usuário
+          </p>
+          <aside class="minha-conta__sidebar">
+            <div class="minha-conta__sidebar-grid">
+              <section class="minha-conta__user-info">
+                <div
+                  id="minha-conta__user-logo"
+                  class="minha-conta__user-logo"
+                ></div>
+                <section class="minha-conta__user-detail">
+                  <div class="minha-conta__user-title">
+                    <h4 id="minha-conta__user-name"></h4>
+                    <h5 id="minha-conta__user-tipo"></h5>
+                  </div>
+
+                  <div class="minha-conta__user-options">
+                    <div
+                      id="editar-imagem"
+                      data-bs-toggle="modal"
+                      data-bs-target="#enviar-imagem"
+                      class="minha-conta__user-add-img"
+                    >
+                      <p>Editar imagem</p>
+                      <i class="fa-regular fa-image fa-3x"></i>
+                    </div>
+                    <div id="logout" class="minha-conta__user-logout">
+                      <p>Sair</p>
+                      <i class="fa-solid fa-arrow-right-from-bracket fa-3x"></i>
+                    </div>
+                    <div
+                      id="visualizar-pedidos"
+                      class="minha-conta__user-dashboard"
+                    >
+                      <p>Meus pedidos</p>
+                      <i class="fa-regular fa-window-restore fa-3x"></i>
+                    </div>
+                  </div>
+                </section>
+              </section>
+            </div>
+            <ul class="minha-conta__user-menu">
+              <li
+                id="editar-dados"
+                class="minha-conta__menu-item minha-conta__menu-item--active"
+              >
+                <span class="material-symbols-outlined"> edit_square </span>
+                <span>Editar meus dados</span>
+              </li>
+              <li
+                id="estatisticas"
+                class="minha-conta__menu-item minha-conta__menu-item--disabled"
+              >
+                <span class="material-symbols-outlined"> monitoring </span>
+                <span>Relatórios e estátisticas</span>
+              </li>
+              <li
+                id="notificacoes"
+                class="minha-conta__menu-item minha-conta__menu-item--disabled"
+              >
+                <span class="material-symbols-outlined"> notifications </span>
+                <span>Minhas notificações</span>
+              </li>
+              <li
+                id="meus-fornecedores"
+                class="minha-conta__menu-item minha-conta__menu-item--disabled"
+              >
+                <span class="material-symbols-outlined"> hub </span>
+                <span>Meus fornecedores</span>
+              </li>
+              <li
+                id="apagar-conta"
+                class="minha-conta__menu-item minha-conta__menu-item--disabled"
+              >
+                <span class="material-symbols-outlined"> delete </span>
+                <span>Apagar conta</span>
+              </li>
+            </ul>
+          </aside>
+          <section class="minha-conta__conteudo">
+            <section id="minha-conta__dados">
+              <h3 class="minha-conta__titulo-conteudo">Editar meu cadastro</h3>
+              <form id="minha-conta__form" class="minha-conta__form">
+                <input
+                  class="minha-conta__input minha-conta__input-md"
+                  id="minha-conta__nome"
+                  type="text"
+                  placeholder="Nome"
+                  disabled
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-md"
+                  id="minha-conta__cnpj"
+                  type="text"
+                  placeholder="CNPJ"
+                  disabled
+                />
+                <div class="busca-cep">
+                  <input
+                    class="minha-conta__input minha-conta__input-cep"
+                    id="minha-conta__cep"
+                    type="text"
+                    placeholder="CEP "
+                  />
+                  <button
+                    id="buscar-btn-cep-cadastro"
+                    class="busca-cep-btn"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
                 </div>
-            </div class=controle-de-dados-d-usuario> </div>
-            <form action="controle-de-dados-do-usuario"></form>
-            <div>
-        <ul>
-            <li class="controle-de-dados-do-usuario">Editar meus dados </li>
-            <li class="controle-de-dados-do-usuario">Minhas estátisticas </li>
-            <li class="controle-de-dados-do-usuario">Meus fornecedores </li>
-            <li class="controle-de-dados-do-usuario">Apagar conta </li>
-        
-        </aside>
-        <section class="dados-do-usuario">
-            
-            <form class="form-dados-do-usuario">
-        
-                <input type="text" placeholder="Nome">
-                <input type="text" placeholder="CNPJ">
-                <input type="text" placeholder="CEP ">
-                <input type="text" placeholder="Logradouro">
-                <input type="text" placeholder="Complemento">
-                <input type="text" placeholder="Bairro">
-                <input type="text" placeholder="Número">
-                <input type="text" placeholder="Cidade">
-                <input type="text" placeholder="Estado">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Senha ">
-                <button>Salvar informações</button>
-        </form>
-        <div class="titulo-dados-cadastrados"><h3> Dados Cadastrados </h3></div>
-        <ul class="lista-dados-cadastrados">
-            <li class="li-lista-dados-cadastrados">Nome</li>
-            <li class="li-lista-dados-cadastrados">CNPJ</li>
-            <li class="li-lista-dados-cadastrados">CEP</li>
-            <li class="li-lista-dados-cadastrados">logradouro</li>
-            <li class="li-lista-dados-cadastrados">Complemento</li>
-            <li class="li-lista-dados-cadastrados">Bairro</li>
-            <li class="li-lista-dados-cadastrados">Número</li>
-            <li class="li-lista-dados-cadastrados">Cidade</li>
-            <li class="li-lista-dados-cadastrados">Estado</li>
-            <li class="li-lista-dados-cadastrados">Email</li>
-            <li class="li-lista-dados-cadastrados">Senha</li>
-    
-        
-        </section>
-       
-    
+                <input
+                  class="minha-conta__input minha-conta__input-sm"
+                  id="logradouro"
+                  type="text"
+                  placeholder="Logradouro"
+                  disabled
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-sm"
+                  id="minha-conta__complemento"
+                  type="text"
+                  placeholder="Complemento"
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-sm"
+                  id="bairro"
+                  type="text"
+                  placeholder="Bairro"
+                  disabled
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-sm"
+                  id="minha-conta__numero"
+                  type="number"
+                  placeholder="Número"
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-sm"
+                  id="localidade"
+                  type="text"
+                  placeholder="Cidade"
+                  disabled
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-sm"
+                  id="uf"
+                  type="text"
+                  placeholder="Estado"
+                  disabled
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-md"
+                  id="minha-conta__segmento"
+                  type="text"
+                  placeholder="Segmento"
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-md"
+                  id="minha-conta__telefone"
+                  type="tel"
+                  placeholder="Telefone"
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-md"
+                  id="minha-conta__email"
+                  type="email"
+                  placeholder="Email"
+                />
+                <input
+                  class="minha-conta__input minha-conta__input-md"
+                  id="minha-conta__senha"
+                  type="password"
+                  placeholder="Senha "
+                />
+                <button
+                  id="minha-conta__salvar-btn"
+                  class="minha-conta__salvar-btn"
+                  type="button"
+                >
+                  Salvar informações
+                </button>
+              </form>
 
+              <section class="minha-conta__pedidos">
+                <h3 class="minha-conta__titulo-conteudo">Pedidos em aberto</h3>
+                <!-- <div class="titulo-dados-cadastrados">
+                  <h3>Dados Cadastrados</h3>
+                </div>
+                <ul class="lista-dados-cadastrados">
+                  <li class="li-lista-dados-cadastrados">Nome</li>
+                  <li class="li-lista-dados-cadastrados">CNPJ</li>
+                  <li class="li-lista-dados-cadastrados">CEP</li>
+                  <li class="li-lista-dados-cadastrados">logradouro</li>
+                  <li class="li-lista-dados-cadastrados">Complemento</li>
+                  <li class="li-lista-dados-cadastrados">Bairro</li>
+                  <li class="li-lista-dados-cadastrados">Número</li>
+                  <li class="li-lista-dados-cadastrados">Cidade</li>
+                  <li class="li-lista-dados-cadastrados">Estado</li>
+                  <li class="li-lista-dados-cadastrados">Email</li>
+                  <li class="li-lista-dados-cadastrados">Senha</li>
+                </ul> -->
+
+                <ul
+                  id="minha-conta__lista-pedidos"
+                  class="minha-conta__lista-pedidos"
+                >
+                  <!-- <li class="minha-conta__lista-pedidos-item">
+                    <div class="minha-conta__lista-pedidos-grid">
+                      <div id="numero-pedido" class="item-lista item-lista-1">
+                        492389
+                      </div>
+                      <div id="data-pedido" class="item-lista item-lista-2">
+                        23/03/2024
+                      </div>
+                      <div class="item-fornecedor item-lista item-lista-3">
+                        <div id="icon-fornecedor" class="icon-fornecedor">
+                          <img src="./img/fornecedor1.png" alt="Bayer" />
+                        </div>
+                        <span id="nome-fornecedor" class="nome-fornecedor">
+                          Bayer AG
+                        </span>
+                      </div>
+                      <div id="valor-pedido" class="item-lista item-lista-4">
+                        R$ 500.000,00
+                      </div>
+                      <div id="status-pedido" class="item-lista item-lista-5">
+                        Enviado
+                      </div>
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </li>
+
+                  <li class="minha-conta__lista-pedidos-item">
+                    <div class="minha-conta__lista-pedidos-grid">
+                      <div id="numero-pedido" class="item-lista item-lista-1">
+                        492389
+                      </div>
+                      <div id="data-pedido" class="item-lista item-lista-2">
+                        23/03/2024
+                      </div>
+                      <div class="item-fornecedor item-lista item-lista-3">
+                        <div id="icon-fornecedor" class="icon-fornecedor">
+                          <img src="./img/fornecedor1.png" alt="Bayer" />
+                        </div>
+                        <span id="nome-fornecedor" class="nome-fornecedor">
+                          Bayer AG
+                        </span>
+                      </div>
+                      <div id="valor-pedido" class="item-lista item-lista-4">
+                        R$ 500.000,00
+                      </div>
+                      <div id="status-pedido" class="item-lista item-lista-5">
+                        Enviado
+                      </div>
+                      <button class="btn-mais">Ver mais</button>
+                    </div>
+                  </li> -->
+                </ul>
+              </section>
+            </section>
+
+            <section id="minha-conta__estatisticas">
+              <div class="minha-conta__relatorio-anual">
+                <h3 class="minha-conta__titulo-conteudo">Relatório anual</h3>
+                <div class="minha-conta__relatorio-btn">
+                  <div class="dropdown minha-conta__dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Selecionar ano
+                    </button>
+                    <ul id="minha-conta__dropdown-list" class="dropdown-menu">
+                      <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Another action</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Something else here</a
+                        >
+                      </li> -->
+                    </ul>
+                  </div>
+
+                  <button
+                    id="exportar-table"
+                    class="minha-conta__salvar-btn"
+                    type="button"
+                  >
+                    Exportar tabela
+                  </button>
+                </div>
+
+                <table
+                  id="tabela-relatorio"
+                  class="minha-conta__tabela-relatorio"
+                >
+                  <thead>
+                    <tr>
+                      <th>Mês</th>
+                      <th>Pedidos finalizados</th>
+                      <th>Pedidos em aberto</th>
+                      <th id="minha-conta__tabela-valor">Valor total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="minha-conta__table-custo">
+                    <!-- <tr>
+                      <td>Maio/2024</td>
+                      <td>0 pedidos</td>
+                      <td>3 pedidos</td>
+                      <td>R$ 00,00</td>
+                    </tr>
+                    <tr>
+                      <td>Maio/2024</td>
+                      <td>0 pedidos</td>
+                      <td>3 pedidos</td>
+                      <td>R$ 00,00</td>
+                    </tr>
+                    <tr>
+                      <td>Maio/2024</td>
+                      <td>0 pedidos</td>
+                      <td>3 pedidos</td>
+                      <td>R$ 00,00</td>
+                    </tr> -->
+                  </tbody>
+                </table>
+
+                <div class="minha-conta__estatisticas-user">
+                  <h3 class="minha-conta__titulo-conteudo">Estatísticas</h3>
+                  <canvas id="myChart"></canvas>
+                </div>
+              </div>
+            </section>
+
+            <section id="minha-conta__notificacoes">
+              <div class="minha-conta__notificacoes-user">
+                <h3 class="minha-conta__titulo-conteudo">
+                  Minhas notificações
+                </h3>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
     </main>
-    
-    
-    
-    
 
-    
-    
+    <!--Modal enviar imagem-->
+    <div
+      class="modal fade"
+      id="enviar-imagem"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Editar imagem
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="criar-pedido">
+            <form class="form-padrao formulario-pedido">
+              <div class="input-style-padrao input-style-lg">
+                <input
+                  id="input__editar-imagem"
+                  class="item-pedido-input"
+                  placeholder="Url da imagem"
+                  type="url"
+                />
+                <span class="focus-border"></span>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="cadastrar-btn">
+              <button
+                id="btn__editar-imagem"
+                type="submit"
+                class="cadastrar-pedido-btn"
+              >
+                Editar imagem
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <p class="footer-empresa">&copy; Mercado do Fornecedor</p>
+          <a
+            href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor"
+            target="_blank"
+          >
+            <i class="fa-brands fa-github fa-2x"></i>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-licensa">Creative Commons - 2024</p>
+          <a href="#header">
+            <i class="fa-solid fa-angles-up fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
 
-</body>
-
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <script src="./js/openMenu.js"></script>
+    <script type="module" src="./js/minhaConta.js"></script>
+    <script type="module" src="./js/script.js"></script>
+  </body>
 </html>
-
-
-
-     

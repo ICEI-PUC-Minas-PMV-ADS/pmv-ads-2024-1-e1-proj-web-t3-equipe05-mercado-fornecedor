@@ -5,10 +5,13 @@ const objLogin = {
   password: "123456",
 };
 
-async function logUser() {
-  const dados = await Api.login(objLogin);
-
-  const userData = JSON.parse(localStorage.getItem("User"));
+export async function logUser() {
+  const isUserLogged = JSON.parse(localStorage.getItem("User"));
+  if (isUserLogged === null) {
+    const dados = await Api.login(objLogin);
+  }
+  const users = await Api.listarUsuarios();
+  localStorage.setItem("Users", JSON.stringify(users));
 }
 
 logUser();

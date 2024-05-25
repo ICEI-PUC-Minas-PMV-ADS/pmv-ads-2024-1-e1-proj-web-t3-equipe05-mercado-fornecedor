@@ -34,8 +34,9 @@
             <form class="login-form">
               <div class="input-style">
                 <input
+                  id="login-input-email"
                   class="form-input"
-                  type="text"
+                  type="email"
                   placeholder="E-mail"
                   required
                 />
@@ -43,6 +44,7 @@
               </div>
               <div class="input-style">
                 <input
+                  id="login-input-senha"
                   class="form-input"
                   type="password"
                   placeholder="Senha"
@@ -51,7 +53,7 @@
                 <span class="focus-border"></span>
               </div>
 
-              <button type="submit">Entrar</button>
+              <button id="login-btn" type="submit">Entrar</button>
               <span>
                 Ainda não é cadastrado?
                 <a href="./cadastro.html">Cadastre-se</a>
@@ -70,5 +72,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="./js/login.js"></script>
   </body>
 </html>
