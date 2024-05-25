@@ -261,6 +261,41 @@
           ],
           "fornecedorId": 6,
           "valor": 19547.3
+        },
+        {
+          "id": 8,
+          "data": "2024-05-23T00:33:40.851Z",
+          "endereco": {
+            "logradouro": "Estrada Galvão Bueno",
+            "bairro": "Batistini",
+            "localidade": "São Bernardo do Campo",
+            "uf": "SP",
+            "complemento": "",
+            "numero": "5000"
+          },
+          "prazoDeEntrega": "60 dias",
+          "observacao": "",
+          "itensDoPedido": [
+            {
+              "nomeDoItem": "Pigmento amarelo",
+              "qtdDoItem": "50 kg",
+              "idItem": "item-lista-id-0"
+            },
+            {
+              "nomeDoItem": "Pigmento vermelho",
+              "qtdDoItem": "50 kg",
+              "idItem": "item-lista-id-1"
+            },
+            {
+              "nomeDoItem": "Pigmento azul",
+              "qtdDoItem": "50 kg",
+              "idItem": "item-lista-id-2"
+            }
+          ],
+          "status": "em aberto",
+          "fornecedorId": null,
+          "cotacoes": [],
+          "valor": null
         }
       ],
       "id": 1
@@ -592,6 +627,32 @@
       "segmento": "Alimentos",
       "pedidos": [],
       "id": 4
+    },
+    {
+      "email": "contato@vale.com",
+      "password": "$2a$10$FNer0CixKZnLk7RoMgWFt.xxbf4zW5CbOSpVl9QASTdJIIRTiazbW",
+      "nome": "Vale S/A",
+      "cnpj": "77.231.061/0001-94",
+      "tipo": "fornecedor",
+      "segmento": "Outro",
+      "endereco": null,
+      "telefone": null,
+      "imgUrl": "https://i.postimg.cc/jjmBPG1M/default-User.png",
+      "pedidos": [],
+      "id": 5
+    },
+    {
+      "email": "contato@kalunga.com",
+      "password": "$2a$10$FJgh.XHeb.eY3Qt16YbqAu5vxJzK/2RsfChOs5GKfisqFv9MkaWqG",
+      "nome": "Kalunga",
+      "cnpj": "54.761.455/0001-59",
+      "tipo": "fornecedor",
+      "segmento": "Outro",
+      "endereco": null,
+      "telefone": null,
+      "imgUrl": "https://i.postimg.cc/jjmBPG1M/default-User.png",
+      "pedidos": [],
+      "id": 6
     }
   ],
   "pedidos": []

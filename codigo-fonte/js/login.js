@@ -1,5 +1,4 @@
 import Api from "./api.js";
-// import { geraPedidos } from "./listarpedidos.js";
 
 const objLogin = {
   email: "contato@acrilex.com",
@@ -7,24 +6,12 @@ const objLogin = {
 };
 
 export async function logUser() {
-  const dados = await Api.login(objLogin);
-  localStorage.setItem("UserLogin", JSON.stringify(objLogin));
-
-  const userData = JSON.parse(localStorage.getItem("User"));
-
-  const userNavbar = document.getElementById("user-navbar");
-
-  const minhaConta = document.createElement("a");
-  const minhaContaSpan = document.createElement("span");
-
-  minhaContaSpan.innerText = "Minha conta";
-  minhaConta.href = "./minhaconta.html";
-
-  minhaConta.append(minhaContaSpan);
-  userNavbar.append(minhaConta);
-  console.log(dados);
-
-  // geraPedidos();
+  const isUserLogged = JSON.parse(localStorage.getItem("User"));
+  if (isUserLogged === null) {
+    const dados = await Api.login(objLogin);
+  }
+  const users = await Api.listarUsuarios();
+  localStorage.setItem("Users", JSON.stringify(users));
 }
 
 logUser();

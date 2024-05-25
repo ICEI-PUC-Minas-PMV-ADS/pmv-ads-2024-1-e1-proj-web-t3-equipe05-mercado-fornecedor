@@ -135,7 +135,7 @@ function listarPedidosEmAberto() {
     (pedido) => pedido.status === "em aberto"
   );
 
-  pedidosEmAberto.forEach((pedido) => {
+  pedidosEmAberto.reverse().forEach((pedido) => {
     const lista = document.getElementById("minha-conta__lista-pedidos");
 
     const listaItem = document.createElement("li");
@@ -271,6 +271,7 @@ function listarTabelaPedidosPorMes(ano) {
   const pedidosPorMes = filtrarPedidosAnuais(ano);
   const meses = Object.values(pedidosPorMes).reverse();
   const table = document.getElementById("minha-conta__table-custo");
+  const tituloValor = document.getElementById("minha-conta__tabela-valor");
 
   while (table.firstChild) {
     table.removeChild(table.firstChild);
@@ -292,6 +293,10 @@ function listarTabelaPedidosPorMes(ano) {
     colunaFinalizados.innerText = `${mes.pedidosFinalizados} pedidos`;
     colunaAbertos.innerText = `${mes.pedidosEmAberto} pedidos`;
     colunaTotal.innerText = valorTotal;
+
+    user.tipo === "cliente"
+      ? (tituloValor.innerText = "Custo")
+      : (tituloValor.innerText = "Faturamento");
 
     row.append(colunaMes, colunaFinalizados, colunaAbertos, colunaTotal);
     table.append(row);
@@ -315,7 +320,7 @@ function filtrarPedidosPorAno() {
     "minha-conta__dropdown-list"
   );
 
-  arrDatas.forEach((ano) => {
+  arrDatas.reverse().forEach((ano) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
 
@@ -357,6 +362,48 @@ function criarGraficoLinhas() {
     },
   });
 }
+
+function editarImagem() {
+  const input = document.getElementById("input__editar-imagem");
+  const btnEditar = document.getElementById("btn__editar-imagem");
+  let index;
+
+  input.value = user.imgUrl;
+
+  btnEditar.addEventListener("click", (e) => {
+    const users = JSON.parse(localStorage.getItem("Users"));
+
+    users.find((u, i) => {
+      if (u.id === user.id) {
+        user.imgUrl = input.value;
+        index = i;
+      }
+    });
+
+    users.splice(index, 1, user);
+    localStorage.setItem("Users", JSON.stringify(users));
+    localStorage.setItem("User", JSON.stringify(user));
+
+    const imgObj = {
+      imgUrl: input.value,
+    };
+
+    Api.editarUsuario(imgObj, user.id);
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 2500);
+  });
+}
+
+const logoutBtn = document.getElementById("logout");
+
+logoutBtn.addEventListener("click", (e) => {
+  localStorage.clear();
+  setTimeout(() => {
+    window.location.replace("./index.html");
+  }, 1500);
+});
 
 salvarBtn.addEventListener("click", (e) => {
   editarDadosDoUsuario();
@@ -424,6 +471,11 @@ exportTableBtn.addEventListener("click", (e) => {
 
 verPedidos.addEventListener("click", (e) => {
   window.location.replace("./painelDeControleCliente.html");
+});
+
+const editarImgBtn = document.getElementById("editar-imagem");
+editarImgBtn.addEventListener("click", (e) => {
+  editarImagem();
 });
 
 exibirDadosDoUsuario();

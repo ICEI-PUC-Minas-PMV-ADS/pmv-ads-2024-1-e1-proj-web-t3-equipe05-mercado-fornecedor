@@ -200,19 +200,14 @@ function buscarFornecedores(inputValue, arrayObjFornecedores) {
     fornecedor.nome.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-  if (Object.keys(resultadoBusca).length === 0) {
-    resultadoBusca = arrayObjFornecedores.filter((fornecedor) =>
+  resultadoBusca.push(
+    ...arrayObjFornecedores.filter((fornecedor) =>
       fornecedor.segmento.toLowerCase().includes(inputValue.toLowerCase())
-    );
-  }
+    )
+  );
 
-  if (Object.keys(resultadoBusca).length === 0) {
-    resultadoBusca = arrayObjFornecedores.filter((fornecedor) =>
-      fornecedor.cnpj.toLowerCase().includes(inputValue.toLowerCase())
-    );
-  }
-
-  listarFornecedoresDoCliente(resultadoBusca);
+  console.log(resultadoBusca);
+  listarFornecedoresDoCliente(...[new Set(resultadoBusca)]);
 }
 
 export function buscarFornecedoresDoCliente() {
@@ -230,14 +225,22 @@ function filtrarFornecedoresPorCategoria(listaDeFornecedores) {
     "dropdown-meus-fornecedores"
   );
 
-  listaDeFornecedores.forEach((fornecedor) => {
+  let categorias = [];
+
+  listaDeFornecedores.forEach((fornecedor) =>
+    categorias.push(fornecedor.segmento)
+  );
+  categorias.sort();
+  categorias = [...new Set(categorias)];
+
+  categorias.forEach((cat) => {
     const li = document.createElement("li");
     const a = document.createElement("a");
 
     a.classList.add("dropdown-item");
     a.href = "#";
-    a.innerText = fornecedor.segmento;
-    a.value = fornecedor.segmento;
+    a.innerText = cat;
+    a.value = cat;
 
     li.appendChild(a);
     listaDeCategorias.appendChild(li);

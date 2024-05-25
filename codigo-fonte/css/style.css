@@ -78,9 +78,134 @@ h4 {
 
 /* FIM TAGS PRINCIPAIS */
 
+/* INÍCIO MOBILE HAMBURGER MENU */
+
+.navigation {
+  position: fixed;
+  top: 35px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #005c97, #363795);
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  transition: height 0.3s, width 0.3s;
+  transition-delay: 0s, 0.75s;
+  overflow: hidden;
+  display: none;
+  z-index: 50000;
+}
+
+.navigation.active {
+  width: 90vw;
+  height: 430px;
+  transition: width 0.3s, height 0.3s;
+  transition-delay: 0s, 0.75s;
+}
+
+.navigation .userBx .username {
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+.navigation .userBx .imgBx {
+  position: relative;
+  min-width: 60px;
+  height: 60px;
+  overflow: hidden;
+  background: #000;
+  border-radius: 50%;
+}
+
+/* Hamburguer toggle menu */
+
+.navigation .menuToggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #005c97, #363795);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #ffffff;
+  transform: translateY(-10px);
+  box-shadow: 0 10px #ffffff;
+  transition: 0.5s;
+}
+
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #ffffff;
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+
+.navigation.active .menuToggle::before {
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: 0 0 #ffffff;
+}
+
+.navigation.active .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 60px);
+  margin-top: 60px;
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 1em;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.menu li a:hover {
+  color: #4e65ff;
+}
+
+.menu li a ion-icon {
+  font-size: 1.5em;
+}
+
+.menu-divider {
+  border: 1px solid #ffffff;
+}
+
+#minha-conta-hamburger {
+  display: none;
+}
+
+/* FIM MOBILE HAMBURGER MENU */
+
 /* HEADER DA PÁGINA HOME */
 
-header {
+.home-header {
   font-family: "Red Hat Display", sans-serif;
   font-weight: bold;
   color: #ffffff;
@@ -180,7 +305,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 24px;
 }
 
 .logo {
@@ -197,23 +321,24 @@ header {
 }
 
 /* Menu de navegação */
-.nav-list {
+.nav-list-home {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 65%;
+  font-size: 24px;
 }
 
-.nav-list li a {
+.nav-list-home li a {
   text-decoration: none;
   color: #ffffff;
   transition: 0.5s;
 }
 
-.nav-list li:hover {
+.nav-list-home li:hover {
   color: #00b5e2;
 }
-.nav-list li a:hover {
+.nav-list-home li a:hover {
   color: #ff9e1b;
   transition: 0.5s;
 }
@@ -358,6 +483,68 @@ header {
 }
 
 /* FIM HEADER DA PÁGINA HOME */
+
+/* HEADER DAS DEMAIS PÁGINAS */
+.header {
+  background-color: #005c97;
+  box-shadow: 0px 3px 10px #005c97;
+  display: flex;
+  justify-content: center;
+  transition: margin-top 0.5s;
+}
+
+.nav-bar {
+  width: 61.4584%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.15rem 0rem;
+}
+
+.logo {
+  /* padding: 50px; */
+  height: 100px;
+  width: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  color: #fff;
+}
+
+/* .nav-list {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+} */
+
+.nav-ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 70%;
+}
+
+/* .nav-item {
+  margin: 0 50px;
+} */
+
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.buttom-login {
+  background: transparent;
+  border: none;
+}
+
+/* FIM DO HEADER DAS DEMAIS PÁGINAS */
 
 /* MAIN DA PÁGINA HOME */
 main {
@@ -593,6 +780,39 @@ main {
 }
 
 /* FIM SEÇÃO FALE CONOSCO */
+
+.title-main {
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  background-color: transparent;
+}
+
+.lista-de-fornecedores {
+  margin-top: 30px;
+}
+
+.card-fornecedor {
+  max-width: 14vw;
+  min-width: 200px;
+  border: 1px solid #cbdbe4;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: left;
+}
+
+.card-fornecedor-title {
+  color: #00395d;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-fornecedor-text {
+  color: #231f20;
+  font-size: 16px;
+}
 
 /* PÁGINA MINHA CONTA */
 .minha-conta {
@@ -962,7 +1182,8 @@ input::-webkit-inner-spin-button {
 }
 
 .minha-conta__dropdown .btn {
-  width: 10vw;
+  min-width: 150px;
+  max-width: 200px;
   height: 50px;
 }
 
@@ -1095,6 +1316,10 @@ input::-webkit-inner-spin-button {
   color: #00b5e2;
 }
 /* Lista de pedidos */
+#lista-pedidos-cliente-desktop {
+  display: block;
+}
+
 .lista-pedidos {
   width: 100%;
   min-height: 34.9vh;
@@ -1244,6 +1469,65 @@ input::-webkit-inner-spin-button {
   max-height: 20rem;
 }
 
+/* Lista de pedidos versão mobile */
+
+#lista-pedidos-cliente-mobile {
+  display: none;
+}
+
+.lista-pedidos-mobile {
+  margin-top: 30px;
+}
+
+.lista-pedidos-mobile-grid {
+  width: 100%;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.lista-pedido-item-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #e0eaec;
+  color: #231f20;
+}
+
+.lista-pedido-item-li:nth-last-child(1) {
+  margin: 20px 0;
+  border: none;
+}
+
+.lista-pedido-item-li div {
+  width: 45%;
+  font-size: 12px;
+}
+
+.lista-pedido-item-li div:nth-child(1) {
+  color: #00395d;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.lista-pedido-item-li div:nth-child(2) {
+  text-align: right;
+}
+.fornecedor-detalhe {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.fornecedor-detalhe img {
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
 /* Paginação da lista de pedidos */
 .paginacao {
   width: 100%;
@@ -1373,6 +1657,11 @@ input::-webkit-inner-spin-button {
 /* Animação on click dos inputs */
 .input-style-padrao {
   width: 48.5%;
+  position: relative;
+}
+
+.input-style-lg {
+  width: 100%;
   position: relative;
 }
 
@@ -1913,7 +2202,8 @@ footer {
   .header-text,
   .header-carousel,
   .main-container,
-  .footer-container {
+  .footer-container,
+  .nav-bar {
     width: 90%;
   }
 
@@ -1976,10 +2266,138 @@ footer {
   }
 }
 
+@media (max-width: 1100px) {
+  .minha-conta__sidebar {
+    width: 100%;
+  }
+
+  .minha-conta__conteudo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .hidden-navbar {
+    display: none;
+  }
+  .navigation {
+    display: flex;
+  }
+
+  .nav-ul,
+  .nav-list-home {
+    display: none;
+  }
+  #lista-pedidos-cliente-desktop {
+    display: none;
+  }
+
+  #lista-pedidos-cliente-mobile {
+    display: block;
+  }
+
+  .card-fornecedor {
+    min-width: 45vw;
+  }
+
+  .header-message {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .main-container h3 {
+    width: 80%;
+  }
+
+  .servicos {
+    flex-wrap: wrap;
+  }
+
+  .lista-de-servicos,
+  .video-servicos {
+    width: 100%;
+  }
+
+  .lista-de-servicos li {
+    gap: 20px;
+  }
+
+  .texto-servicos {
+    width: 69%;
+  }
+
+  .video-servicos {
+    margin-top: 30px;
+  }
+
+  .glide__slides img {
+    width: 30vw;
+    height: 30vh;
+    transition: all 300ms ease;
+    object-fit: cover;
+    opacity: 1;
+  }
+
+  .glide__slide--active img {
+    z-index: 2000;
+    width: 70vw;
+  }
+
+  .input-style-padrao {
+    width: 100%;
+  }
+
+  .input-style-md {
+    width: 59.06%;
+  }
+
+  .detalhes-empresa {
+    flex-wrap: wrap;
+  }
+
+  .marca-empresa {
+    width: 100%;
+  }
+
+  .info-empresa {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .titulo-lista-fornecedor {
+    display: flex;
+  }
+
+  .titulo-lista-fornecedor li {
+    width: 100%;
+  }
+
+  .titulo-lista-fornecedor li:nth-child(2) {
+    display: none;
+  }
+
+  .lista-fornecedor {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .lista-pedidos-fornecedor {
+    width: 100%;
+  }
+}
+
 @media (min-width: 2000px) {
   .header-text,
   .header-carousel,
-  .main-container {
+  .main-container,
+  .nav-bar {
     width: 80%;
   }
 }
