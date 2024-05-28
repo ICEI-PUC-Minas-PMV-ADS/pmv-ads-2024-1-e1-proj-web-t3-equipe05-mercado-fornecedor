@@ -355,11 +355,24 @@
                   <li class="li-lista-dados-cadastrados">Senha</li>
                 </ul> -->
 
-                <ul
-                  id="minha-conta__lista-pedidos"
-                  class="minha-conta__lista-pedidos"
+                <section
+                  id="lista-pedidos-abertos-cliente-desktop"
+                  class="lista-pedidos"
                 >
-                  <!-- <li class="minha-conta__lista-pedidos-item">
+                  <div
+                    class="minha-conta__lista-pedidos-grid pedidos-em-aberto"
+                  >
+                    <div class="item-lista item-lista-1">Número</div>
+                    <div class="item-lista item-lista-2">Data</div>
+                    <div class="item-lista item-lista-3">Fornecedor</div>
+                    <div class="item-lista item-lista-4">Valor</div>
+                    <div class="item-lista item-lista-5">Status</div>
+                  </div>
+                  <ul
+                    id="minha-conta__lista-pedidos"
+                    class="minha-conta__lista-pedidos"
+                  >
+                    <!-- <li class="minha-conta__lista-pedidos-item">
                     <div class="minha-conta__lista-pedidos-grid">
                       <div id="numero-pedido" class="item-lista item-lista-1">
                         492389
@@ -410,7 +423,96 @@
                       <button class="btn-mais">Ver mais</button>
                     </div>
                   </li> -->
-                </ul>
+                  </ul>
+                </section>
+                <section
+                  id="lista-pedidos-cliente-mobile"
+                  class="lista-pedidos-mobile"
+                >
+                  <div id="lista-de-pedidos-user-mobile" class="accordion-list">
+                    <!-- <div class="accordion-list-item" id="item1">
+                <a class="accordion-link" href="#item1">
+                  <div class="lista-pedidos-mobile-ul">
+                    <ul class="lista-pedidos-mobile-grid">
+                      <li class="lista-pedido-item-li">
+                        <div>Número</div>
+                        <div>492389</div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div>Data</div>
+                        <div>23/03/2024</div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div>Fornecedor</div>
+                        <div class="fornecedor-detalhe">
+                          <img src="./img/fornecedor1.png" alt="Bayer" />
+                          <p>Bayer</p>
+                        </div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div>Valor</div>
+                        <div>R$ 500.000,00</div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div><button class="btn-mais">Ver mais</button></div>
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum.
+                  </p>
+                </div>
+              </div>
+
+              <div class="accordion-list-item" id="item1">
+                <a class="accordion-link" href="#item1">
+                  <div class="lista-pedidos-mobile-ul">
+                    <ul class="lista-pedidos-mobile-grid">
+                      <li class="lista-pedido-item-li">
+                        <div>Número</div>
+                        <div>492389</div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div>Data</div>
+                        <div>23/03/2024</div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div>Fornecedor</div>
+                        <div class="fornecedor-detalhe">
+                          <img src="./img/fornecedor1.png" alt="Bayer" />
+                          <p>Bayer</p>
+                        </div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div>Valor</div>
+                        <div>R$ 500.000,00</div>
+                      </li>
+                      <li class="lista-pedido-item-li">
+                        <div><button class="btn-mais">Ver mais</button></div>
+                      </li>
+                    </ul>
+                  </div>
+                </a>
+                <div class="detalhe-pedido">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum.
+                  </p>
+                </div>
+              </div> -->
+                  </div>
+                </section>
               </section>
             </section>
 
@@ -485,7 +587,26 @@
 
                 <div class="minha-conta__estatisticas-user">
                   <h3 class="minha-conta__titulo-conteudo">Estatísticas</h3>
-                  <canvas id="myChart"></canvas>
+                  <canvas id="lineChart"></canvas>
+                  <div class="minha-conta__chart-container">
+                    <div class="minha-conta__small-chart">
+                      <div class="minha-conta__chart-title">
+                        <h4>Pedidos por</h4>
+                        <h3>Fornecedor</h3>
+                        <h5>Últimos 6 meses</h5>
+                      </div>
+                      <div id="legenda-d-chart"></div>
+                      <canvas id="doughnutChart"></canvas>
+                    </div>
+                    <div class="minha-conta__small-chart">
+                      <div class="minha-conta__chart-title">
+                        <h4>Total de pedidos</h4>
+                        <h3>20 pedidos</h3>
+                        <h5>Últimos 6 meses</h5>
+                      </div>
+                      <canvas id="barChart"></canvas>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>

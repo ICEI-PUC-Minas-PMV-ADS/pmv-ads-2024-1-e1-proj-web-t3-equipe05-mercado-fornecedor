@@ -370,7 +370,7 @@
       <section id="equipe" class="equipe">
         <div class="main-container">
           <div class="estilo-lista-equipe">
-            <h1>Conheça a nossa equipe de desenvolvimento</h1>
+            <h2>Conheça a nossa equipe de desenvolvimento</h2>
             <ul class="ul">
               <li class="card" style="width: 18rem">
                 <img src="./img/felipe.png" class="card-img-top" alt="..." />
@@ -497,12 +497,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script>
-      new Glide(".glide", {
-        type: "carousel",
-        focusAt: "center",
-        startAt: 1,
-        perView: 3,
-      }).mount();
+      const windowSize =
+        document.documentElement.clientWidth || window.innerWidth;
+      if (windowSize <= 800) {
+        new Glide(".glide", {
+          type: "carousel",
+          focusAt: "center",
+          startAt: 1,
+          perView: 1,
+        }).mount();
+      } else {
+        new Glide(".glide", {
+          type: "carousel",
+          focusAt: "center",
+          startAt: 1,
+          perView: 3,
+        }).mount();
+      }
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

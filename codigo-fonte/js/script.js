@@ -1,5 +1,4 @@
 import Api from "./api.js";
-import { salvarFornecedoresNoStorage } from "./listarFornecedores.js";
 
 const isUserLogged = JSON.parse(localStorage.getItem("User"));
 
@@ -18,4 +17,4 @@ if (isUserLogged !== null) {
   userNavbar.append(minhaConta);
 }
 
-salvarFornecedoresNoStorage();
+await Api.listarFornecedores();
