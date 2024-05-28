@@ -1,54 +1,30 @@
-import Api from "./api.js";
-
-// BUSCA A LISTA DE FORNECEDORES NA API E SALVA NO LOCAL STORAGE
-export async function salvarFornecedoresNoStorage() {
-  const listaFornecedores = await Api.listarFornecedores();
-
-  localStorage.setItem("fornecedores", JSON.stringify(listaFornecedores));
+async function buscarFornecedores() {
+  const response = await fetch('db.json');
+  const fornecedores = await response.json();
+  return fornecedores;
 }
 
-// LISTA OS FORNECEDORES NA PÁGINA FORNECEDORES.HTML
-function listarFornecedores() {
-  // const listaDeFornecedores = Constante que armazena um array de objetos onde cada objeto representa um fornecedor
-  // Os objetos estão no seguinte formato:
-  // {
-  //       cnpj: "30.091.596/0001-43",
-  //       email: "contato@bayer.com",
-  //       endereco: [
-  //           bairro: "Vila Socorro",
-  //           complemento: "",
-  //           localidade: "São Paulo",
-  //           logradouro: "Rua Domingos Jorge",
-  //           numero: "1100",
-  //           uf: "SP",
-  //       ],
+async function buscarFornecedores() {
+  const response = await fetch('db.json');
+  const fornecedores = await response.json();
 
-  //       id: 3,
-  //       imgUrl: "https://i.ibb.co/hmjBTJ2/f3.png",
-  //       nome: "Bayer",
-  //       password: "$2a$10$zgAY9i0dddN0on5LT51NN.mHziPhdROT7m7WEbMvG897Drgj8wS9O",
-  //       telefone: "2139481000",
-  //       tipo: "fornecedor",
-  //   }
+  const tabela = document.createElement('table');
 
-  const listaDeFornecedores = JSON.parse(localStorage.getItem("fornecedores"));
-}
+  fornecedores.forEach(fornecedor => {
+    const linha = document.createElement('tr');
+    const nomeColuna = document.createElement('td');
+    const enderecoColuna = document.createElement('td');
+    const telefoneColuna = document.createElement('td');
 
+    nomeColuna.innerText = fornecedor.nome;
+    enderecoColuna.innerText = fornecedor.endereco;
+    telefoneColuna.innerText = fornecedor.telefone;
 
-listarFornecedores () 
-fetch('fornecedores.json')
-    .then(response => response.json())
-    .then(data => {
-      const fornecedores = data.fornecedores;
-      const listaFornecedores = document.createElement('ul');
-      for (let i = 0; i < fornecedores.length; i++) {
-        const itemLista = document.createElement('li');
-        const textoItem = document.createTextNode(fornecedores[i].nome + ' - ' +
-        fornecedores[i].telefone + ' - ' +
-        fornecedores[i].email);
-        itemLista.appendChild(textoItem);
-        listaFornecedores.appendChild(itemLista);
-      }
-      document.getElementById('lista-fornecedores').appendChild(listaFornecedores);
-    });
+    linha.appendChild(nomeColuna);
+    linha.appendChild(enderecoColuna);
+    linha.appendChild(telefoneColuna);
+    tabela.appendChild(linha);
+  });
+
+  document.body.appendChild(tabela);
 }
