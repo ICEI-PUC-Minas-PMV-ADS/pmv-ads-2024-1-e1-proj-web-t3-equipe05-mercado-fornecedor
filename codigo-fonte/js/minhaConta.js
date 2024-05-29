@@ -599,48 +599,6 @@ function criarGraficos() {
   });
 }
 
-function editarImagem() {
-  const input = document.getElementById("input__editar-imagem");
-  const btnEditar = document.getElementById("btn__editar-imagem");
-  let index;
-
-  input.value = user.imgUrl;
-
-  btnEditar.addEventListener("click", (e) => {
-    const users = JSON.parse(localStorage.getItem("Users"));
-
-    users.find((u, i) => {
-      if (u.id === user.id) {
-        user.imgUrl = input.value;
-        index = i;
-      }
-    });
-
-    users.splice(index, 1, user);
-    localStorage.setItem("Users", JSON.stringify(users));
-    localStorage.setItem("User", JSON.stringify(user));
-
-    const imgObj = {
-      imgUrl: input.value,
-    };
-
-    Api.editarUsuario(imgObj, user.id);
-
-    setTimeout(() => {
-      window.location.reload();
-    }, 2500);
-  });
-}
-
-const logoutBtn = document.getElementById("logout");
-
-logoutBtn.addEventListener("click", (e) => {
-  localStorage.clear();
-  setTimeout(() => {
-    window.location.replace("./index.html");
-  }, 1500);
-});
-
 salvarBtn.addEventListener("click", (e) => {
   editarDadosDoUsuario();
 });
@@ -707,11 +665,6 @@ exportTableBtn.addEventListener("click", (e) => {
 
 verPedidos.addEventListener("click", (e) => {
   window.location.replace("./painelDeControleCliente.html");
-});
-
-const editarImgBtn = document.getElementById("editar-imagem");
-editarImgBtn.addEventListener("click", (e) => {
-  editarImagem();
 });
 
 exibirDadosDoUsuario();
