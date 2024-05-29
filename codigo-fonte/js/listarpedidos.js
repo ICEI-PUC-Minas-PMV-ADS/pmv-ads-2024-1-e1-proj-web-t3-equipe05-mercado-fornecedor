@@ -86,86 +86,94 @@ export async function listarPedidosPorCliente(pedidos) {
 
   for (const pedido of pedidos) {
     const item = document.createElement("div");
-    const itemLink = document.createElement("a");
-    const gridPedido = document.createElement("div");
-    const numeroDoPedido = document.createElement("div");
-    const dataDoPedido = document.createElement("div");
-    const containerPedido = document.createElement("div");
-    const containerImg = document.createElement("div");
-    const imgUser = document.createElement("img");
-    const nomeUser = document.createElement("span");
-    const valorPedido = document.createElement("div");
-    const statusPedido = document.createElement("div");
-    const containerBtn = document.createElement("div");
-    const verMaisBtn = document.createElement("button");
-
-    const detalhesPedido = document.createElement("div");
-    const infoPedido = document.createElement("p");
+    let imgUser, nomeUser, valorPedido;
 
     item.classList.add("accordion-list-item");
     item.setAttribute("id", "pedido-id-" + pedido.id);
-    itemLink.classList.add("accordion-link");
-    gridPedido.classList.add("lista-grid-pedidos");
-    numeroDoPedido.classList.add("item-lista", "item-lista-1");
-    dataDoPedido.classList.add("item-lista", "item-lista-2");
-    containerPedido.classList.add(
-      "item-fornecedor",
-      "item-lista",
-      "item-lista-3"
-    );
-    containerImg.classList.add("icon-fornecedor");
-    nomeUser.classList.add("nome-fornecedor");
-    valorPedido.classList.add("item-lista", "item-lista-4");
-    statusPedido.classList.add("item-lista", "item-lista-5");
-    containerBtn.classList.add("item-lista", "item-lista-6");
-    verMaisBtn.classList.add("btn-mais");
-
-    detalhesPedido.classList.add("detalhe-pedido");
-
-    itemLink.href = "#pedido-id-" + pedido.id;
-    numeroDoPedido.innerText = pedido.id;
 
     const data = new Date(pedido.data);
     const dia = data.getDate();
     const mes = data.getMonth() + 1;
     const ano = data.getFullYear();
-    dataDoPedido.innerText = `${dia}/${mes}/${ano}`;
 
     if (pedido.fornecedorId !== null) {
       const fornecedor = await Api.listarUsuariosPorId(pedido.fornecedorId);
-      imgUser.src = fornecedor[0].imgUrl;
-      nomeUser.innerText = fornecedor[0].nome;
+      imgUser = fornecedor[0].imgUrl;
+      nomeUser = fornecedor[0].nome;
       const valor = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",
       }).format(pedido.valor);
-      valorPedido.innerText = valor;
+      valorPedido = valor;
     } else {
-      imgUser.src = "./img/defaultUser.png";
-      nomeUser.innerText = "Indefinido";
-      valorPedido.innerText = "-";
+      imgUser = "./img/defaultUser.png";
+      nomeUser = "Indefinido";
+      valorPedido = "-";
     }
 
-    statusPedido.innerText = pedido.status;
-    verMaisBtn.innerText = "Ver mais";
+    item.innerHTML = `<a class="accordion-link" href="#pedido-id-${pedido.id}">
+      <div class="lista-grid-pedidos">
+        <div class="item-lista item-lista-1">${pedido.id}</div>
+        <div class="item-lista item-lista-2">${dia}/${mes}/${ano}</div>
+        <div class="item-fornecedor item-lista item-lista-3">
+          <div class="icon-fornecedor">
+            <img src="${imgUser}" alt="${nomeUser}" />
+          </div>
+          <span class="nome-fornecedor">${nomeUser}</span>
+        </div>
+        <div class="item-lista item-lista-4">${valorPedido}</div>
+        <div class="item-lista item-lista-5">${pedido.status}</div>
+        <div class="item-lista item-lista-6">
+          <button class="btn-mais">Ver mais</button>
+        </div>
+      </div>
+    </a>`;
 
-    containerImg.appendChild(imgUser);
-    containerPedido.appendChild(containerImg);
-    containerPedido.appendChild(nomeUser);
+    const detalhesDoPedido = document.createElement("div");
+    detalhesDoPedido.classList.add("detalhe-pedido");
+    detalhesDoPedido.innerHTML = `<div class="detalhe-pedido">
+      <section class="coluna-01" id="coluna-01">
+        <div>
+          <h6>Observações:</h6>
+        </div>
+        <div class="caixa-obs" id="caixa-obs">
+        ${pedido.observacao}
+        </div>
+      </section>
+      <section class="coluna-02" id="coluna-02">
+        <div>
+          <h6>Itens do pedido:</h6>
+        </div>
+        <div>
+          <ul>
+            <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+            <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+            <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+            <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+            <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+            <li>01 - Lorem ipsum - 50ml  .......  R$150,00</li>
+          </ul>
+        </div>
+      </section>
+      <section class="coluna-03" id="coluna-03">
+        <div>
+          <h6>Endereço de entrega:</h6>
+        </div>
+        <div>
+        Praça da Matriz, n° 50, Belo Horizonte - MG
+        </div>
+      </section>
 
-    containerBtn.appendChild(verMaisBtn);
+      <button class="btn-adc-obs" id="btn-adc-obs">Adicionar observação</button>
+      <div class="btn-hight" id="btn-hight">
+        <button class="btn-edt-ped" id="btn-edt-ped">Adicionar itens</button>
+        <button class="btn-edt-ped" id="btn-edt-ped">Editar pedido</button>
+        <button class="btn-can-ped" id="btn-can-ped">Cancelar pedido</button>
+      </div>
+    </div>`;
 
-    gridPedido.append(
-      numeroDoPedido,
-      dataDoPedido,
-      containerPedido,
-      valorPedido,
-      statusPedido,
-      containerBtn
-    );
+    item.append(detalhesDoPedido);
 
-    itemLink.appendChild(gridPedido);
-    item.appendChild(itemLink);
     listaPedidos.appendChild(item);
   }
 
