@@ -98,8 +98,8 @@ h4 {
 }
 
 .navigation.active {
-  width: 90vw;
-  height: 430px;
+  width: 350px;
+  height: 400px;
   transition: width 0.3s, height 0.3s;
   transition-delay: 0s, 0.75s;
 }
@@ -113,6 +113,7 @@ h4 {
 .navigation .userBx .imgBx {
   position: relative;
   min-width: 60px;
+  max-width: 350px;
   height: 60px;
   overflow: hidden;
   background: #000;
@@ -168,6 +169,7 @@ h4 {
   height: calc(100% - 60px);
   margin-top: 60px;
   padding: 20px;
+  padding-top: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -548,7 +550,7 @@ h4 {
 
 /* MAIN DA PÁGINA HOME */
 main {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 /* SEÇÃO SOBRE */
@@ -1121,10 +1123,6 @@ input::-webkit-inner-spin-button {
   margin-top: 30px;
 }
 
-.minha-conta__lista-pedidos {
-  margin-top: 20px;
-}
-
 .minha-conta__lista-pedidos-grid {
   width: 100%;
   display: grid;
@@ -1133,6 +1131,34 @@ input::-webkit-inner-spin-button {
   align-items: center;
   text-align: left;
   padding: 0 20px;
+}
+
+/* .lista-grid {
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 12%;
+  text-align: left;
+  padding: 20px 0;
+  padding-left: 20px;
+}
+
+.item-lista {
+  width: 100%;
+  color: #00395d;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+} */
+
+#lista-pedidos-abertos-cliente-desktop .pedidos-em-aberto .item-lista {
+  width: 100%;
+  color: #00395d;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .minha-conta__lista-pedidos-item {
@@ -1221,6 +1247,64 @@ input::-webkit-inner-spin-button {
   color: #545a60;
   font-family: "Nunito Sans", sans-serif;
   font-size: 12px;
+}
+
+.minha-conta__tabela-relatorio tr td {
+  word-break: break-all;
+}
+
+.minha-conta__chart-container {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.minha-conta__small-chart {
+  width: 48%;
+  border-radius: 10px;
+  padding: 20px;
+  padding-bottom: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.minha-conta__chart-title {
+  padding-bottom: 10px;
+  margin-bottom: -20px;
+  border-bottom: 2px solid #ececec;
+}
+
+.minha-conta__chart-title h4 {
+  font-size: 16px;
+  color: #828282;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.minha-conta__chart-title h3 {
+  font-size: 36px;
+  color: #0b1354;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.minha-conta__chart-title h5 {
+  font-size: 14px;
+  color: #4f4f4f;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+#legenda-d-chart ul {
+  flex-wrap: wrap;
+}
+
+#legenda-d-chart ul li {
+  margin-bottom: 20px;
 }
 
 /* FIM DA PÁGINA MINHA CONTA */
@@ -1316,8 +1400,13 @@ input::-webkit-inner-spin-button {
   color: #00b5e2;
 }
 /* Lista de pedidos */
-#lista-pedidos-cliente-desktop {
+#lista-pedidos-cliente-desktop,
+#lista-pedidos-abertos-cliente-desktop {
   display: block;
+}
+
+#lista-pedidos-abertos-cliente-desktop {
+  margin-top: 20px;
 }
 
 .lista-pedidos {
@@ -2017,6 +2106,9 @@ input::-webkit-inner-spin-button {
   padding: 20px;
   justify-content: center;
 }
+.estilo-lista-equipe h2 {
+  color: #ffffff;
+}
 .card {
   color: #00395d;
   font-weight: bold;
@@ -2288,7 +2380,8 @@ footer {
   .nav-list-home {
     display: none;
   }
-  #lista-pedidos-cliente-desktop {
+  #lista-pedidos-cliente-desktop,
+  #lista-pedidos-abertos-cliente-desktop {
     display: none;
   }
 
@@ -2300,8 +2393,24 @@ footer {
     min-width: 45vw;
   }
 
+  .header-container {
+    height: 90vh;
+  }
+
   .header-message {
-    font-size: 30px;
+    font-size: 22px;
+  }
+
+  .header-carousel {
+    margin-top: -300px;
+  }
+
+  .carousel {
+    height: 50vh;
+  }
+
+  .carousel-inner {
+    height: 50vh;
   }
 
   h2 {
@@ -2313,7 +2422,7 @@ footer {
   }
 
   .main-container h3 {
-    width: 80%;
+    width: 100%;
   }
 
   .servicos {
@@ -2338,7 +2447,7 @@ footer {
   }
 
   .glide__slides img {
-    width: 30vw;
+    width: 50vw;
     height: 30vh;
     transition: all 300ms ease;
     object-fit: cover;
@@ -2347,7 +2456,7 @@ footer {
 
   .glide__slide--active img {
     z-index: 2000;
-    width: 70vw;
+    width: 100vw;
   }
 
   .input-style-padrao {
@@ -2389,6 +2498,24 @@ footer {
   }
 
   .lista-pedidos-fornecedor {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .caixa-texto {
+    display: none;
+  }
+
+  .formulario .form {
+    width: 100%;
+  }
+
+  .minha-conta__chart-container {
+    flex-wrap: wrap;
+  }
+
+  .minha-conta__small-chart {
     width: 100%;
   }
 }

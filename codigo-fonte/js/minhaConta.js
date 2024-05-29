@@ -7,6 +7,8 @@ const salvarBtn = document.getElementById("minha-conta__salvar-btn");
 const editarDadosBtn = document.getElementById("editar-dados");
 const estatisticasBtn = document.getElementById("estatisticas");
 const notificacoesBtn = document.getElementById("notificacoes");
+const objPedidosPorAno = {};
+const arrayPedidosPorAno = [];
 
 // BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 const btnCepCadastro = document.getElementById("buscar-btn-cep-cadastro");
@@ -130,6 +132,80 @@ function editarDadosDoUsuario() {
   Api.editarUsuario(objUser, user.id);
 }
 
+async function listaDePedidosMobile(pedidos) {
+  const listaPedidosUser = document.getElementById(
+    "lista-de-pedidos-user-mobile"
+  );
+  pedidos.forEach((pedido) => {
+    const listaAccordion = document.createElement("div");
+    let imgUser;
+    let nomeUser;
+    let valorPedido;
+
+    listaAccordion.classList.add("accordion-list-item");
+    listaAccordion.setAttribute("id", "item-mobile-" + pedido.id);
+
+    const data = new Date(pedido.data);
+    const dia = data.getDate();
+    const mes = data.getMonth() + 1;
+    const ano = data.getFullYear();
+
+    if (pedido.fornecedorId !== null) {
+      const listaFornecedores = JSON.parse(localStorage.getItem("Users"));
+      const fornecedor = listaFornecedores.filter(
+        (fornecedor) => fornecedor.id === pedido.fornecedorId
+      );
+      imgUser = fornecedor[0].imgUrl;
+      nomeUser = fornecedor[0].nome;
+      const valor = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(pedido.valor);
+      valorPedido = valor;
+    } else {
+      imgUser = "./img/defaultUser.png";
+      nomeUser = "Indefinido";
+      valorPedido = "-";
+    }
+
+    listaAccordion.innerHTML = `
+      <a class="accordion-link" href="#item-mobile-${pedido.id}">
+      <div class="lista-pedidos-mobile-ul">
+        <ul class="lista-pedidos-mobile-grid">
+          <li class="lista-pedido-item-li">
+            <div>Número</div>
+            <div>${pedido.id}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Data</div>
+            <div>${dia}/${mes}/${ano}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Fornecedor</div>
+            <div class="fornecedor-detalhe">
+              <img src="${imgUser}" alt="${nomeUser}" />
+              <p>${nomeUser}</p>
+            </div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Valor</div>
+            <div>${valorPedido}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div>Status</div>
+            <div>${pedido.status}</div>
+          </li>
+          <li class="lista-pedido-item-li">
+            <div><button class="btn-mais">Ver mais</button></div>
+          </li>
+        </ul>
+      </div>
+    </a>`;
+
+    listaPedidosUser.append(listaAccordion);
+  });
+}
+
 function listarPedidosEmAberto() {
   const pedidosEmAberto = user.pedidos.filter(
     (pedido) => pedido.status === "em aberto"
@@ -192,6 +268,8 @@ function listarPedidosEmAberto() {
     listaItem.append(containerItem);
     lista.append(listaItem);
   });
+
+  listaDePedidosMobile(pedidosEmAberto);
 }
 
 function listarConteudo(
@@ -254,6 +332,7 @@ function filtrarPedidosAnuais(anoAtual) {
       });
 
       const statsMes = {
+        ano: anoAtual,
         mes: meses[i],
         total: valorTotal,
         pedidosEmAberto: pedidosEmAberto,
@@ -335,21 +414,178 @@ function filtrarPedidosPorAno() {
     li.addEventListener("click", (e) => {
       listarTabelaPedidosPorMes(a.value);
     });
+
+    objPedidosPorAno[ano] = filtrarPedidosAnuais(ano);
   });
+
+  for (const [key, value] of Object.entries(objPedidosPorAno)) {
+    for (const [k, v] of Object.entries(value)) {
+      if (arrayPedidosPorAno.length <= 6) arrayPedidosPorAno.push(v);
+    }
+  }
 }
 
-function criarGraficoLinhas() {
-  const ctx = document.getElementById("myChart");
+const getOrCreateLegendList = (chart, id) => {
+  const legendContainer = document.getElementById(id);
+  let listContainer = legendContainer.querySelector("ul");
 
-  new Chart(ctx, {
-    type: "bar",
+  if (!listContainer) {
+    listContainer = document.createElement("ul");
+    listContainer.style.display = "flex";
+    listContainer.style.flexDirection = "row";
+    listContainer.style.margin = 0;
+    listContainer.style.padding = 0;
+
+    legendContainer.appendChild(listContainer);
+  }
+
+  return listContainer;
+};
+
+const htmlLegendPlugin = {
+  id: "htmlLegend",
+  afterUpdate(chart, args, options) {
+    const ul = getOrCreateLegendList(chart, options.containerID);
+
+    // Remove old legend items
+    while (ul.firstChild) {
+      ul.firstChild.remove();
+    }
+
+    // Reuse the built-in legendItems generator
+    const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+    items.forEach((item) => {
+      const li = document.createElement("li");
+      li.style.alignItems = "center";
+      li.style.cursor = "pointer";
+      li.style.display = "flex";
+      li.style.flexDirection = "row";
+      li.style.marginLeft = "10px";
+
+      li.onclick = () => {
+        const { type } = chart.config;
+        if (type === "pie" || type === "doughnut") {
+          // Pie and doughnut charts only have a single dataset and visibility is per item
+          chart.toggleDataVisibility(item.index);
+        } else {
+          chart.setDatasetVisibility(
+            item.datasetIndex,
+            !chart.isDatasetVisible(item.datasetIndex)
+          );
+        }
+        chart.update();
+      };
+
+      // Color box
+      const boxSpan = document.createElement("span");
+      boxSpan.style.background = item.fillStyle;
+      boxSpan.style.borderColor = item.strokeStyle;
+      boxSpan.style.borderWidth = item.lineWidth + "px";
+      boxSpan.style.display = "inline-block";
+      boxSpan.style.flexShrink = 0;
+      boxSpan.style.height = "20px";
+      boxSpan.style.marginRight = "10px";
+      boxSpan.style.width = "20px";
+
+      // Text
+      const textContainer = document.createElement("p");
+      textContainer.style.color = item.fontColor;
+      textContainer.style.margin = 0;
+      textContainer.style.padding = 0;
+      textContainer.style.textDecoration = item.hidden ? "line-through" : "";
+
+      const text = document.createTextNode(item.text);
+      textContainer.appendChild(text);
+
+      li.appendChild(boxSpan);
+      li.appendChild(textContainer);
+      ul.appendChild(li);
+    });
+  },
+};
+
+function criarGraficos() {
+  const lineCanvas = document.getElementById("lineChart");
+  const doughnutCanvas = document.getElementById("doughnutChart");
+  const barCanvas = document.getElementById("barChart");
+  const valorMes = [];
+  const infoMesAno = [];
+
+  arrayPedidosPorAno.forEach((pedido) => {
+    let mesAno = `${pedido.mes}/${pedido.ano}`;
+    infoMesAno.push(mesAno);
+    valorMes.push(pedido.total);
+  });
+
+  new Chart(lineCanvas, {
+    type: "line",
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: infoMesAno,
       datasets: [
         {
-          label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
+          label: "Custo mensal",
+          data: valorMes,
           borderWidth: 1,
+          borderWidth: 2,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  new Chart(doughnutCanvas, {
+    type: "doughnut",
+    data: {
+      labels: infoMesAno,
+      datasets: [
+        {
+          label: "Custo mensal",
+          data: valorMes,
+          backgroundColor: [
+            "#165BAA",
+            "#A155B9",
+            "#F765A3",
+            "#16BFD6",
+            "#1DDD8D",
+            "#953BBF",
+          ],
+          borderWidth: 1,
+          borderWidth: 2,
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        htmlLegend: {
+          containerID: "legenda-d-chart",
+        },
+        legend: {
+          display: true,
+          position: "right",
+          align: "center",
+        },
+      },
+    },
+    // plugins: [htmlLegendPlugin],
+  });
+
+  new Chart(barCanvas, {
+    type: "polarArea",
+    data: {
+      labels: infoMesAno,
+      datasets: [
+        {
+          label: "Custo mensal",
+          data: valorMes,
+          borderWidth: 1,
+          borderWidth: 2,
         },
       ],
     },
@@ -362,48 +598,6 @@ function criarGraficoLinhas() {
     },
   });
 }
-
-function editarImagem() {
-  const input = document.getElementById("input__editar-imagem");
-  const btnEditar = document.getElementById("btn__editar-imagem");
-  let index;
-
-  input.value = user.imgUrl;
-
-  btnEditar.addEventListener("click", (e) => {
-    const users = JSON.parse(localStorage.getItem("Users"));
-
-    users.find((u, i) => {
-      if (u.id === user.id) {
-        user.imgUrl = input.value;
-        index = i;
-      }
-    });
-
-    users.splice(index, 1, user);
-    localStorage.setItem("Users", JSON.stringify(users));
-    localStorage.setItem("User", JSON.stringify(user));
-
-    const imgObj = {
-      imgUrl: input.value,
-    };
-
-    Api.editarUsuario(imgObj, user.id);
-
-    setTimeout(() => {
-      window.location.reload();
-    }, 2500);
-  });
-}
-
-const logoutBtn = document.getElementById("logout");
-
-logoutBtn.addEventListener("click", (e) => {
-  localStorage.clear();
-  setTimeout(() => {
-    window.location.replace("./index.html");
-  }, 1500);
-});
 
 salvarBtn.addEventListener("click", (e) => {
   editarDadosDoUsuario();
@@ -473,14 +667,9 @@ verPedidos.addEventListener("click", (e) => {
   window.location.replace("./painelDeControleCliente.html");
 });
 
-const editarImgBtn = document.getElementById("editar-imagem");
-editarImgBtn.addEventListener("click", (e) => {
-  editarImagem();
-});
-
 exibirDadosDoUsuario();
 listarPedidosEmAberto();
 filtrarPedidosPorAno();
 const currentYear = new Date().getFullYear();
 listarTabelaPedidosPorMes(currentYear);
-criarGraficoLinhas();
+criarGraficos();
