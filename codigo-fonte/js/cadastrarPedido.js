@@ -49,7 +49,7 @@ btnAddItem.addEventListener("click", function () {
   const objItemPedido = {
     nomeDoItem: itemPedido,
     qtdDoItem: qtdItemPedido,
-    idItem: "item-lista-id-" + counterItensPedido,
+    idItem: counterItensPedido + 1,
   };
 
   arrayItensPedido.push(objItemPedido);
@@ -136,6 +136,7 @@ async function criarPedidos() {
     observacao: obsPedido,
     itensDoPedido: arrayItensPedido,
     status: "em aberto",
+    clienteId: userData.id,
     fornecedorId: null,
     cotacoes: [],
     valor: null,
@@ -144,7 +145,8 @@ async function criarPedidos() {
   pedido.push(objPedido);
   const meusPedidos = { pedidos: pedido };
 
-  await Api.editarUsuario(meusPedidos, userData.id);
+  const editedUser = await Api.editarUsuario(meusPedidos, userData.id);
+  localStorage.setItem("User", JSON.stringify(editedUser))
 
   const listaPedidos = document.getElementById("lista-de-pedidos-user");
   let listaChild = listaPedidos.lastElementChild;
@@ -163,7 +165,6 @@ async function criarPedidos() {
     }
   })
 
-  
   console.log(updatedUser.pedidos.reverse())
 
   setTimeout(() => {

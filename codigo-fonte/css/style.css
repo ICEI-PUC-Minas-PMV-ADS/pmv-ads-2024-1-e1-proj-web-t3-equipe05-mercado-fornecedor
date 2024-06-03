@@ -862,9 +862,10 @@ main {
 }
 
 .minha-conta__user-logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 120px;
+  width: 110px;
+  height: 110px;
+  border-radius: 110px;
+  padding: 5px;
   background-color: #eaf6f9;
   position: absolute;
   display: flex;
@@ -880,7 +881,8 @@ main {
 }
 .minha-conta__user-logo img {
   object-fit: contain;
-  width: 90%;
+  border-radius: 150px;
+  width: 100%;
 }
 
 .minha-conta__user-detail {
@@ -1501,6 +1503,12 @@ input::-webkit-inner-spin-button {
   font-weight: 400;
 }
 
+.item-lista-6 {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
 .item-fornecedor {
   display: flex;
   align-items: center;
@@ -1511,6 +1519,7 @@ input::-webkit-inner-spin-button {
   background-color: #ffffff;
   width: 40px;
   height: 40px;
+  padding: 2px;
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -1518,8 +1527,9 @@ input::-webkit-inner-spin-button {
 }
 
 .icon-fornecedor img {
-  width: 90%;
-  object-fit: cover;
+  width: 100%;
+  border-radius: 100%;
+  object-fit: contain;
 }
 .btn-mais {
   background-color: #91ebf5;
@@ -1541,6 +1551,7 @@ input::-webkit-inner-spin-button {
 }
 
 .detalhe-pedido {
+  width: 100%;
   max-height: 0;
   overflow: hidden;
   position: relative;
@@ -1548,14 +1559,162 @@ input::-webkit-inner-spin-button {
   transition: max-height 650ms;
 }
 
-.detalhe-pedido p {
+.detalhe-pedido h6 {
   color: #00395d;
-  font-size: 15px;
-  padding: 2rem;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.detalhe-pedido__info {
+  margin-top: 20px;
+  border-top: 4px solid #ffffff;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+  text-align: left;
+  padding: 0px 20px;
+  color: #231f20;
 }
 
 .accordion-list-item:target .detalhe-pedido {
   max-height: 20rem;
+}
+
+.coluna-01 {
+  margin-top: 20px;
+  width: 24%;
+}
+
+.message-box {
+  margin-top: 15px;
+}
+
+.obs-message {
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid transparent;
+  resize: none;
+  background-color: #f1f1f1;
+  font-size: 12px;
+  color: #231f20;
+  height: 100px;
+  transition: all 0.5s ease;
+  padding: 10px;
+}
+
+.obs-message:focus {
+  border: 1px solid #828282;
+  outline: none;
+}
+
+.coluna-02 {
+  margin-top: 20px;
+  width: 48%;
+}
+
+.detalhe-itens-pedido {
+  /* display: grid;
+  grid-template-rows: repeat(5, 40px);
+  gap: 10px;
+  column-gap: 30px;
+  grid-auto-flow: column; */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  padding-bottom: 10px;
+}
+
+.detalhe-pedido__item {
+  color: #231f20;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  gap: 5px;
+}
+
+.item-nome {
+  display: flex;
+  gap: 10px;
+}
+
+.item-nome div:nth-child(1) {
+  font-weight: bold;
+  color: #005c97;
+}
+
+.coluna-03 {
+  margin-top: 20px;
+  width: 24%;
+}
+
+.coluna-03 div:first-child {
+  margin-bottom: 15px;
+}
+
+.btn-hight {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn-hight button {
+  height: 40px;
+  color: #ffffff;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  padding: 0px 20px;
+  border-radius: 5px;
+  border: none;
+  transition: all 300ms ease;
+}
+
+.btn-adc-obs {
+  background-color: #00395d;
+  height: 40px;
+  color: #ffffff;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  padding: 0px 20px;
+  border-radius: 5px;
+  border: none;
+  transition: all 300ms ease;
+}
+
+.btn-adc-obs:hover {
+  color: #00395d;
+  background-color: #91ebf5;
+  transition: all 300ms ease;
+}
+
+.left-btn {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.btn-edt-ped {
+  background-color: #0f99cc;
+}
+
+.btn-edt-ped:hover {
+  background-color: #ff9e1b;
+  transition: all 300ms ease;
+}
+
+.btn-can-ped {
+  background-color: #5d0b00;
+}
+
+.btn-can-ped:hover {
+  background-color: #363795;
 }
 
 /* Lista de pedidos versão mobile */
@@ -1565,6 +1724,7 @@ input::-webkit-inner-spin-button {
 }
 
 .lista-pedidos-mobile {
+  width: 100%;
   margin-top: 30px;
 }
 
@@ -2500,6 +2660,44 @@ footer {
   .lista-pedidos-fornecedor {
     width: 100%;
   }
+
+  .accordion-list-item:target .detalhe-pedido {
+    max-height: 50rem;
+  }
+
+  .detalhe-itens-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  .detalhe-pedido__info {
+    flex-wrap: wrap;
+  }
+
+  .coluna-01,
+  .coluna-02,
+  .coluna-03 {
+    width: 100%;
+  }
+
+  .coluna-03 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .coluna-03 div {
+    width: 48%;
+  }
+
+  .btn-adc-obs {
+    margin-top: 10px;
+  }
+
+  .left-btn {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 600px) {
@@ -2516,6 +2714,24 @@ footer {
   }
 
   .minha-conta__small-chart {
+    width: 100%;
+  }
+
+  .coluna-03 {
+    display: block;
+  }
+
+  .coluna-03 div {
+    width: 100%;
+  }
+
+  .left-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .detalhe-itens-mobile {
+    display: block;
     width: 100%;
   }
 }
