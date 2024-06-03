@@ -44,6 +44,30 @@ btnCepCadastro.addEventListener("click", (e) => {
     .catch((e) => console.log(e.message));
 });
 
+function verificaTipoDeUsuario() {
+  const paginaFornecedores = document.getElementById("meus-fornecedores");
+
+  if (user.tipo === "fornecedor") {
+    paginaFornecedores.innerHTML = `<span class="material-symbols-outlined"> hub </span>
+    <span>Meus clientes</span>`;
+
+    paginaFornecedores.addEventListener("click", (e) => {
+      window.location.replace("./meusClientes.html");
+    });
+
+    verPedidos.addEventListener("click", (e) => {
+      window.location.replace("./painelDeControleFornecedor.html");
+    });
+  } else {
+    paginaFornecedores.innerHTML = `<span class="material-symbols-outlined"> hub </span>
+    <span>Meus fornecedores</span>`;
+
+    verPedidos.addEventListener("click", (e) => {
+      window.location.replace("./painelDeControleCliente.html");
+    });
+  }
+}
+
 function exibirDadosDoUsuario() {
   const user = JSON.parse(localStorage.getItem("User"));
 
@@ -663,10 +687,7 @@ exportTableBtn.addEventListener("click", (e) => {
   XLSX.writeFile(planilha, "relatorio-anual.xlsx");
 });
 
-verPedidos.addEventListener("click", (e) => {
-  window.location.replace("./painelDeControleCliente.html");
-});
-
+verificaTipoDeUsuario();
 exibirDadosDoUsuario();
 listarPedidosEmAberto();
 filtrarPedidosPorAno();

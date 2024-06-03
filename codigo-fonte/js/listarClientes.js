@@ -1,12 +1,37 @@
 import Api from "./api.js";
 
 const userData = JSON.parse(localStorage.getItem("User"));
-const pedidosLista = await Api.filtrarPedidosPorUser(userData.id);
 const pedidosPaginados = [];
 
 function listarItensPedido(itensDoPedido, pedidoId) {
   const listaItens = document.getElementById(
     "detalhe-itens-pedido-" + pedidoId
+  );
+
+  itensDoPedido.forEach((item) => {
+    const li = document.createElement("li");
+    li.classList.add("detalhe-pedido__item");
+    li.innerHTML = `
+        <div class="item-nome">
+            <div>
+                ${item.idItem}
+            </div>
+            <div>
+                ${item.nomeDoItem}
+            </div>
+        </div>
+        
+        <div>
+            ${item.qtdDoItem}
+        </div>`;
+
+    listaItens.append(li);
+  });
+}
+
+function listarItensPedidoMobile(itensDoPedido, pedidoId) {
+  const listaItens = document.getElementById(
+    "detalhe-itens-mobile-" + pedidoId
   );
 
   itensDoPedido.forEach((item) => {
@@ -48,23 +73,17 @@ async function listaDePedidosMobile(pedidos) {
     const mes = data.getMonth() + 1;
     const ano = data.getFullYear();
 
-    if (pedido.fornecedorId !== null) {
-      const listaFornecedores = JSON.parse(localStorage.getItem("Users"));
-      const fornecedor = listaFornecedores.filter(
-        (fornecedor) => fornecedor.id === pedido.fornecedorId
-      );
-      imgUser = fornecedor[0].imgUrl;
-      nomeUser = fornecedor[0].nome;
-      const valor = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }).format(pedido.valor);
-      valorPedido = valor;
-    } else {
-      imgUser = "./img/defaultUser.png";
-      nomeUser = "Indefinido";
-      valorPedido = "-";
-    }
+    const listaUsers = JSON.parse(localStorage.getItem("Users"));
+    const cliente = listaUsers.filter((user) => user.id === pedido.clienteId);
+
+    imgUser = cliente[0].imgUrl;
+    nomeUser = cliente[0].nome;
+
+    const valor = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(pedido.valor);
+    valorPedido = valor;
 
     listaAccordion.innerHTML = `
       <a class="accordion-link" href="#item-mobile-${pedido.id}">
@@ -100,7 +119,68 @@ async function listaDePedidosMobile(pedidos) {
       </div>
     </a>`;
 
+    const detalhesDoPedido = document.createElement("div");
+    detalhesDoPedido.classList.add("detalhe-pedido");
+    detalhesDoPedido.innerHTML = `
+    <div class="detalhe-pedido__info">
+        <section class="coluna-01" id="coluna-01">
+            <div>
+                <h6>Observações</h6>
+                <div class="caixa-obs" id="caixa-obs">
+                    ${pedido.observacao}
+                </div>
+                <div class="message-box">
+                    <textarea class="obs-message"></textarea>
+                </div>
+                <button class="btn-adc-obs" id="btn-adc-obs-${pedido.id}">Enviar observação</button>
+            </div>
+        </section>
+
+        <section class="coluna-02" id="coluna-02">
+            <div>
+                <h6>Itens do pedido</h6>
+            </div>
+            <div>
+                <ul id="detalhe-itens-mobile-${pedido.id}" class="detalhe-itens-mobile">
+                </ul>
+            </div>
+        </section>
+        <section class="coluna-03" id="coluna-03">
+            <div>
+                <h6>Prazo de entrega</h6>
+                <div>
+                    ${pedido.prazoDeEntrega}
+                </div>
+            </div>
+            <div>
+                <h6>Endereço de entrega</h6>
+                <p>
+                  ${pedido.endereco.logradouro}, ${pedido.endereco.numero}
+                </p>
+                <p>
+                  ${pedido.endereco.localidade}/${pedido.endereco.uf} - CEP: ${pedido.endereco.cep}
+                </p>
+            </div>
+        </section>
+
+        <div class="btn-hight" id="btn-hight">
+            
+            <div class="left-btn">
+                <button class="btn-edt-ped" id="btn-add-item-${pedido.id}">Adicionar itens</button>
+                <button class="btn-edt-ped" id="btn-edt-ped-${pedido.id}">Editar pedido</button>
+                <button class="btn-can-ped" id="btn-can-ped-${pedido.id}">Cancelar pedido</button>
+            </div>
+        </div>
+
+        <section id="detalhe-pedido__cotacoes-${pedido.id}" class="detalhe-pedido__cotacoes">
+        </section>
+    </div>`;
+
+    listaAccordion.append(detalhesDoPedido);
+
     listaPedidosUser.append(listaAccordion);
+
+    listarItensPedidoMobile(pedido.itensDoPedido, pedido.id);
   });
 }
 
@@ -122,20 +202,17 @@ export async function listarPedidosPorCliente(pedidos) {
     const mes = data.getMonth() + 1;
     const ano = data.getFullYear();
 
-    if (pedido.fornecedorId !== null) {
-      const fornecedor = await Api.listarUsuariosPorId(pedido.fornecedorId);
-      imgUser = fornecedor[0].imgUrl;
-      nomeUser = fornecedor[0].nome;
-      const valor = new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }).format(pedido.valor);
-      valorPedido = valor;
-    } else {
-      imgUser = "./img/defaultUser.png";
-      nomeUser = "Indefinido";
-      valorPedido = "-";
-    }
+    const listaUsers = JSON.parse(localStorage.getItem("Users"));
+    const cliente = listaUsers.filter((user) => user.id === pedido.clienteId);
+
+    imgUser = cliente[0].imgUrl;
+    nomeUser = cliente[0].nome;
+
+    const valor = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(pedido.valor);
+    valorPedido = valor;
 
     item.innerHTML = `<a class="accordion-link" href="#pedido-id-${pedido.id}">
       <div class="lista-grid-pedidos">
@@ -222,19 +299,6 @@ export async function listarPedidosPorCliente(pedidos) {
 }
 
 function paginacaoPedidos(pedidos) {
-  // Paginação de pedidos usando a Api
-  // let i = 1;
-  // let pedidos = pedidosLista;
-
-  // while (pedidos.length !== 0) {
-  //   pedidos = await Api.listarPedidosPaginados(i);
-  //   pedidosPaginados.push(pedidos);
-
-  //   i++;
-  // }
-  // pedidosPaginados.pop();
-
-  // Paginação de pedidos manualmente
   let i = 0;
   let arr = [];
   pedidosPaginados.length = 0;
@@ -290,5 +354,15 @@ export function geraPedidos(pedidos) {
     listaDePaginas.append(liForward);
   }
 }
+
+const pedidosEmAbertoBtn = document.getElementById("pedidos-em-aberto");
+pedidosEmAbertoBtn.addEventListener("click", (e) => {
+  window.location.replace("./pedidosDisponiveis.html");
+});
+
+const visualizarClientesBtn = document.getElementById("visualizar-clientes");
+visualizarClientesBtn.addEventListener("click", (e) => {
+  window.location.replace("./meusClientes.html");
+});
 
 geraPedidos(userData.pedidos.reverse());
