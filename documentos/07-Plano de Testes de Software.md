@@ -12,6 +12,22 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 | Critérios de êxito | Indicar os critérios de êxito  |
 | Responsável pela elaborar do caso de Teste | Nome do integrante da equipe |
 
+
+|Caso de Teste    | CT-05: Verificar a listagem de pedidos do fornecedor |
+|:---|:---|
+| Requisitos Associados | RF-05:	O usuário do tipo fornecedor deverá ter acesso a lista com todos os seus pedidos em andamento ou finalizados |
+| Objetivo do Teste | Verificar se os pedidos do fornecedor estão sendo listados corretamente |
+| Passos | <ol>
+    <li>Acessar a página de login da aplicação</li>
+    <li>Realizar login com um usuário do tipo fornecedor</li>
+    <li>Acessar a lista de pedidos do fornecedor</li>
+    <li>Verificar se todos os pedidos estão sendo listados corretamente</li>
+    <li>Verificar se os detalhes do pedido estão sendo exibidos ao clicar no botão "ver mais"</li>
+    <li>Verificar a exibição da lista em resoluções menores</li>
+   </ol> |
+| Critérios de êxito | Todos os pedidos devem ser listados corretamente, em resoluções mobile e desktop; deve ser possível visualizar detalhes dos pedidos.  |
+| Responsável pela elaborar do caso de Teste | Lorena |
+
 <table>
  <tr>
   <th>Caso de teste</th>
