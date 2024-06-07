@@ -34,7 +34,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 | Requisitos Associados | RF-08:	O usuário deve ser capaz de adicionar uma imagem a sua marca, de remover sua conta da aplicação, e de fazer logout da aplicação. |
 | Objetivo do Teste | Verificar se a conta do usuário permite que ele personalize-a de acordo com a sua vontade |
 | Passos | 1. Começar pela página de login<br/> 2. Cadastrar os dados solictados <br/> 3.Direcionar-se para a página "minha conta"<br/> 
-| Critérios de êxito | 1. Qunado o usuário apertar em apagar, sua cona deve ser excluída.<br/> 2. | Quando o usuário apertar em logout, ele deve sair da página. <br/> 3. | Quando o usuário apertar em editar, a foto deve ser trocada.  
+| Critérios de êxito | 1. Quando o usuário apertar em apagar, sua conta deve ser excluída.Quando o usuário apertar em logout, ele deve sair da página. Quando o usuário apertar em editar, a foto deve ser trocada.  
 | Responsável pela elaborar do caso de Teste | Safira |
 
  
