@@ -37,6 +37,14 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 | Critérios de êxito | 1. Quando o usuário apertar em apagar, sua conta deve ser excluída.Quando o usuário apertar em logout, ele deve sair da página. Quando o usuário apertar em editar, a foto deve ser trocada.  
 | Responsável pela elaborar do caso de Teste | Safira |
 
+|Caso de Teste    | CT-10: verificar se a página de clientes consegue fazer pesquisa|
+|:---|:---|
+| Requisitos Associados | RF-10:	No perfil de clientes, deve permitir apenas pesquisa pelo número do pedido. |
+| Objetivo do Teste | Verificar se o campo de busca mostra os pedidos |
+| Passos | 1. Começar pela página de login<br/> 2. Cadastrar os dados solictados <br/> 3.Direcionar-se para a página "minha conta"<br/>  4. Ir no painel de clientes <br/>  5. Clicar no botão de busca e digitar o número do pedido <br/>
+| Critérios de êxito | 1. Quando o usuário digitar o número do pedido, o pedido deve aparecer conforme solicitado.  
+| Responsável pela elaborar do caso de Teste | Safira |
+
  
 > **Links Úteis**:
 > - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
