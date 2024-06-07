@@ -17,77 +17,18 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 |:---|:---|
 | Requisitos Associados | RF-05:	O usuário do tipo fornecedor deverá ter acesso a lista com todos os seus pedidos em andamento ou finalizados |
 | Objetivo do Teste | Verificar se os pedidos do fornecedor estão sendo listados corretamente |
-| Passos | 1. Acessar a página de login da aplicação<br/> 2. Realizar login com um usuário do tipo fornecedor<br/> 3.Acessar a lista de pedidos do fornecedor<br/>|
+| Passos | 1. Acessar a página de login da aplicação<br/> 2. Realizar login com um usuário do tipo fornecedor<br/> 3.Acessar a lista de pedidos do fornecedor<br/> 4. Verificar se todos os pedidos estão sendo listados corretamente<br/> 5. Verificar se os detalhes do pedido estão sendo exibidos ao clicar no botão "ver mais"<br/> 6. Verificar a exibição da lista em resoluções menores|
 | Critérios de êxito | Todos os pedidos devem ser listados corretamente, em resoluções mobile e desktop; deve ser possível visualizar detalhes dos pedidos.  |
 | Responsável pela elaborar do caso de Teste | Lorena |
 
-<table>
- <tr>
-  <th>Caso de teste</th>
-  <th>Requisitos associados</th>
-  <th>Objetivo do teste</th>
-  <th>Passos</th>
-  <th>Critérios de êxito</th>
-  <th>Responsável</th>
- </tr>
- <tr>
-  <td>CT-05: Verificar a listagem de pedidos do fornecedor</td>
-  <td>
-   <ul>
+|Caso de Teste    | CT-07: Verificar a geração de relatórios do usuário |
+|:---|:---|
+| Requisitos Associados | RF-07:	Permitir a visualização de relatórios de custo de suprimentos totais e por cada fornecedor em um período |
+| Objetivo do Teste | Verificar se os relatórios de custos/faturamento estão sendo gerados corretamente |
+| Passos | 1. Acessar a página de login da aplicação<br/> 2. Realizar login com um usuário<br/> 3.Acessar a página "minha conta"<br/> 4. Acessar o menu "Relatórios e estatísticas"<br/> 5. Verificar se as tabelas contendo os relatórios de custo/faturamento são exibidas<br/> 6. Verificar se o botão "exportar tabela" exporta um arquivo em formato .xlsx|
+| Critérios de êxito | 1. As tabelas devem conter o custo/faturamento mês a mês, de acordo com o ano selecionado no menu.<br/> 2. O botão "exportar tabela" deve gerar o download de um arquivo .xlsx contendo a tabela de custo/faturamento do ano selecionado.  |
+| Responsável pela elaborar do caso de Teste | Lorena |
 
-   <li>RF-05:	O usuário do tipo fornecedor deverá ter acesso a lista com todos os seus pedidos em andamento ou finalizados</li>
-
-   </ul>
-  </td>
-  <td>Verificar se os pedidos do fornecedor estão sendo listados corretamente</td>
-  <td>
-   <ol>
-    <li>Acessar a página de login da aplicação</li>
-    <li>Realizar login com um usuário do tipo fornecedor</li>
-    <li>Acessar a lista de pedidos do fornecedor</li>
-    <li>Verificar se todos os pedidos estão sendo listados corretamente</li>
-    <li>Verificar se os detalhes do pedido estão sendo exibidos ao clicar no botão "ver mais"</li>
-    <li>Verificar a exibição da lista em resoluções menores</li>
-   </ol>
-   </td>
-  <td>Todos os pedidos devem ser listados corretamente, em resoluções mobile e desktop; deve ser possível visualizar detalhes dos pedidos.</td>
-  <td>Maria</td>
- </tr>
-</table>
-
-<table>
- <tr>
-  <th>Caso de teste</th>
-  <th>Requisitos associados</th>
-  <th>Objetivo do teste</th>
-  <th>Passos</th>
-  <th>Critérios de êxito</th>
-  <th>Responsável</th>
- </tr>
- <tr>
-  <td>CT-07: Verificar a listagem de pedidos do fornecedor</td>
-  <td>
-   <ul>
-
-   <li>RF-07:	O usuário do tipo fornecedor deverá ter acesso a lista com todos os seus pedidos em andamento ou finalizados</li>
-
-   </ul>
-  </td>
-  <td>Verificar se os pedidos do fornecedor estão sendo listados corretamente</td>
-  <td>
-   <ol>
-    <li>Acessar a página de login da aplicação</li>
-    <li>Realizar login com um usuário do tipo fornecedor</li>
-    <li>Acessar a lista de pedidos do fornecedor</li>
-    <li>Verificar se todos os pedidos estão sendo listados corretamente</li>
-    <li>Verificar se os detalhes do pedido estão sendo exibidos ao clicar no botão "ver mais"</li>
-    <li>Verificar a exibição da lista em resoluções menores</li>
-   </ol>
-   </td>
-  <td>Todos os pedidos devem ser listados corretamente, em resoluções mobile e desktop; deve ser possível visualizar detalhes dos pedidos.</td>
-  <td>Maria</td>
- </tr>
-</table>
  
 > **Links Úteis**:
 > - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
