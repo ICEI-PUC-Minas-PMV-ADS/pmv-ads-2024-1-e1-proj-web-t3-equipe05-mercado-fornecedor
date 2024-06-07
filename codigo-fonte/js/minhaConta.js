@@ -709,3 +709,12 @@ filtrarPedidosPorAno();
 const currentYear = new Date().getFullYear();
 listarTabelaPedidosPorMes(currentYear);
 criarGraficos();
+
+document.getElementById("apagarConta").onclick = apagarConta;
+function apagarConta(){
+  window.confirm("Aperte ok caso deseje apagar a conta");
+  window.alert("Sua conta foi excluída");
+  localStorage.clear();
+  window.location.href = "/codigo-fonte/index.html"
+}
+
