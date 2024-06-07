@@ -29,6 +29,14 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 | Critérios de êxito | 1. As tabelas devem conter o custo/faturamento mês a mês, de acordo com o ano selecionado no menu.<br/> 2. O botão "exportar tabela" deve gerar o download de um arquivo .xlsx contendo a tabela de custo/faturamento do ano selecionado.  |
 | Responsável pela elaborar do caso de Teste | Lorena |
 
+|Caso de Teste    | CT-08: verificar a página de usuário|
+|:---|:---|
+| Requisitos Associados | RF-07:	O usuário deve ser capaz de adicionar uma imagem a sua marca, de remover sua conta da aplicação, e de fazer logout da aplicação. |
+| Objetivo do Teste | Verificar se a conta do usuário permite que ele personalize-a de acordo com a sua vontade |
+| Passos | 1. Começar pela página de login<br/> 2. Cadastrar os dados solictados <br/> 3.Direcionar-se para a página "minha conta"<br/> 
+| Critérios de êxito | 1. Qunado o usuário apertar em apagar, sua cona deve ser excluída.<br/> 2. | Quando o usuário apertar em logout, ele deve sair da página. <br/> 3. | Quando o usuário apertar em editar, a foto deve ser trocada.  
+| Responsável pela elaborar do caso de Teste | Safira |
+
  
 > **Links Úteis**:
 > - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
