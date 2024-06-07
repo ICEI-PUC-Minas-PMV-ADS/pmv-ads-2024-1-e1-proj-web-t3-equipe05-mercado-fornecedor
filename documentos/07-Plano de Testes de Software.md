@@ -17,14 +17,8 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 |:---|:---|
 | Requisitos Associados | RF-05:	O usuário do tipo fornecedor deverá ter acesso a lista com todos os seus pedidos em andamento ou finalizados |
 | Objetivo do Teste | Verificar se os pedidos do fornecedor estão sendo listados corretamente |
-| Passos | <ol>
-    <li>Acessar a página de login da aplicação</li>
-    <li>Realizar login com um usuário do tipo fornecedor</li>
-    <li>Acessar a lista de pedidos do fornecedor</li>
-    <li>Verificar se todos os pedidos estão sendo listados corretamente</li>
-    <li>Verificar se os detalhes do pedido estão sendo exibidos ao clicar no botão "ver mais"</li>
-    <li>Verificar a exibição da lista em resoluções menores</li>
-   </ol> |
+| Passos | 1. Acessar a página de login da aplicação
+2. Realizar login com um usuário do tipo fornecedor|
 | Critérios de êxito | Todos os pedidos devem ser listados corretamente, em resoluções mobile e desktop; deve ser possível visualizar detalhes dos pedidos.  |
 | Responsável pela elaborar do caso de Teste | Lorena |
 
