@@ -32,21 +32,27 @@
   </head>
   <body>
     <main>
+
       <div class="container-centered">
         <section class="main-container">
           <h1 class="title-main">Fornecedores</h1>
-          <nav class="navbar">
+
+
+          
+            <div id="header"></div>
             <div class="container-busca">
               <input
                 class="form-control me-2"
                 type="Procurar"
                 placeholder="Buscar Fornecedores"
-                aria-label=""
               />
+
+              <div id="list"></div>
+
               <button class="btn btn-outline-primary" type="submit">
                 Buscar
               </button>
-              <div class="dropdown">
+              <!-- <div class="dropdown">
                 <button
                   class="btn btn-outline-primary dropdown-toggle"
                   type="button"
@@ -63,104 +69,142 @@
                   <li><a class="dropdown-item" href="#">Entretenimento</a></li>
                   <li><a class="dropdown-item" href="#">Pet</a></li>
                   <li><a class="dropdown-item" href="#">Siderúrgica</a></li>
-                  <li><a class="dropdown-item" href="#">Veículos</a></li>
-                </ul>
+                  <li><a class="dropdown-item" href="#">Veículos</a></li> -->
+                <!-- </ul> -->
+              <!-- </div>
+            </div> -->
+          <!-- </nav>
+          
+          <ul class="lista-de-fornecedores"> -->
+             <!-- <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f1.png" alt="Usiminas" />
               </div>
-            </div>
-          </nav>
-          <ul class="lista-de-fornecedores">
-            <li class="card-fornecedor">
-              <img
-                src="./img/Rectangle 36.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Elefante</h5>
-                <p class="card-fornecedor-text">Alimentícia</p>
-              </div>
+
+              <h4 class="title-lista-user">Usiminas</h4>
+              <h5 class="cat-lista-user">Siderurgia</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
             </li>
-            <li class="card-fornecedor">
-              <img src="./img/acrilex.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Acrilex</h5>
-                <p class="card-fornecedor-text">Artes e Artesanatos</p>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f6.png" alt="Voltz" />
               </div>
+
+              <h4 class="title-lista-user">Voltz</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
             </li>
-            <li class="card-fornecedor">
-              <img src="./img/futura.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Futura</h5>
-                <p class="card-fornecedor-text">Entretenimento</p>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f5.png" alt="Panco" />
               </div>
+
+              <h4 class="title-lista-user">Panco</h4>
+              <h5 class="cat-lista-user">Alimentos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
             </li>
-            <li class="card-fornecedor">
-              <img src="./img/Pet.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Petlove</h5>
-                <p class="card-fornecedor-text">Pet</p>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f4.png" alt="Hummer" />
               </div>
+
+              <h4 class="title-lista-user">Hummer</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
             </li>
-            <li class="card-fornecedor">
-              <img src="./img/usiminas.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Usiminas</h5>
-                <p class="card-fornecedor-text">Siderúrgica</p>
+
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f1.png" alt="Usiminas" />
               </div>
+
+              <h4 class="title-lista-user">Usiminas</h4>
+              <h5 class="cat-lista-user">Siderurgia</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
             </li>
-            <li class="card-fornecedor">
-              <img src="./img/voltz.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Voltz</h5>
-                <p class="card-fornecedor-text">Veículos</p>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f6.png" alt="Voltz" />
               </div>
+
+              <h4 class="title-lista-user">Voltz</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
             </li>
-            <li class="card-fornecedor">
-              <img src="./img/catupiry.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Catupiry</h5>
-                <p class="card-fornecedor-text">Alimentícia</p>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f5.png" alt="Panco" />
               </div>
+
+              <h4 class="title-lista-user">Panco</h4>
+              <h5 class="cat-lista-user">Alimentos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
             </li>
-            <li class="card-fornecedor">
-              <img src="./img/panco.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Panco</h5>
-                <p class="card-fornecedor-text">Alimentícia</p>
+            <li class="card-lista-usuarios">
+              <div class="img-lista-user">
+                <img src="./img/f4.png" alt="Hummer" />
               </div>
-            </li>
-            <li class="card-fornecedor">
-              <img src="./img/Pet.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Petlove</h5>
-                <p class="card-fornecedor-text">Pet</p>
-              </div>
-            </li>
-            <li class="card-fornecedor">
-              <img
-                src="./img/Rectangle 36.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Elefante</h5>
-                <p class="card-fornecedor-text">Alimentícia</p>
-              </div>
-            </li>
-            <li class="card-fornecedor">
-              <img src="./img/acrilex.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Acrilex</h5>
-                <p class="card-fornecedor-text">Artes e Artesanatos</p>
-              </div>
-            </li>
-            <li class="card-fornecedor">
-              <img src="./img/voltz.png" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-fornecedor-title">Voltz</h5>
-                <p class="card-fornecedor-text">Veículos</p>
-              </div>
-            </li>
+
+              <h4 class="title-lista-user">Hummer</h4>
+              <h5 class="cat-lista-user">Veículos</h5>
+              <button
+                class="btn-lista-user"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#ver-mais-fornecedores"
+              >
+                Ver mais
+              </button>
+            </li> -->
           </ul>
         </section>
       </div>
@@ -170,7 +214,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/openMenu.js"></script>
+    <script src="./js/listarFornecedores.js"></script>
     <script type="module" src="./js/script.js"></script>
   </body>
 </html>
