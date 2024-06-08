@@ -379,7 +379,7 @@ Para acessar a página, visite o link abaixo:
 
 Otavio Stefanine Nunes Soutelo
 
-### Home - Monstagem da página do Loguin e JS
+### Monstagem da página do Loguin e JS
 
 <figure>
   <img src="img/login.png"/>
