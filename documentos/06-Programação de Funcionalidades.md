@@ -398,9 +398,9 @@ RF - 02 - RF-02 Usuário deve ser capaz de realizar login na aplicação, utiliz
 
 #### Estrutura de Dados
 
-- <a href="../codigo-fonte/login.html">Index.html </a>
-- <a href="../codigo-fonte/css/login.css">Style.css </a>
-- <a href="../codigo-fonte/js/login.js">openMenu.js </a>
+- <a href="../codigo-fonte/login.html">login.html </a>
+- <a href="../codigo-fonte/css/login.css">login.css </a>
+- <a href="../codigo-fonte/js/login.js">login.js </a>
 
 #### Instruções de acesso
 
