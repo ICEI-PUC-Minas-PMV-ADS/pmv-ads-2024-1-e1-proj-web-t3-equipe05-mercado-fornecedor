@@ -49,8 +49,8 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 |:---|:---|
 | Requisitos Associados | RF-02:	No perfil de clientes ou fornecedores, deve permitir loguin no site. |
 | Objetivo do Teste | Verificar se o campo de loguin entra com e-mail e senha |
-| Passos | 1. Começar pela página index<br/> 2. Procurar pela aba para apertar em loguin <br/> 3.Preencher o campo de e-mail senha"<br/>  4. Direcionar para a pagina index <br/>  
-| Critérios de êxito | 1. Quando o usuário digitar o número do pedido, o pedido deve aparecer conforme solicitado.  
+| Passos | 1. Começar pela página index<br/> 2. Procurar pela aba para apertar em loguin <br/> 3.Preencher o campo de e-mail senha<br/>  4. Direcionar para a pagina index <br/>  
+| Critérios de êxito | 1. Quando o usuário digitar o e-mail e senha cadastrado, deve logar no site.  
 | Responsável pela elaborar do caso de Teste | Renato |
 
 > **Links Úteis**:
