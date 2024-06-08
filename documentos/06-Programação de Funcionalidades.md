@@ -378,3 +378,36 @@ Para acessar a página, visite o link abaixo:
 #### Responsável
 
 Otavio Stefanine Nunes Soutelo
+
+### Home - Monstagem da página do Loguin e JS
+
+<figure>
+  <img src="img/loguin.png"/>
+  <figcaption>Figura 1 - Imagem da página login</figcaption>
+</figure>
+
+#### Requisito atendido
+
+RF - 02 - RF-02 Usuário deve ser capaz de realizar login na aplicação, utilizando seu e-mail e senha
+
+#### Artefatos da funcionalidade
+
+- login.html 
+- login.css 
+- login.js
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/login.html">Index.html </a>
+- <a href="../codigo-fonte/css/login.css">Style.css </a>
+- <a href="../codigo-fonte/js/login.js">openMenu.js </a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo:
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/login.html" target="_blank">Página de Login</a>
+
+#### Responsável
+
+Renato Andrade de Carvalho
