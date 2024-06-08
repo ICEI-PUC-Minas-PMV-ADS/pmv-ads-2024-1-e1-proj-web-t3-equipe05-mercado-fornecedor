@@ -382,7 +382,7 @@ Otavio Stefanine Nunes Soutelo
 ### Home - Monstagem da página do Loguin e JS
 
 <figure>
-  <img src="img/loguin.png"/>
+  <img src="img/login.png"/>
   <figcaption>Figura 1 - Imagem da página login</figcaption>
 </figure>
 
