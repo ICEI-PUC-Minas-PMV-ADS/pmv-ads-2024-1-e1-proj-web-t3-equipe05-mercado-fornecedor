@@ -45,7 +45,14 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 | Critérios de êxito | 1. Quando o usuário digitar o número do pedido, o pedido deve aparecer conforme solicitado.  
 | Responsável pela elaborar do caso de Teste | Safira |
 
- 
+ |Caso de Teste    | CT-02: Usuário deve ser capaz de realizar login na aplicação, utilizando seu e-mail e senha.
+|:---|:---|
+| Requisitos Associados | RF-02:	No perfil de clientes ou fornecedores, deve permitir loguin no site. |
+| Objetivo do Teste | Verificar se o campo de loguin entra com e-mail e senha |
+| Passos | 1. Começar pela página index<br/> 2. Procurar pela aba para apertar em loguin <br/> 3.Preencher o campo de e-mail senha"<br/>  4. Direcionar para a pagina index <br/>  
+| Critérios de êxito | 1. Quando o usuário digitar o número do pedido, o pedido deve aparecer conforme solicitado.  
+| Responsável pela elaborar do caso de Teste | Renato |
+
 > **Links Úteis**:
 > - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
 > -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
