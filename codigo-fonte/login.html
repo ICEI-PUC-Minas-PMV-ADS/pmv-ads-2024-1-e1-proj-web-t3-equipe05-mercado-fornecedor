@@ -16,6 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <link href="./css/login.css" rel="stylesheet" />
   </head>
   <body>
@@ -31,7 +36,7 @@
         <section class="login-form-bg">
           <section class="login-form-section">
             <h2>Login</h2>
-            <form id="loginForm">
+            <form id="loginForm" class="login-form">
               <div class="input-style">
                 <input
                   id="login-input-email"
@@ -57,7 +62,10 @@
                 Ainda não é cadastrado?
                 <a href="./cadastro.html">Cadastre-se</a>
               </span>
-              <div id="error-message" style="color: red; margin-top: 10px;"></div>
+              <div
+                id="error-message"
+                style="color: red; margin-top: 10px"
+              ></div>
             </form>
           </section>
           <section class="login-img">
@@ -72,6 +80,10 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/login.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script type="module" src="js/login.js"></script>
   </body>
 </html>
