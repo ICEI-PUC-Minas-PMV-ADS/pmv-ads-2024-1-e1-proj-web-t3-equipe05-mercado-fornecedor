@@ -343,3 +343,7 @@ const menuTodos = document.getElementById("listar-todos-fornecedores");
 menuTodos.addEventListener("click", (e) => {
   listarFornecedoresDoCliente(meusFornecedores);
 });
+
+ 
+
+

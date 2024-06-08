@@ -6,7 +6,23 @@ const meusFornecedores = document.getElementById("meus-fornecedores");
 const salvarBtn = document.getElementById("minha-conta__salvar-btn");
 const editarDadosBtn = document.getElementById("editar-dados");
 const estatisticasBtn = document.getElementById("estatisticas");
-const notificacoesBtn = document.getElementById("notificacoes");
+const notificacoesBtn = document.getElementById("notificacoes");  
+
+
+
+function logout() {
+
+  localStorage.clear();
+  sessionStorage.clear();
+
+  window.location.href = "/codigo-fonte/login.html";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("logout").addEventListener("click", logout);
+});
+
+
 const objPedidosPorAno = {};
 const arrayPedidosPorAno = [];
 
@@ -90,7 +106,10 @@ function exibirDadosDoUsuario() {
 
   if (user.segmento !== null) segmento.value = user.segmento;
   if (user.telefone !== null) telefone.value = user.telefone;
+
 }
+
+
 
 function editarDadosDoUsuario() {
   const user = JSON.parse(localStorage.getItem("User"));
@@ -616,6 +635,7 @@ editarDadosBtn.addEventListener("click", (e) => {
     editarDadosBtn,
     notificacoesBtn,
     estatisticasBtn
+  
   );
 });
 
@@ -673,3 +693,25 @@ filtrarPedidosPorAno();
 const currentYear = new Date().getFullYear();
 listarTabelaPedidosPorMes(currentYear);
 criarGraficos();
+
+
+document.getElementById('apagar-conta').addEventListener('click', function() {
+  // Aqui você pode colocar a lógica para apagar a conta
+  if (confirm("Tem certeza de que deseja apagar sua conta?")) {
+      // Se o usuário confirmar, você pode executar a ação de exclusão da conta aqui
+      console.log("Conta apagada!");
+      // Por exemplo, você pode chamar uma função que faça uma requisição para o servidor para apagar a conta
+      // deleteAccount();
+  } else {
+      // Se o usuário cancelar, você pode não fazer nada ou exibir uma mensagem
+      console.log("Exclusão de conta cancelada.");
+  }
+});
+
+document.getElementById("apagarConta").onclick = apagarConta;
+function apagarConta(){
+  window.confirm("Aperte ok caso deseje apagar a conta");
+  window.alert("Sua conta foi excluída");
+  localStorage.clear();
+  window.location.href = "/codigo-fonte/index.html"
+}

@@ -251,3 +251,19 @@ export function geraPedidos(pedidos) {
 }
 
 geraPedidos(userData.pedidos.reverse());
+
+
+    
+    
+
+filtro.onkeyup = function(){
+  const pedidosFiltrados = userData.pedidos.forEach((p) => p.id == Number(filtro.value));
+geraPedidos(pedidosFiltrados);
+}
+
+
+
+
+
+
+
