@@ -293,8 +293,40 @@ export function geraPedidos(pedidos) {
 
 geraPedidos(userData.pedidos.reverse());
 
+busca.onkeyup = function () {
+  const pedidosFiltrados = userData.pedidos.filter(
+    (p) => p.id == Number(busca.value)
+  );
+  busca.value == ""
+    ? geraPedidos(userData.pedidos)
+    : geraPedidos(pedidosFiltrados);
+};
 
-filtro.onkeyup = function(){
-  const pedidosFiltrados = userData.pedidos.forEach((p) => p.id == Number(filtro.value));
-geraPedidos(pedidosFiltrados);
-}
+// const inputBusca = document.getElementById("busca-pedidos-cliente");
+
+// inputBusca.addEventListener("input", (e) => {
+//   let textoBusca = inputBusca.value;
+
+//   const fornecedores = JSON.parse(localStorage.getItem("Fornecedores"));
+//   let filtro = fornecedores.filter((f) =>
+//     f.nome.toLowerCase().includes(textoBusca.toLowerCase())
+//   );
+
+//   const pedidosFiltrados = [];
+//   userData.pedidos.forEach((p) => {
+//     filtro.forEach((f) => {
+//       if (f.id == p.fornecedorId) pedidosFiltrados.push(p);
+//     });
+//   });
+
+//   pedidosFiltrados.push(
+//     ...userData.pedidos.filter((p) => p.id == Number(textoBusca))
+//   );
+
+//   textoBusca == ""
+//     ? geraPedidos(userData.pedidos)
+//     : geraPedidos(pedidosFiltrados);
+// });
+
+let nome;
+console.log(nome + 1);
