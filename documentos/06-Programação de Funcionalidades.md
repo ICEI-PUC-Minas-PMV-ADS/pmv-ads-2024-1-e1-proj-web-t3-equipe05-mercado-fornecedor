@@ -37,7 +37,7 @@ Para acessar a página, visite o link abaixo:
 
 Lorena Marta Martiniana de Paula
 
-### Cadastro de usuário - apenas JavaScript 
+### Cadastro de usuário - apenas JavaScript
 
 <figure>
   <img src="img/cadastro.png"/>
@@ -66,40 +66,67 @@ Para acessar a página, visite o link abaixo:
 
 Lorena Marta Martiniana de Paula
 
-### Lista de pedidos do cliente e cadastro de pedidos
+### Lista de pedidos do fornecedor
 
 <figure>
-  <img src="img/painel-cliente.png"/>
-  <figcaption>Figura 3 - Imagem do painel de controle do cliente contando com a lista de pedidos efetuados pelo usuário e o formulário para cadastro de pedidos</figcaption>
+  <img src="img/painel-fornecedor.png"/>
+  <figcaption>Figura 3 - Imagem do painel de controle do fornecedor, contendo a lista de pediso do fornecedor</figcaption>
 </figure>
 
 #### Requisito atendido
 
-RF-02 - A aplicação deve apresentar campo de status no andamento das requisições
+RF-05 - Usuário fornecedor deve ter acesso a lista com todos os pedidos para os quais enviou cotação
 
 #### Artefatos da funcionalidade
 
-- painelDeControleCliente.html - linhas 50 até 610
-- Style.css - Linhas 587 até 1098
-- script.js
-- api.js
-- listarpedidos.js
-- cadastrarPedidos.js
+- painelDeControleFornecedor.html
+- style.css - Linhas 1314 até 2063
+- listarClientes.js
 
 #### Estrutura de Dados
 
 - <a href="../codigo-fonte/painelDeControleCliente.html">Index.html - linhas 50 até 610</a>
-- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 587 até 1098</a>
-- <a href="../codigo-fonte/js/script.js">Script.js</a>
-- <a href="../codigo-fonte/js/api.js">Api.js</a>
-- <a href="../codigo-fonte/js/listarpedidos.js">listarpedidos.js</a>
-- <a href="../codigo-fonte/js/cadastrarPedido.js">cadastrarPedido.js</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1314 até 2063</a>
+- <a href="../codigo-fonte/js/listarClientes.js">listarpedidos.js</a>
 
 #### Instruções de acesso
 
-Para acessar a página, visite o link abaixo:
+Para acessar a página, visite o link abaixo, logado em usuário fornecedor:
 
-- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/painelDeControleCliente.html" target="_blank">Página de lista de pedidos</a>
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/painelDeControleFornecedor.html" target="_blank">Página de lista de pedidos do fornecedor</a>
+
+#### Responsável
+
+Lorena Marta Martiniana de Paula
+
+### Geração de relatórios de custo/faturamento
+
+<figure>
+  <img src="img/relatorios-estatisticas.png"/>
+  <figcaption>Figura 4 - Visualização da seção "Relatórios e Estatísticas" na página "Minha conta"</figcaption>
+</figure>
+
+#### Requisito atendido
+
+RF-07 - Permitir a visualização de relatórios de custo de suprimentos totais e por cada fornecedor em um período;
+
+#### Artefatos da funcionalidade
+
+- minhaConta.html
+- style.css - Linhas 819 até 1312
+- minhaConta.js - Linhas 1 até 719
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/minhaconta.html">MinhaConta.html - linhas 50 até 610</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 819 até 1312</a>
+- <a href="../codigo-fonte/js/minhaConta.js">minhaConta.js - Linhas 1 até 719</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo e selecione "Relatórios e estatísticas":
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/minhaconta.html" target="_blank">Página "Minha Conta"</a>
 
 #### Responsável
 
@@ -113,6 +140,7 @@ Lorena Marta Martiniana de Paula
 </figure>
 
 #### Requisito atendido
+
 N/A - Página não atende a nenhum requisito estabelecido
 
 #### Artefatos da funcionalidade
@@ -121,7 +149,7 @@ N/A - Página não atende a nenhum requisito estabelecido
 
 -cadastro.html
 
-#### Estrutura de Dados 
+#### Estrutura de Dados
 
 - <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/cadastro.html">HTML do cadastro</a>
 
@@ -130,6 +158,7 @@ N/A - Página não atende a nenhum requisito estabelecido
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
+
 - <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/cadastro.html" target="_blank">Cadastro da aplicação</a>
 
 #### Responsável
@@ -145,7 +174,7 @@ Renato Andrade de Carvalho
 
 #### Requisito atendido
 
-RF-04	A aplicação deve permitir que o cliente visualize o cadastro de todos os fornecedores para ciência da marca da mercadoria que cotarão
+RF-04 A aplicação deve permitir que o cliente visualize o cadastro de todos os fornecedores para ciência da marca da mercadoria que cotarão
 
 #### Artefatos da funcionalidade
 
@@ -162,6 +191,7 @@ RF-04	A aplicação deve permitir que o cliente visualize o cadastro de todos os
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
+
 - <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/interfacepedidodocliente.html" target="_blank">painel de controle do cliente</a>
 
 #### Responsável
@@ -174,8 +204,6 @@ Renato Andrade de Carvalho
 > - [JSON Tutorial](https://www.w3resource.com/JSON)
 > - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
 > - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
->
-
 
 ### Página de Contato
 
@@ -228,7 +256,7 @@ FR-09 - No perfil de fornecedor, permitir filtragem de todos os pedidos feitos p
 
 #### Artefatos da funcionalidade
 
-- contato.html - Linhas  134 a 775
+- contato.html - Linhas 134 a 775
 - style.css - Linhas 1186 a 1339
 
 #### Estrutura de Dados
@@ -270,7 +298,7 @@ NA - Página não atende nenhum requisito estabelecido
 
 #### Artefatos da funcionalidade
 
-- contato.html - Linhas  12 a 33
+- contato.html - Linhas 12 a 33
 - style.css - Linhas 1072 a 1119
 
 #### Estrutura de Dados
@@ -289,6 +317,7 @@ Para acessar a página, visite o link abaixo:
 - Felipe Sauter
 
 ## Interface Minha Página
+
 <figure>
   <img src="img/minhaconta.jpg"/>
   <figcaption>Figura 9 - Minha Conta </figcaption>
@@ -299,16 +328,18 @@ Para acessar a página, visite o link abaixo:
 codigo-fonte/css/minhaconta.css
 codigo-fonte/minhaconta.html
 
-## Estrutura dos dados 
+## Estrutura dos dados
+
 - <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/minhaconta.html">html minha conta</a>
 - <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/minhaconta.css">css minha conta</a>
 
 ### Instruções de acesso
 
 Para acessar a página, entre no link abaixo:
+
 - <a href=" https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/minhaconta.html" target="_blank">página minha conta</a>
 
-### Responsável 
+### Responsável
 
 Safira Gabriele Garcia da Silva
 
@@ -327,6 +358,7 @@ Safira Gabriele Garcia da Silva
 </figure>
 
 #### Requisito atendido
+
 N/A - Página não atende a nenhum requisito estabelecido
 
 #### Artefatos da funcionalidade
@@ -334,15 +366,15 @@ N/A - Página não atende a nenhum requisito estabelecido
 -style.css - Linhas 1246 até 1289
 -index.html - Linhas 265 até 306
 
-#### Estrutura de Dados 
+#### Estrutura de Dados
 
 - <a href="../codigo-fonte/index.html">Index.html - linhas 265 até 306</a>
 - <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1246 até 1289</a>
 
-
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
+
 - <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/cadastro.html" target="_blank">Cadastro da aplicação</a>
 
 #### Responsável
@@ -357,22 +389,23 @@ Otavio Stefanine Nunes Soutelo
 </figure>
 
 #### Requisito atendido
+
 N/A - Página não atende a nenhum requisito estabelecido
 
 #### Artefatos da funcionalidade
 
--fornecedores.css 
--fornecedores.html 
+-fornecedores.css
+-fornecedores.html
 
-#### Estrutura de Dados 
+#### Estrutura de Dados
 
 - <a href="../codigo-fonte/fornecedores.html">Fornecedores.html</a>
 - <a href="../codigo-fonte/css/fornecedores.css">fornecedores.css</a>
 
-
 #### Instruções de acesso
 
 Para acessar a página, visite o link abaixo:
+
 - <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/fornecedores.html" target="_blank">Fornecedores disponiveis</a>
 
 #### Responsável
@@ -392,8 +425,8 @@ RF - 02 - RF-02 Usuário deve ser capaz de realizar login na aplicação, utiliz
 
 #### Artefatos da funcionalidade
 
-- login.html 
-- login.css 
+- login.html
+- login.css
 - login.js
 
 #### Estrutura de Dados

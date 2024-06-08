@@ -4,9 +4,17 @@ Relatório com as evidências dos testes de software realizados na aplicação p
 
 Os resultados dos testes funcionais realizados na aplicação são descritos a seguir. [Utilize a estrutura abaixo para cada caso de teste executado]
 
-|Caso de Teste    | CT-X - Título Caso de Teste |
-|:---|:---|
-| Resultados obtidos | Descrever resultados do teste  |
-| Responsável pela execução do caso de Teste | Nome do integrante da equipe |
+| Caso de Teste                              | CT-X - Título Caso de Teste   |
+| :----------------------------------------- | :---------------------------- |
+| Resultados obtidos                         | Descrever resultados do teste |
+| Responsável pela execução do caso de Teste | Nome do integrante da equipe  |
 
-[Inserir aqui as evidências de teste que podem ser apresentadas por print de telas ou por .gif de execução de teste]
+| Caso de Teste                              | CT-08: verificar a página de usuário                                                                                                                                                                                                                                                            |
+| :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resultados obtidos                         | 1. Ao clicar em "Sair", surge um erro, ao invés de ser redirecionado para a página de login, o usuário visualizada uma página de erro 404<br/> 2. Ao clicar em "editar imagem" e enviar uma nova imagem, a imagem não está sendo alterada<br/> 3. O botão apagar conta não realiza nenhuma ação |
+| Responsável pela execução do caso de Teste | Lorena                                                                                                                                                                                                                                                                                          |
+
+| Caso de Teste                              | CT-10: verificar se a página de clientes consegue fazer pesquisa                                                                                           |
+| :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resultados obtidos                         | 1. Ao digitar o número do pedido na busca, nada acontece e nenhum pedido é buscado<br/> 2. Surge um erro no console informando que "filtro está undefined" |
+| Responsável pela execução do caso de Teste | Lorena                                                                                                                                                     |
