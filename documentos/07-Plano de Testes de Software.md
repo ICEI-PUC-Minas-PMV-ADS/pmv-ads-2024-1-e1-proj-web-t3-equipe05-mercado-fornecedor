@@ -53,6 +53,14 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 | Critérios de êxito | 1. Quando o usuário digitar o e-mail e senha cadastrado, deve logar no site.  
 | Responsável pela elaborar do caso de Teste | Renato |
 
+ |Caso de Teste    | CT-04 A aplicação deve permitir que o cliente visualize o cadastro de todos os fornecedores;.
+|:---|:---|
+| Requisitos Associados | RF-04:	O usuário deve conseguir visualizar os fornecedores cadastrados na aplicação. |
+| Objetivo do Teste | Verificar se o campo mostra os fornecedores cadastrados. |
+| Passos | 1. Começar pela página index<br/> 2. Acessar o campo "fornecedores" <br/> 
+| Critérios de êxito | 1. O usuário consegue pesquisar os fornecedores cadastrados.  
+| Responsável pela elaborar do caso de Teste | Otavio |
+
 > **Links Úteis**:
 > - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
 > -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
