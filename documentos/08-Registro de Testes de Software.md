@@ -33,3 +33,8 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 | :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Resultados obtidos                         | 1. os detalhes dos pedidos estão sendo listado corretamente e exibidos ao clicar no botão "ver mais"  |
 | Responsável pela execução do caso de Teste | Safira                  
+
+| Caso de Teste                              | CT- 02: Usuário deve ser capaz de realizar login na aplicação, utilizando seu e-mail e senha.                                                                                                                                                                                                                                                  |
+| :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resultados obtidos                         | 1. o usuário consegue realizar o login com email e senha |
+| Responsável pela execução do caso de Teste | Otavio                 
