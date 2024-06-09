@@ -412,7 +412,7 @@ Para acessar a página, visite o link abaixo:
 
 Renato Andrade de Carvalho
 
-## RF-10
+## pedido de busca painel de clientes
 <figure>
   <img src="img/painel-cliente.png"/>
   <figcaption>interface da pagina de pedidos</figcaption>
@@ -420,8 +420,13 @@ Renato Andrade de Carvalho
 
 ## Requisito atendido 
 
-No perfil de cliente, permitir pesquisa apenas pelo número do pedido.
+RF-10 No perfil de cliente, permitir pesquisa apenas pelo número do pedido. É válido ressaltar que foi desenvolvido por mim apenas a  capacidade de buscar o pedido da página.
+
+## Artefatos e funcionalidade 
+linhas 259-262-minhaconta.js
 
 ## Responsável 
 
 Safira Garcia
+
+
