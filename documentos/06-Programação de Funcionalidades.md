@@ -423,7 +423,10 @@ Renato Andrade de Carvalho
 RF-10 No perfil de cliente, permitir pesquisa apenas pelo número do pedido. É válido ressaltar que foi desenvolvido por mim apenas a  capacidade de buscar o pedido da página.
 
 ## Artefatos e funcionalidade 
-linhas 259-262-minhaconta.js
+linhas 259-262-paineldecontrole.js
+
+## Instruções de acesso
+<a href="../codigo-fonte/painelDeControleCliente.js">
 
 ## Responsável 
 
