@@ -447,6 +447,14 @@ Renato Andrade de Carvalho
 
 ## RF-10
 <figure>
-  <img src="img/paineldecontroleclientes.jpeg"/>
-  <figcaption>Figura 4 - Interface da página de cadastro do usuário</figcaption>
+  <img src="img/painel-cliente.png"/>
+  <figcaption>interface da pagina de pedidos</figcaption>
 </figure>
+
+## Requisito atendido 
+
+No perfil de cliente, permitir pesquisa apenas pelo número do pedido.
+
+## Responsável 
+
+Safira Garcia
