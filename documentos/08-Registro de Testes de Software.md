@@ -38,3 +38,8 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 | :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Resultados obtidos                         | 1. o usuário consegue realizar o login com email e senha |
 | Responsável pela execução do caso de Teste | Otavio                 
+
+| Caso de Teste                              | CT- 04: A aplicação deve permitir que o cliente visualize o cadastro de todos os fornecedores;                                                                                                                                                                                                                                        
+| :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resultados obtidos                         | 1. o usuário visualiza os fornecedores cadastrados |
+| Responsável pela execução do caso de Teste | Renato                 
