@@ -27,4 +27,9 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 | Caso de Teste                              | CT- 07: Verificar a geração de relatórios do usuário                                                                                                                                                                                                                                                         |
 | :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Resultados obtidos                         | 1. As tabelas e os relatórios estão sendo exibidos e ao clicar em "exportar tabela" gera o download de um arquivo xlsx. |
-| Responsável pela execução do caso de Teste | Safira                   
+| Responsável pela execução do caso de Teste | Safira                  
+
+| Caso de Teste                              | CT- 05: Verificar a listagem de pedidos do fornecedor                                                                                                                                                                                                                                                       |
+| :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resultados obtidos                         | 1. os detalhes dos pedidos estão sendo listado corretamente e exibidos ao clicar no botão "ver mais"  |
+| Responsável pela execução do caso de Teste | Safira                  
