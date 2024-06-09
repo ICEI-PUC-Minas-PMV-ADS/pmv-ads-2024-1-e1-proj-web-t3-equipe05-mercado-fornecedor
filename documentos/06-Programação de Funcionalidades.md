@@ -132,39 +132,6 @@ Para acessar a página, visite o link abaixo e selecione "Relatórios e estatís
 
 Lorena Marta Martiniana de Paula
 
-### Interface do cadastro do usuário
-
-<figure>
-  <img src="img/cadastro.png"/>
-  <figcaption>Figura 4 - Interface da página de cadastro do usuário</figcaption>
-</figure>
-
-#### Requisito atendido
-
-N/A - Página não atende a nenhum requisito estabelecido
-
-#### Artefatos da funcionalidade
-
--cadastro.css
-
--cadastro.html
-
-#### Estrutura de Dados
-
-- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/cadastro.html">HTML do cadastro</a>
-
-- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/cadastro.css">CSS do cadastro</a>
-
-#### Instruções de acesso
-
-Para acessar a página, visite o link abaixo:
-
-- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/cadastro.html" target="_blank">Cadastro da aplicação</a>
-
-#### Responsável
-
-Renato Andrade de Carvalho
-
 ### Interface do painel de controle do cliente
 
 <figure>
