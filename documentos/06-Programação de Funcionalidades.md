@@ -444,3 +444,9 @@ Para acessar a página, visite o link abaixo:
 #### Responsável
 
 Renato Andrade de Carvalho
+
+## RF-10
+<figure>
+  <img src="img/paineldecontroleclientes.jpeg"/>
+  <figcaption>Figura 4 - Interface da página de cadastro do usuário</figcaption>
+</figure>
