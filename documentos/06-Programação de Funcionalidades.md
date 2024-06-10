@@ -66,11 +66,147 @@ Para acessar a página, visite o link abaixo:
 
 Lorena Marta Martiniana de Paula
 
+### Lista de pedidos do cliente
+
+<figure>
+  <img src="img/pedidos-cliente.png"/>
+  <figcaption>Figura 3 - Imagem da lista de pedidos do usuário cliente</figcaption>
+</figure>
+
+#### Requisito atendido
+
+N/A - Página não atende a nenhum requisito estabelecido
+
+#### Artefatos da funcionalidade
+
+- painelDeControleCliente.html
+- style.css - Linhas 1314 até 2063
+- listarPedidos.js
+- api.js
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/painelDeControleCliente.html">painelDeControleCliente.html</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1314 até 2063</a>
+- <a href="../codigo-fonte/js/listarClientes.js">listarpedidos.js</a>
+- <a href="../codigo-fonte/js/api.js">api.js</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo, logado em usuário cliente (e-mail: contato@inova.com | senha: 123456):
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/painelDeControleCliente.html" target="_blank">Página de lista de pedidos do cliente</a>
+
+#### Responsável
+
+Lorena Marta Martiniana de Paula
+
+### Cadastro de pedidos
+
+<figure>
+  <img src="img/cadastro-pedidos.png"/>
+  <figcaption>Figura 4 - Imagem do formulário de cadastro de pedidos do cliente</figcaption>
+</figure>
+
+#### Requisito atendido
+
+N/A - Página não atende a nenhum requisito estabelecido
+
+#### Artefatos da funcionalidade
+
+- painelDeControleCliente.html
+- style.css - Linhas 1314 até 2063
+- cadastrarPedido.js
+- api.js
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/painelDeControleCliente.html">painelDeControleCliente.html</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1314 até 2063</a>
+- <a href="../codigo-fonte/js/cadastrarPedido.js">cadastrarPedido.js</a>
+- <a href="../codigo-fonte/js/api.js">api.js</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo, logado em usuário cliente (e-mail: contato@inova.com | senha: 123456). Em seguida clique no botão "Criar novo pedido":
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/painelDeControleCliente.html" target="_blank">Página de lista de pedidos do cliente</a>
+
+#### Responsável
+
+Lorena Marta Martiniana de Paula
+
+### Meus clientes (lista de clientes do fornecedor)
+
+<figure>
+  <img src="img/meus-clientes.png"/>
+  <figcaption>Figura 5 - Imagem da página contendo todos os clientes do fornecedor</figcaption>
+</figure>
+
+#### Requisito atendido
+
+N/A - Página não atende a nenhum requisito estabelecido
+
+#### Artefatos da funcionalidade
+
+- meusClientes.html
+- style.css - Linhas 2077 até 2404
+- meusClientes.js
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/meusClientes.html">meusClientes.html</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1314 até 2063</a>
+- <a href="../codigo-fonte/js/meusClientes.js">meusClientes.js</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo, logado em usuário fornecedor (e-mail: contato@tecnobits.com | senha: 123456):
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/meusClientes.html" target="_blank">Página de lista de clientes do fornecedor</a>
+
+#### Responsável
+
+Lorena Marta Martiniana de Paula
+
+### Meus fornecedores (lista de fornecedores do cliente)
+
+<figure>
+  <img src="img/meus-clientes.png"/>
+  <figcaption>Figura 6 - Imagem da página contendo todos os clientes do fornecedor</figcaption>
+</figure>
+
+#### Requisito atendido
+
+N/A - Página não atende a nenhum requisito estabelecido
+
+#### Artefatos da funcionalidade
+
+- meusFornecedores.html
+- style.css - Linhas 2077 até 2404
+- meusFornecedores.js
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/meusFornecedores.html">meusFornecedores.html</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1314 até 2063</a>
+- <a href="../codigo-fonte/js/meusFornecedores.js">meusFornecedores.js</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo, logado em usuário cliente (e-mail: contato@inova.com | senha: 123456):
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/meusFornecedores.html" target="_blank">Página de lista de fornecedores do cliente</a>
+
+#### Responsável
+
+Lorena Marta Martiniana de Paula
+
 ### Lista de pedidos do fornecedor
 
 <figure>
-  <img src="img/painel-fornecedor.png"/>
-  <figcaption>Figura 3 - Imagem do painel de controle do fornecedor, contendo a lista de pediso do fornecedor</figcaption>
+  <img src="img/pedidos-fornecedor.png"/>
+  <figcaption>Figura 7 - Imagem da lista de pedidos do usuário fornecedor</figcaption>
 </figure>
 
 #### Requisito atendido
@@ -85,13 +221,13 @@ RF-05 - Usuário fornecedor deve ter acesso a lista com todos os pedidos para os
 
 #### Estrutura de Dados
 
-- <a href="../codigo-fonte/painelDeControleCliente.html">Index.html - linhas 50 até 610</a>
+- <a href="../codigo-fonte/painelDeControleFornecedor.html">painelDeControleFornecedor.html</a>
 - <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1314 até 2063</a>
 - <a href="../codigo-fonte/js/listarClientes.js">listarpedidos.js</a>
 
 #### Instruções de acesso
 
-Para acessar a página, visite o link abaixo, logado em usuário fornecedor:
+Para acessar a página, visite o link abaixo, logado em usuário fornecedor (e-mail: contato@tecnobits.com | senha: 123456):
 
 - <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/painelDeControleFornecedor.html" target="_blank">Página de lista de pedidos do fornecedor</a>
 
@@ -103,7 +239,7 @@ Lorena Marta Martiniana de Paula
 
 <figure>
   <img src="img/relatorios-estatisticas.png"/>
-  <figcaption>Figura 4 - Visualização da seção "Relatórios e Estatísticas" na página "Minha conta"</figcaption>
+  <figcaption>Figura 8 - Visualização da seção "Relatórios e Estatísticas" na página "Minha conta"</figcaption>
 </figure>
 
 #### Requisito atendido
@@ -114,13 +250,13 @@ RF-07 - Permitir a visualização de relatórios de custo de suprimentos totais 
 
 - minhaConta.html
 - style.css - Linhas 819 até 1312
-- minhaConta.js - Linhas 1 até 719
+- minhaConta.js - Linhas 22 até 712
 
 #### Estrutura de Dados
 
 - <a href="../codigo-fonte/minhaconta.html">MinhaConta.html - linhas 50 até 610</a>
 - <a href="../codigo-fonte/css/style.css">Style.css - Linhas 819 até 1312</a>
-- <a href="../codigo-fonte/js/minhaConta.js">minhaConta.js - Linhas 1 até 719</a>
+- <a href="../codigo-fonte/js/minhaConta.js">minhaConta.js - Linhas 22 até 712</a>
 
 #### Instruções de acesso
 
