@@ -409,6 +409,10 @@ RF-08: O usuario deve ser capaz de adicionar uma imagem da sua aplicação com s
 minhaconta.html-180 a 183, 
 minha.conta.js-711-717
 
+codigo-fonte/js/minhaConta.js
+codigo-fonte/minhaconta.html
+
+
 
 ## Responsável
 
