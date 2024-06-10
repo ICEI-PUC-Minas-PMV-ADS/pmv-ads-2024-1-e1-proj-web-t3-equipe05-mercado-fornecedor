@@ -317,7 +317,7 @@ Otavio Stefanine Nunes Soutelo
 
 #### Requisito atendido
 
-N/A - Página não atende a nenhum requisito estabelecido
+RF-04: O usuário deve conseguir visualizar os fornecedores cadastrados na aplicação.
 
 #### Artefatos da funcionalidade
 
