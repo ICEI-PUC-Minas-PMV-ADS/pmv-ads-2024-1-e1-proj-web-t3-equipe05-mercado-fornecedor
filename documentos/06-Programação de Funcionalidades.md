@@ -396,7 +396,7 @@ Safira Garcia
 
 ## Editar imagem, logout, e apagar conta 
 <figure>
-  <img src="img/minhaconta2.jpeg"/>
+  <img src="img/Captura de tela_9-6-2024_222652_127.0.0.1.jpeg"/>
   <figcaption>- Minha Conta </figcaption>
 </figure>
  
