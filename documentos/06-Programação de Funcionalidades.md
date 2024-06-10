@@ -394,6 +394,15 @@ https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05
 
 Safira Garcia
 
+## Editar imagem, logout, e apagar conta 
+<figure>
+  <img src="img/minhaconta.png"/>
+  <figcaption>- Minha Conta </figcaption>
+</figure>
+
+##  Requisito atendido 
+RF-08: O usuario deve ser capaz de adicionar uma imagem da sua aplicação com sua marca, remover sua conta e de fazer logout da aplicação.
+
 ### Interface do painel de controle do cliente
 
 <figure>
