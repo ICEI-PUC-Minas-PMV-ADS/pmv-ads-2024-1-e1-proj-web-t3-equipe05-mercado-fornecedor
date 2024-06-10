@@ -311,7 +311,7 @@ Otavio Stefanine Nunes Soutelo
 ### Tabela de fornecedores
 
 <figure>
-  <img src="img/listar-fornecedores.png"/>
+  <img src="img/listar-fornecedors.png"/>
   <figcaption>Figura 11 - Apresentação de fornecedores</figcaption>
 </figure>
 
