@@ -348,7 +348,7 @@ Otavio Stefanine Nunes Soutelo
 
 #### Requisito atendido
 
-RF - 02 - RF-02 Usuário deve ser capaz de realizar login na aplicação, utilizando seu e-mail e senha
+RF-02 Usuário deve ser capaz de realizar login na aplicação, utilizando seu e-mail e senha
 
 #### Artefatos da funcionalidade
 
