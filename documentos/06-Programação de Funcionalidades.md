@@ -172,7 +172,7 @@ Lorena Marta Martiniana de Paula
 ### Meus fornecedores (lista de fornecedores do cliente)
 
 <figure>
-  <img src="img/meus-clientes.png"/>
+  <img src="img/meus-fornecedores.png"/>
   <figcaption>Figura 6 - Imagem da página contendo todos os clientes do fornecedor</figcaption>
 </figure>
 
