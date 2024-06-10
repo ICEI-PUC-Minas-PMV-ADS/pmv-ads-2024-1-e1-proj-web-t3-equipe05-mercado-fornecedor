@@ -399,7 +399,7 @@ Safira Garcia
   <img src="img/minhaconta.png"/>
   <figcaption>- Minha Conta </figcaption>
 </figure>
- É Válido ressaltar que, a imagem pega os relatórios e estatísticas, mas os focos são os botões relacionados à funcionalidade.
+ 
  
 ##  Requisito atendido 
 RF-08: O usuario deve ser capaz de adicionar uma imagem da sua aplicação com sua marca, remover sua conta e de fazer logout da aplicação.
