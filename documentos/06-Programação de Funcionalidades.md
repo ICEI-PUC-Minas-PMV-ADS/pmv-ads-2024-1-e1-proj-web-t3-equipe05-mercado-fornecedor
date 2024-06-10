@@ -384,7 +384,7 @@ RF-10 No perfil de cliente, permitir pesquisa apenas pelo número do pedido. É 
 
 ## Artefatos e funcionalidade 
 linhas 259-262-paineldecontrole.js
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/js/listarClientes.js
+
 
 
 ## Instruções de acesso
@@ -396,7 +396,7 @@ Safira Garcia
 
 ## Editar imagem, logout, e apagar conta 
 <figure>
-  <img src="img/relatorios-estatisticas.png"/>
+  <img src="img/minhaconta.png"/>
   <figcaption>- Minha Conta </figcaption>
 </figure>
  É Válido ressaltar que, a imagem pega os relatórios e estatísticas, mas os focos são os botões relacionados à funcionalidade.
