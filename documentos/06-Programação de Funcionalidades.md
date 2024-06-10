@@ -409,8 +409,8 @@ RF-08: O usuario deve ser capaz de adicionar uma imagem da sua aplicação com s
 minhaconta.html-180 a 183, 
 minha.conta.js-711-717
 
-codigo-fonte/js/minhaConta.js
-codigo-fonte/minhaconta.html
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/minhaconta.html
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/js/minhaConta.js
 
 
 
