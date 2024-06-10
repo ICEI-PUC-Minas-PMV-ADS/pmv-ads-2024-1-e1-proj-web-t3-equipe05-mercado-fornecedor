@@ -396,12 +396,23 @@ Safira Garcia
 
 ## Editar imagem, logout, e apagar conta 
 <figure>
-  <img src="img/minhaconta.png"/>
+  <img src="img/relatorios-estatisticas.png"/>
   <figcaption>- Minha Conta </figcaption>
 </figure>
-
+ É Válido ressaltar que, a imagem pega os relatórios e estatísticas, mas os focos são os botões relacionados à funcionalidade.
+ 
 ##  Requisito atendido 
 RF-08: O usuario deve ser capaz de adicionar uma imagem da sua aplicação com sua marca, remover sua conta e de fazer logout da aplicação.
+
+## Artefatos ou funcionalidades
+
+minhaconta.html-180 a 183, 
+minha.conta.js-711-717
+
+
+## Responsável
+
+Safira Garcia
 
 ### Interface do painel de controle do cliente
 
