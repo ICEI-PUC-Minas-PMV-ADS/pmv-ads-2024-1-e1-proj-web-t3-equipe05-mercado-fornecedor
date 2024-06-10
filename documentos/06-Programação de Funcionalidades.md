@@ -132,46 +132,6 @@ Para acessar a página, visite o link abaixo e selecione "Relatórios e estatís
 
 Lorena Marta Martiniana de Paula
 
-### Interface do painel de controle do cliente
-
-<figure>
-  <img src="img/painelcontrolecliente.png"/>
-  <figcaption>Figura 4 - Painel de controle do cliente</figcaption>
-</figure>
-
-#### Requisito atendido
-
-RF-04 A aplicação deve permitir que o cliente visualize o cadastro de todos os fornecedores para ciência da marca da mercadoria que cotarão
-
-#### Artefatos da funcionalidade
-
--interfacepedidocliente.css
-
--interfacepedidocliente.html
-
-#### Estrutura de Dados
-
-- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/css/interfacepedidodocliente.css"> CSS do painel</a>
-
-- <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/interfacepedidodocliente.html">HTML do painel</a>
-
-#### Instruções de acesso
-
-Para acessar a página, visite o link abaixo:
-
-- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/interfacepedidodocliente.html" target="_blank">painel de controle do cliente</a>
-
-#### Responsável
-
-Renato Andrade de Carvalho
-
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
-
 ### Página de Contato
 
 <figure>
