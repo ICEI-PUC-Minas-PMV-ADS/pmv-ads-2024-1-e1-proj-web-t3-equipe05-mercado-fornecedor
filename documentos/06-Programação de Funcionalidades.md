@@ -384,6 +384,7 @@ RF-10 No perfil de cliente, permitir pesquisa apenas pelo número do pedido. É 
 
 ## Artefatos e funcionalidade 
 linhas 259-262-paineldecontrole.js
+codigo-fonte/js/listarClientes.js
 
 ## Instruções de acesso
 <a href="../codigo-fonte/painelDeControleCliente.js">
@@ -420,6 +421,8 @@ N/A - Página não atende a nenhum requisito estabelecido
 Para acessar a página, visite o link abaixo:
 
 - <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/interfacepedidodocliente.html" target="_blank">painel de controle do cliente</a>
+
+
 
 #### Responsável
 
