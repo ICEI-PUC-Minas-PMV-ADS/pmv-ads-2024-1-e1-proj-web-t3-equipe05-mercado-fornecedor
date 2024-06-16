@@ -1,6 +1,6 @@
-const userOrders = JSON.parse(localStorage.getItem("User")).pedidos;
-
-const listaF = JSON.parse(localStorage.getItem("Users"));
+const orders = JSON.parse(localStorage.getItem("listaDePedidos"));
+const myUser = JSON.parse(localStorage.getItem("User"));
+const listaF = JSON.parse(localStorage.getItem("Fornecedores"));
 
 function fecharModal() {
   const modal = document.querySelector(".modal-fornecedor");
@@ -124,8 +124,11 @@ function criarModal(fornecedor) {
 
   const arrMeusPedidos = [];
 
-  userOrders.forEach((pedido) => {
-    if (pedido.fornecedorId === fornecedor.id) {
+  orders.forEach((pedido) => {
+    if (
+      pedido.fornecedorId === fornecedor.id &&
+      pedido.clienteId === myUser.id
+    ) {
       arrMeusPedidos.push(pedido);
     }
   });
@@ -151,7 +154,9 @@ function criarModal(fornecedor) {
     const mes = dataFormatada.getMonth() + 1;
     const ano = dataFormatada.getFullYear();
 
-    numeroPedido.innerText = arrMeusPedidos[i].id;
+    const shortOrderId = arrMeusPedidos[i].id.split("-")[0];
+
+    numeroPedido.innerText = shortOrderId;
     dataPedido.innerText = `${dia}/${mes}/${ano}`;
     statusPedido.innerText = arrMeusPedidos[i].status;
 
@@ -308,30 +313,15 @@ export function filtrarFornecedores(pedidos, userList) {
 
   pedidos.forEach((pedido) => {
     userList.forEach((user) => {
-      if (user.id === pedido.fornecedorId) arrayFornecedores.push(user);
+      if (user.id === pedido.fornecedorId && myUser.id === pedido.clienteId)
+        arrayFornecedores.push(user);
     });
   });
-
-  // userList.forEach((pedido) => {
-  //   if (pedido.fornecedorId !== null) {
-  //     if (!arrayFornecedores.includes(pedido.fornecedorId))
-  //       arrayFornecedores.push(pedido.fornecedorId);
-  //     arrayPedidosDefinidos.push(pedido);
-  //   }
-  // });
-
-  // const listaMeusFornecedores = [];
-
-  // pedidos.forEach((fornecedor) => {
-  //   if (arrayFornecedores.includes(fornecedor.id)) {
-  //     listaMeusFornecedores.push(fornecedor);
-  //   }
-  // });
 
   return [...new Set(arrayFornecedores)];
 }
 
-const meusFornecedores = filtrarFornecedores(userOrders, listaF);
+const meusFornecedores = filtrarFornecedores(orders, listaF);
 
 buscarFornecedoresDoCliente();
 filtrarFornecedoresPorCategoria(meusFornecedores);
