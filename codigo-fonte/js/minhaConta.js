@@ -7,8 +7,23 @@ const salvarBtn = document.getElementById("minha-conta__salvar-btn");
 const editarDadosBtn = document.getElementById("editar-dados");
 const estatisticasBtn = document.getElementById("estatisticas");
 const notificacoesBtn = document.getElementById("notificacoes");
+
+function logout() {
+
+  localStorage.clear();
+  sessionStorage.clear();
+
+  window.location.href = "/codigo-fonte/login.html";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("logout").addEventListener("click", logout);
+});
+
+
 const objPedidosPorAno = {};
 const arrayPedidosPorAno = [];
+
 
 // BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 const btnCepCadastro = document.getElementById("buscar-btn-cep-cadastro");
@@ -694,3 +709,12 @@ filtrarPedidosPorAno();
 const currentYear = new Date().getFullYear();
 listarTabelaPedidosPorMes(currentYear);
 criarGraficos();
+
+document.getElementById("apagarConta").onclick = apagarConta;
+function apagarConta(){
+  window.confirm("Aperte ok caso deseje apagar a conta");
+  window.alert("Sua conta foi excluída");
+  localStorage.clear();
+  window.location.href = "/codigo-fonte/index.html"
+}
+
