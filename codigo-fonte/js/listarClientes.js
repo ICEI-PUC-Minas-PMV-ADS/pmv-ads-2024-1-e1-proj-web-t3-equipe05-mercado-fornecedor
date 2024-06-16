@@ -1,6 +1,16 @@
 import Api from "./api.js";
 
 const userData = JSON.parse(localStorage.getItem("User"));
+const listaPedidos = await Api.listarTodosPedidos();
+const userPedidos = listaPedidos.filter((p) => p.fornecedorId === userData.id);
+
+userPedidos.sort((d1, d2) => {
+  d1 = new Date(d1.data);
+  d2 = new Date(d2.data);
+
+  return d2 - d1;
+});
+
 const pedidosPaginados = [];
 
 function listarItensPedido(itensDoPedido, pedidoId) {
@@ -85,13 +95,15 @@ async function listaDePedidosMobile(pedidos) {
     }).format(pedido.valor);
     valorPedido = valor;
 
+    const shortOrderId = pedido.id.split("-")[0];
+
     listaAccordion.innerHTML = `
       <a class="accordion-link" href="#item-mobile-${pedido.id}">
       <div class="lista-pedidos-mobile-ul">
         <ul class="lista-pedidos-mobile-grid">
           <li class="lista-pedido-item-li">
             <div>Número</div>
-            <div>${pedido.id}</div>
+            <div>${shortOrderId}</div>
           </li>
           <li class="lista-pedido-item-li">
             <div>Data</div>
@@ -214,9 +226,11 @@ export async function listarPedidosPorCliente(pedidos) {
     }).format(pedido.valor);
     valorPedido = valor;
 
+    const shortOrderId = pedido.id.split("-")[0];
+
     item.innerHTML = `<a class="accordion-link" href="#pedido-id-${pedido.id}">
       <div class="lista-grid-pedidos">
-        <div class="item-lista item-lista-1">${pedido.id}</div>
+        <div class="item-lista item-lista-1">${shortOrderId}</div>
         <div class="item-lista item-lista-2">${dia}/${mes}/${ano}</div>
         <div class="item-fornecedor item-lista item-lista-3">
           <div class="icon-fornecedor">
@@ -365,4 +379,4 @@ visualizarClientesBtn.addEventListener("click", (e) => {
   window.location.replace("./meusClientes.html");
 });
 
-geraPedidos(userData.pedidos.reverse());
+geraPedidos(userPedidos);

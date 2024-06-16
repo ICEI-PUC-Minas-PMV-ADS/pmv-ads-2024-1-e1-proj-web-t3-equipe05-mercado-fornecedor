@@ -1,12 +1,70 @@
 import Api from "./api.js";
 import { geraPedidos } from "./listarpedidos.js";
-import db from "../json/db.json" with {type: "json"};
 
 const userData = JSON.parse(localStorage.getItem("User"));
+const objEndereco = {};
 
 // ADICIONA E REMOVE ITENS DO MODAL NA JANELA MODAL PARA CRIAR PEDIDOS
 let counterItensPedido = 0;
+let objPedido = {};
 const arrayItensPedido = [];
+
+const enderecoCheckBox = document.getElementById("usar-endereco");
+
+enderecoCheckBox.addEventListener("click", (e) => {
+  const cepInput = document.getElementById("add-cep-pedido");
+  const cepBtn = document.getElementById("buscar-btn-cep-pedido");
+  const logradouroInput = document.getElementById("logradouro");
+  const bairroInput = document.getElementById("bairro");
+  const complementoInput = document.getElementById("add-complemento-pedido");
+  const numeroInput = document.getElementById("add-numero-pedido");
+  const localidadeInput = document.getElementById("localidade");
+  const ufInput = document.getElementById("uf");
+
+  if (enderecoCheckBox.checked === true) {
+    cepInput.value = userData.endereco.cep;
+    logradouroInput.value = userData.endereco.logradouro;
+    bairroInput.value = userData.endereco.bairro;
+    complementoInput.value = userData.endereco.complemento;
+    numeroInput.value = userData.endereco.numero;
+    localidadeInput.value = userData.endereco.localidade;
+    ufInput.value = userData.endereco.uf;
+
+    cepInput.disabled = true;
+    cepBtn.disabled = true;
+    logradouroInput.disabled = true;
+    bairroInput.disabled = true;
+    complementoInput.disabled = true;
+    numeroInput.disabled = true;
+    localidadeInput.disabled = true;
+    ufInput.disabled = true;
+
+    objEndereco.cep = userData.endereco.cep;
+    objEndereco.logradouro = userData.endereco.logradouro;
+    objEndereco.bairro = userData.endereco.bairro;
+    objEndereco.complemento = userData.endereco.complemento;
+    objEndereco.numero = userData.endereco.numero;
+    objEndereco.localidade = userData.endereco.localidade;
+    objEndereco.uf = userData.endereco.uf;
+  } else {
+    cepInput.disabled = false;
+    cepBtn.disabled = false;
+    logradouroInput.disabled = false;
+    bairroInput.disabled = false;
+    complementoInput.disabled = false;
+    numeroInput.disabled = false;
+    localidadeInput.disabled = false;
+    ufInput.disabled = false;
+
+    cepInput.value = "";
+    logradouroInput.value = "";
+    bairroInput.value = "";
+    complementoInput.value = "";
+    numeroInput.value = "";
+    localidadeInput.value = "";
+    ufInput.value = "";
+  }
+});
 
 const btnAddItem = document.getElementById("add-btn-item-pedido");
 btnAddItem.addEventListener("click", function () {
@@ -72,7 +130,6 @@ btnAddItem.addEventListener("click", function () {
 
 //BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 const inputCepPedidos = document.getElementById("buscar-btn-cep-pedido");
-const objEndereco = {};
 
 const exibirEndereco = (endereco) => {
   for (const campo in endereco) {
@@ -82,6 +139,8 @@ const exibirEndereco = (endereco) => {
       objEndereco[campo] = endereco[campo];
     }
   }
+
+  objEndereco.cep = endereco.cep;
 };
 
 inputCepPedidos.addEventListener("click", (e) => {
@@ -105,30 +164,24 @@ inputCepPedidos.addEventListener("click", (e) => {
 const btnCadastrar = document.getElementById("btn-cadastrar-pedido");
 
 async function criarPedidos() {
-  const complEndereco = document.getElementById("add-complemento-pedido").value;
-  const numEndereco = document.getElementById("add-numero-pedido").value;
+  const enderecoCheckBox = document.getElementById("usar-endereco");
+  if (enderecoCheckBox.checked == false) {
+    const complEndereco = document.getElementById(
+      "add-complemento-pedido"
+    ).value;
+    const numEndereco = document.getElementById("add-numero-pedido").value;
+    objEndereco.complemento = complEndereco;
+    objEndereco.numero = numEndereco;
+  }
   const prazo = document.getElementById("add-prazo-pedido").value;
   const obsPedido = document.getElementById("add-obs-pedido").value;
   let timeStamp = new Date();
-  // const dia = timeStamp.getDate();
-  // const ano = timeStamp.getFullYear();
-  // const mes = timeStamp.getMonth() + 1;
-
-  // const data = `${dia}/${mes}/${ano}`;
-
-  objEndereco.complemento = complEndereco;
-  objEndereco.numero = numEndereco;
 
   var os = timeStamp.getTimezoneOffset();
   timeStamp = new Date(timeStamp.getTime() - os * 60 * 1000);
+  let id = crypto.randomUUID();
 
-  const pedido = userData.pedidos;
-  let id;
-  if (pedido.length !== 0) {
-    id = pedido[pedido.length - 1].id + 1;
-  }
-
-  const objPedido = {
+  objPedido = {
     id: id,
     data: timeStamp.toJSON(),
     endereco: objEndereco,
@@ -142,11 +195,8 @@ async function criarPedidos() {
     valor: null,
   };
 
-  pedido.push(objPedido);
-  const meusPedidos = { pedidos: pedido };
-
-  const editedUser = await Api.editarUsuario(meusPedidos, userData.id);
-  localStorage.setItem("User", JSON.stringify(editedUser))
+  await Api.cadastrarPedido(objPedido);
+  await Api.listarTodosPedidos();
 
   const listaPedidos = document.getElementById("lista-de-pedidos-user");
   let listaChild = listaPedidos.lastElementChild;
@@ -155,21 +205,12 @@ async function criarPedidos() {
     listaChild = listaPedidos.lastElementChild;
   }
 
-  let updatedUser = JSON.parse(localStorage.getItem("User"));
-  db.users.forEach((user) => {
-    if(user.email == userData.email) {
-      // user.pedidos.push(objPedido)
-      updatedUser.pedidos.push(objPedido)
-
-      localStorage.setItem("User", JSON.stringify(updatedUser))
-    }
-  })
-
-  console.log(updatedUser.pedidos.reverse())
-
+  const listaItensPedido = document.getElementById("lista-itens-pedido");
+  listaItensPedido.innerHTML = "";
   setTimeout(() => {
-    geraPedidos(updatedUser.pedidos);
-  }, 250);
+    // geraPedidos(updatedUser.pedidos);
+    window.location.reload();
+  }, 2000);
 }
 
 btnCadastrar.addEventListener("click", (e) => {

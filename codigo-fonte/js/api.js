@@ -60,19 +60,10 @@ class Api {
     )
       .then((res) => res.json())
       .then((res) => {
+        localStorage.setItem("User", JSON.stringify(res));
         return res;
       })
       .catch((error) => error);
-
-    Toastify({
-      close: true,
-      // duration: 120000,
-      text: "Usuário editado com sucesso!",
-      className: "info",
-      style: {
-        background: "linear-gradient(to right, #00F260, #0575E6)",
-      },
-    }).showToast();
 
     return response;
   }
@@ -172,9 +163,25 @@ class Api {
     return response;
   }
 
+  static async apagarUsuario(userId) {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/users" + userId,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => res);
+    return response;
+  }
+
   static async listarTodosPedidos() {
     const response = await fetch(
-      "https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc",
+      "https://mercado-do-fornecedor-api.onrender.com/pedidos",
       {
         method: "GET",
         headers: {
@@ -191,44 +198,41 @@ class Api {
         }
       })
       .then((res) => {
-        if (typeof res == "number") {
-          return 400;
-        } else {
-          console.log(res);
-        }
+        localStorage.setItem("listaDePedidos", JSON.stringify(res));
+        return res;
       });
 
     return response;
   }
 
-  static async listarPedidosPaginados(page) {
-    const response = await fetch(
-      `https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc&_page=${page}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("Token")}`,
-        },
-      }
-    )
-      .then((res) => {
-        if (res.status != 200) {
-          return res.status;
-        } else {
-          return res.json();
-        }
-      })
-      .then((res) => {
-        if (typeof res == "number") {
-          return 400;
-        } else {
-          return res;
-        }
-      });
+  // static async listarPedidosPaginados(page) {
+  //   const response = await fetch(
+  //     `https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc&_page=${page}`,
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${localStorage.getItem("Token")}`,
+  //       },
+  //     }
+  //   )
+  //     .then((res) => {
+  //       if (res.status != 200) {
+  //         return res.status;
+  //       } else {
+  //         return res.json();
+  //       }
+  //     })
+  //     .then((res) => {
+  //       if (typeof res == "number") {
+  //         return 400;
+  //       } else {
+  //         return res;
+  //       }
+  //     });
 
-    return response;
-  }
+  //   return response;
+  // }
 
   static async filtrarPedidosPorUser(userId) {
     const response = await fetch(
@@ -269,12 +273,102 @@ class Api {
     return response;
   }
 
-  static async listarCotacoesPorPedido(pedidoId) {
+  static async editarPedido(dadosPedido, id) {
     const response = await fetch(
-      "https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc&pedidoId=" +
-        pedidoId,
+      `https://mercado-do-fornecedor-api.onrender.com/pedidos/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+        body: JSON.stringify(dadosPedido),
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => res)
+      .catch((error) => error);
+
+    return response;
+  }
+
+  // static async listarCotacoesPorPedido(pedidoId) {
+  //   const response = await fetch(
+  //     "https://mercado-do-fornecedor-api.onrender.com/pedidos?_sort=id&_order=desc&pedidoId=" +
+  //       pedidoId,
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${localStorage.getItem("Token")}`,
+  //       },
+  //     }
+  //   )
+  //     .then((res) => res.json())
+  //     .then((res) => res);
+  //   return response;
+  // }
+
+  static async cadastrarCotacao(cotacao) {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/cotacoes",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+        body: JSON.stringify(cotacao),
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => res);
+    return response;
+  }
+
+  static async listarCotacoes() {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/cotacoes",
       {
         method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        localStorage.setItem("Cotacoes", JSON.stringify(res));
+        return res;
+      });
+    return response;
+  }
+
+  static async editarCotacao(dadosCotacao, id) {
+    const response = await fetch(
+      `https://mercado-do-fornecedor-api.onrender.com/cotacoes/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+        body: JSON.stringify(dadosCotacao),
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => res)
+      .catch((error) => error);
+
+    return response;
+  }
+
+  static async removerCotacao(cotId) {
+    const response = await fetch(
+      `https://mercado-do-fornecedor-api.onrender.com/cotacoes/${cotId}`,
+      {
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("Token")}`,

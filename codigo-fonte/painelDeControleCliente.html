@@ -34,7 +34,6 @@
       src="https://kit.fontawesome.com/1e3fdf6601.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./js/listarpedidos.js"></script>
   </head>
   <body>
     <!--INÍCIO DO MENU DE USUÁRIO-->
@@ -154,14 +153,17 @@
             >
               Criar novo pedido
             </button>
-            <button
+            <button id="btn-meus-fornecedores" type="button" class="large-btn">
+              Meus Fornecedores
+            </button>
+            <!-- <button
               type="button"
               class="large-btn"
               data-bs-toggle="modal"
               data-bs-target="#enviar-proposta"
             >
-              Enviar proposta
-            </button>
+              Meus Fornecedores
+            </button> -->
           </div>
           <h2 class="title-dashboard">Meus pedidos</h2>
 
@@ -201,352 +203,14 @@
               <div class="item-lista item-lista-5">Status</div>
             </div>
 
-            <div id="lista-de-pedidos-user" class="accordion-list">
-              <!-- <div class="accordion-list-item" id="item1">
-                <a class="accordion-link" href="#item1">
-                  <div class="lista-grid-pedidos">
-                    <div id="numero-pedido" class="item-lista item-lista-1">
-                      492389
-                    </div>
-                    <div id="data-pedido" class="item-lista item-lista-2">
-                      23/03/2024
-                    </div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div id="icon-fornecedor" class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                      <span id="nome-fornecedor" class="nome-fornecedor">
-                        Bayer AG
-                      </span>
-                    </div>
-                    <div id="valor-pedido" class="item-lista item-lista-4">
-                      R$ 500.000,00
-                    </div>
-                    <div id="status-pedido" class="item-lista item-lista-5">
-                      Enviado
-                    </div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    We believe in the greater good, we strive to do something
-                    for people, we aim to make their lives easier and more
-                    enjoyable, we love businesses that keep this
-                  </p>
-                </div>
-              </div>
-
-              <div class="accordion-list-item" id="item2">
-                <a class="accordion-link" href="#item2">
-                  <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                      <span id="nomeFornecedor" class="nome-fornecedor">
-                        Bayer AG
-                      </span>
-                    </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div>
-              <div class="accordion-list-item" id="item3">
-                <a class="accordion-link" href="#item3">
-                  <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                      <span id="nomeFornecedor" class="nome-fornecedor">
-                        Bayer AG
-                      </span>
-                    </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div>
-              <div class="accordion-list-item" id="item4">
-                <a class="accordion-link" href="#item4">
-                  <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                      <span id="nomeFornecedor" class="nome-fornecedor">
-                        Bayer AG
-                      </span>
-                    </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div>
-
-              <div class="accordion-list-item" id="item5">
-                <a class="accordion-link" href="#item5">
-                  <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                      <span id="nomeFornecedor" class="nome-fornecedor">
-                        Bayer AG
-                      </span>
-                    </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div>
-
-              <div class="accordion-list-item" id="item6">
-                <a class="accordion-link" href="#item6">
-                  <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                      <span id="nomeFornecedor" class="nome-fornecedor">
-                        Bayer AG
-                      </span>
-                    </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div>
-
-              <div class="accordion-list-item" id="item7">
-                <a class="accordion-link" href="#item7">
-                  <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                      <span id="nomeFornecedor" class="nome-fornecedor">
-                        Bayer AG
-                      </span>
-                    </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div> -->
-
-              <!-- <div class="accordion-list-item" id="item8">
-                <a class="accordion-link" href="#item8">
-                  <div class="lista-grid-pedidos">
-                    <div class="item-lista item-lista-1">492389</div>
-                    <div class="item-lista item-lista-2">23/03/2024</div>
-                    <div class="item-fornecedor item-lista item-lista-3">
-                      <div class="icon-fornecedor">
-                        <img src="./img/fornecedor1.png" alt="Bayer" />
-                      </div>
-                    </div>
-                    <div class="item-lista item-lista-4">R$ 500.000,00</div>
-                    <div class="item-lista item-lista-5">Enviado</div>
-                    <div class="item-lista item-lista-6">
-                      <button class="btn-mais">Ver mais</button>
-                    </div>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div> -->
-            </div>
+            <div id="lista-de-pedidos-user" class="accordion-list"></div>
           </section>
 
           <section
             id="lista-pedidos-cliente-mobile"
             class="lista-pedidos-mobile"
           >
-            <div id="lista-de-pedidos-user-mobile" class="accordion-list">
-              <!-- <div class="accordion-list-item" id="item1">
-                <a class="accordion-link" href="#item1">
-                  <div class="lista-pedidos-mobile-ul">
-                    <ul class="lista-pedidos-mobile-grid">
-                      <li class="lista-pedido-item-li">
-                        <div>Número</div>
-                        <div>492389</div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div>Data</div>
-                        <div>23/03/2024</div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div>Fornecedor</div>
-                        <div class="fornecedor-detalhe">
-                          <img src="./img/fornecedor1.png" alt="Bayer" />
-                          <p>Bayer</p>
-                        </div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div>Valor</div>
-                        <div>R$ 500.000,00</div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div><button class="btn-mais">Ver mais</button></div>
-                      </li>
-                    </ul>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div>
-
-              <div class="accordion-list-item" id="item1">
-                <a class="accordion-link" href="#item1">
-                  <div class="lista-pedidos-mobile-ul">
-                    <ul class="lista-pedidos-mobile-grid">
-                      <li class="lista-pedido-item-li">
-                        <div>Número</div>
-                        <div>492389</div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div>Data</div>
-                        <div>23/03/2024</div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div>Fornecedor</div>
-                        <div class="fornecedor-detalhe">
-                          <img src="./img/fornecedor1.png" alt="Bayer" />
-                          <p>Bayer</p>
-                        </div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div>Valor</div>
-                        <div>R$ 500.000,00</div>
-                      </li>
-                      <li class="lista-pedido-item-li">
-                        <div><button class="btn-mais">Ver mais</button></div>
-                      </li>
-                    </ul>
-                  </div>
-                </a>
-                <div class="detalhe-pedido">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum.
-                  </p>
-                </div>
-              </div> -->
-            </div>
+            <div id="lista-de-pedidos-user-mobile" class="accordion-list"></div>
           </section>
           <nav class="paginacao">
             <ul id="lista-paginas" class="lista-paginas">
@@ -609,6 +273,16 @@
               >
                 Adicionar
               </button>
+              <div class="input-style-lg">
+                <div class="checkbox-container">
+                  <input
+                    type="checkbox"
+                    id="usar-endereco"
+                    name="usar-endereco"
+                  />
+                  <label for="usar-endereco">Usar meu endereço</label>
+                </div>
+              </div>
               <div class="input-style-md">
                 <input
                   id="add-cep-pedido"
@@ -744,66 +418,6 @@
                 class="cadastrar-pedido-btn"
               >
                 Cadastrar novo pedido
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Modal enviar proposta-->
-    <div
-      class="modal fade"
-      id="enviar-proposta"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Criar proposta
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="criar-pedido">
-            <form class="form-padrao formulario-pedido">
-              <div class="input-style-padrao">
-                <input
-                  class="item-pedido-input"
-                  placeholder="Valor"
-                  type="number"
-                />
-                <span class="focus-border"></span>
-              </div>
-              <div class="input-style-padrao">
-                <input
-                  class="item-pedido-input"
-                  placeholder="Prazo de entrega"
-                  type="text"
-                />
-                <span class="focus-border"></span>
-              </div>
-              <div class="input-style-padrao input-style-lg">
-                <textarea
-                  class="item-pedido-input textarea-lg"
-                  placeholder="Observações"
-                  type="text"
-                ></textarea>
-                <span class="focus-border"></span>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div class="cadastrar-btn">
-              <button type="submit" class="cadastrar-pedido-btn">
-                Enviar proposta
               </button>
             </div>
           </div>
