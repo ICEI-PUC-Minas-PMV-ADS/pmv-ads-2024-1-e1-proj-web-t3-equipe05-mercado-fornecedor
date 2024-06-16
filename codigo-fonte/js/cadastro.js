@@ -35,25 +35,14 @@ function cadastrarUsuario() {
     localStorage.setItem("Users", JSON.stringify(db_json.users));
     storageDB = JSON.parse(localStorage.getItem("Users"));
   }
-
-  console.log(filtraFornecedor)
+  
+  let id = crypto.randomUUID();
+  objUser.id = id;
+  db_json.users.push(objUser);
+  localStorage.setItem("Users", JSON.stringify(db_json.users));
 
   Api.cadastrarUsuario(objUser);
 
-  if (filtraFornecedor.length === 0) {
-    let id;
-
-    let p = storageDB.length;
-
-    if (email !== "" && senha !== "") {
-      db_json.users = storageDB;
-      id = db_json.users[p - 1].id + 1;
-      objUser.id = id;
-
-      db_json.users.push(objUser);
-      localStorage.setItem("Users", JSON.stringify(db_json.users));
-    }
-  }
 }
 const btnCadastrarUser = document.getElementById("cadastrar-user-btn");
 

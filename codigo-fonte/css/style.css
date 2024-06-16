@@ -551,6 +551,7 @@ h4 {
 /* MAIN DA PÁGINA HOME */
 main {
   margin-top: 50px;
+  min-height: 59.6vh;
 }
 
 /* SEÇÃO SOBRE */
@@ -794,6 +795,7 @@ main {
 
 .lista-de-fornecedores {
   margin-top: 30px;
+  width: 100%;
 }
 
 .card-fornecedor {
@@ -1451,6 +1453,11 @@ input::-webkit-inner-spin-button {
   grid-column-end: 7;
 }
 
+.cotacao-2 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
 /* Menu accordion da lista de pedidos */
 .accordion-list {
   display: flex;
@@ -1492,7 +1499,8 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
-.lista-grid-pedidos {
+.lista-grid-pedidos,
+.lista-grid-cotacoes {
   width: 100%;
   display: grid;
   justify-content: space-between;
@@ -1502,10 +1510,15 @@ input::-webkit-inner-spin-button {
   padding-left: 20px;
 }
 
-.lista-grid-pedidos .item-lista {
+.lista-grid-pedidos .item-lista,
+.lista-grid-cotacoes .item-lista {
   color: #231f20;
   font-size: 12px;
   font-weight: 400;
+}
+
+.lista-grid-cotacoes {
+  padding-left: 0;
 }
 
 .item-lista-6 {
@@ -1585,7 +1598,7 @@ input::-webkit-inner-spin-button {
 }
 
 .accordion-list-item:target .detalhe-pedido {
-  max-height: 20rem;
+  max-height: 40rem;
 }
 
 .coluna-01 {
@@ -1716,10 +1729,108 @@ input::-webkit-inner-spin-button {
 
 .btn-can-ped {
   background-color: #5d0b00;
+  transition: all 300ms ease;
+}
+
+.btn-can-ped-null {
+  background-color: #ccc;
 }
 
 .btn-can-ped:hover {
   background-color: #363795;
+}
+
+.minhas-cotacoes {
+  width: 100%;
+}
+
+.minhas-cotacoes h4 {
+  background-color: #f1f1f1;
+  padding: 10px 10px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #00395d;
+}
+
+.cotacao-6,
+.cotacao-7 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.li-cotacao {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.btn-aceita,
+.btn-recusa {
+  width: 90px;
+  height: 30px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  transition: all 300ms ease;
+}
+
+.btn-aceita {
+  background-color: #0fcc93;
+}
+
+.btn-aceita:hover {
+  background-color: #4e65ff;
+}
+
+.btn-recusa {
+  background-color: #cc0f31;
+}
+
+.btn-recusa:hover {
+  background-color: #0b1354;
+}
+
+.btn-aceita-disabled,
+.btn-recusa-disabled {
+  width: 90px;
+  height: 30px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  background-color: #ccc;
+  cursor: default !important;
+}
+
+.btn-can-cot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 30px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  background-color: #00395d;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 300ms ease;
+}
+
+.btn-can-cot-disabled {
+  background-color: #ccc;
+}
+
+.btn-can-cot:hover {
+  background-color: #5d0b00;
 }
 
 /* Lista de pedidos versão mobile */
@@ -1884,6 +1995,11 @@ input::-webkit-inner-spin-button {
   font-size: 14px;
 }
 
+.item-pedido-input:disabled {
+  color: #7ec9dc;
+  background-color: #d6eff5;
+}
+
 .item-pedido-input::placeholder {
   color: #98b9c1;
 }
@@ -1928,6 +2044,12 @@ input::-webkit-inner-spin-button {
   width: 23%;
   position: relative;
 }
+
+.checkbox-container {
+  display: flex;
+  gap: 10px;
+}
+
 .item-pedido-input ~ .focus-border {
   position: absolute;
   bottom: 0;
@@ -2738,6 +2860,10 @@ footer {
   .detalhe-itens-mobile {
     display: block;
     width: 100%;
+  }
+
+  .detalhe-itens-pedido {
+    grid-template-columns: 1fr;
   }
 }
 

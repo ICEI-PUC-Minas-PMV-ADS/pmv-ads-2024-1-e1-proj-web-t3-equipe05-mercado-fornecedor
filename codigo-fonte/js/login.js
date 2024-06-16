@@ -25,6 +25,8 @@ async function userLogin(userData) {
     }).showToast();
   } else if (apiResponse.accessToken !== undefined) {
     await Api.listarUsuarios();
+    await Api.listarCotacoes();
+    await Api.listarTodosPedidos();
 
     Toastify({
       close: true,
