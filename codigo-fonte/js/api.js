@@ -60,6 +60,21 @@ class Api {
     )
       .then((res) => res.json())
       .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
         localStorage.setItem("User", JSON.stringify(res));
         return res;
       })
@@ -165,7 +180,7 @@ class Api {
 
   static async apagarUsuario(userId) {
     const response = await fetch(
-      "https://mercado-do-fornecedor-api.onrender.com/users" + userId,
+      "https://mercado-do-fornecedor-api.onrender.com/users/" + userId,
       {
         method: "DELETE",
         headers: {
@@ -175,7 +190,24 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res);
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        return res;
+      });
     return response;
   }
 
@@ -190,14 +222,23 @@ class Api {
         },
       }
     )
+      .then((res) => res.json())
       .then((res) => {
-        if (res.status != 200) {
-          return res.status;
-        } else {
-          return res.json();
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
         }
-      })
-      .then((res) => {
         localStorage.setItem("listaDePedidos", JSON.stringify(res));
         return res;
       });
@@ -248,6 +289,21 @@ class Api {
     )
       .then((res) => res.json())
       .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
         localStorage.setItem("listaDePedidos", JSON.stringify(res));
         return res;
       });
@@ -267,7 +323,24 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res)
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        return res;
+      })
       .catch((error) => error);
 
     return response;
@@ -286,7 +359,24 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res)
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        return res;
+      })
       .catch((error) => error);
 
     return response;
@@ -322,7 +412,24 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res);
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        return res;
+      });
     return response;
   }
 
@@ -339,6 +446,21 @@ class Api {
     )
       .then((res) => res.json())
       .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
         localStorage.setItem("Cotacoes", JSON.stringify(res));
         return res;
       });
@@ -358,7 +480,24 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res)
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        return res;
+      })
       .catch((error) => error);
 
     return response;
@@ -376,7 +515,24 @@ class Api {
       }
     )
       .then((res) => res.json())
-      .then((res) => res);
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        return res;
+      });
     return response;
   }
 }

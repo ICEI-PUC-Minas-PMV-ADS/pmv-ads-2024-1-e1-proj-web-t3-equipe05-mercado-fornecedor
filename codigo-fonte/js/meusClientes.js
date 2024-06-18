@@ -1,6 +1,6 @@
 const orders = JSON.parse(localStorage.getItem("listaDePedidos"));
 const myUser = JSON.parse(localStorage.getItem("User"));
-const listaF = JSON.parse(localStorage.getItem("Fornecedores"));
+const listaF = JSON.parse(localStorage.getItem("Users"));
 
 function fecharModal() {
   const modal = document.querySelector(".modal-fornecedor");
@@ -126,8 +126,8 @@ function criarModal(fornecedor) {
 
   orders.forEach((pedido) => {
     if (
-      pedido.fornecedorId === fornecedor.id &&
-      pedido.clienteId === myUser.id
+      pedido.clienteId === fornecedor.id &&
+      pedido.fornecedorId === myUser.id
     ) {
       arrMeusPedidos.push(pedido);
     }
@@ -289,7 +289,7 @@ export function filtrarFornecedores(pedidos, userList) {
 
   pedidos.forEach((pedido) => {
     userList.forEach((user) => {
-      if (user.id === pedido.fornecedorId && myUser.id === pedido.clienteId)
+      if (user.id === pedido.clienteId && myUser.id === pedido.fornecedorId)
         arrayFornecedores.push(user);
     });
   });

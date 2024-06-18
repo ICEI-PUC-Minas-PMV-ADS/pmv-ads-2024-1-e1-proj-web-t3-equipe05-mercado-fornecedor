@@ -1,6 +1,15 @@
 import Api from "./api.js";
 
 const user = JSON.parse(localStorage.getItem("User"));
+const listaUsers = JSON.parse(localStorage.getItem("Users"));
+const listaDePedidos = JSON.parse(localStorage.getItem("listaDePedidos"));
+const cotacoes = JSON.parse(localStorage.getItem("Cotacoes"));
+const listaDePedidosUser = listaDePedidos.filter(
+  (pedido) => pedido.clienteId === user.id
+);
+const listaDePedidosFornecedor = listaDePedidos.filter(
+  (pedido) => pedido.fornecedorId === user.id
+);
 const verPedidos = document.getElementById("visualizar-pedidos");
 const meusFornecedores = document.getElementById("meus-fornecedores");
 const salvarBtn = document.getElementById("minha-conta__salvar-btn");
@@ -9,21 +18,18 @@ const estatisticasBtn = document.getElementById("estatisticas");
 const notificacoesBtn = document.getElementById("notificacoes");
 
 function logout() {
-
   localStorage.clear();
   sessionStorage.clear();
 
-  window.location.href = "/codigo-fonte/login.html";
+  window.location.href = "./login.html";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("logout").addEventListener("click", logout);
 });
 
-
 const objPedidosPorAno = {};
 const arrayPedidosPorAno = [];
-
 
 // BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
 const btnCepCadastro = document.getElementById("buscar-btn-cep-cadastro");
@@ -84,8 +90,6 @@ function verificaTipoDeUsuario() {
 }
 
 function exibirDadosDoUsuario() {
-  const user = JSON.parse(localStorage.getItem("User"));
-
   const nome = document.getElementById("minha-conta__nome");
   const cnpj = document.getElementById("minha-conta__cnpj");
   const cep = document.getElementById("minha-conta__cep");
@@ -131,9 +135,15 @@ function exibirDadosDoUsuario() {
   if (user.telefone !== null) telefone.value = user.telefone;
 }
 
-function editarDadosDoUsuario() {
-  const user = JSON.parse(localStorage.getItem("User"));
+async function editarUser(editedObj, userId) {
+  await Api.editarUsuario(editedObj, userId);
 
+  setTimeout(() => {
+    window.location.reload();
+  }, 2500);
+}
+
+function editarDadosDoUsuario() {
   // const nome = document.getElementById("minha-conta__nome").value;
   // const cnpj = document.getElementById("minha-conta__cnpj").value;
   const cep = document.getElementById("minha-conta__cep").value;
@@ -168,7 +178,9 @@ function editarDadosDoUsuario() {
   if (email !== "") objUser.email = email;
   if (senha !== "") objUser.password = senha;
 
-  Api.editarUsuario(objUser, user.id);
+  console.log(objUser);
+
+  editarUser(objUser, user.id);
 }
 
 async function listaDePedidosMobile(pedidos) {
@@ -246,66 +258,103 @@ async function listaDePedidosMobile(pedidos) {
 }
 
 function listarPedidosEmAberto() {
-  const pedidosEmAberto = user.pedidos.filter(
-    (pedido) => pedido.status === "em aberto"
-  );
+  let pedidosEmAberto;
+  if (user.tipo === "cliente") {
+    pedidosEmAberto = listaDePedidosUser.filter(
+      (pedido) => pedido.status === "em aberto"
+    );
+  } else {
+    const minhasCotacoes = cotacoes.filter(
+      (c) => c.fornecedorId === user.id && c.status === "pendente"
+    );
+    const pedidosFiltrados = [];
+
+    minhasCotacoes.forEach((c) => {
+      let cot = listaDePedidos.filter((p) => p.id === c.pedidoId);
+      pedidosFiltrados.push(...cot);
+    });
+    pedidosEmAberto = [...pedidosFiltrados];
+  }
 
   pedidosEmAberto.reverse().forEach((pedido) => {
     const lista = document.getElementById("minha-conta__lista-pedidos");
 
     const listaItem = document.createElement("li");
-    const containerItem = document.createElement("div");
-    const numeroPedido = document.createElement("div");
-    const dataPedido = document.createElement("div");
-    const containerFornecedor = document.createElement("div");
-    const containerImgFornecedor = document.createElement("div");
-    const imgFornecedor = document.createElement("img");
-    const nomeFornecedor = document.createElement("span");
-    const valorPedido = document.createElement("div");
-    const statusPedido = document.createElement("div");
-    const verMaisBtn = document.createElement("button");
 
     listaItem.classList.add("minha-conta__lista-pedidos-item");
-    containerItem.classList.add("minha-conta__lista-pedidos-grid");
-    numeroPedido.classList.add("item-lista", "item-lista-1");
-    dataPedido.classList.add("item-lista", "item-lista-2");
-    containerFornecedor.classList.add(
-      "item-fornecedor",
-      "item-lista",
-      "item-lista-3"
-    );
-    containerImgFornecedor.classList.add("icon-fornecedor");
-    nomeFornecedor.classList.add("nome-fornecedor");
-    valorPedido.classList.add("item-lista", "item-lista-4");
-    statusPedido.classList.add("item-lista", "item-lista-5");
-    verMaisBtn.classList.add("btn-mais");
+    listaItem.setAttribute("id", "pedido-id-" + pedido.id);
+
+    let imgUser, nomeUser, valorPedido;
+
+    let cancelarClass;
+    pedido.status == "em aberto"
+      ? (cancelarClass = "btn-can-ped")
+      : (cancelarClass = "btn-can-ped-null");
+
+    if (pedido.fornecedorId !== null) {
+      const fornecedor = listaUsers.filter(
+        (user) => user.id == pedido.fornecedorId
+      );
+      imgUser = fornecedor[0].imgUrl;
+      nomeUser = fornecedor[0].nome;
+      const valor = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(pedido.valor);
+      valorPedido = valor;
+    } else if (user.tipo === "fornecedor") {
+      const cliente = listaUsers.filter((u) => u.id === pedido.clienteId);
+      imgUser = cliente[0].imgUrl;
+      nomeUser = cliente[0].nome;
+      valorPedido = "-";
+    } else {
+      imgUser = "./img/defaultUser.png";
+      nomeUser = "Indefinido";
+      valorPedido = "-";
+    }
 
     const data = new Date(pedido.data);
     const dia = data.getDate();
     const mes = data.getMonth() + 1;
     const ano = data.getFullYear();
 
-    numeroPedido.innerText = pedido.id;
-    dataPedido.innerText = `${dia}/${mes}/${ano}`;
-    imgFornecedor.src = "https://i.ibb.co/ydQxnbG/default-User.png";
-    nomeFornecedor.innerText = "Indefinido";
-    valorPedido.innerText = "-";
-    statusPedido.innerText = pedido.status;
-    verMaisBtn.innerText = "Ver mais";
+    const shortOrderId = pedido.id.split("-")[0];
 
-    containerImgFornecedor.append(imgFornecedor);
-    containerFornecedor.append(containerImgFornecedor, nomeFornecedor);
+    listaItem.innerHTML = `
+    <div class="minha-conta__lista-pedidos-grid">
+      <div id="numero-pedido" class="item-lista item-lista-1">
+        ${shortOrderId}
+      </div>
+      <div id="data-pedido" class="item-lista item-lista-2">
+        ${dia}/${mes}/${ano}
+      </div>
+      <div class="item-fornecedor item-lista item-lista-3">
+        <div id="icon-fornecedor" class="icon-fornecedor">
+          <img src="${imgUser}" alt="${nomeUser}" />
+        </div>
+        <span id="nome-fornecedor" class="nome-fornecedor">
+          ${nomeUser}
+        </span>
+      </div>
+      <div id="valor-pedido" class="item-lista item-lista-4">
+        ${valorPedido}
+      </div>
+      <div id="status-pedido" class="item-lista item-lista-5">
+        ${pedido.status}
+      </div>
+      <button class="btn-mais" id="conta-ped-mais-${pedido.id}">Ver mais</button>
+    </div>`;
 
-    containerItem.append(
-      numeroPedido,
-      dataPedido,
-      containerFornecedor,
-      valorPedido,
-      statusPedido,
-      verMaisBtn
-    );
-    listaItem.append(containerItem);
     lista.append(listaItem);
+
+    const verMaisBtn = document.getElementById("conta-ped-mais-" + pedido.id);
+    verMaisBtn.addEventListener("click", (e) => {
+      user.tipo === "cliente"
+        ? (window.location.href =
+            "./painelDeControleCliente.html#pedido-id-" + pedido.id)
+        : (window.location.href =
+            "./pedidosDisponiveis.html#pedido-id-" + pedido.id);
+    });
   });
 
   listaDePedidosMobile(pedidosEmAberto);
@@ -353,12 +402,24 @@ function filtrarPedidosAnuais(anoAtual) {
     let pedidosFinalizados = 0;
     let pedidosEmAberto = 0;
     let valorTotal = 0;
-    const pedidosDoMes = user.pedidos.filter((pedido) => {
-      const dataDoPedido = new Date(pedido.data);
-      return (
-        dataDoPedido.getMonth() == i && dataDoPedido.getFullYear() == anoAtual
-      );
-    });
+
+    let pedidosDoMes;
+
+    if (user.tipo === "cliente") {
+      pedidosDoMes = listaDePedidosUser.filter((pedido) => {
+        const dataDoPedido = new Date(pedido.data);
+        return (
+          dataDoPedido.getMonth() == i && dataDoPedido.getFullYear() == anoAtual
+        );
+      });
+    } else {
+      pedidosDoMes = listaDePedidosFornecedor.filter((pedido) => {
+        const dataDoPedido = new Date(pedido.data);
+        return (
+          dataDoPedido.getMonth() == i && dataDoPedido.getFullYear() == anoAtual
+        );
+      });
+    }
 
     if (pedidosDoMes.length !== 0) {
       pedidosDoMes.forEach((pedido) => {
@@ -424,10 +485,17 @@ function listarTabelaPedidosPorMes(ano) {
 function filtrarAnosDosPedidos() {
   const arrDatas = [];
 
-  user.pedidos.forEach((pedido) => {
-    const dataDoPedido = new Date(pedido.data);
-    arrDatas.push(dataDoPedido.getFullYear());
-  });
+  if (user.tipo === "cliente") {
+    listaDePedidosUser.forEach((pedido) => {
+      const dataDoPedido = new Date(pedido.data);
+      arrDatas.push(dataDoPedido.getFullYear());
+    });
+  } else {
+    listaDePedidosFornecedor.forEach((pedido) => {
+      const dataDoPedido = new Date(pedido.data);
+      arrDatas.push(dataDoPedido.getFullYear());
+    });
+  }
 
   return [...new Set(arrDatas)];
 }
@@ -710,11 +778,38 @@ const currentYear = new Date().getFullYear();
 listarTabelaPedidosPorMes(currentYear);
 criarGraficos();
 
-document.getElementById("apagarConta").onclick = apagarConta;
-function apagarConta(){
-  window.confirm("Aperte ok caso deseje apagar a conta");
-  window.alert("Sua conta foi excluída");
-  localStorage.clear();
-  window.location.href = "/codigo-fonte/index.html"
-}
+const btnEnviarImg = document.getElementById("btn__editar-imagem");
+btnEnviarImg.addEventListener("click", (e) => {
+  const imgUrl = document.getElementById("input__editar-imagem").value;
 
+  if (imgUrl !== "") {
+    const newImgObj = {
+      imgUrl: imgUrl,
+    };
+
+    editarUser(newImgObj, user.id);
+  }
+});
+
+document.getElementById("apagar-conta").onclick = apagarConta;
+async function apagarConta() {
+  const checkDel = window.confirm("Aperte ok caso deseje apagar a conta");
+
+  if (checkDel) {
+    Toastify({
+      close: true,
+      // duration: 120000,
+      text: "Conta excluída com sucesso!",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00F260, #0575E6)",
+      },
+    }).showToast();
+    await Api.apagarUsuario(user.id);
+
+    setTimeout(() => {
+      localStorage.clear();
+      window.location.href = "./index.html";
+    }, 1500);
+  }
+}
