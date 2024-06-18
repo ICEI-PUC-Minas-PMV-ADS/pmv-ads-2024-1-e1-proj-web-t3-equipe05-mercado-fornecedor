@@ -40,7 +40,7 @@ async function userLogin(userData) {
 
     setTimeout(() => {
       window.location = "./minhaconta.html";
-    }, 4000);
+    }, 2000);
   }
 }
 

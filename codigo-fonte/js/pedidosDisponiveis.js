@@ -334,7 +334,7 @@ async function listaDePedidosMobile(pedidos) {
               </div>
               <div class="item-lista cotacao-6"></div>
               <div class="item-lista cotacao-7">
-                <button class="btn-can-cot" id="btn-can-ped-${verificaCotacao[0].id}">Remover</button>
+                <button class="btn-can-cot" id="btn-rmv-cot-mobile-${verificaCotacao[0].id}">Remover</button>
               </div>
             </div>`;
 
@@ -345,7 +345,7 @@ async function listaDePedidosMobile(pedidos) {
       detalhe.append(cotacoes);
 
       const removerBtn = document.getElementById(
-        "btn-can-ped-" + verificaCotacao[0].id
+        "btn-rmv-cot-mobile-" + verificaCotacao[0].id
       );
 
       removerBtn.addEventListener("click", (e) => {
@@ -535,7 +535,7 @@ export async function listarPedidosEmAberto(pedidos) {
               </div>
               <div class="item-lista cotacao-6"></div>
               <div class="item-lista cotacao-7">
-                <button class="btn-can-cot" id="btn-can-ped-${verificaCotacao[0].id}">Remover</button>
+                <button class="btn-can-cot" id="btn-rmv-cot-${verificaCotacao[0].id}">Remover</button>
               </div>
             </div>`;
 
@@ -546,7 +546,7 @@ export async function listarPedidosEmAberto(pedidos) {
       detalhe.append(cotacoes);
 
       const removerBtn = document.getElementById(
-        "btn-can-ped-" + verificaCotacao[0].id
+        "btn-rmv-cot-" + verificaCotacao[0].id
       );
 
       removerBtn.addEventListener("click", (e) => {

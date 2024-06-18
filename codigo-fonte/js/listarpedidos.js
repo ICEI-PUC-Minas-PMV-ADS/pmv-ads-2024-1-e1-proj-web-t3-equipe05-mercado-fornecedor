@@ -1,6 +1,7 @@
 import Api from "./api.js";
 
 const userData = JSON.parse(localStorage.getItem("User"));
+const listaUsers = JSON.parse(localStorage.getItem("Users"));
 const listaPedidos = JSON.parse(localStorage.getItem("listaDePedidos"));
 const listaCotacoes = JSON.parse(localStorage.getItem("Cotacoes"));
 const userPedidos = listaPedidos.filter((p) => p.clienteId === userData.id);
@@ -25,6 +26,10 @@ async function editarPedidos(dadosPedido, pedidoId) {
 async function alterarCotacao(status, cotacaoId) {
   await Api.editarCotacao(status, cotacaoId);
   await Api.listarCotacoes();
+
+  setTimeout(() => {
+    window.location.reload();
+  }, 1500);
 }
 
 async function alterarTodasCotacoes(cotacaoAceita, pedidoId) {
@@ -90,7 +95,7 @@ function listarItensPedidoMobile(itensDoPedido, pedidoId) {
   });
 }
 
-async function listaDePedidosMobile(pedidos) {
+function listaDePedidosMobile(pedidos) {
   const listaPedidosUser = document.getElementById(
     "lista-de-pedidos-user-mobile"
   );
@@ -113,8 +118,6 @@ async function listaDePedidosMobile(pedidos) {
       const dia = data.getDate();
       const mes = data.getMonth() + 1;
       const ano = data.getFullYear();
-
-      const listaUsers = JSON.parse(localStorage.getItem("Users"));
 
       const valor = new Intl.NumberFormat("pt-BR", {
         style: "currency",
@@ -301,10 +304,10 @@ async function listaDePedidosMobile(pedidos) {
               Aceita
             </div>
             <div class="item-lista cotacao-6">
-              <button class="${classAceitar}">Aceitar</button>
+              <button class="${classAceitar}" id="act-cot-btn-mobile-${cotacao.id}">Aceitar</button>
             </div>
             <div class="item-lista cotacao-7">
-              <button class="${classRecusar}">Recusar</button>
+              <button class="${classRecusar}" id="rec-cot-btn-mobile-${cotacao.id}">Recusar</button>
             </div>
           </div>`;
 
@@ -318,7 +321,7 @@ async function listaDePedidosMobile(pedidos) {
 
       findCotacoes.forEach((c) => {
         const cotacaoAceita = findCotacoes.find((e) => e.status == "aceita");
-        const actCotBtn = document.getElementById("act-cot-btn-" + c.id);
+        const actCotBtn = document.getElementById("act-cot-btn-mobile-" + c.id);
 
         actCotBtn.addEventListener("click", (e) => {
           const status = {
@@ -336,7 +339,7 @@ async function listaDePedidosMobile(pedidos) {
           editarPedidos(novoPedidoEdit, pedido.id);
         });
 
-        const recCotBtn = document.getElementById("rec-cot-btn-" + c.id);
+        const recCotBtn = document.getElementById("rec-cot-btn-mobile-" + c.id);
         recCotBtn.addEventListener("click", (e) => {
           const status = {
             status: "recusada",
@@ -352,9 +355,13 @@ async function listaDePedidosMobile(pedidos) {
       });
 
       if (pedido.status !== "em aberto") {
-        document.getElementById("btn-can-ped-" + pedido.id).disabled = true;
+        document.getElementById(
+          "btn-can-ped-mobile-" + pedido.id
+        ).disabled = true;
       } else {
-        const cancelarBtn = document.getElementById("btn-can-ped-" + pedido.id);
+        const cancelarBtn = document.getElementById(
+          "btn-can-ped-mobile-" + pedido.id
+        );
         cancelarBtn.addEventListener("click", (e) => {
           const statusObj = {
             status: "cancelado",
@@ -382,7 +389,7 @@ async function listaDePedidosMobile(pedidos) {
   }
 }
 
-export async function listarPedidosPorCliente(pedidos) {
+function listarPedidosPorCliente(pedidos) {
   const listaPedidos = document.getElementById("lista-de-pedidos-user");
   while (listaPedidos.firstChild) {
     listaPedidos.removeChild(listaPedidos.firstChild);
@@ -410,7 +417,9 @@ export async function listarPedidosPorCliente(pedidos) {
       const ano = data.getFullYear();
 
       if (pedido.fornecedorId !== null) {
-        const fornecedor = await Api.listarUsuariosPorId(pedido.fornecedorId);
+        const fornecedor = listaUsers.filter(
+          (user) => user.id == pedido.fornecedorId
+        );
         imgUser = fornecedor[0].imgUrl;
         nomeUser = fornecedor[0].nome;
         const valor = new Intl.NumberFormat("pt-BR", {
@@ -671,6 +680,8 @@ function paginacaoPedidos(pedidos) {
   let arr = [];
   pedidosPaginados.length = 0;
 
+  console.log(pedidos);
+
   for (i = 0; i < pedidos.length; i++) {
     if (i % 10 == 0 && i !== 0) {
       pedidosPaginados.push(arr);
@@ -682,6 +693,8 @@ function paginacaoPedidos(pedidos) {
   if (arr.length !== 0) {
     pedidosPaginados.push(arr);
   }
+
+  console.log(pedidosPaginados);
 
   return pedidosPaginados;
 }
@@ -732,6 +745,7 @@ document
   });
 
 const inputBusca = document.getElementById("busca");
+
 inputBusca.onkeyup = function () {
   const novosPedidos = userPedidos.filter((p) =>
     p.id.includes(inputBusca.value)

@@ -198,6 +198,17 @@ async function criarPedidos() {
   await Api.cadastrarPedido(objPedido);
   await Api.listarTodosPedidos();
 
+  const listaDePedidos = JSON.parse(localStorage.getItem("listaDePedidos"));
+  const listaCotacoes = JSON.parse(localStorage.getItem("Cotacoes"));
+  const userPedidos = listaDePedidos.filter((p) => p.clienteId === userData.id);
+
+  userPedidos.sort((d1, d2) => {
+    d1 = new Date(d1.data);
+    d2 = new Date(d2.data);
+
+    return d2 - d1;
+  });
+
   const listaPedidos = document.getElementById("lista-de-pedidos-user");
   let listaChild = listaPedidos.lastElementChild;
   while (listaChild) {
@@ -208,8 +219,8 @@ async function criarPedidos() {
   const listaItensPedido = document.getElementById("lista-itens-pedido");
   listaItensPedido.innerHTML = "";
   setTimeout(() => {
-    // geraPedidos(updatedUser.pedidos);
-    window.location.reload();
+    geraPedidos(userPedidos);
+    // window.location.reload();
   }, 2000);
 }
 

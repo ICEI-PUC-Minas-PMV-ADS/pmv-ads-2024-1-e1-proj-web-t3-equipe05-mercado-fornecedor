@@ -1,6 +1,7 @@
 import Api from "./api.js";
 
 const userData = JSON.parse(localStorage.getItem("User"));
+const listaUsers = JSON.parse(localStorage.getItem("Users"));
 const listaPedidos = await Api.listarTodosPedidos();
 const userPedidos = listaPedidos.filter((p) => p.fornecedorId === userData.id);
 
@@ -65,7 +66,7 @@ function listarItensPedidoMobile(itensDoPedido, pedidoId) {
   });
 }
 
-async function listaDePedidosMobile(pedidos) {
+function listaDePedidosMobile(pedidos) {
   const listaPedidosUser = document.getElementById(
     "lista-de-pedidos-user-mobile"
   );
@@ -83,7 +84,6 @@ async function listaDePedidosMobile(pedidos) {
     const mes = data.getMonth() + 1;
     const ano = data.getFullYear();
 
-    const listaUsers = JSON.parse(localStorage.getItem("Users"));
     const cliente = listaUsers.filter((user) => user.id === pedido.clienteId);
 
     imgUser = cliente[0].imgUrl;
@@ -196,7 +196,7 @@ async function listaDePedidosMobile(pedidos) {
   });
 }
 
-export async function listarPedidosPorCliente(pedidos) {
+function listarPedidosPorCliente(pedidos) {
   const listaPedidos = document.getElementById("lista-de-pedidos-user");
   while (listaPedidos.firstChild) {
     listaPedidos.removeChild(listaPedidos.firstChild);
@@ -214,7 +214,6 @@ export async function listarPedidosPorCliente(pedidos) {
     const mes = data.getMonth() + 1;
     const ano = data.getFullYear();
 
-    const listaUsers = JSON.parse(localStorage.getItem("Users"));
     const cliente = listaUsers.filter((user) => user.id === pedido.clienteId);
 
     imgUser = cliente[0].imgUrl;
