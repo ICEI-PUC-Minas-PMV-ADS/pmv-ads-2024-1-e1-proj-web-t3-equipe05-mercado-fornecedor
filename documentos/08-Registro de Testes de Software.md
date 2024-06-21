@@ -43,3 +43,11 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 | :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Resultados obtidos                         | 1. o usuário visualiza os fornecedores cadastrados |
 | Responsável pela execução do caso de Teste | Renato                 
+
+| Caso de Teste                              | CT- 01:  A aplicação deve permitir que o pedido apareça para todos os fornecedores, para que o cliente verifique os melhores preços                                                                                                                                                                                                                                                 |
+| :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resultados obtidos                         | 1. Todos os pedidos estão listados corretamente, em resoluções mobile e desktop
+2. Os detalhes dos pedidos podem ser visualizados
+3. É possível enviar cotação com valor e prazo de entrega
+4.  A cotação enviada junto ao pedido selecionado é visualizada pelo cliente|
+| Responsável pela execução do caso de Teste | Otavio                 
