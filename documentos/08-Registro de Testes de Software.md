@@ -13,13 +13,13 @@ Os resultados dos testes funcionais realizados na aplicação são descritos a s
 
 | Caso de Teste                              | CT-08: verificar a página de usuário                                                                                                                                                                                                                                                            |
 | :----------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resultados obtidos                         | 1. Ao clicar em "Sair", surge um erro, ao invés de ser redirecionado para a página de login, o usuário visualizada uma página de erro 404<br/> 2. Ao clicar em "editar imagem" e enviar uma nova imagem, a imagem não está sendo alterada<br/> 3. O botão apagar conta não realiza nenhuma ação |
+| Resultados obtidos                         | 1. Ao clicar em "Sair", os dados do usuário são apagados do storage e o usuário volta para a página de login<br/> 2. Ao clicar em "editar imagem" e enviar uma nova imagem, a imagem do usuário é alterada corretamente<br/> 3. O botão exclui a conta do usuário, apaga todos os dados do storage e redireciona o usuário para a página home |
 | Responsável pela execução do caso de Teste | Lorena                                                                                                                                                                                                                                                                                          |
 
 
 | Caso de Teste                              | CT-10: verificar se a página de clientes consegue fazer pesquisa                                                                                           |
 | :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Resultados obtidos                         | 1. Ao digitar o número do pedido na busca, nada acontece e nenhum pedido é buscado<br/> 2. Surge um erro no console informando que "filtro está undefined" |
+| Resultados obtidos                         | 1. Ao digitar o número do pedido na busca, são listados apenas os pedidos que contem a string digitada<br/> 2. Ao apagar o texto da busca, todos os pedidos são carregados novamente |
 | Responsável pela execução do caso de Teste | Lorena   |       
 
 
