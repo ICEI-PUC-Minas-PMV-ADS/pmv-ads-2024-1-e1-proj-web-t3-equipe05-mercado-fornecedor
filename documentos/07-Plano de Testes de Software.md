@@ -17,7 +17,7 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir. 
 | Requisitos Associados | RF-01: A aplicação deve permitir que o pedido apareça para todos os fornecedores, para que o cliente verifique os melhores preços |
 | Objetivo do Teste | Verificar se o fornecedor tem acesso à lista de pedidos disponíveis e é capaz de enviar cotações corretamente |
 | Passos | 1. Realizar login com um usuário do tipo fornecedor<br/> Sugestão de fornecedores:<br/> E-mail: contato@tecnobits.com<br/> Senha: 123456<br />E-mail: contato@escrita.com<br/> Senha: 123456<br /> 2. Acessar a página de pedidos disponíveis da aplicação<br/> 3. Verificar se todos os pedidos estão sendo listados corretamente<br/> 5. Verificar se os detalhes do pedido estão sendo exibidos ao clicar no botão "ver mais"<br/> 6. Verificar a exibição da lista em resoluções menores<br/> 7. Enviar uma cotação através do botão "Enviar cotação"<br/> 8. Verificar se a cotação é listada corretamente no pedido selecionado|
-| Critérios de êxito | Todos os pedidos devem ser listados corretamente, em resoluções mobile e desktop; deve ser possível visualizar detalhes dos pedidos; deve ser possível enviar cotação com valor e prazo de entrega; deve ser possível visualizar a cotação enviada junto ao pedido selecionado  |
+| Critérios de êxito | 1. Todos os pedidos devem ser listados corretamente, em resoluções mobile e desktop<br/> 2. Deve ser possível visualizar detalhes dos pedidos<br/> 3. Deve ser possível enviar cotação com valor e prazo de entrega<br/> 4. Deve ser possível visualizar a cotação enviada junto ao pedido selecionado  |
 | Responsável pela elaborar do caso de Teste | Lorena |
 
 |Caso de Teste    | CT-05: Verificar a listagem de pedidos do fornecedor |
