@@ -68,7 +68,7 @@ enderecoCheckBox.addEventListener("click", (e) => {
 
 const btnAddItem = document.getElementById("add-btn-item-pedido");
 btnAddItem.addEventListener("click", function () {
-  let itemPedido = document.getElementById("add-item-pedido").value;
+  let itemPedido = document.getElementById("add-item-pedido");
   let qtdItemPedido = document.getElementById("add-qtd-item-pedido").value;
 
   const listaItensPedido = document.getElementById("lista-itens-pedido");
@@ -90,7 +90,7 @@ btnAddItem.addEventListener("click", function () {
   );
   closeBtn.classList.add("fa-solid", "fa-xmark");
 
-  nomeItem.innerText = itemPedido;
+  nomeItem.innerText = itemPedido.value;
   qtdItem.innerText = qtdItemPedido;
 
   item.appendChild(nomeItem);
@@ -105,7 +105,7 @@ btnAddItem.addEventListener("click", function () {
   });
 
   const objItemPedido = {
-    nomeDoItem: itemPedido,
+    nomeDoItem: itemPedido.value,
     qtdDoItem: qtdItemPedido,
     idItem: counterItensPedido + 1,
   };
@@ -125,7 +125,43 @@ btnAddItem.addEventListener("click", function () {
       .indexOf(itemLista.id);
     arrayItensPedido.splice(indexItem, 1);
   });
+
+  itemPedido.value = "";
   counterItensPedido++;
+});
+
+const inputItem = document.getElementById("add-item-pedido");
+
+function buscarItensDePedidos(inputValue) {
+  let resultadoBusca = userData.itensDePedidos.filter(
+    (item) =>
+      item.nomeDoItem.toLowerCase().includes(inputValue.toLowerCase()) &&
+      inputValue !== ""
+  );
+
+  const listaItens = document.getElementById("list-itens");
+  listaItens.innerHTML = "";
+
+  resultadoBusca.slice(0, 5).forEach((item) => {
+    const itemLista = document.createElement("li");
+    itemLista.setAttribute("id", "item-lista-id" + item.id);
+    itemLista.innerText = item.nomeDoItem;
+    listaItens.append(itemLista);
+    listaItens.style.display = "block";
+
+    const itemName = document.getElementById("item-lista-id" + item.id);
+    itemName.addEventListener("click", (e) => {
+      inputItem.value = itemName.innerText;
+      listaItens.innerHTML = "";
+      listaItens.style.display = "none";
+    });
+  });
+
+  if (resultadoBusca.length === 0) listaItens.style.display = "none";
+}
+
+inputItem.addEventListener("input", (e) => {
+  buscarItensDePedidos(inputItem.value);
 });
 
 //BUSCA ENDEREÇO PELO CEP E PREENCHE AUTOMATICAMENTE OS INPUTS
@@ -174,32 +210,58 @@ async function criarPedidos() {
     objEndereco.numero = numEndereco;
   }
   const prazo = document.getElementById("add-prazo-pedido").value;
-  const obsPedido = document.getElementById("add-obs-pedido").value;
+  const segmentoPedido = document.getElementById("add-obs-pedido").value;
   let timeStamp = new Date();
 
   var os = timeStamp.getTimezoneOffset();
   timeStamp = new Date(timeStamp.getTime() - os * 60 * 1000);
   let id = crypto.randomUUID();
 
+  const arrayItensNovos = [...arrayItensPedido];
+  const arrayItensFinais = [];
+  const filteredArray = arrayItensNovos.filter(
+    (item1) =>
+      !userData.itensDePedidos.some(
+        (item2) => item1.nomeDoItem === item2.nomeDoItem
+      )
+  );
+
+  console.log(filteredArray);
+
   objPedido = {
     id: id,
     data: timeStamp.toJSON(),
     endereco: objEndereco,
     prazoDeEntrega: prazo,
-    observacao: obsPedido,
+    observacao: "",
     itensDoPedido: arrayItensPedido,
     status: "em aberto",
     clienteId: userData.id,
     fornecedorId: null,
-    cotacoes: [],
     valor: null,
+    segmento: segmentoPedido,
+  };
+
+  filteredArray.forEach((itemP) => {
+    const objItemPedidoNovos = {
+      nomeDoItem: itemP.nomeDoItem,
+      id: crypto.randomUUID(),
+    };
+
+    arrayItensFinais.push(objItemPedidoNovos);
+  });
+
+  userData.itensDePedidos.push(...arrayItensFinais);
+
+  const objNovosPedidos = {
+    itensDePedidos: userData.itensDePedidos,
   };
 
   await Api.cadastrarPedido(objPedido);
+  await Api.editarUsuario(objNovosPedidos, userData.id);
   await Api.listarTodosPedidos();
 
   const listaDePedidos = JSON.parse(localStorage.getItem("listaDePedidos"));
-  const listaCotacoes = JSON.parse(localStorage.getItem("Cotacoes"));
   const userPedidos = listaDePedidos.filter((p) => p.clienteId === userData.id);
 
   userPedidos.sort((d1, d2) => {
@@ -219,6 +281,16 @@ async function criarPedidos() {
   const listaItensPedido = document.getElementById("lista-itens-pedido");
   listaItensPedido.innerHTML = "";
   setTimeout(() => {
+    Toastify({
+      close: true,
+      // duration: 120000,
+      text: "Pedido cadastrado com sucesso!",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00F260, #0575E6)",
+      },
+    }).showToast();
+
     geraPedidos(userPedidos);
     // window.location.reload();
   }, 2000);

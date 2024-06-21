@@ -177,7 +177,12 @@
                       <p>Editar imagem</p>
                       <i class="fa-regular fa-image fa-3x"></i>
                     </div>
-                    <div id="logout" class="minha-conta__user-logout"onclick="logout"()>
+                    <div
+                      id="logout"
+                      class="minha-conta__user-logout"
+                      onclick="logout"
+                      ()
+                    >
                       <p>Sair</p>
                       <i class="fa-solid fa-arrow-right-from-bracket fa-3x"></i>
                     </div>
@@ -587,13 +592,20 @@
 
                 <div class="minha-conta__estatisticas-user">
                   <h3 class="minha-conta__titulo-conteudo">Estatísticas</h3>
-                  <canvas id="lineChart"></canvas>
+                  <div class="minha-conta__chart-title">
+                    <h4 id="minha-conta__title-h4-line">Custo mensal</h4>
+                    <h3>Pedidos finalizados</h3>
+                    <h5>Últimos 6 meses</h5>
+                  </div>
+                  <div class="minha-conta__line-chart">
+                    <canvas id="lineChart"></canvas>
+                  </div>
                   <div class="minha-conta__chart-container">
                     <div class="minha-conta__small-chart">
                       <div class="minha-conta__chart-title">
-                        <h4>Pedidos por</h4>
-                        <h3>Fornecedor</h3>
-                        <h5>Últimos 6 meses</h5>
+                        <h4>Total de pedidos por</h4>
+                        <h3 id="minha-conta__title-h3-doughnut">Fornecedor</h3>
+                        <h5>5 maiores</h5>
                       </div>
                       <div id="legenda-d-chart"></div>
                       <canvas id="doughnutChart"></canvas>
@@ -601,8 +613,8 @@
                     <div class="minha-conta__small-chart">
                       <div class="minha-conta__chart-title">
                         <h4>Total de pedidos</h4>
-                        <h3>20 pedidos</h3>
-                        <h5>Últimos 6 meses</h5>
+                        <h3 id="minha-conta__title-h3-radar"></h3>
+                        <h5>6 Primeiros itens</h5>
                       </div>
                       <canvas id="barChart"></canvas>
                     </div>
