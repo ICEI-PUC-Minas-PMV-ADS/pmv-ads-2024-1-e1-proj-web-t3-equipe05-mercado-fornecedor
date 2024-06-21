@@ -535,6 +535,74 @@ class Api {
       });
     return response;
   }
+
+  static async cadastrarItens(itensDoPedido) {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/itensDePedidos",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+        body: JSON.stringify(itensDoPedido),
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        return res;
+      });
+    return response;
+  }
+
+  static async listarItens() {
+    const response = await fetch(
+      "https://mercado-do-fornecedor-api.onrender.com/itensDePedidos",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        if (res === "jwt expired") {
+          Toastify({
+            close: true,
+            // duration: 120000,
+            text: "Token expirado. Faça login novamente.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #ED213A, #93291E)",
+            },
+          }).showToast();
+
+          setTimeout(() => {
+            window.location = "./login.html";
+          }, 1000);
+        }
+        localStorage.setItem("itensDePedidos", JSON.stringify(res));
+        return res;
+      });
+    return response;
+  }
 }
 
 export default Api;

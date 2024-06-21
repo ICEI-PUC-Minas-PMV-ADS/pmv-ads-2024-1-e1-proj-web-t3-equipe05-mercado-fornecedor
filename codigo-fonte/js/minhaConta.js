@@ -612,12 +612,93 @@ const htmlLegendPlugin = {
   },
 };
 
+function listarPedidosPorFornecedor(listaFornecedorFiltrada) {
+  const pedidosPorFornecedor = [];
+
+  listaFornecedorFiltrada.forEach((fornecedor) => {
+    let pedidoCount = 0;
+    listaDePedidos.forEach((pedido) => {
+      if (user.tipo === "cliente") {
+        if (
+          pedido.fornecedorId === fornecedor.id &&
+          pedido.clienteId === user.id
+        )
+          pedidoCount++;
+      } else {
+        if (
+          pedido.clienteId === fornecedor.id &&
+          pedido.fornecedorId === user.id
+        )
+          pedidoCount++;
+      }
+    });
+    pedidosPorFornecedor.push(pedidoCount);
+  });
+
+  return pedidosPorFornecedor;
+}
+
+function listarMeusFornecedores() {
+  const minhaListaDeFornecedores = [];
+
+  if (user.tipo === "cliente") {
+    listaDePedidosUser.forEach((pedido) => {
+      listaUsers.forEach((userF) => {
+        if (userF.id === pedido.fornecedorId)
+          minhaListaDeFornecedores.push(userF);
+      });
+    });
+  } else {
+    listaDePedidosFornecedor.forEach((pedido) => {
+      listaUsers.forEach((userC) => {
+        if (userC.id === pedido.clienteId) minhaListaDeFornecedores.push(userC);
+      });
+    });
+  }
+
+  return [...new Set(minhaListaDeFornecedores)];
+}
+
+function contaItensDePedidos(nomeItens) {
+  const contaItens = [];
+  if (user.tipo === "cliente") {
+    nomeItens.forEach((nome) => {
+      let contador = 0;
+      listaDePedidosUser.forEach((pedido) => {
+        const filter = pedido.itensDoPedido.filter(
+          (item) => item.nomeDoItem === nome
+        );
+        if (filter.length > 0) contador++;
+      });
+
+      contaItens.push(contador);
+    });
+  } else {
+    nomeItens.forEach((nome) => {
+      let contador = 0;
+      listaDePedidosFornecedor.forEach((pedido) => {
+        const filter = pedido.itensDoPedido.filter(
+          (item) => item.nomeDoItem === nome
+        );
+        if (filter.length > 0) contador++;
+      });
+
+      contaItens.push(contador);
+    });
+  }
+
+  return contaItens;
+}
+
 function criarGraficos() {
   const lineCanvas = document.getElementById("lineChart");
   const doughnutCanvas = document.getElementById("doughnutChart");
   const barCanvas = document.getElementById("barChart");
   const valorMes = [];
   const infoMesAno = [];
+  const nomeFornecedores = [];
+  const nomeItensPedidos = [];
+  let totalPorItem;
 
   arrayPedidosPorAno.forEach((pedido) => {
     let mesAno = `${pedido.mes}/${pedido.ano}`;
@@ -625,6 +706,35 @@ function criarGraficos() {
     valorMes.push(pedido.total);
   });
 
+  const listaFiltradaFornecedores = listarMeusFornecedores();
+
+  listaFiltradaFornecedores.forEach((f) => nomeFornecedores.push(f.nome));
+
+  if (user.tipo === "cliente") {
+    user.itensDePedidos.forEach((item) =>
+      nomeItensPedidos.push(item.nomeDoItem)
+    );
+    totalPorItem = contaItensDePedidos(nomeItensPedidos);
+  } else {
+    listaDePedidosFornecedor.forEach((pedido) => {
+      pedido.itensDoPedido.forEach((item) =>
+        nomeItensPedidos.push(item.nomeDoItem)
+      );
+    });
+
+    totalPorItem = contaItensDePedidos([...new Set(nomeItensPedidos)]);
+  }
+
+  const h4l = document.getElementById("minha-conta__title-h4-line");
+  const h3D = document.getElementById("minha-conta__title-h3-doughnut");
+  const h3R = document.getElementById("minha-conta__title-h3-radar");
+  h3R.innerText = `${listaDePedidosUser.length} pedidos`;
+
+  if (user.tipo === "fornecedor") {
+    h4l.innerText = "Faturamento mensal";
+    h3D.innerText = "Cliente";
+    h3R.innerText = `${listaDePedidosFornecedor.length} pedidos`;
+  }
   new Chart(lineCanvas, {
     type: "line",
     data: {
@@ -650,11 +760,11 @@ function criarGraficos() {
   new Chart(doughnutCanvas, {
     type: "doughnut",
     data: {
-      labels: infoMesAno,
+      labels: nomeFornecedores,
       datasets: [
         {
-          label: "Custo mensal",
-          data: valorMes,
+          label: "Pedidos totais",
+          data: listarPedidosPorFornecedor(listaFiltradaFornecedores),
           backgroundColor: [
             "#165BAA",
             "#A155B9",
@@ -686,20 +796,25 @@ function criarGraficos() {
   new Chart(barCanvas, {
     type: "polarArea",
     data: {
-      labels: infoMesAno,
+      labels: nomeItensPedidos.slice(0, 5),
       datasets: [
         {
-          label: "Custo mensal",
-          data: valorMes,
+          label: "Itens mais pedidos",
+          data: totalPorItem.slice(0, 5),
           borderWidth: 1,
           borderWidth: 2,
         },
       ],
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true,
+      plugins: {
+        htmlLegend: {
+          containerID: "legenda-d-chart",
+        },
+        legend: {
+          display: true,
+          position: "right",
+          align: "center",
         },
       },
     },

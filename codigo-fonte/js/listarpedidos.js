@@ -680,8 +680,6 @@ function paginacaoPedidos(pedidos) {
   let arr = [];
   pedidosPaginados.length = 0;
 
-  console.log(pedidos);
-
   for (i = 0; i < pedidos.length; i++) {
     if (i % 10 == 0 && i !== 0) {
       pedidosPaginados.push(arr);
@@ -694,9 +692,7 @@ function paginacaoPedidos(pedidos) {
     pedidosPaginados.push(arr);
   }
 
-  console.log(pedidosPaginados);
-
-  return pedidosPaginados;
+  return [...pedidosPaginados];
 }
 
 export function geraPedidos(pedidos) {
