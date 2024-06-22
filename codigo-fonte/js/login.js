@@ -38,9 +38,9 @@ async function userLogin(userData) {
       },
     }).showToast();
 
-    setTimeout(() => {
-      window.location = "./minhaconta.html";
-    }, 2000);
+    //setTimeout(() => {
+     // window.location = "./minhaconta.html";
+    //}, 2000);
   }
 }
 
