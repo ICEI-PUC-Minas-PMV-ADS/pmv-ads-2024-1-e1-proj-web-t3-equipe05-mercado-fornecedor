@@ -364,18 +364,24 @@ function listarConteudo(
   e,
   openTab,
   closedTab1,
-  closedTab2,
+  // closedTab2,
   activeBtn,
-  disabledBtn1,
+  // disabledBtn1,
   disabledBtn2
 ) {
   closedTab1.style.display = "none";
-  closedTab2.style.display = "none";
+  // closedTab2.style.display = "none";
   openTab.style.display = "block";
 
+  console.log(openTab);
+  console.log(closedTab1);
+  console.log(activeBtn);
+  // console.log(disabledBtn1);
+  console.log(disabledBtn2);
+
   activeBtn.className = "minha-conta__menu-item minha-conta__menu-item--active";
-  disabledBtn1.className =
-    "minha-conta__menu-item minha-conta__menu-item--disabled";
+  // disabledBtn1.className =
+  //   "minha-conta__menu-item minha-conta__menu-item--disabled";
   disabledBtn2.className =
     "minha-conta__menu-item minha-conta__menu-item--disabled";
 }
@@ -828,15 +834,15 @@ salvarBtn.addEventListener("click", (e) => {
 editarDadosBtn.addEventListener("click", (e) => {
   const openTab = document.getElementById("minha-conta__dados");
   const closedTab1 = document.getElementById("minha-conta__estatisticas");
-  const closedTab2 = document.getElementById("minha-conta__notificacoes");
+  // const closedTab2 = document.getElementById("minha-conta__notificacoes");
 
   listarConteudo(
     e,
     openTab,
     closedTab1,
-    closedTab2,
+    // closedTab2,
     editarDadosBtn,
-    notificacoesBtn,
+    // notificacoesBtn,
     estatisticasBtn
   );
 });
@@ -844,34 +850,34 @@ editarDadosBtn.addEventListener("click", (e) => {
 estatisticasBtn.addEventListener("click", (e) => {
   const openTab = document.getElementById("minha-conta__estatisticas");
   const closedTab1 = document.getElementById("minha-conta__dados");
-  const closedTab2 = document.getElementById("minha-conta__notificacoes");
+  // const closedTab2 = document.getElementById("minha-conta__notificacoes");
 
   listarConteudo(
     e,
     openTab,
     closedTab1,
-    closedTab2,
+    // closedTab2,
     estatisticasBtn,
-    notificacoesBtn,
+    // notificacoesBtn,
     editarDadosBtn
   );
 });
 
-notificacoesBtn.addEventListener("click", (e) => {
-  const openTab = document.getElementById("minha-conta__notificacoes");
-  const closedTab1 = document.getElementById("minha-conta__dados");
-  const closedTab2 = document.getElementById("minha-conta__estatisticas");
+// notificacoesBtn.addEventListener("click", (e) => {
+//   const openTab = document.getElementById("minha-conta__notificacoes");
+//   const closedTab1 = document.getElementById("minha-conta__dados");
+//   const closedTab2 = document.getElementById("minha-conta__estatisticas");
 
-  listarConteudo(
-    e,
-    openTab,
-    closedTab1,
-    closedTab2,
-    notificacoesBtn,
-    estatisticasBtn,
-    editarDadosBtn
-  );
-});
+//   listarConteudo(
+//     e,
+//     openTab,
+//     closedTab1,
+//     closedTab2,
+//     notificacoesBtn,
+//     estatisticasBtn,
+//     editarDadosBtn
+//   );
+// });
 
 meusFornecedores.addEventListener("click", (e) => {
   window.location.replace("./meusFornecedores.html");
