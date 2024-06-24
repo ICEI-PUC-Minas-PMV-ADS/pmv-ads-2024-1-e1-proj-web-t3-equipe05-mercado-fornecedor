@@ -202,6 +202,39 @@ Para acessar a página, visite o link abaixo, logado em usuário cliente (e-mail
 
 Lorena Marta Martiniana de Paula
 
+### Lista de pedidos disponíveis
+
+<figure>
+  <img src="img/pedidos-disponiveis.png"/>
+  <figcaption>Figura 7 - Imagem da lista de pedidos em aberto disponíveis para envio de orçamento/cotação</figcaption>
+</figure>
+
+#### Requisito atendido
+
+RF-01 - A aplicação deve permitir que o pedido apareça para todos os fornecedores, para que o cliente verifique os melhores preços
+
+#### Artefatos da funcionalidade
+
+- pedidosDisponiveis.html
+- style.css - Linhas 1314 até 2063
+- pedidosDisponiveis.js
+
+#### Estrutura de Dados
+
+- <a href="../codigo-fonte/pedidosDisponiveis.html">pedidosDisponiveis.html</a>
+- <a href="../codigo-fonte/css/style.css">Style.css - Linhas 1314 até 2063</a>
+- <a href="../codigo-fonte/js/pedidosDisponiveis.js">pedidosDisponiveis.js</a>
+
+#### Instruções de acesso
+
+Para acessar a página, visite o link abaixo, logado em usuário fornecedor (e-mail: contato@tecnobits.com | senha: 123456):
+
+- <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/pedidosDisponiveis.html" target="_blank">Página de lista de pedidos disponíveis</a>
+
+#### Responsável
+
+Lorena Marta Martiniana de Paula
+
 ### Lista de pedidos do fornecedor
 
 <figure>
@@ -509,28 +542,30 @@ Para acessar a página, visite o link abaixo:
 Renato Andrade de Carvalho
 
 ## pedido de busca painel de clientes
+
 <figure>
   <img src="img/painel-cliente.png"/>
   <figcaption>interface da pagina de pedidos</figcaption>
 </figure>
 
-## Requisito atendido 
+## Requisito atendido
 
-RF-10 No perfil de cliente, permitir pesquisa apenas pelo número do pedido. É válido ressaltar que foi desenvolvido por mim apenas a  capacidade de buscar o pedido da página.
+RF-10 No perfil de cliente, permitir pesquisa apenas pelo número do pedido. É válido ressaltar que foi desenvolvido por mim apenas a capacidade de buscar o pedido da página.
 
-## Artefatos e funcionalidade 
+## Artefatos e funcionalidade
+
 linhas 259-262-paineldecontrole.js
 
-
-
 ## Instruções de acesso
+
 <a href="../codigo-fonte/painelDeControleCliente.js">
 
-## Responsável 
+## Responsável
 
 Safira Garcia
 
-## Editar imagem, logout, e apagar conta 
+## Editar imagem, logout, e apagar conta
+
 <figure>
   <img src="img/Captura de tela_9-6-2024_222652_127.0.0.1.jpeg"/>
   <figcaption>- Minha Conta </figcaption>
@@ -542,13 +577,11 @@ RF-08: O usuario deve ser capaz de adicionar uma imagem da sua aplicação com s
 
 ## Artefatos ou funcionalidades
 
-minhaconta.html-180 a 183, 
+minhaconta.html-180 a 183,
 minha.conta.js-711-717
 
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/minhaconta.html
 https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/blob/main/codigo-fonte/js/minhaConta.js
-
-
 
 ## Responsável
 
@@ -582,8 +615,6 @@ N/A - Página não atende a nenhum requisito estabelecido
 Para acessar a página, visite o link abaixo:
 
 - <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor/codigo-fonte/interfacepedidodocliente.html" target="_blank">painel de controle do cliente</a>
-
-
 
 #### Responsável
 
