@@ -17,6 +17,11 @@ const editarDadosBtn = document.getElementById("editar-dados");
 const estatisticasBtn = document.getElementById("estatisticas");
 const notificacoesBtn = document.getElementById("notificacoes");
 
+const pedidosListados = document.getElementById("minha-conta__pedidos");
+if (user.tipo === "fornecedor") {
+  pedidosListados.style.display = "none";
+}
+
 function logout() {
   localStorage.clear();
   sessionStorage.clear();
@@ -807,6 +812,14 @@ function criarGraficos() {
         {
           label: "Itens mais pedidos",
           data: totalPorItem.slice(0, 5),
+          backgroundColor: [
+            "#165BAA",
+            "#A155B9",
+            "#F765A3",
+            "#16BFD6",
+            "#1DDD8D",
+            "#953BBF",
+          ],
           borderWidth: 1,
           borderWidth: 2,
         },

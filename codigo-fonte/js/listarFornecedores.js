@@ -1,3 +1,5 @@
+import Api from "./api.js";
+
 // LISTA OS FORNECEDORES NA PÁGINA FORNECEDORES.HTML
 function listarFornecedores() {
   const listaDeFornecedores = JSON.parse(localStorage.getItem("Fornecedores"));
@@ -18,4 +20,5 @@ function listarFornecedores() {
   });
 }
 
+await Api.listarFornecedores();
 listarFornecedores();
