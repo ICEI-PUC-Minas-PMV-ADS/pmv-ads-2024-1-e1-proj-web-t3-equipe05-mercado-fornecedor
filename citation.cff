@@ -1,0 +1,24 @@
+message: Please cite this software using these metadata.
+title: Prevenir Gestão de Biblioteca
+authors:
+  - family-names: Marta Martiniana de Paula
+    given-names:  Lorena
+  - family-names: Stefanine Nunes Soutelo
+    given-names: Otavio
+  - family-names: Andrade de Carvalho
+    given-names: Renato
+  - family-names: Gabriele Garcia da Silva
+    given-names: Safira
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alves Nogueira
+    given-names: Simone
+keywords:
+  - Gestão
+  - Cotações
+  - Orçamentos
+  - Compras
+  - Vendas
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e1-proj-web-t3-equipe05-mercado-fornecedor
+version: 1.0.0
+date-released: 2024-06-23
